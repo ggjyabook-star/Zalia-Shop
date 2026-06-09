@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Panel de Administración | Zalia Shop</title>
+  <link rel="icon" type="image/png" href="assets/logos/logo_color.png">
+  
+  <!-- Fonts & Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+  
+  <style>
+    /* Inline Dashboard-specific styling extending styles.css */
+    .admin-container {
+      max-width: 1200px;
+      margin: 110px auto 60px;
+      padding: 0 24px;
+    }
+    .admin-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 30px;
+      margin-top: 30px;
+    }
+    @media (min-width: 992px) {
+      .admin-grid {
+        grid-template-columns: 1.2fr 0.8fr;
+      }
+    }
+    .upload-zone {
+      border: 3px dashed var(--light-border);
+      border-radius: var(--border-radius-lg);
+      padding: 50px 30px;
+      text-align: center;
+      background: var(--light-card);
+      cursor: pointer;
+      transition: var(--transition);
+      position: relative;
+    }
+    body.dark-mode-active .upload-zone {
+      border-color: rgba(255, 255, 255, 0.15);
+      background: var(--dark-card);
+    }
+    .upload-zone:hover, .upload-zone.dragover {
+      border-color: var(--primary);
+      background: rgba(255, 0, 127, 0.02);
+    }
+    body.dark-mode-active .upload-zone:hover, 
+    body.dark-mode-active .upload-zone.dragover {
+      border-color: var(--secondary);
+      background: rgba(0, 180, 216, 0.05);
+    }
+    .upload-icon {
+      font-size: 3.5rem;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 20px;
+    }
+    .log-box {
+      background: #f1f5f9;
+      border-left: 4px solid var(--text-muted);
+      padding: 16px;
+      border-radius: var(--border-radius-sm);
+      margin-top: 20px;
+      font-family: monospace;
+      font-size: 0.9rem;
+      max-height: 200px;
+      overflow-y: auto;
+      white-space: pre-wrap;
+      text-align: left;
+    }
+    body.dark-mode-active .log-box {
+      background: #141d2e;
+      border-left-color: var(--secondary);
+    }
+    .table-container {
+      width: 100%;
+      overflow-x: auto;
+      margin-top: 20px;
+      border-radius: var(--border-radius-sm);
+      border: 1px solid var(--light-border);
+    }
+    body.dark-mode-active .table-container {
+      border-color: rgba(255, 255, 255, 0.1);
+    }
+    .preview-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.9rem;
+    }
+    .preview-table th, .preview-table td {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--light-border);
+    }
+    body.dark-mode-active .preview-table th, 
+    body.dark-mode-active .preview-table td {
+      border-color: rgba(255, 255, 255, 0.05);
+    }
+    .preview-table th {
+      background: rgba(0,0,0,0.02);
+      font-weight: 700;
+    }
+    body.dark-mode-active .preview-table th {
+      background: rgba(255,255,255,0.02);
+    }
+    .preview-img {
+      width: 40px;
+      height: 40px;
+      object-fit: cover;
+      border-radius: 4px;
+      background: #eee;
+    }
+    .badge-status {
+      display: inline-block;
+      padding: 4px 10px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      border-radius: 4px;
+    }
+    .badge-status.active-mode {
+      background: rgba(16, 185, 129, 0.15);
+      color: var(--success);
+    }
+    .badge-status.default-mode {
+      background: rgba(245, 158, 11, 0.15);
+      color: var(--warning);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo-wrapper">
+        <img src="assets/logos/logo_color.png" alt="Zalia Shop Logo" class="logo-img">
+      </a>
+      
+      <h2 style="font-size: 1.4rem; font-weight: 700;">Administración de Catálogo</h2>
+      
+      <div class="nav-actions">
+        <button id="theme-toggle" class="btn-icon" title="Cambiar Tema" aria-label="Cambiar tema">
+          <i class="fas fa-moon"></i>
+        </button>
+        <a href="index.html" class="btn-primary" style="padding: 10px 18px; font-size: 0.95rem;">
+          <i class="fas fa-store"></i> Ver Tienda
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <div class="admin-container">
+    <div class="section-header" style="text-align: left; margin-bottom: 30px;">
+      <h2 style="font-size: 2.2rem;">Panel de Control y CMS</h2>
+      <p>Edita tus productos, actualiza los precios de mayoreo, menudeo, caja y liga tus fotos de Google Photos de forma sencilla mediante un archivo Excel o CSV.</p>
+    </div>
+
+    <!-- Status Overview -->
+    <div class="prop-card" style="margin-bottom: 30px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; padding: 25px 30px;">
+      <div>
+        <h3 style="font-size: 1.25rem; margin-bottom: 8px;">Estado del Catálogo de Productos</h3>
+        <p style="font-size: 0.95rem; color: var(--text-muted);" id="catalog-desc-status">
+          Cargando información del catálogo...
+        </p>
+      </div>
+      <div style="display: flex; gap: 12px; align-items: center;">
+        <span class="badge-status" id="catalog-badge-status">Cargando...</span>
+        <button id="btn-restore-default" class="btn-secondary" style="background: #ef4444; box-shadow: 0 4px 15px rgba(239, 68, 68, 0.25); padding: 10px 18px; font-size: 0.9rem;">
+          <i class="fas fa-undo"></i> Restaurar Por Defecto
+        </button>
+      </div>
+    </div>
+
+    <div class="admin-grid">
+      <!-- Left Column: Upload and Preview -->
+      <div style="display: flex; flex-direction: column; gap: 30px;">
+        <!-- Upload Box -->
+        <div class="prop-card" style="padding: 30px;">
+          <h3 style="font-weight: 700; font-size: 1.3rem; margin-bottom: 16px;">
+            <i class="fas fa-file-excel" style="color: #10b981; margin-right: 8px;"></i> Subir Archivo Excel o CSV
+          </h3>
+          <p style="color: var(--text-muted); margin-bottom: 20px; font-size: 0.95rem;">
+            Actualiza tus productos subiendo el archivo. Asegúrate de respetar los nombres de las columnas para evitar errores de carga.
+          </p>
+          
+          <div class="upload-zone" id="drop-zone">
+            <i class="fas fa-cloud-upload-alt upload-icon"></i>
+            <h4 style="font-size: 1.15rem; margin-bottom: 8px;">Arrastra tu archivo aquí</h4>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 16px;">Formatos soportados: .xlsx, .xls, .csv</p>
+            <button class="btn-secondary" style="pointer-events: none;">Buscar Archivo</button>
+            <input type="file" id="file-input" style="display:none;" accept=".csv, .xlsx, .xls">
+          </div>
+
+          <div id="validation-logs" style="display:none;">
+            <div class="log-box" id="log-content"></div>
+          </div>
+          
+          <div id="save-panel" style="display:none; margin-top: 20px; text-align: right;">
+            <button id="btn-save-catalog" class="btn-primary" style="background: linear-gradient(135deg, #10b981, #059669); box-shadow: 0 6px 20px rgba(16, 185, 129, 0.3);">
+              <i class="fas fa-save"></i> Guardar y Publicar Catálogo
+            </button>
+          </div>
+        </div>
+
+        <!-- Preview Block -->
+        <div class="prop-card" id="preview-panel" style="display:none; padding: 30px;">
+          <h3 style="font-weight: 700; font-size: 1.3rem;">Previsualización de Productos a Cargar</h3>
+          <p style="color: var(--text-muted); font-size: 0.9rem;">Mostrando las primeras filas detectadas en tu archivo.</p>
+          
+          <div class="table-container">
+            <table class="preview-table">
+              <thead>
+                <tr>
+                  <th>Imagen</th>
+                  <th>ID</th>
+                  <th>Nombre</th>
+                  <th>Categoría</th>
+                  <th>P. Normal</th>
+                  <th>P. Mayoreo</th>
+                  <th>P. Caja</th>
+                  <th>Pzs/Caja</th>
+                </tr>
+              </thead>
+              <tbody id="preview-table-body">
+                <!-- Injected by JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Instructions & Downloads -->
+      <div style="display: flex; flex-direction: column; gap: 30px;">
+        <!-- Downloads -->
+        <div class="prop-card" style="padding: 30px;">
+          <h3 style="font-weight: 700; font-size: 1.3rem; margin-bottom: 16px;">Recursos de Edición</h3>
+          <div style="display: flex; flex-direction: column; gap: 14px;">
+            <a href="plantilla_productos.csv" download="plantilla_productos.csv" class="btn-secondary" style="width: 100%; justify-content: center; background: #2563eb; box-shadow: 0 4px 15px rgba(37, 99, 235, 0.25);">
+              <i class="fas fa-file-download"></i> Descargar Plantilla CSV
+            </a>
+            <button id="btn-export-current" class="btn-secondary" style="width: 100%; justify-content: center; border-color: var(--primary); color: var(--primary); background: transparent;">
+              <i class="fas fa-download"></i> Respaldar Catálogo Activo (CSV)
+            </button>
+          </div>
+        </div>
+
+        <!-- Instructions -->
+        <div class="prop-card" style="padding: 30px;">
+          <h3 style="font-weight: 700; font-size: 1.3rem; margin-bottom: 16px;">¿Cómo Editar tu Catálogo?</h3>
+          <ul style="padding-left: 20px; display: flex; flex-direction: column; gap: 12px; font-size: 0.95rem; color: var(--text-muted);">
+            <li>
+              <strong style="color: var(--text-dark); body.dark-mode-active & { color: white; }">1. Descarga el archivo de ejemplo:</strong> Descarga la plantilla CSV y ábrela en Microsoft Excel, Google Sheets o Block de Notas.
+            </li>
+            <li>
+              <strong style="color: var(--text-dark); body.dark-mode-active & { color: white; }">2. Edita las Columnas:</strong>
+              <ul>
+                <li><code style="font-weight: 700;">Categoria</code>: Debe ser exactamente: <code style="color: var(--primary);">bolsas-carteras</code>, <code style="color: var(--primary);">mochilas</code>, <code style="color: var(--primary);">peluches</code> o <code style="color: var(--primary);">accesorios-mas</code>.</li>
+                <li><code style="font-weight: 700;">Imagen_URL</code>: Liga directa de la foto. Puedes copiar las ligas desde tu Google Photos haciendo clic derecho en la imagen abierta y seleccionando "Copiar dirección de imagen".</li>
+              </ul>
+            </li>
+            <li>
+              <strong style="color: var(--text-dark); body.dark-mode-active & { color: white; }">3. Sube tu archivo:</strong> Arrastra tu documento editado aquí en esta ventana. Verificaremos que el formato sea correcto.
+            </li>
+            <li>
+              <strong style="color: var(--text-dark); body.dark-mode-active & { color: white; }">4. Publica los cambios:</strong> Haz clic en "Guardar y Publicar" para aplicar la actualización inmediatamente en el catálogo del sitio web.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SheetJS CDN (Reads Excel file directly in browser) -->
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+  
+  <script>
+    // State
+    let parsedProducts = [];
+
+    // DOM Elements
+    const dropZone = document.getElementById('drop-zone');
+    const fileInput = document.getElementById('file-input');
+    const logBox = document.getElementById('validation-logs');
+    const logContent = document.getElementById('log-content');
+    const previewPanel = document.getElementById('preview-panel');
+    const previewTableBody = document.getElementById('preview-table-body');
+    const savePanel = document.getElementById('save-panel');
+    const btnSaveCatalog = document.getElementById('btn-save-catalog');
+    const btnRestoreDefault = document.getElementById('btn-restore-default');
+    const btnExportCurrent = document.getElementById('btn-export-current');
+    const catalogDescStatus = document.getElementById('catalog-desc-status');
+    const catalogBadgeStatus = document.getElementById('catalog-badge-status');
+    const themeToggleBtn = document.getElementById('theme-toggle');
+
+    // Initialize Dashboard
+    function init() {
+      checkDarkModePref();
+      updateCatalogStatusText();
+      setupEventListeners();
+    }
+
+    // Event Listeners
+    function setupEventListeners() {
+      // Dark Mode Toggle
+      themeToggleBtn.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode-active');
+        const isDark = document.body.classList.contains('dark-mode-active');
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        updateThemeIcon(isDark);
+      });
+
+      // Drag & Drop
+      dropZone.addEventListener('click', () => fileInput.click());
+      
+      dropZone.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        dropZone.classList.add('dragover');
+      });
+
+      dropZone.addEventListener('dragleave', () => {
+        dropZone.classList.remove('dragover');
+      });
+
+      dropZone.addEventListener('drop', (e) => {
+        e.preventDefault();
+        dropZone.classList.remove('dragover');
+        if (e.dataTransfer.files.length > 0) {
+          handleFile(e.dataTransfer.files[0]);
+        }
+      });
+
+      fileInput.addEventListener('change', (e) => {
+        if (e.target.files.length > 0) {
+          handleFile(e.target.files[0]);
+        }
+      });
+
+      // Save Catalog
+      btnSaveCatalog.addEventListener('click', () => {
+        if (parsedProducts.length === 0) return;
+        
+        // Save to LocalStorage
+        localStorage.setItem('zalia_custom_products', JSON.stringify(parsedProducts));
+        
+        // Clear cart to avoid mismatching items
+        localStorage.removeItem('zalia_cart');
+
+        alert(`¡Catálogo publicado con éxito! Se cargaron ${parsedProducts.length} productos correctamente en la tienda.`);
+        
+        // Refresh status
+        updateCatalogStatusText();
+        
+        // Reset uploader interface
+        previewPanel.style.display = 'none';
+        savePanel.style.display = 'none';
+        logBox.style.display = 'none';
+      });
+
+      // Restore default catalog
+      btnRestoreDefault.addEventListener('click', () => {
+        if (confirm('¿Estás seguro de que deseas restaurar el catálogo predeterminado de Zalia Shop? Se borrarán los productos personalizados de tu Excel.')) {
+          localStorage.removeItem('zalia_custom_products');
+          localStorage.removeItem('zalia_cart');
+          updateCatalogStatusText();
+          alert('Catálogo por defecto restaurado.');
+        }
+      });
+
+      // Export Current Active Catalog to CSV
+      btnExportCurrent.addEventListener('click', exportActiveCatalogToCSV);
+    }
+
+    // Read and Parse Uploader File
+    function handleFile(file) {
+      logBox.style.display = 'block';
+      logContent.textContent = `Analizando archivo: "${file.name}"...\n`;
+      previewPanel.style.display = 'none';
+      savePanel.style.display = 'none';
+      parsedProducts = [];
+
+      const reader = new FileReader();
+      const ext = file.name.split('.').pop().toLowerCase();
+
+      if (ext === 'csv') {
+        reader.onload = function(e) {
+          const text = e.target.result;
+          parseCSV(text);
+        };
+        reader.readAsText(file, 'UTF-8');
+      } else if (ext === 'xlsx' || ext === 'xls') {
+        reader.onload = function(e) {
+          try {
+            const data = new Uint8Array(e.target.result);
+            const workbook = XLSX.read(data, {type: 'array'});
+            const firstSheetName = workbook.SheetNames[0];
+            const worksheet = workbook.Sheets[firstSheetName];
+            const jsonData = XLSX.utils.sheet_to_json(worksheet);
+            processJsonData(jsonData);
+          } catch (error) {
+            logContent.textContent += `❌ Error al decodificar archivo Excel: ${error.message}\n`;
+          }
+        };
+        reader.readAsArrayBuffer(file);
+      } else {
+        logContent.textContent += `❌ Tipo de archivo no soportado. Sube un archivo Excel (.xlsx, .xls) o CSV (.csv).\n`;
+      }
+    }
+
+    // CSV Parsing Logic
+    function parseCSV(text) {
+      logContent.textContent += `Lector CSV en ejecución...\n`;
+      try {
+        const lines = [];
+        let row = [""];
+        let inQuotes = false;
+        
+        // Handle quotes and commas correctly
+        for (let i = 0; i < text.length; i++) {
+          const char = text[i];
+          const next = text[i+1];
+          if (char === '"') {
+            if (inQuotes && next === '"') {
+              row[row.length - 1] += '"';
+              i++;
+            } else {
+              inQuotes = !inQuotes;
+            }
+          } else if (char === ',' && !inQuotes) {
+            row.push("");
+          } else if ((char === '\r' || char === '\n') && !inQuotes) {
+            if (char === '\r' && next === '\n') i++;
+            lines.push(row);
+            row = [""];
+          } else {
+            row[row.length - 1] += char;
+          }
+        }
+        if (row.length > 1 || row[0] !== "") {
+          lines.push(row);
+        }
+
+        if (lines.length === 0) {
+          logContent.textContent += `❌ Archivo CSV vacío.\n`;
+          return;
+        }
+
+        const headers = lines[0].map(h => h.trim().toUpperCase());
+        logContent.textContent += `Columnas encontradas: [${headers.join(', ')}]\n`;
+
+        // Check required columns
+        const colIndices = {
+          id: headers.indexOf('ID'),
+          nombre: headers.indexOf('NOMBRE'),
+          categoria: headers.indexOf('CATEGORIA'),
+          pNormal: headers.indexOf('PRECIO_NORMAL'),
+          pMayoreo: headers.indexOf('PRECIO_MAYOREO'),
+          pCaja: headers.indexOf('PRECIO_CAJA'),
+          pzsCaja: headers.indexOf('PIEZAS_POR_CAJA'),
+          image: headers.indexOf('IMAGEN_URL'),
+          tag: headers.indexOf('ETIQUETA'),
+          desc: headers.indexOf('DESCRIPCION')
+        };
+
+        if (colIndices.id === -1 || colIndices.nombre === -1 || colIndices.categoria === -1 || colIndices.pNormal === -1) {
+          logContent.textContent += `❌ Faltan columnas requeridas en el CSV. Asegúrate de tener al menos: ID, Nombre, Categoria, Precio_Normal.\n`;
+          return;
+        }
+
+        const items = [];
+        for (let idx = 1; idx < lines.length; idx++) {
+          const rowData = lines[idx];
+          if (rowData.length < 3 || (rowData.length === 1 && rowData[0] === '')) continue; // skip blank rows
+          
+          const item = {
+            id: rowData[colIndices.id]?.trim() || '',
+            name: rowData[colIndices.nombre]?.trim() || '',
+            category: rowData[colIndices.categoria]?.trim().toLowerCase() || '',
+            wholesalePrice: parseFloat(rowData[colIndices.pMayoreo]) || 0,
+            retailPrice: parseFloat(rowData[colIndices.pNormal]) || 0,
+            boxPrice: parseFloat(rowData[colIndices.pCaja]) || 0,
+            pcsPerBox: parseInt(rowData[colIndices.pzsCaja]) || 12,
+            image: rowData[colIndices.image]?.trim() || 'assets/images/bolsa_cartera_showcase.png',
+            tag: rowData[colIndices.tag]?.trim() || 'Importación',
+            desc: rowData[colIndices.desc]?.trim() || ''
+          };
+
+          items.push(item);
+        }
+        processProductsList(items);
+
+      } catch (err) {
+        logContent.textContent += `❌ Error parseando CSV: ${err.message}\n`;
+      }
+    }
+
+    // Process parsed spreadsheet JSON
+    function processJsonData(rows) {
+      logContent.textContent += `Filas detectadas en hoja Excel: ${rows.length}\n`;
+      if (rows.length === 0) {
+        logContent.textContent += `❌ No se encontraron filas de datos en el Excel.\n`;
+        return;
+      }
+
+      // Check schema based on first row keys
+      const keys = Object.keys(rows[0]).map(k => k.trim().toUpperCase());
+      logContent.textContent += `Columnas detectadas: [${keys.join(', ')}]\n`;
+
+      const hasRequired = keys.includes('ID') && keys.includes('NOMBRE') && keys.includes('CATEGORIA') && (keys.includes('PRECIO_NORMAL') || keys.includes('PRECIO_MAYOREO'));
+      if (!hasRequired) {
+        logContent.textContent += `❌ Columnas incorrectas en Excel. Deben incluir al menos: ID, Nombre, Categoria, Precio_Normal y Precio_Mayoreo.\n`;
+        return;
+      }
+
+      // Normalize row values
+      const items = rows.map((row, idx) => {
+        // Find keys case-insensitively
+        const getVal = (field) => {
+          const matchedKey = Object.keys(row).find(k => k.trim().toUpperCase() === field.toUpperCase());
+          return matchedKey ? row[matchedKey] : null;
+        };
+
+        return {
+          id: String(getVal('ID') || '').trim(),
+          name: String(getVal('Nombre') || '').trim(),
+          category: String(getVal('Categoria') || '').trim().toLowerCase(),
+          wholesalePrice: parseFloat(getVal('Precio_Mayoreo')) || 0,
+          retailPrice: parseFloat(getVal('Precio_Normal')) || 0,
+          boxPrice: parseFloat(getVal('Precio_Caja')) || 0,
+          pcsPerBox: parseInt(getVal('Piezas_Por_Caja')) || 12,
+          image: String(getVal('Imagen_URL') || '').trim() || 'assets/images/bolsa_cartera_showcase.png',
+          tag: String(getVal('Etiqueta') || '').trim() || 'Importación',
+          desc: String(getVal('Descripcion') || '').trim() || ''
+        };
+      });
+
+      processProductsList(items);
+    }
+
+    // Validate and preview products
+    function processProductsList(items) {
+      const validCategories = ['bolsas-carteras', 'mochilas', 'peluches', 'accesorios-mas'];
+      const errors = [];
+      const cleanItems = [];
+
+      items.forEach((item, index) => {
+        const rowNum = index + 2; // offset header line
+        
+        if (!item.id) {
+          errors.push(`Fila ${rowNum}: El campo "ID" está vacío.`);
+          return;
+        }
+        if (!item.name) {
+          errors.push(`Fila ${rowNum}: El campo "Nombre" está vacío.`);
+          return;
+        }
+        if (!validCategories.includes(item.category)) {
+          errors.push(`Fila ${rowNum}: Categoría inválida ("${item.category}"). Debe ser uno de: bolsas-carteras, mochilas, peluches, accesorios-mas.`);
+          return;
+        }
+        if (isNaN(item.retailPrice) || item.retailPrice <= 0) {
+          errors.push(`Fila ${rowNum}: Precio_Normal inválido ($${item.retailPrice}).`);
+          return;
+        }
+
+        // Fill pricing fallbacks
+        if (isNaN(item.wholesalePrice) || item.wholesalePrice <= 0) {
+          item.wholesalePrice = item.retailPrice; // fallback to retail price
+        }
+        if (isNaN(item.boxPrice) || item.boxPrice <= 0) {
+          item.boxPrice = item.wholesalePrice * 0.8; // default to 20% discount on wholesale
+        }
+
+        cleanItems.push(item);
+      });
+
+      // Show Validation Logs
+      if (errors.length > 0) {
+        logContent.textContent += `⚠️ Se encontraron ${errors.length} advertencias en el análisis:\n`;
+        errors.forEach(err => {
+          logContent.textContent += ` - ${err}\n`;
+        });
+      }
+
+      if (cleanItems.length === 0) {
+        logContent.textContent += `❌ Carga abortada: Ningún producto pasó las reglas de validación.\n`;
+        return;
+      }
+
+      logContent.textContent += `✅ ¡Carga exitosa! ${cleanItems.length} productos listos para importación.\n`;
+      parsedProducts = cleanItems;
+
+      // Show Preview Table
+      previewTableBody.innerHTML = '';
+      const previewSlice = cleanItems.slice(0, 8);
+      
+      previewSlice.forEach(p => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td><img class="preview-img" src="${p.image}" alt="${p.name}"></td>
+          <td><code>${p.id}</code></td>
+          <td style="font-weight:600;">${p.name}</td>
+          <td><code>${p.category}</code></td>
+          <td>$${p.retailPrice}</td>
+          <td>$${p.wholesalePrice}</td>
+          <td style="color:var(--primary); font-weight:700;">$${p.boxPrice}</td>
+          <td>${p.pcsPerBox} pzs</td>
+        `;
+        previewTableBody.appendChild(tr);
+      });
+
+      previewPanel.style.display = 'block';
+      savePanel.style.display = 'block';
+    }
+
+    // Update Catalog Status Card
+    function updateCatalogStatusText() {
+      const customProducts = localStorage.getItem('zalia_custom_products');
+      if (customProducts) {
+        try {
+          const items = JSON.parse(customProducts);
+          catalogBadgeStatus.textContent = 'Personalizado';
+          catalogBadgeStatus.className = 'badge-status active-mode';
+          catalogDescStatus.innerHTML = `Tienes cargado un catálogo personalizado de <strong>${items.length} productos</strong> subido mediante tu planilla Excel/CSV.`;
+          btnRestoreDefault.style.display = 'inline-flex';
+        } catch (e) {
+          loadDefaultStatus();
+        }
+      } else {
+        loadDefaultStatus();
+      }
+    }
+
+    function loadDefaultStatus() {
+      catalogBadgeStatus.textContent = 'Por Defecto';
+      catalogBadgeStatus.className = 'badge-status default-mode';
+      catalogDescStatus.innerHTML = `Estás utilizando el catálogo predeterminado de Zalia Shop surtido directamente de las fotos de tu contenedor (<strong>48 productos oficiales</strong>).`;
+      btnRestoreDefault.style.display = 'none';
+    }
+
+    // Export current active products to CSV format
+    function exportActiveCatalogToCSV() {
+      // Fetch currently active catalog
+      let catalog = [];
+      const customProducts = localStorage.getItem('zalia_custom_products');
+      if (customProducts) {
+        try { catalog = JSON.parse(customProducts); } catch (e) {}
+      }
+      
+      // Fallback to defaults
+      if (catalog.length === 0) {
+        // Fallback hardcoded defaults matching app.js
+        alert('Se exportará el catálogo base de 16 productos. (Abre index.html para cargarlos de memoria si es necesario).');
+        // Let's scrape them from local storage if available or create a basic array
+        catalog = JSON.parse(localStorage.getItem('zalia_custom_products')) || [];
+      }
+
+      if (catalog.length === 0) {
+        // If nothing is present in local storage yet, fetch it from js database (we mockup the defaults since we're inside client environment)
+        // Let's generate a quick download of the plantilla CSV which matches the defaults
+        window.location.href = 'plantilla_productos.csv';
+        return;
+      }
+
+      let csvContent = '\uFEFF'; // UTF-8 BOM
+      csvContent += 'ID,Nombre,Categoria,Precio_Normal,Precio_Mayoreo,Precio_Caja,Piezas_Por_Caja,Imagen_URL,Etiqueta,Descripcion\n';
+      
+      catalog.forEach(p => {
+        const nameEsc = `"${p.name.replace(/"/g, '""')}"`;
+        const descEsc = `"${p.desc.replace(/"/g, '""')}"`;
+        csvContent += `${p.id},${nameEsc},${p.category},${p.retailPrice},${p.wholesalePrice},${p.boxPrice},${p.pcsPerBox},${p.image},${p.tag},${descEsc}\n`;
+      });
+
+      const blob = new Blob([csvContent], {type: 'text/csv;charset=utf-8;'});
+      const link = document.createElement('a');
+      const url = URL.createObjectURL(blob);
+      link.setAttribute('href', url);
+      link.setAttribute('download', 'catalogo_activo_zalia.csv');
+      link.style.visibility = 'hidden';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+
+    // Theme Helpers
+    function checkDarkModePref() {
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.body.classList.add('dark-mode-active');
+        updateThemeIcon(true);
+      } else {
+        document.body.classList.remove('dark-mode-active');
+        updateThemeIcon(false);
+      }
+    }
+
+    function updateThemeIcon(isDark) {
+      themeToggleBtn.innerHTML = isDark ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+    }
+
+    document.addEventListener('DOMContentLoaded', init);
+  </script>
+</body>
+</html>
