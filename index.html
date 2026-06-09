@@ -44,9 +44,9 @@
       <nav>
         <ul class="nav-menu" id="nav-menu">
           <li><a href="#home" class="nav-link active">Inicio</a></li>
-          <li><a href="#nosotros" class="nav-link">Nosotros</a></li>
           <li><a href="#catalogo" class="nav-link">Catálogo</a></li>
           <li><a href="#como-cotizar" class="nav-link">¿Cómo Comprar?</a></li>
+          <li><a href="#nosotros" class="nav-link">Nosotros</a></li>
           <li><a href="#ubicacion" class="nav-link">Ubicación</a></li>
         </ul>
       </nav>
@@ -67,68 +67,80 @@
     </div>
   </header>
 
-  <!-- Hero Section -->
+  <!-- Hero Section with Slides (Videos & Products) -->
   <section id="home" class="hero">
-    <div class="hero-content">
-      <div class="hero-text">
-        <h1>
-          Importaciones Directas <br>
-          <span class="gradient-text">De Contenedor</span>
-        </h1>
-        <p>
-          En <strong>Zalia Shop</strong> te ofrecemos los precios más bajos en bolsas de mano, carteras, mochilas y peluches directamente de fábrica. Ideal para mayoristas, revendedores y minoristas que buscan el máximo margen de ganancia.
-        </p>
-        <div class="hero-cta">
-          <a href="#catalogo" class="btn-primary">
-            <i class="fas fa-store"></i> Ver Catálogo
-          </a>
-          <a href="#ubicacion" class="btn-secondary">
-            <i class="fas fa-map-marker-alt"></i> Tienda Física
-          </a>
-        </div>
-      </div>
-      <div class="hero-visual">
-        <div class="hero-circle">
-          <img src="assets/logos/logo_color.png" alt="Zalia Shop Logo Grande" class="hero-logo-img">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Value Proposition / Nosotros -->
-  <section id="nosotros" class="section">
-    <div class="container">
-      <div class="section-header">
-        <h2>¿Por qué elegir Zalia Shop?</h2>
-        <p>Somos distribuidores clave en el Centro Histórico de la CDMX con un modelo de negocio enfocado en tu crecimiento comercial.</p>
-      </div>
+    <div class="slides-container" id="hero-slides">
       
-      <div class="props-grid">
-        <!-- Card 1 -->
-        <div class="prop-card">
-          <div class="prop-icon">
-            <i class="fas fa-ship"></i>
+      <!-- Slide 1: Welcome & Direct Imports -->
+      <div class="slide active">
+        <div class="slide-content">
+          <div class="slide-text">
+            <span class="slide-badge"><i class="fas fa-ship"></i> Importación Directa</span>
+            <h1>Contenedores Completos <br><span class="gradient-text">Al Mejor Precio</span></h1>
+            <p>Precios directos de fábrica en bolsas de mano, carteras, mochilas y peluches. Surtimos a mayoristas y minoristas en todo México.</p>
+            <div class="hero-cta">
+              <a href="#catalogo" class="btn-primary"><i class="fas fa-store"></i> Ver Catálogo</a>
+              <a href="#ubicacion" class="btn-secondary"><i class="fas fa-map-marker-alt"></i> Tienda Física</a>
+            </div>
           </div>
-          <h3>Precios de Contenedor</h3>
-          <p>Importamos volúmenes masivos directamente sin intermediarios, lo que nos permite ofrecer el costo más competitivo del mercado nacional.</p>
-        </div>
-        <!-- Card 2 -->
-        <div class="prop-card">
-          <div class="prop-icon">
-            <i class="fas fa-hand-holding-usd"></i>
+          <div class="slide-visual">
+            <div class="hero-circle">
+              <img src="assets/logos/logo_color.png" alt="Zalia Shop Logo" class="hero-logo-img">
+            </div>
           </div>
-          <h3>Mayoreo y Menudeo</h3>
-          <p>Accede a precios de mayoreo súper accesibles a partir de tan solo 3 piezas de la tienda, facilitando que inicies o surtas tu negocio.</p>
-        </div>
-        <!-- Card 3 -->
-        <div class="prop-card">
-          <div class="prop-icon">
-            <i class="fas fa-truck-fast"></i>
-          </div>
-          <h3>Envíos Rápidos a México</h3>
-          <p>Despachamos tu pedido directo a tu domicilio en cualquier estado de la República por medio de paqueterías seguras y económicas.</p>
         </div>
       </div>
+
+      <!-- Slide 2: TikTok Showcase (Embedded Live) -->
+      <div class="slide">
+        <div class="slide-content">
+          <div class="slide-text">
+            <span class="slide-badge"><i class="fab fa-tiktok"></i> @zalia.shop</span>
+            <h1>Desempaques en Vivo <br><span class="gradient-text">Y Novedades Diarias</span></h1>
+            <p>Mira la mercancía llegando directo de aduana. Síguenos y no te pierdas ningún directo de contenedor.</p>
+            <div class="hero-cta">
+              <a href="https://www.tiktok.com/@zalia.shop" target="_blank" class="btn-primary"><i class="fab fa-tiktok"></i> Seguir en TikTok</a>
+            </div>
+          </div>
+          <div class="slide-visual video-visual">
+            <div class="video-container">
+              <iframe src="https://www.tiktok.com/embed/v2/7162985392818982150" class="tiktok-iframe-hero" allowfullscreen title="TikTok Video Zalia Shop"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 3: Products Highlight -->
+      <div class="slide">
+        <div class="slide-content">
+          <div class="slide-text">
+            <span class="slide-badge"><i class="fas fa-boxes"></i> Tres Niveles de Precios</span>
+            <h1>Compra por Pieza, <br><span class="gradient-text">Mayoreo o Caja</span></h1>
+            <p>Precios especiales para emprendedores. Mayoreo a partir de 3 piezas mixtas. Ahorros de hasta 50% por caja cerrada.</p>
+            <div class="hero-cta">
+              <a href="#como-cotizar" class="btn-primary"><i class="fas fa-question-circle"></i> ¿Cómo Comprar?</a>
+            </div>
+          </div>
+          <div class="slide-visual products-visual">
+            <div class="featured-products-mini">
+              <div class="mini-card"><img src="assets/images/bolsa_cartera_showcase.png" alt="Bolsas"><span>Bolsas</span></div>
+              <div class="mini-card"><img src="assets/images/mochila_showcase.png" alt="Mochilas"><span>Mochilas</span></div>
+              <div class="mini-card"><img src="assets/images/peluche_showcase.png" alt="Peluches"><span>Peluches</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Slider Controls -->
+    <button class="slide-ctrl prev" id="hero-prev" aria-label="Anterior"><i class="fas fa-chevron-left"></i></button>
+    <button class="slide-ctrl next" id="hero-next" aria-label="Siguiente"><i class="fas fa-chevron-right"></i></button>
+    
+    <div class="slide-dots" id="hero-dots">
+      <span class="dot active" data-slide="0"></span>
+      <span class="dot" data-slide="1"></span>
+      <span class="dot" data-slide="2"></span>
     </div>
   </section>
 
@@ -212,6 +224,43 @@
       <!-- Product Cards Grid -->
       <div class="product-grid" id="product-grid">
         <!-- Dynamically Generated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Value Proposition / Nosotros (Moved to the bottom before map/contact) -->
+  <section id="nosotros" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>¿Por qué elegir Zalia Shop?</h2>
+        <p>Somos distribuidores clave en el Centro Histórico de la CDMX con un modelo de negocio enfocado en tu crecimiento comercial.</p>
+      </div>
+      
+      <div class="props-grid">
+        <!-- Card 1 -->
+        <div class="prop-card">
+          <div class="prop-icon">
+            <i class="fas fa-ship"></i>
+          </div>
+          <h3>Precios de Contenedor</h3>
+          <p>Importamos volúmenes masivos directamente sin intermediarios, lo que nos permite ofrecer el costo más competitivo del mercado nacional.</p>
+        </div>
+        <!-- Card 2 -->
+        <div class="prop-card">
+          <div class="prop-icon">
+            <i class="fas fa-hand-holding-usd"></i>
+          </div>
+          <h3>Mayoreo y Menudeo</h3>
+          <p>Accede a precios de mayoreo súper accesibles a partir de tan solo 3 piezas de la tienda, facilitando que inicies o surtas tu negocio.</p>
+        </div>
+        <!-- Card 3 -->
+        <div class="prop-card">
+          <div class="prop-icon">
+            <i class="fas fa-truck-fast"></i>
+          </div>
+          <h3>Envíos Rápidos a México</h3>
+          <p>Despachamos tu pedido directo a tu domicilio en cualquier estado de la República por medio de paqueterías seguras y económicas.</p>
+        </div>
       </div>
     </div>
   </section>

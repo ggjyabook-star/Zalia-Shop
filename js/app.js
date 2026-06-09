@@ -636,6 +636,145 @@ const mobileMenuBtn = document.getElementById('mobile-menu-btn');
 const navMenu = document.getElementById('nav-menu');
 const quoteForm = document.getElementById('quote-form');
 
+// Initialize Hero Slideshow
+function initHeroSlider() {
+  const slides = document.querySelectorAll('.slide');
+  const dots = document.querySelectorAll('.dot');
+  const prevBtn = document.getElementById('hero-prev');
+  const nextBtn = document.getElementById('hero-next');
+  const heroSection = document.getElementById('home');
+  
+  if (slides.length === 0) return;
+  
+  let currentSlide = 0;
+  let slideInterval;
+  const intervalTime = 6000; // 6 seconds auto cycle
+  
+  function showSlide(index) {
+    if (index >= slides.length) index = 0;
+    if (index < 0) index = slides.length - 1;
+    
+    slides.forEach(slide => slide.classList.remove('active'));
+    dots.forEach(dot => dot.classList.remove('active'));
+    
+    slides[index].classList.add('active');
+    if (dots[index]) dots[index].classList.add('active');
+    
+    currentSlide = index;
+  }
+  
+  function nextSlide() {
+    showSlide(currentSlide + 1);
+  }
+  
+  function prevSlide() {
+    showSlide(currentSlide - 1);
+  }
+  
+  function startAutoSlide() {
+    slideInterval = setInterval(nextSlide, intervalTime);
+  }
+  
+  function resetAutoSlide() {
+    clearInterval(slideInterval);
+    startAutoSlide();
+  }
+  
+  if (prevBtn) {
+    prevBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      prevSlide();
+      resetAutoSlide();
+    });
+  }
+  
+  if (nextBtn) {
+    nextBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      nextSlide();
+      resetAutoSlide();
+    });
+  }
+  
+  dots.forEach((dot, idx) => {
+    dot.addEventListener('click', (e) => {
+      e.preventDefault();
+      showSlide(idx);
+      resetAutoSlide();
+    });
+  });
+  
+  // Touch Swipe Support for Mobile UX
+  if (heroSection) {
+    let startX = 0;
+    let endX = 0;
+    
+    heroSection.addEventListener('touchstart', (e) => {
+      startX = e.touches[0].clientX;
+    }, { passive: true });
+    
+    heroSection.addEventListener('touchend', (e) => {
+      endX = e.changedTouches[0].clientX;
+      handleSwipe();
+    }, { passive: true });
+    
+    function handleSwipe() {
+      const threshold = 50;
+      if (startX - endX > threshold) {
+        nextSlide();
+        resetAutoSlide();
+      } else if (endX - startX > threshold) {
+        prevSlide();
+        resetAutoSlide();
+      }
+    }
+  }
+
+  // Mini-cards category redirect with smooth scroll
+  const miniCards = document.querySelectorAll('.mini-card');
+  const catKeys = ['bolsas-carteras', 'mochilas', 'peluches'];
+  miniCards.forEach((card, idx) => {
+    card.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetCat = catKeys[idx];
+      if (targetCat) {
+        activeCategory = targetCat;
+        
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+          if (btn.getAttribute('data-category') === targetCat) {
+            btn.classList.add('active');
+          } else {
+            btn.classList.remove('active');
+          }
+        });
+        
+        const categoriesMap = {
+          'bolsas-carteras': 'Bolsas y Carteras',
+          'mochilas': 'Mochilas',
+          'peluches': 'Peluches',
+          'accesorios-mas': 'Accesorios y Más'
+        };
+        
+        const albumBtn = document.getElementById('album-link-btn');
+        const albumCategoryName = document.getElementById('album-category-name');
+        if (albumBtn && albumCategoryName) {
+          albumBtn.setAttribute('href', PHOTO_ALBUMS[targetCat]);
+          albumCategoryName.textContent = categoriesMap[targetCat];
+        }
+        
+        renderCatalog();
+        
+        const catalogSec = document.getElementById('catalogo');
+        if (catalogSec) {
+          catalogSec.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    });
+  });
+  
+  startAutoSlide();
+}
+
 // Initialize Website
 function init() {
   renderTabs();
@@ -643,6 +782,7 @@ function init() {
   setupEventListeners();
   loadCartFromStorage();
   checkDarkModePref();
+  initHeroSlider();
 }
 
 // Check Dark Mode Preference
@@ -704,6 +844,7 @@ function renderTabs() {
 function renderCatalog() {
   if (!productGrid) return;
   productGrid.innerHTML = '';
+  productGrid.scrollLeft = 0; // Reset scroll position on category switch
 
   const activeProducts = getActiveProducts();
   const filteredProducts = activeProducts.filter(prod => {
