@@ -827,8 +827,10 @@ function renderTabs() {
       button.classList.add('active');
       
       // Update Google Photos redirection text and link
-      albumBtn.setAttribute('href', PHOTO_ALBUMS[key]);
-      albumCategoryName.textContent = categoriesMap[key];
+      if (albumBtn && albumCategoryName) {
+        albumBtn.setAttribute('href', PHOTO_ALBUMS[key]);
+        albumCategoryName.textContent = categoriesMap[key];
+      }
 
       renderCatalog();
     });
@@ -836,8 +838,10 @@ function renderTabs() {
   });
 
   // Set initial album info
-  albumBtn.setAttribute('href', PHOTO_ALBUMS[activeCategory]);
-  albumCategoryName.textContent = categoriesMap[activeCategory];
+  if (albumBtn && albumCategoryName) {
+    albumBtn.setAttribute('href', PHOTO_ALBUMS[activeCategory]);
+    albumCategoryName.textContent = categoriesMap[activeCategory];
+  }
 }
 
 // Render Catalog Grid (Simplified - No Piece/Box Redundant buttons)
