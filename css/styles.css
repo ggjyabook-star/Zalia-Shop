@@ -939,6 +939,7 @@ body.dark-mode-active .qty-val {
   transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
 }
 
 body.dark-mode-active .cart-drawer {
@@ -985,6 +986,7 @@ body.dark-mode-active .cart-close {
 
 .cart-content-scroll {
   overflow-y: auto;
+  overflow-x: hidden;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
@@ -1024,6 +1026,7 @@ body.dark-mode-active .cart-item {
 
 .cart-item-details {
   flex-grow: 1;
+  min-width: 0;
 }
 
 .cart-item-title {
@@ -1521,4 +1524,55 @@ body.dark-mode-active .cart-subtotal-item {
 .cart-item-qty .qty-val {
   font-size: 0.95rem;
   width: 40px;
+}
+
+/* TikTok Embed Styles */
+.tiktok-section {
+  max-width: 800px;
+  margin: 0 auto 40px;
+  background: var(--light-card);
+  border: 1px solid var(--light-border);
+  border-radius: var(--border-radius-lg);
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+  text-align: center;
+}
+
+body.dark-mode-active .tiktok-section {
+  background: var(--dark-card);
+  border-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+}
+
+.tiktok-header {
+  margin-bottom: 24px;
+}
+
+.tiktok-header h3 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #00f2fe, #4facfe, #ff007f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.tiktok-header p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+body.dark-mode-active .tiktok-header p {
+  color: var(--text-white-muted);
+}
+
+.tiktok-widget-container {
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
 }
