@@ -606,6 +606,13 @@ function renderCatalog() {
       </button>
     `;
 
+    const txtBoxAction = currentLanguage === 'zh' ? '添加整箱' : 'Agregar Caja';
+    const actionBoxBtnHtml = isOutOfStock ? '' : `
+      <button class="btn-add-box add-box-to-cart-btn" data-id="${product.id}" data-pcs="${product.pcsPerBox}">
+        <i class="fas fa-box"></i> ${txtBoxAction} (${product.pcsPerBox} pzs)
+      </button>
+    `;
+
     const txtCajaCon = currentLanguage === 'zh' 
       ? `整箱包含: <strong>${product.pcsPerBox} 件</strong>` 
       : `Caja cerrada con: <strong>${product.pcsPerBox} pzs</strong>`;
@@ -653,9 +660,12 @@ function renderCatalog() {
           </div>
         </div>
 
-        <div class="product-actions">
-          ${qtyControlHtml}
-          ${actionBtnHtml}
+        <div class="product-actions" style="display: flex; flex-direction: column; gap: 8px; width: 100%;">
+          <div style="display: flex; gap: 8px; width: 100%; align-items: center;">
+            ${qtyControlHtml}
+            ${actionBtnHtml}
+          </div>
+          ${actionBoxBtnHtml}
         </div>
       </div>
     `;
@@ -769,6 +779,52 @@ function setupCardControls() {
         btn.innerHTML = originalHtml;
         btn.style.background = '';
       }, 1500);
+    });
+  });
+
+  // Add Box To Cart Buttons
+  productGrid.querySelectorAll('.add-box-to-cart-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const id = btn.getAttribute('data-id');
+      const pcs = parseInt(btn.getAttribute('data-pcs')) || 12;
+      
+      // Find current quantity in cart
+      const cartItem = cart.find(item => String(item.id).trim() === String(id).trim());
+      const currentQty = cartItem ? cartItem.qty : 0;
+      
+      // Check if adding a box exceeds stock
+      const activeProducts = getActiveProducts();
+      const product = activeProducts.find(p => String(p.id).trim() === String(id).trim());
+      const stockLimit = product && typeof product.stock !== 'undefined' ? Number(product.stock) : 999;
+      
+      const newQty = currentQty + pcs;
+      if (newQty <= stockLimit) {
+        addToCart(id, newQty);
+        
+        // Update input field in catalog page
+        const input = document.getElementById(`qty-input-${id}`);
+        if (input) {
+          input.value = newQty;
+        }
+        
+        // Visual Feedback
+        const originalHtml = btn.innerHTML;
+        btn.innerHTML = currentLanguage === 'zh' ? '<i class="fas fa-check"></i> 已添加整箱!' : '<i class="fas fa-check"></i> ¡Caja Agregada!';
+        btn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
+        btn.style.borderColor = '#10b981';
+        btn.style.color = 'white';
+        setTimeout(() => {
+          btn.innerHTML = originalHtml;
+          btn.style.background = '';
+          btn.style.borderColor = '';
+          btn.style.color = '';
+        }, 1500);
+      } else {
+        const alertMsg = currentLanguage === 'zh'
+          ? `无法添加整箱：库存仅剩 ${stockLimit} 件，而添加一整箱将使您的购物车达到 ${newQty} 件。`
+          : `No se puede agregar la caja: el stock disponible es de ${stockLimit} pzs, y agregar una caja completa superaría ese límite (total: ${newQty} pzs).`;
+        alert(alertMsg);
+      }
     });
   });
 }
