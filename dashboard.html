@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -403,6 +403,7 @@
                   <th>P. Mayoreo</th>
                   <th>P. Caja</th>
                   <th>Pzs/Caja</th>
+                  <th>Stock</th>
                 </tr>
               </thead>
               <tbody id="preview-table-body">
@@ -459,6 +460,8 @@
 
   <!-- SheetJS CDN (Reads Excel file directly in browser) -->
   <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+  <!-- Products Data -->
+  <script src="js/products_data.js"></script>
   
   <script>
     // State
@@ -620,6 +623,16 @@
       btnExportCurrent.addEventListener('click', exportActiveCatalogToCSV);
     }
 
+    // Helper to auto-categorize products by SKU prefix
+    function getCategoryFromSKU(sku) {
+      if (!sku) return 'accesorios-mas';
+      const clean = String(sku).trim().toUpperCase();
+      if (clean.startsWith('B') || clean.startsWith('C')) return 'bolsas-carteras';
+      if (clean.startsWith('M')) return 'mochilas';
+      if (clean.startsWith('P')) return 'peluches';
+      return 'accesorios-mas';
+    }
+
     // Read and Parse Uploader File
     function handleFile(file) {
       logBox.style.display = 'block';
@@ -697,22 +710,36 @@
         const headers = lines[0].map(h => h.trim().toUpperCase());
         logContent.textContent += `Columnas encontradas: [${headers.join(', ')}]\n`;
 
-        // Check required columns
-        const colIndices = {
-          id: headers.indexOf('ID'),
-          nombre: headers.indexOf('NOMBRE'),
-          categoria: headers.indexOf('CATEGORIA'),
-          pNormal: headers.indexOf('PRECIO_NORMAL'),
-          pMayoreo: headers.indexOf('PRECIO_MAYOREO'),
-          pCaja: headers.indexOf('PRECIO_CAJA'),
-          pzsCaja: headers.indexOf('PIEZAS_POR_CAJA'),
-          image: headers.indexOf('IMAGEN_URL'),
-          tag: headers.indexOf('ETIQUETA'),
-          desc: headers.indexOf('DESCRIPCION')
+        const getColIndex = (names) => {
+          for (let name of names) {
+            const idx = headers.indexOf(name.toUpperCase());
+            if (idx > -1) return idx;
+          }
+          return -1;
         };
 
-        if (colIndices.id === -1 || colIndices.nombre === -1 || colIndices.categoria === -1 || colIndices.pNormal === -1) {
-          logContent.textContent += `❌ Faltan columnas requeridas en el CSV. Asegúrate de tener al menos: ID, Nombre, Categoria, Precio_Normal.\n`;
+        // Check required columns (support both Spanish and Chinese headers)
+        const colIndices = {
+          id: getColIndex(['ID', '货号']),
+          nombre: getColIndex(['NOMBRE', '货号']),
+          categoria: getColIndex(['CATEGORIA']),
+          pNormal: getColIndex(['PRECIO_NORMAL', '价格1']),
+          pMayoreo: getColIndex(['PRECIO_MAYOREO', '价格4']),
+          pCaja: getColIndex(['PRECIO_CAJA']),
+          pzsCaja: getColIndex(['PIEZAS_POR_CAJA', '箱装数']),
+          image: getColIndex(['IMAGEN_URL']),
+          tag: getColIndex(['ETIQUETA']),
+          desc: getColIndex(['DESCRIPCION']),
+          stock: getColIndex(['STOCK', 'EXISTENCIAS', '销售统计', 'CANTIDAD']),
+          barcode: getColIndex(['BARCODE', '条码1'])
+        };
+
+        if (colIndices.id === -1) {
+          logContent.textContent += `❌ Falta la columna de ID / 货号 en el archivo.\n`;
+          return;
+        }
+        if (colIndices.pNormal === -1 && colIndices.pMayoreo === -1) {
+          logContent.textContent += `❌ Falta la columna de precio (Precio_Normal / 价格1 o Precio_Mayoreo / 价格4) en el archivo.\n`;
           return;
         }
 
@@ -721,20 +748,35 @@
           const rowData = lines[idx];
           if (rowData.length < 3 || (rowData.length === 1 && rowData[0] === '')) continue; // skip blank rows
           
-          const item = {
-            id: rowData[colIndices.id]?.trim() || '',
-            name: rowData[colIndices.nombre]?.trim() || '',
-            category: rowData[colIndices.categoria]?.trim().toLowerCase() || '',
-            wholesalePrice: parseFloat(rowData[colIndices.pMayoreo]) || 0,
-            retailPrice: parseFloat(rowData[colIndices.pNormal]) || 0,
-            boxPrice: parseFloat(rowData[colIndices.pCaja]) || 0,
-            pcsPerBox: parseInt(rowData[colIndices.pzsCaja]) || 12,
-            image: rowData[colIndices.image]?.trim() || 'assets/images/bolsa_cartera_showcase.png',
-            tag: rowData[colIndices.tag]?.trim() || 'Importación',
-            desc: rowData[colIndices.desc]?.trim() || ''
-          };
+          const rawId = rowData[colIndices.id]?.trim() || '';
+          const rawBarcode = colIndices.barcode !== -1 ? (rowData[colIndices.barcode]?.trim() || '') : '';
+          
+          const retailVal = parseFloat(rowData[colIndices.pNormal]) || parseFloat(rowData[colIndices.pMayoreo]) || 0;
+          const wholesaleVal = parseFloat(rowData[colIndices.pMayoreo]) || retailVal || 0;
+          const boxPriceVal = colIndices.pCaja !== -1 ? (parseFloat(rowData[colIndices.pCaja]) || wholesaleVal * 0.8) : (wholesaleVal * 0.8);
+          const pcsPerBoxVal = colIndices.pzsCaja !== -1 ? (parseInt(rowData[colIndices.pzsCaja]) || 12) : 12;
+          const stockVal = colIndices.stock !== -1 ? (parseInt(rowData[colIndices.stock]) || 0) : 999;
+          
+          const catVal = colIndices.categoria !== -1 ? (rowData[colIndices.categoria]?.trim().toLowerCase() || getCategoryFromSKU(rawId)) : getCategoryFromSKU(rawId);
+          const nameVal = colIndices.nombre !== -1 ? (rowData[colIndices.nombre]?.trim() || rawId) : rawId;
+          const imageVal = colIndices.image !== -1 ? (rowData[colIndices.image]?.trim() || 'assets/logos/logo_color.png') : 'assets/logos/logo_color.png';
+          const tagVal = colIndices.tag !== -1 ? (rowData[colIndices.tag]?.trim() || 'Importación') : 'Importación';
+          const descVal = colIndices.desc !== -1 ? (rowData[colIndices.desc]?.trim() || `Modelo: ${rawId} - Código de barras: ${rawBarcode || 'N/A'}`) : `Modelo: ${rawId} - Código de barras: ${rawBarcode || 'N/A'}`;
 
-          items.push(item);
+          items.push({
+            id: rawId,
+            name: nameVal,
+            category: catVal,
+            wholesalePrice: wholesaleVal,
+            retailPrice: retailVal,
+            boxPrice: Math.round(boxPriceVal * 100) / 100,
+            pcsPerBox: pcsPerBoxVal,
+            image: imageVal,
+            tag: tagVal,
+            desc: descVal,
+            stock: stockVal,
+            barcode: rawBarcode
+          });
         }
         processProductsList(items);
 
@@ -752,34 +794,72 @@
       }
 
       // Check schema based on first row keys
-      const keys = Object.keys(rows[0]).map(k => k.trim().toUpperCase());
-      logContent.textContent += `Columnas detectadas: [${keys.join(', ')}]\n`;
+      const firstRowKeys = Object.keys(rows[0]).map(k => k.trim());
+      const keysUpper = firstRowKeys.map(k => k.toUpperCase());
+      logContent.textContent += `Columnas detectadas: [${firstRowKeys.join(', ')}]\n`;
 
-      const hasRequired = keys.includes('ID') && keys.includes('NOMBRE') && keys.includes('CATEGORIA') && (keys.includes('PRECIO_NORMAL') || keys.includes('PRECIO_MAYOREO'));
-      if (!hasRequired) {
-        logContent.textContent += `❌ Columnas incorrectas en Excel. Deben incluir al menos: ID, Nombre, Categoria, Precio_Normal y Precio_Mayoreo.\n`;
+      const getMatchedKey = (names) => {
+        for (let name of names) {
+          const foundKey = Object.keys(rows[0]).find(k => k.trim().toUpperCase() === name.toUpperCase());
+          if (foundKey) return foundKey;
+        }
+        return null;
+      };
+
+      const keysMapped = {
+        id: getMatchedKey(['ID', '货号']),
+        nombre: getMatchedKey(['Nombre', '货号']),
+        categoria: getMatchedKey(['Categoria']),
+        pNormal: getMatchedKey(['Precio_Normal', '价格1']),
+        pMayoreo: getMatchedKey(['Precio_Mayoreo', '价格4']),
+        pCaja: getMatchedKey(['Precio_Caja']),
+        pzsCaja: getMatchedKey(['Piezas_Por_Caja', '箱装数']),
+        image: getMatchedKey(['Imagen_URL']),
+        tag: getMatchedKey(['Etiqueta']),
+        desc: getMatchedKey(['Descripcion']),
+        stock: getMatchedKey(['Stock', 'Existencias', '销售统计', 'Cantidad']),
+        barcode: getMatchedKey(['Barcode', '条码1'])
+      };
+
+      if (!keysMapped.id) {
+        logContent.textContent += `❌ Falta la columna de ID / 货号 en el Excel.\n`;
+        return;
+      }
+      if (!keysMapped.pNormal && !keysMapped.pMayoreo) {
+        logContent.textContent += `❌ Falta la columna de precio (Precio_Normal / 价格1 o Precio_Mayoreo / 价格4) en el Excel.\n`;
         return;
       }
 
       // Normalize row values
       const items = rows.map((row, idx) => {
-        // Find keys case-insensitively
-        const getVal = (field) => {
-          const matchedKey = Object.keys(row).find(k => k.trim().toUpperCase() === field.toUpperCase());
-          return matchedKey ? row[matchedKey] : null;
-        };
+        const rawId = String(row[keysMapped.id] || '').trim();
+        const rawBarcode = keysMapped.barcode ? String(row[keysMapped.barcode] || '').trim() : '';
+
+        const retailVal = parseFloat(row[keysMapped.pNormal]) || parseFloat(row[keysMapped.pMayoreo]) || 0;
+        const wholesaleVal = parseFloat(row[keysMapped.pMayoreo]) || retailVal || 0;
+        const boxPriceVal = keysMapped.pCaja ? (parseFloat(row[keysMapped.pCaja]) || wholesaleVal * 0.8) : (wholesaleVal * 0.8);
+        const pcsPerBoxVal = keysMapped.pzsCaja ? (parseInt(row[keysMapped.pzsCaja]) || 12) : 12;
+        const stockVal = keysMapped.stock ? (parseInt(row[keysMapped.stock]) || 0) : 999;
+
+        const catVal = keysMapped.categoria ? String(row[keysMapped.categoria] || '').trim().toLowerCase() : getCategoryFromSKU(rawId);
+        const nameVal = keysMapped.nombre ? String(row[keysMapped.nombre] || '').trim() : rawId;
+        const imageVal = keysMapped.image ? String(row[keysMapped.image] || '').trim() : 'assets/logos/logo_color.png';
+        const tagVal = keysMapped.tag ? String(row[keysMapped.tag] || '').trim() : 'Importación';
+        const descVal = keysMapped.desc ? String(row[keysMapped.desc] || '').trim() : `Modelo: ${rawId} - Código de barras: ${rawBarcode || 'N/A'}`;
 
         return {
-          id: String(getVal('ID') || '').trim(),
-          name: String(getVal('Nombre') || '').trim(),
-          category: String(getVal('Categoria') || '').trim().toLowerCase(),
-          wholesalePrice: parseFloat(getVal('Precio_Mayoreo')) || 0,
-          retailPrice: parseFloat(getVal('Precio_Normal')) || 0,
-          boxPrice: parseFloat(getVal('Precio_Caja')) || 0,
-          pcsPerBox: parseInt(getVal('Piezas_Por_Caja')) || 12,
-          image: String(getVal('Imagen_URL') || '').trim() || 'assets/images/bolsa_cartera_showcase.png',
-          tag: String(getVal('Etiqueta') || '').trim() || 'Importación',
-          desc: String(getVal('Descripcion') || '').trim() || ''
+          id: rawId,
+          name: nameVal,
+          category: catVal,
+          wholesalePrice: wholesaleVal,
+          retailPrice: retailVal,
+          boxPrice: Math.round(boxPriceVal * 100) / 100,
+          pcsPerBox: pcsPerBoxVal,
+          image: imageVal || 'assets/logos/logo_color.png',
+          tag: tagVal || 'Importación',
+          desc: descVal,
+          stock: stockVal,
+          barcode: rawBarcode
         };
       });
 
@@ -808,16 +888,16 @@
           return;
         }
         if (isNaN(item.retailPrice) || item.retailPrice <= 0) {
-          errors.push(`Fila ${rowNum}: Precio_Normal inválido ($${item.retailPrice}).`);
+          errors.push(`Fila ${rowNum}: Precio inválido ($${item.retailPrice}).`);
           return;
         }
 
         // Fill pricing fallbacks
         if (isNaN(item.wholesalePrice) || item.wholesalePrice <= 0) {
-          item.wholesalePrice = item.retailPrice; // fallback to retail price
+          item.wholesalePrice = item.retailPrice;
         }
         if (isNaN(item.boxPrice) || item.boxPrice <= 0) {
-          item.boxPrice = item.wholesalePrice * 0.8; // default to 20% discount on wholesale
+          item.boxPrice = item.wholesalePrice * 0.8;
         }
 
         cleanItems.push(item);
@@ -839,7 +919,7 @@
       logContent.textContent += `✅ ¡Carga exitosa! ${cleanItems.length} productos listos para importación.\n`;
       parsedProducts = cleanItems;
 
-      // Show Preview Table
+      // Show Preview Table (including Stock column)
       previewTableBody.innerHTML = '';
       const previewSlice = cleanItems.slice(0, 8);
       
@@ -854,6 +934,7 @@
           <td>$${p.wholesalePrice}</td>
           <td style="color:var(--primary); font-weight:700;">$${p.boxPrice}</td>
           <td>${p.pcsPerBox} pzs</td>
+          <td style="font-weight:600;">${p.stock} pzs</td>
         `;
         previewTableBody.appendChild(tr);
       });
@@ -883,7 +964,8 @@
     function loadDefaultStatus() {
       catalogBadgeStatus.textContent = 'Por Defecto';
       catalogBadgeStatus.className = 'badge-status default-mode';
-      catalogDescStatus.innerHTML = `Estás utilizando el catálogo predeterminado de Zalia Shop surtido directamente de las fotos de tu contenedor (<strong>48 productos oficiales</strong>).`;
+      const count = (typeof DEFAULT_PRODUCTS !== 'undefined') ? DEFAULT_PRODUCTS.length : 48;
+      catalogDescStatus.innerHTML = `Estás utilizando el catálogo predeterminado de Zalia Shop surtido desde el inventario del contenedor (<strong>${count} productos oficiales</strong>).`;
       btnRestoreDefault.style.display = 'none';
     }
 
@@ -898,26 +980,21 @@
       
       // Fallback to defaults
       if (catalog.length === 0) {
-        // Fallback hardcoded defaults matching app.js
-        alert('Se exportará el catálogo base de 16 productos. (Abre index.html para cargarlos de memoria si es necesario).');
-        // Let's scrape them from local storage if available or create a basic array
-        catalog = JSON.parse(localStorage.getItem('zalia_custom_products')) || [];
+        catalog = (typeof DEFAULT_PRODUCTS !== 'undefined') ? DEFAULT_PRODUCTS : [];
       }
 
       if (catalog.length === 0) {
-        // If nothing is present in local storage yet, fetch it from js database (we mockup the defaults since we're inside client environment)
-        // Let's generate a quick download of the plantilla CSV which matches the defaults
         window.location.href = 'plantilla_productos.csv';
         return;
       }
 
       let csvContent = '\uFEFF'; // UTF-8 BOM
-      csvContent += 'ID,Nombre,Categoria,Precio_Normal,Precio_Mayoreo,Precio_Caja,Piezas_Por_Caja,Imagen_URL,Etiqueta,Descripcion\n';
+      csvContent += 'ID,Nombre,Categoria,Precio_Normal,Precio_Mayoreo,Precio_Caja,Piezas_Por_Caja,Imagen_URL,Etiqueta,Descripcion,Stock,Barcode\n';
       
       catalog.forEach(p => {
-        const nameEsc = `"${p.name.replace(/"/g, '""')}"`;
-        const descEsc = `"${p.desc.replace(/"/g, '""')}"`;
-        csvContent += `${p.id},${nameEsc},${p.category},${p.retailPrice},${p.wholesalePrice},${p.boxPrice},${p.pcsPerBox},${p.image},${p.tag},${descEsc}\n`;
+        const nameEsc = `"${(p.name || p.id || '').replace(/"/g, '""')}"`;
+        const descEsc = `"${(p.desc || '').replace(/"/g, '""')}"`;
+        csvContent += `${p.id},${nameEsc},${p.category},${p.retailPrice},${p.wholesalePrice},${p.boxPrice},${p.pcsPerBox},${p.image},${p.tag},${descEsc},${p.stock || 0},${p.barcode || ''}\n`;
       });
 
       const blob = new Blob([csvContent], {type: 'text/csv;charset=utf-8;'});

@@ -1,589 +1,4 @@
-// Default Product Database (48 items using direct scraped Google Photos URLs)
-const DEFAULT_PRODUCTS = [
-  // Bolsas y Carteras
-  {
-    id: 'bc1',
-    name: 'Bolsa de Mano Premium Elegante',
-    category: 'bolsas-carteras',
-    retailPrice: 280,
-    wholesalePrice: 180,
-    boxPrice: 140,
-    pcsPerBox: 12,
-    image: 'https://lh3.googleusercontent.com/pw/AP1GczPrBNH2gRxUrfHs8s0nK_2yncDetmUtk39oRVi4q3OZPcdtEOWxWmiZv6nKKHruwVkOi3_GvREFzF49xdVy9ELrdoe63KOYLkXg0ziTLLvC2h2CMxE',
-    tag: 'Contenedor',
-    desc: 'Bolsa de mano de tactopiel de alta resistencia con cierres y herrajes dorados reforzados.'
-  },
-  {
-    id: 'bc2',
-    name: 'Cartera de Dama Minimalista',
-    category: 'bolsas-carteras',
-    retailPrice: 120,
-    wholesalePrice: 65,
-    boxPrice: 48,
-    pcsPerBox: 24,
-    image: 'https://lh3.googleusercontent.com/pw/AP1GczOEnG_IJApaPLGgmjjvhJACli9SW-tRPAVre72l_EMvt7YR0W0mAo-vVbpSN9y1cl_R7G3x8l8QkIYK56g0Yjq3GkEHOTDvesJtIgq0fjhtTYV_-tc',
-    tag: 'Oferta',
-    desc: 'Cartera de mano ultra compacta con multiples tarjeteros, monedero con cierre y diseno elegante.'
-  },
-  {
-    id: 'bc3',
-    name: 'Bolsa Mochila 2 en 1 Multifuncional',
-    category: 'bolsas-carteras',
-    retailPrice: 250,
-    wholesalePrice: 150,
-    boxPrice: 110,
-    pcsPerBox: 12,
-    image: 'https://lh3.googleusercontent.com/pw/AP1GczNN9WkFGc7c_nyrHDyR_CpYZs199udTaD39fNbcrdlh3zb6Piq0DylDMLzjHTl43ni4gkksSWU8ThcG3acqKQo3w-V2moWMEyJNFxUvwSKvIn2VkFM',
-    tag: 'Mas Vendido',
-    desc: 'Bolsa convertible a mochila escolar o de viaje, diseno impermeable de nylon suave.'
-  },
-  {
-    id: 'bc4',
-    name: 'Cartera de Caballero en Piel Sintetica',
-    category: 'bolsas-carteras',
-    retailPrice: 90,
-    wholesalePrice: 45,
-    boxPrice: 32,
-    pcsPerBox: 30,
-    image: 'https://lh3.googleusercontent.com/pw/AP1GczMLxQ2lgE2p5OU-abzJmaniire97gCpTUDHmhNo5cIpx_Fj0wY_1Z9_BsJooWhdHyn4Y9nbRrC3nwIFxNnRcc8gDekgTWHs0znp2u6E95eGhgQwQWA',
-    tag: 'Oferta',
-    desc: 'Cartera clasica para caballero, ranuras para tarjetas multiples y proteccion RFID anti-clonado.'
-  },
-  {
-    id: 'bc5',
-    name: 'Bolsa Tote Casual de Algodon',
-    category: 'bolsas-carteras',
-    retailPrice: 180,
-    wholesalePrice: 110,
-    boxPrice: 85,
-    pcsPerBox: 15,
-    image: 'https://lh3.googleusercontent.com/pw/AP1GczMj37B6yCPFTmC1dUOyG-XNw_sFrB0dYa4I2SO48SouwCi4SvHOpqeVbMZUpITXdtATQ5WcvMDsZfvVutGOQri7wFJd06zj7VPKEGNi2p1e1OLn6Ew',
-    tag: 'Novedad',
-    desc: 'Bolsa tipo Tote ideal para playa, compras o salidas casuales. Tela ultra lavable y resistente.'
-  },
-  {
-    id: 'bc6',
-    name: 'Bandolera Juvenil de Moda',
-    category: 'bolsas-carteras',
-    retailPrice: 210,
-    wholesalePrice: 130,
-    boxPrice: 95,
-    pcsPerBox: 12,
-    image: 'https://lh3.googleusercontent.com/pw/AP1GczOcc9XJOpftOAiOqACL0O4AdH9vLUN7dmu8uB_5suiOJSP0djLFoGkEbs-AewgRD9TlWD7RgVrbkraflZK5x4T8BUBfSIEnT7rEtrzX5d4v-pIi4xA',
-    tag: 'Tendencia',
-    desc: 'Bolsa bandolera cruzada con correa ajustable estampada, compartimento con cierre suave.'
-  },
-  {
-    id: 'bc7',
-    name: 'Cartera Monedero con Cierre de Boton',
-    category: 'bolsas-carteras',
-    retailPrice: 100,
-    wholesalePrice: 55,
-    boxPrice: 40,
-    pcsPerBox: 24,
-    image: 'https://lh3.googleusercontent.com/pw/AP1GczM4Mnl4PtUnrPolIfPzBXozTsBfmoANbuZuie_XiPUiXIH9juJsgUQc5NOOVpCinGsSRlnVVl9Rf8wv-RyfTd5LSGYEhl5etehucK2mUscmHMRd5LM',
-    tag: 'Oferta',
-    desc: 'Cartera monedero compacta con costuras reforzadas, boton metalico y diseno elegante.'
-  },
-  {
-    id: 'bc8',
-    name: 'Bolsa de Hombro Texturizada',
-    category: 'bolsas-carteras',
-    retailPrice: 290,
-    wholesalePrice: 190,
-    boxPrice: 145,
-    pcsPerBox: 10,
-    image: 'https://lh3.googleusercontent.com/pw/AP1GczNDS7gL1qIQZ_Pz5aJeziWAXOX1AfERRDNEOYw1Lyw2ngMFpELHv2CJ1Cc7fRfrgeUR3WRdweNVz6Ed2zDMmxkxrqDKVnvqguwWiz0TwQecMT7r-lM',
-    tag: 'Importacion',
-    desc: 'Bolsa de hombro de tactopiel grabada con patrones geometricos y doble compartimento.'
-  },
-  {
-    id: 'bc9',
-    name: 'Neceser de Viaje para Maquillaje',
-    category: 'bolsas-carteras',
-    retailPrice: 140,
-    wholesalePrice: 80,
-    boxPrice: 60,
-    pcsPerBox: 20,
-    image: 'https://lh3.googleusercontent.com/pw/AP1GczP0ck5zezBnrbSSITjKiWrB8vxYEKNjhWep5piyc0sC3IYLOn8ZXMiH1kzXNDrrMpbsVNs0n_Md8FzaOxO19yg3zebB1-z5nLRaNrqUvx2DQY6VYyE',
-    tag: 'Organizador',
-    desc: 'Neceser impermeable de viaje con ganchos para colgar y compartimentos de red transparentes.'
-  },
-  {
-    id: 'bc10',
-    name: 'Bolsa Clutch de Noche con Cadena',
-    category: 'bolsas-carteras',
-    retailPrice: 230,
-    wholesalePrice: 140,
-    boxPrice: 105,
-    pcsPerBox: 12,
-    image: 'https://lh3.googleusercontent.com/pw/AP1GczNt8Oo4lZCz60E_-GREGBSGBfEgcTOqw1rh1PbGO6ITfaoBsT8eNuKlNOtYgjqt3uLQAUIPEcTURrXOvp6DjDUbyB_d8IXSRRKmn31_hmMD2iMJaQk',
-    tag: 'Elegante',
-    desc: 'Bolso de mano tipo clutch para eventos de noche con cadena dorada desmontable.'
-  },
-  {
-    id: 'bc11',
-    name: 'Bolsa de Mano Clasica con Compartimentos',
-    category: 'bolsas-carteras',
-    retailPrice: 270,
-    wholesalePrice: 170,
-    boxPrice: 130,
-    pcsPerBox: 12,
-    image: 'https://lh3.googleusercontent.com/pw/AP1GczP-Wn3Li0zzDLVZMUW167vYuaJ2pm-rY50CAf0Q-7jOxtPFxUrIGIABlfu4LTryZhxpbvDQ3xIaktO7QtQzK6NoyM-xFiOv0m8yItpZITbiSwFTMXA',
-    tag: 'Mas Vendido',
-    desc: 'Bolsa de mano espaciosa con 3 divisiones principales con cierre y bolsillos laterales.'
-  },
-  {
-    id: 'bc12',
-    name: 'Cartera Larga con Tarjetero Expandible',
-    category: 'bolsas-carteras',
-    retailPrice: 130,
-    wholesalePrice: 70,
-    boxPrice: 52,
-    pcsPerBox: 24,
-    image: 'https://lh3.googleusercontent.com/pw/AP1GczN-MngpJrHmuuCG-Q0LzsVQkCx0IpVLcb80VSUTRZefgbXyOaWR8YCf2bM0FBErIC2yWkhc1JJI1ROcbKXiH4RlELc8NaEqvhgpTAfebpcCWLypQ-A',
-    tag: 'Novedad',
-    desc: 'Cartera ejecutiva larga para dama con capacidad de hasta 16 tarjetas y cierre seguro.'
-  },
-
-  // Mochilas
-  {
-    id: 'mc1',
-    name: 'Mochila Escolar Reforzada',
-    category: 'mochilas',
-    retailPrice: 220,
-    wholesalePrice: 140,
-    boxPrice: 105,
-    pcsPerBox: 10,
-    image: 'https://lh3.googleusercontent.com/pw/AP1GczOJ03-pWRDyK9mK25vw8AVPKEp2O9rWs4LwKz3R0eGFbzXPs16ankTj6h2tS6mVdmFeUZENXRzhmVZXAXyq0euIXyCrGBH6ALqv-IYymdtmiwBKzcs',
-    tag: 'Escolar',
-    desc: 'Mochila escolar de alta resistencia con costuras dobles, compartimento amplio y tirantes acolchados.'
-  },
-  {
-    id: 'mc2',
-    name: 'Mochila Ejecutiva Porta-Laptop',
-    category: 'mochilas',
-    retailPrice: 320,
-    wholesalePrice: 195,
-    boxPrice: 150,
-    pcsPerBox: 10,
-    image: 'https://lh3.googleusercontent.com/pw/AP1GczNg7ZjLULu239rlOpcraqFLxeyEXwwxnT_fz-Cyx0rj_rXPsm7kSFm8NjKiFjUUBxtba8QxE1J560kzUYe2E9E8hvwmRaH8hqvV_lbQ71mW1ZUWSaE',
-    tag: 'Impermeable',
-    desc: 'Mochila ejecutiva impermeable con compartimento acolchado para laptop de 15.6 pulgadas y puerto USB.'
-  },
-  {
-    id: 'mc3',
-    name: 'Mochila Infantil de Ruedas',
-    category: 'mochilas',
-    retailPrice: 350,
-    wholesalePrice: 220,
-    boxPrice: 175,
-    pcsPerBox: 8,
-    image: 'https://lh3.googleusercontent.com/pw/AP1GczPvhKPwfup1ln3GRxVA11t7QsmwJ-5SU_D5Lqu9rFYe5a7updclJ1R-9TYOAfSTfaL55eIZkTHWqtZyotHaI0rfbAefEjCa7y7ZSuhrm5jrt0tnBEw',
-    tag: 'Infantil',
-    desc: 'Mochila con carrito de aluminio reforzado, ruedas de gel silenciosas de alta durabilidad.'
-  },
-  {
-    id: 'mc4',
-    name: 'Mochila Deportiva Ligera',
-    category: 'mochilas',
-    retailPrice: 160,
-    wholesalePrice: 95,
-    boxPrice: 70,
-    pcsPerBox: 20,
-    image: 'https://lh3.googleusercontent.com/pw/AP1GczOB2FphTvhTd1RHYBspY5V_JKwDCJkxx2J8UjVnt3kAfAyblwEOVnve0-mTmaoKKkkZWiQLz-hVGXy3Hz3TOxtP1B0U8B01KqbhBcQUWBx80C9crII',
-    tag: 'Liquidacion',
-    desc: 'Mochila ultra ligera de nylon de alta densidad, ideal para entrenamientos o paseos cortos.'
-  },
-  {
-    id: 'mc5',
-    name: 'Mochila Militar Tactica Impermeable',
-    category: 'mochilas',
-    retailPrice: 380,
-    wholesalePrice: 240,
-    boxPrice: 185,
-    pcsPerBox: 8,
-    image: 'https://lh3.googleusercontent.com/pw/AP1GczPEctlAcqoCUeSM-GP1-TaX9emhStWMbB-I207zdNJ0GCVoOAOK17vKn6OO03Gj0nDnOd6ApKDOr12xTLRMkJzG3CNR-HitAPdWBq3MpAbJBYbAHJc',
-    tag: 'Ruda',
-    desc: 'Mochila tactica de poliester militar 600D, compartimentos multiples y sistema MOLLE.'
-  },
-  {
-    id: 'mc6',
-    name: 'Mochila de Hombro Cruzada',
-    category: 'mochilas',
-    retailPrice: 150,
-    wholesalePrice: 85,
-    boxPrice: 62,
-    pcsPerBox: 20,
-    image: 'https://lh3.googleusercontent.com/pw/AP1GczOSNLmS-mWmOanWwG5IHW5l0_6vV4f1suIlLN9TwwLAQTS1X_soYB_rlPjC6gnfsE-anoIMrBeeGGdSQewksavh5LzqosR5-2zZ-ebevfKdQQrLwrE',
-    tag: 'Novedad',
-    desc: 'Mochila cruzada tipo mariconera con puerto USB y diseno ergonomico antirrobo.'
-  },
-  {
-    id: 'mc7',
-    name: 'Mochila Escolar Kawaii con Llavero',
-    category: 'mochilas',
-    retailPrice: 240,
-    wholesalePrice: 150,
-    boxPrice: 115,
-    pcsPerBox: 12,
-    image: 'https://lh3.googleusercontent.com/pw/AP1GczOxDkMLYzDeoEznu5FvN_UKkQi1DL5myv_M89X0nwpn8HY1hjBoZhkCL6Q5kc2Ec8oCMGftHejdMRlKnwIo5LjLFUs7w-HRuF-fjR6KU1FMyLcHxEA',
-    tag: 'Infantil',
-    desc: 'Mochila escolar de diseno kawaii con compartimento para termos y llavero de peluche incluido.'
-  },
-  {
-    id: 'mc8',
-    name: 'Mochila de Viaje Expandible 40L',
-    category: 'mochilas',
-    retailPrice: 450,
-    wholesalePrice: 280,
-    boxPrice: 220,
-    pcsPerBox: 8,
-    image: 'https://lh3.googleusercontent.com/pw/AP1GczOUNfe-kMxIw9-t9PXLcFcNjGWaoiu9ogiVv9Bmo5lPoYbr54N_JXNU9LNLMgUrRm7ymWySxjILLlEDgxrqS1wklSVo8bmjY9QI7kDErssU1We7lvI',
-    tag: 'Viajero',
-    desc: 'Mochila de viaje expandible apta para cabina de avion, correas de compresion y organizadores.'
-  },
-  {
-    id: 'mc9',
-    name: 'Mochila Basica Universitaria',
-    category: 'mochilas',
-    retailPrice: 180,
-    wholesalePrice: 110,
-    boxPrice: 85,
-    pcsPerBox: 15,
-    image: 'https://lh3.googleusercontent.com/pw/AP1GczMm4nnCZm_55enYotqmiVgpQZiB0IWjAjd9E7y_syFwiGwDTfQxO84iIdLyFiN5mYl65o66BZYQRytttPSSZYfOHN1czDAMPCALXmKb0PBHi1XVsMQ',
-    tag: 'Oferta',
-    desc: 'Mochila escolar clasica de lona resistente, ideal para preparatoria o universidad.'
-  },
-  {
-    id: 'mc10',
-    name: 'Mochila de Ruedas Juvenil 3D',
-    category: 'mochilas',
-    retailPrice: 360,
-    wholesalePrice: 230,
-    boxPrice: 180,
-    pcsPerBox: 8,
-    image: 'https://lh3.googleusercontent.com/pw/AP1GczOV1RcAymXKlT2C5GHwtqlSQKAtqPswVjCbyAH43uUJgMq-iilWf2olj9h1bBO5fmPLrgQjz0I6CfO0kh2iRE1RrwDhSUYvzwrySrjJLnFSiOrLYnI',
-    tag: 'Escolar',
-    desc: 'Mochila con ruedas con diseno frontal en relieve 3D, baston de aluminio de doble nivel.'
-  },
-  {
-    id: 'mc11',
-    name: 'Pañalera Mochila Multifuncional',
-    category: 'mochilas',
-    retailPrice: 340,
-    wholesalePrice: 210,
-    boxPrice: 160,
-    pcsPerBox: 10,
-    image: 'https://lh3.googleusercontent.com/pw/AP1GczM7W2MMgq3E5ZB15usNT1Lfih9XmgYvHj9Ahb7ERaHUmf73S5dxVCpqk0rHthKdIxgBC09F3gesaA2teuWVoLTxNXBqXTk4kMSkB9KvPVBZbdyLvss',
-    tag: 'Para Bebes',
-    desc: 'Mochila panalera con bolsillos termicos para biberones y dispensador de toallitas humedas.'
-  },
-  {
-    id: 'mc12',
-    name: 'Mochila Mini de Moda para Dama',
-    category: 'mochilas',
-    retailPrice: 190,
-    wholesalePrice: 115,
-    boxPrice: 88,
-    pcsPerBox: 15,
-    image: 'https://lh3.googleusercontent.com/pw/AP1GczPCxjs5A-dKRM_u2z-tNit4cib4dcjyaOyoB6snrSnRWi0wMGa5-yLLktRcizr7mihTbfmEUmeeHvfY7iNT8ze_7hNZpuP9BJjvOGqLs-XoPQl50oQ',
-    tag: 'Tendencia',
-    desc: 'Mochila miniatura de tactopiel suave con estoperoles decorativos y tirantes ajustables.'
-  },
-
-  // Accesorios y Más
-  {
-    id: 'ac1',
-    name: 'Audifonos Bluetooth Diadema Pro',
-    category: 'accesorios-mas',
-    retailPrice: 170,
-    wholesalePrice: 90,
-    boxPrice: 72,
-    pcsPerBox: 12,
-    image: 'https://lh3.googleusercontent.com/pw/AP1GczOrqBOAdEVmJqxj47MiJ6XYjDfIaKzRE-kK0qYBbK-VAy4HgLZAx7Ddyqmfgcy8vneBdNcwaaYmdG7YcrSKy-imKomsTr2b6T0Z_RxBzoYFSwkUqIE',
-    tag: 'Tecnologia',
-    desc: 'Audifonos inalambricos recargables con microfono manos libres y cancelacion de ruido pasiva.'
-  },
-  {
-    id: 'ac2',
-    name: 'Termo de Acero Inoxidable con Temp.',
-    category: 'accesorios-mas',
-    retailPrice: 130,
-    wholesalePrice: 75,
-    boxPrice: 58,
-    pcsPerBox: 24,
-    image: 'https://lh3.googleusercontent.com/pw/AP1GczNiH7KvjgTNHhX7DKSxZ9AY4wBtQzlOgSYssVny8GQBZ4gqjzrBkO--SLc79uUoer_rtiQOlLP4nOcUpOhsHEueAtWO2VHKCaUpXcPjlsEVvTGo254',
-    tag: 'Ecologico',
-    desc: 'Termo inteligente de acero inoxidable con sensor de temperatura LED tactil en tapa.'
-  },
-  {
-    id: 'ac3',
-    name: 'Set de Brochas de Maquillaje (12 pzs)',
-    category: 'accesorios-mas',
-    retailPrice: 95,
-    wholesalePrice: 50,
-    boxPrice: 38,
-    pcsPerBox: 20,
-    image: 'https://lh3.googleusercontent.com/pw/AP1GczPgVsVZADJo-733pyd3kasgvIZdVfvqJkmSBkDm0bgUm0YTElAPVP075ZKFwSW_P5mrcuxKF5YibC0Yyroihbs4E8zEnz_TbH7Jf2lYp6_tIxgavew',
-    tag: 'Belleza',
-    desc: 'Estuche portatil con 12 brochas profesionales de cerdas sinteticas suaves y mangos de madera.'
-  },
-  {
-    id: 'ac4',
-    name: 'Luz Led de Lectura Recargable',
-    category: 'accesorios-mas',
-    retailPrice: 70,
-    wholesalePrice: 35,
-    boxPrice: 24,
-    pcsPerBox: 30,
-    image: 'https://lh3.googleusercontent.com/pw/AP1GczMszmTT5pr0JO4Ilv6q_ILs7TEUJLD_ef6AGutE3_4WsSmiojWFEF5qKAwJseXL-O119sb7CutIjwiqK77Aek5GZsCOfHGVrCYwtjJzd_X8-U8KzUI',
-    tag: 'Hogar',
-    desc: 'Lampara de lectura con clip de sujecion, bateria recargable por USB y 3 intensidades de luz.'
-  },
-  {
-    id: 'ac5',
-    name: 'Cargador Portatil Powerbank 10000mAh',
-    category: 'accesorios-mas',
-    retailPrice: 180,
-    wholesalePrice: 110,
-    boxPrice: 88,
-    pcsPerBox: 15,
-    image: 'https://lh3.googleusercontent.com/pw/AP1GczMdhmBpVFmgZCpxhEU6o6xnuDMwAogP9-qY7uoLTJZtuda5yQhF_bYDyKKj6_nKKFmRZKE1i-gJKz6-mVoe7_q7BVhdoqjZHm9tNVWFEXrFBt2ljDM',
-    tag: 'Tecnologia',
-    desc: 'Bateria externa powerbank con doble salida USB y carga rapida 2A compatible con Android/iOS.'
-  },
-  {
-    id: 'ac6',
-    name: 'Humidificador Difusor Ultrasónico',
-    category: 'accesorios-mas',
-    retailPrice: 150,
-    wholesalePrice: 85,
-    boxPrice: 65,
-    pcsPerBox: 16,
-    image: 'https://lh3.googleusercontent.com/pw/AP1GczPw5BYlO4_NH-CCSvPJTA0JrLEmVZ6nQcHP4kS56uxRPtVh8y8x5ZaYQZtUZOjcetMtBvivzlteHJq8o3IXmC6GRdCTEGTElOsh3FGHRaQnmzZnqHc',
-    tag: 'Hogar',
-    desc: 'Difusor de aroma y humidificador con luces LED de colores y conexion USB para oficina u hogar.'
-  },
-  {
-    id: 'ac7',
-    name: 'Soporte de Celular para Auto con Pinza',
-    category: 'accesorios-mas',
-    retailPrice: 80,
-    wholesalePrice: 40,
-    boxPrice: 28,
-    pcsPerBox: 30,
-    image: 'https://lh3.googleusercontent.com/pw/AP1GczOz1wQAWPj-G2eQn0gbYxyLhRUmSh6iUtPksY9ITpWqobLvoUO8Bp5tDQc07OW41nlJz1GxbaM86xrowYDp22pE9WoCxLeYNBRG3cCLmahbHOLao9w',
-    tag: 'Novedad',
-    desc: 'Soporte universal para rejilla de aire acondicionado con pinzas de ajuste automatico por gravedad.'
-  },
-  {
-    id: 'ac8',
-    name: 'Mini Bocina Bluetooth Impermeable',
-    category: 'accesorios-mas',
-    retailPrice: 160,
-    wholesalePrice: 95,
-    boxPrice: 72,
-    pcsPerBox: 20,
-    image: 'https://lh3.googleusercontent.com/pw/AP1GczORknH0MNsO5Y7s94M4cDpzttW-22nlZlKB05UTzw4_aTLGwSEJR-WT9xQ8Bv1ZYouiFLYHh6b2jOnGxqwWdCdbGdXcAT3BJm-rsHqNY2n3eUbKBWU',
-    tag: 'Musica',
-    desc: 'Bocina bluetooth portatil resistente a salpicaduras con ventosa de sujecion para ducha.'
-  },
-  {
-    id: 'ac9',
-    name: 'Lampara Escritorio Led Flexible',
-    category: 'accesorios-mas',
-    retailPrice: 110,
-    wholesalePrice: 60,
-    boxPrice: 45,
-    pcsPerBox: 24,
-    image: 'https://lh3.googleusercontent.com/pw/AP1GczPacHEwiaYr6o6Gjmt_Lt0MxOfax89UTqcrNdbNPYwqZK4P7po17YmtNLnKHH8yLQ3LA2QgRZybzJ_KHJqhi2GDVfJou-0SMmjCdrB_aZUjTGbqESE',
-    tag: 'Oficina',
-    desc: 'Lampara de escritorio recargable por USB con cuello de cisne flexible y control tactico de brillo.'
-  },
-  {
-    id: 'ac10',
-    name: 'Aro de Luz Led para Selfies',
-    category: 'accesorios-mas',
-    retailPrice: 60,
-    wholesalePrice: 30,
-    boxPrice: 19,
-    pcsPerBox: 40,
-    image: 'https://lh3.googleusercontent.com/pw/AP1GczOx90albeANBkpzsQnLwuYMDDc-6oKd9ezOrJoc9PE3JPnHvbLz5RWec8A4sefzDEaLi2HIICAxCM5OE8UJPVkExNcc9rzxNyLMOqQg1Sclbfi8lFA',
-    tag: 'Belleza',
-    desc: 'Aro de luz clip para camara frontal de celular con 3 tonos de luz para selfies y videos.'
-  },
-  {
-    id: 'ac11',
-    name: 'Cable USB Multi-Entrada 3 en 1',
-    category: 'accesorios-mas',
-    retailPrice: 50,
-    wholesalePrice: 25,
-    boxPrice: 15,
-    pcsPerBox: 50,
-    image: 'https://lh3.googleusercontent.com/pw/AP1GczN98TrX0F6GUqSZ_xfnCmY_3CUY5mXipnxWLlK0TbrHNxc0BY8REXYDtXSXg38h-jnfyj-tHHEHfofVEqFCPRLoPTIddWwbwRVnxVkZaligOCZIpiU',
-    tag: 'Oferta',
-    desc: 'Cable reforzado de nylon trenzado con conectores Tipo C, Lightning y Micro USB en uno solo.'
-  },
-  {
-    id: 'ac12',
-    name: 'Reloj Despertador Digital Led',
-    category: 'accesorios-mas',
-    retailPrice: 140,
-    wholesalePrice: 80,
-    boxPrice: 62,
-    pcsPerBox: 20,
-    image: 'https://lh3.googleusercontent.com/pw/AP1GczMZKLZR2mFYnOeaTASHfwaETREMB-inSbleZlrDMr7wZsDO6WnQmzOLhlaVX_UULWHHmrGw7l8SMLn6MrfHQwm_kf8OEXIJsJFZiQ0Bk_1Bvrxq3AQ',
-    tag: 'Hogar',
-    desc: 'Reloj despertador con pantalla LED, indicador de temperatura y sensor de luz nocturna.'
-  },
-
-  // Peluches
-  {
-    id: 'pl1',
-    name: 'Oso de Peluche Clasico Gigante (80cm)',
-    category: 'peluches',
-    retailPrice: 390,
-    wholesalePrice: 250,
-    boxPrice: 190,
-    pcsPerBox: 5,
-    image: 'https://lh3.googleusercontent.com/pw/AP1GczO4jGrQQ5oCQj4XiKe3ueH4UURsliWbLu826awYbzJVfUsPWE3g-ItlwX5NPm588-O7-YTpZuP5Z7wg-m8nCCcsELyn6_cXDsiSdqdg6OXycb51oRA',
-    tag: 'Favorito',
-    desc: 'Peluche gigante de felpa ultra suave, relleno de algodon antialergico de alta recuperacion.'
-  },
-  {
-    id: 'pl2',
-    name: 'Peluche de Aguacate Llavero',
-    category: 'peluches',
-    retailPrice: 40,
-    wholesalePrice: 20,
-    boxPrice: 13,
-    pcsPerBox: 50,
-    image: 'https://lh3.googleusercontent.com/pw/AP1GczMG5wiO2fxjI4nYrx2ggtQGSgIBTr7YafTs7gahxMfR_ETpf6-cF_wUyTP5tTIm03qm9sCxAxlry5aoWkgr7cx4kpjlSRzGrqdCIL-ZWS1M7XLKZ9A',
-    tag: 'Novedad',
-    desc: 'Llavero de felpa en forma de aguacate kawaii con carita sonriente, ideal para detalles.'
-  },
-  {
-    id: 'pl3',
-    name: 'Dinosaurio de Felpa Abrazo Largo',
-    category: 'peluches',
-    retailPrice: 150,
-    wholesalePrice: 85,
-    boxPrice: 62,
-    pcsPerBox: 12,
-    image: 'https://lh3.googleusercontent.com/pw/AP1GczMbn1I6FJ2Gqv_jUAVvzC2V8VRiBySZ9vtA3vALUOx1wneBPiOKzJr-l2v1TDZcnO4ym5MvonhKRWACytlEMwHfzka4Y1y2gQVxyjbvKlp-6SHJPd4',
-    tag: 'Ultimas Piezas',
-    desc: 'Peluche alargado ergonomico de dinosaurio suave para abrazar al dormir.'
-  },
-  {
-    id: 'pl4',
-    name: 'Pulpito Reversible de Emociones',
-    category: 'peluches',
-    retailPrice: 60,
-    wholesalePrice: 30,
-    boxPrice: 19,
-    pcsPerBox: 40,
-    image: 'https://lh3.googleusercontent.com/pw/AP1GczMNnXFyRG2BRpiw_Jp3Rd1IpAG24cNgomuscDiAmGPlcz23v4zNJPaGRByUGYsYMB00fnv2y3YbvhiwQTDanAfAq-1ws7gjfRJIEOsN-cVW2Dmrmok',
-    tag: 'Clasico',
-    desc: 'Peluche bicolor reversible que muestra estado de animo contento o enojado.'
-  },
-  {
-    id: 'pl5',
-    name: 'Peluche de Unicornio de Colores (30cm)',
-    category: 'peluches',
-    retailPrice: 160,
-    wholesalePrice: 95,
-    boxPrice: 70,
-    pcsPerBox: 15,
-    image: 'https://lh3.googleusercontent.com/pw/AP1GczPAk8B2B3q1awSlZr9jh3EwqDTZ2-uA6qcAT-8P7zhY81dcYCva13J2O_TOrz8joEuzA5ioeetUwf4pa5xERe_edqneDCYI9qEhZ-S-IgoykkeXfBM',
-    tag: 'Favorito',
-    desc: 'Lindo unicornio con detalles dorados brillosos y felpa de colores pastel antialergica.'
-  },
-  {
-    id: 'pl6',
-    name: 'Llavero de Peluche de Animalito Kawaii',
-    category: 'peluches',
-    retailPrice: 35,
-    wholesalePrice: 18,
-    boxPrice: 11,
-    pcsPerBox: 60,
-    image: 'https://lh3.googleusercontent.com/pw/AP1GczPNI8Hl9QzrqFNd68nuT5qxIWqQqe7pz2IU7pzdaAvoNopWdbFzuhLRvKolJOj1hfzGJRHl-yISNi9VJF_oAGlW8k51aSbObNI_I0-a0ICsRJOcbQs',
-    tag: 'Novedad',
-    desc: 'Llaveros de felpa de animalitos variados (pandas, conejos, gatitos) ideales para mochilas.'
-  },
-  {
-    id: 'pl7',
-    name: 'Peluche de Jirafa Gigante (60cm)',
-    category: 'peluches',
-    retailPrice: 280,
-    wholesalePrice: 170,
-    boxPrice: 130,
-    pcsPerBox: 8,
-    image: 'https://lh3.googleusercontent.com/pw/AP1GczMdclEgLUWVG2I73ALDlBPPRYjPLk3SvBEYG9u9zkrBIyuqc5Wc1PH1cElTqOoeGlqu0dsj75QaLr4PtCWQwNprZsfK_0cjqrMecaPOdkGWrJjIbPs',
-    tag: 'Importacion',
-    desc: 'Jirafa de felpa con estructura interna suave que se mantiene de pie, ideal para decoracion.'
-  },
-  {
-    id: 'pl8',
-    name: 'Peluche de Gato Gordo Cojin',
-    category: 'peluches',
-    retailPrice: 180,
-    wholesalePrice: 110,
-    boxPrice: 85,
-    pcsPerBox: 12,
-    image: 'https://lh3.googleusercontent.com/pw/AP1GczPyQJgO-geJe2D-gtqxj3n-rJCG0uwHBwU2m1VcbwmSH4NgVv_I4Tn2K8wlWVEzUlfjU2-wYD_XuR-ZaQWT-pdSZBW2r6VJdEaLZySzk67QPOnSfdM',
-    tag: 'Cozy',
-    desc: 'Cojin abrazable en forma de gato de felpa elastica supersuave, relleno de algodon memory foam.'
-  },
-  {
-    id: 'pl9',
-    name: 'Peluche de Conejo con Orejas Largas',
-    category: 'peluches',
-    retailPrice: 140,
-    wholesalePrice: 80,
-    boxPrice: 60,
-    pcsPerBox: 20,
-    image: 'https://lh3.googleusercontent.com/pw/AP1GczMIcvSh5fATqTeo1D36yQnSV_f3WLOUlmUpFiIX80a9wGZqKvaLzFySUP0WMMNeGeL9c0O0ZeGWXWbKrNWMuzbRi_QXJaWOEn-Hulq7RVfxZX_sutI',
-    tag: 'Infantil',
-    desc: 'Conejo de peluche con orejas largas y caidas, tela texturizada ultra tierna para bebes.'
-  },
-  {
-    id: 'pl10',
-    name: 'Peluche Almohada de Zanahoria Kawaii',
-    category: 'peluches',
-    retailPrice: 170,
-    wholesalePrice: 100,
-    boxPrice: 75,
-    pcsPerBox: 12,
-    image: 'https://lh3.googleusercontent.com/pw/AP1GczMxiY6IhSchtE8O2sWpBbPdIksDIEgJTOPCwfMGtO8FPC8s4Y7qAKU7axk_l6977JeX-zPUVjSjaiLClWlPz1QGGLYEqAwyhmM_a8lP4sy1Re8lx7Y',
-    tag: 'Novedad',
-    desc: 'Almohada con diseno de zanahoria gigante feliz, ideal para recostarse o decorar la cama.'
-  },
-  {
-    id: 'pl11',
-    name: 'Peluche de Osito con Corazon (35cm)',
-    category: 'peluches',
-    retailPrice: 150,
-    wholesalePrice: 90,
-    boxPrice: 68,
-    pcsPerBox: 16,
-    image: 'https://lh3.googleusercontent.com/pw/AP1GczNlmoUEiRKdxsigx_u9o1bQdtOxtNPGXwpdGJq-G6UxPZJ_nxCBXOZBnoYe-OVr6u1a6WpUd0FDc-IWYSoVbXIoB_rGIJB-OMdoPIEI5Yo9W9RmhJM',
-    tag: 'Regalo',
-    desc: 'Clasico osito de peluche cargando un corazon bordado con la frase "Te Quiero".'
-  },
-  {
-    id: 'pl12',
-    name: 'Peluche de Ajolote Mexicano',
-    category: 'peluches',
-    retailPrice: 120,
-    wholesalePrice: 68,
-    boxPrice: 50,
-    pcsPerBox: 20,
-    image: 'https://lh3.googleusercontent.com/pw/AP1GczOvGs3Z0nlPe4Q3xFH3S_YeyYlnfprq1dfpGdm3-Zva9qqWf1EH3PSS2GpKQJGek0eJtpaZZKU6qYR3yvo-YUAYniOyUmhBRIy2rEjvHvRdqxWsRmI',
-    tag: 'Nacional',
-    desc: 'Peluche de ajolote kawaii con branquias de felpa suave y colores vibrantes rosados.'
-  }
-];
+// Default Product Database is loaded from js/products_data.js
 
 // Album links mapping
 const PHOTO_ALBUMS = {
@@ -611,6 +26,8 @@ function getActiveProducts() {
 let cart = [];
 let activeCategory = 'bolsas-carteras';
 let searchQuery = '';
+let displayLimit = 40;
+let searchDebounceTimer = null;
 
 // DOM Elements
 const productGrid = document.getElementById('product-grid');
@@ -815,14 +232,25 @@ function renderTabs() {
 
   if (!tabsContainer) return;
 
+  // Count products per category
+  const allProducts = getActiveProducts();
+  const countByCategory = {};
+  allProducts.forEach(p => {
+    countByCategory[p.category] = (countByCategory[p.category] || 0) + 1;
+  });
+
   tabsContainer.innerHTML = '';
   Object.keys(categoriesMap).forEach(key => {
+    const count = countByCategory[key] || 0;
     const button = document.createElement('button');
     button.className = `tab-btn ${key === activeCategory ? 'active' : ''}`;
-    button.textContent = categoriesMap[key];
     button.setAttribute('data-category', key);
+    button.innerHTML = `${categoriesMap[key]} <span style="font-size:0.75rem; opacity:0.75; font-weight:500;">(${count})</span>`;
     button.addEventListener('click', () => {
       activeCategory = key;
+      displayLimit = 40; // Reset display limit on tab change
+      searchQuery = '';
+      if (searchInput) searchInput.value = '';
       document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
       button.classList.add('active');
       
@@ -853,8 +281,13 @@ function renderCatalog() {
   const activeProducts = getActiveProducts();
   const filteredProducts = activeProducts.filter(prod => {
     const matchesCategory = prod.category === activeCategory;
-    const matchesSearch = prod.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
-                          prod.desc.toLowerCase().includes(searchQuery.toLowerCase());
+    const query = searchQuery.toLowerCase().trim();
+    const matchesSearch = !query ? true : (
+      prod.name.toLowerCase().includes(query) ||
+      (prod.desc && prod.desc.toLowerCase().includes(query)) ||
+      prod.id.toLowerCase().includes(query) ||
+      (prod.barcode && prod.barcode.toLowerCase().includes(query))
+    );
     return matchesCategory && matchesSearch;
   });
 
@@ -868,18 +301,64 @@ function renderCatalog() {
     return;
   }
 
-  filteredProducts.forEach(product => {
+  // Slice based on pagination limit
+  const displayedProducts = filteredProducts.slice(0, displayLimit);
+
+  displayedProducts.forEach(product => {
     // Check if item is already in cart to display existing quantity
     const cartItem = cart.find(item => item.id === product.id);
     const initialQty = cartItem ? cartItem.qty : 1;
 
+    // Stock Badge & logic
+    const stockVal = typeof product.stock !== 'undefined' ? Number(product.stock) : 999;
+    let stockBadge = '';
+    let isOutOfStock = false;
+    let maxQtyAttr = '';
+    
+    if (stockVal <= 0) {
+      stockBadge = `<span class="badge-tag" style="background: #ef4444; color: white; right: auto; left: 12px; font-weight:700;"><i class="fas fa-exclamation-triangle"></i> Agotado</span>`;
+      isOutOfStock = true;
+    } else if (stockVal < 10) {
+      stockBadge = `<span class="badge-tag" style="background: #f59e0b; color: white; right: auto; left: 12px; font-weight:700;"><i class="fas fa-hourglass-half"></i> Últimas ${stockVal} pzs</span>`;
+      maxQtyAttr = `max="${stockVal}"`;
+    } else {
+      stockBadge = `<span class="badge-tag" style="background: #10b981; color: white; right: auto; left: 12px; font-weight:700;"><i class="fas fa-check-circle"></i> ${stockVal} disp.</span>`;
+      maxQtyAttr = `max="${stockVal}"`;
+    }
+
     const card = document.createElement('div');
     card.className = 'product-card';
+    
+    const qtyControlHtml = isOutOfStock ? `
+      <div class="quantity-control disabled" style="width: 110px; opacity: 0.5; pointer-events: none;">
+        <button class="qty-btn minus">-</button>
+        <input type="number" class="qty-val" value="0" disabled style="width: 46px;">
+        <button class="qty-btn plus">+</button>
+      </div>
+    ` : `
+      <div class="quantity-control" style="width: 110px;">
+        <button class="qty-btn minus" data-id="${product.id}">-</button>
+        <input type="number" class="qty-val" id="qty-input-${product.id}" value="${initialQty}" ${maxQtyAttr} style="width: 46px; -moz-appearance: textfield;">
+        <button class="qty-btn plus" data-id="${product.id}">+</button>
+      </div>
+    `;
+
+    const actionBtnHtml = isOutOfStock ? `
+      <button class="btn-add-card" disabled style="font-size: 0.95rem; background: #64748b; cursor: not-allowed; box-shadow: none;">
+        <i class="fas fa-times-circle"></i> Sin existencias
+      </button>
+    ` : `
+      <button class="btn-add-card add-to-cart-btn" data-id="${product.id}" style="font-size: 0.95rem;">
+        <i class="fas fa-shopping-cart"></i> Agregar Piezas
+      </button>
+    `;
+
     card.innerHTML = `
       <div class="product-img-wrapper">
         <img class="product-img" src="${product.image}" alt="${product.name}" loading="lazy">
         <span class="badge-tag">${product.tag || 'Contenedor'}</span>
         <span class="badge-tag tag-import">Importación</span>
+        ${stockBadge}
       </div>
       <div class="product-info">
         <h3>${product.name}</h3>
@@ -907,19 +386,36 @@ function renderCatalog() {
         </div>
 
         <div class="product-actions">
-          <div class="quantity-control" style="width: 110px;">
-            <button class="qty-btn minus" data-id="${product.id}">-</button>
-            <input type="number" class="qty-val" id="qty-input-${product.id}" value="${initialQty}" style="width: 46px; -moz-appearance: textfield;">
-            <button class="qty-btn plus" data-id="${product.id}">+</button>
-          </div>
-          <button class="btn-add-card add-to-cart-btn" data-id="${product.id}" style="font-size: 0.95rem;">
-            <i class="fas fa-shopping-cart"></i> Agregar Piezas
-          </button>
+          ${qtyControlHtml}
+          ${actionBtnHtml}
         </div>
       </div>
     `;
     productGrid.appendChild(card);
   });
+
+  // Load More Button
+  if (filteredProducts.length > displayLimit) {
+    const loadMoreContainer = document.createElement('div');
+    loadMoreContainer.style.gridColumn = '1 / -1';
+    loadMoreContainer.style.textAlign = 'center';
+    loadMoreContainer.style.padding = '20px 0 40px';
+    
+    const remaining = filteredProducts.length - displayLimit;
+    const loadMoreBtn = document.createElement('button');
+    loadMoreBtn.className = 'btn-primary';
+    loadMoreBtn.style.padding = '12px 30px';
+    loadMoreBtn.style.fontSize = '1rem';
+    loadMoreBtn.innerHTML = `<i class="fas fa-plus-circle"></i> Cargar más (${remaining} productos restantes)`;
+    
+    loadMoreBtn.addEventListener('click', () => {
+      displayLimit += 40;
+      renderCatalog();
+    });
+    
+    loadMoreContainer.appendChild(loadMoreBtn);
+    productGrid.appendChild(loadMoreContainer);
+  }
 
   setupCardControls();
 }
@@ -933,9 +429,16 @@ function setupCardControls() {
     btn.addEventListener('click', (e) => {
       const id = btn.getAttribute('data-id');
       const input = document.getElementById(`qty-input-${id}`);
+      const activeProducts = getActiveProducts();
+      const product = activeProducts.find(p => String(p.id).trim() === String(id).trim());
+      const stockLimit = product && typeof product.stock !== 'undefined' ? Number(product.stock) : 999;
       if (input) {
         let val = parseInt(input.value) || 0;
-        input.value = val + 1;
+        if (val < stockLimit) {
+          input.value = val + 1;
+        } else {
+          alert(`Límite alcanzado: solo hay ${stockLimit} piezas disponibles de este producto.`);
+        }
       }
     });
   });
@@ -957,8 +460,16 @@ function setupCardControls() {
   // Direct quantity input change
   productGrid.querySelectorAll('.qty-val').forEach(input => {
     input.addEventListener('change', () => {
+      const id = input.id.replace('qty-input-', '');
+      const activeProducts = getActiveProducts();
+      const product = activeProducts.find(p => String(p.id).trim() === String(id).trim());
+      const stockLimit = product && typeof product.stock !== 'undefined' ? Number(product.stock) : 999;
       let val = parseInt(input.value) || 1;
       if (val < 1) val = 1;
+      if (val > stockLimit) {
+        alert(`Cantidad limitada a las existencias disponibles: ${stockLimit} pzs.`);
+        val = stockLimit;
+      }
       input.value = val;
     });
   });
@@ -1122,7 +633,7 @@ function renderCart() {
       <div class="cart-item-qty">
         <div class="quantity-control">
           <button class="qty-btn cart-qty-minus" data-id="${item.id}">-</button>
-          <input type="text" class="qty-val" value="${qty}" readonly>
+          <input type="number" class="qty-val cart-qty-input" data-id="${item.id}" value="${qty}" min="1" style="-moz-appearance: textfield;">
           <button class="qty-btn cart-qty-plus" data-id="${item.id}">+</button>
         </div>
         <button class="btn-remove-item" data-id="${item.id}" title="Eliminar del cotizador">
@@ -1144,13 +655,24 @@ function renderCart() {
 
 // Bind Events inside Cart Drawer (Using loose ID matching for event handlers)
 function setupCartEvents() {
-  // Cart Plus
+  const activeProducts = getActiveProducts();
+
+  // Cart Plus - with stock enforcement
   document.querySelectorAll('.cart-qty-plus').forEach(btn => {
     btn.addEventListener('click', () => {
       const id = btn.getAttribute('data-id');
       const item = cart.find(i => String(i.id).trim() === String(id).trim());
       if (item) {
-        updateCartQty(id, item.qty + 1);
+        const product = activeProducts.find(p => String(p.id).trim() === String(id).trim());
+        const stockLimit = product && typeof product.stock !== 'undefined' ? Number(product.stock) : 999;
+        if (item.qty < stockLimit) {
+          updateCartQty(id, item.qty + 1);
+        } else {
+          // Flash the button red briefly
+          btn.style.background = '#ef4444';
+          btn.style.color = 'white';
+          setTimeout(() => { btn.style.background = ''; btn.style.color = ''; }, 800);
+        }
       }
     });
   });
@@ -1163,6 +685,22 @@ function setupCartEvents() {
       if (item) {
         updateCartQty(id, item.qty - 1);
       }
+    });
+  });
+
+  // Cart direct input change
+  document.querySelectorAll('.cart-qty-input').forEach(input => {
+    input.addEventListener('change', () => {
+      const id = input.getAttribute('data-id');
+      const product = activeProducts.find(p => String(p.id).trim() === String(id).trim());
+      const stockLimit = product && typeof product.stock !== 'undefined' ? Number(product.stock) : 999;
+      let val = parseInt(input.value) || 1;
+      if (val < 1) val = 1;
+      if (val > stockLimit) {
+        val = stockLimit;
+        input.value = val;
+      }
+      updateCartQty(id, val);
     });
   });
 
@@ -1216,11 +754,15 @@ function setupEventListeners() {
     });
   });
 
-  // Search Input Handler
+  // Search Input Handler (debounced 250ms for performance with 2009 products)
   if (searchInput) {
     searchInput.addEventListener('input', (e) => {
-      searchQuery = e.target.value;
-      renderCatalog();
+      clearTimeout(searchDebounceTimer);
+      searchDebounceTimer = setTimeout(() => {
+        searchQuery = e.target.value;
+        displayLimit = 40; // Reset pagination on new search
+        renderCatalog();
+      }, 250);
     });
   }
 
