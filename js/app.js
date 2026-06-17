@@ -1236,8 +1236,8 @@ function sendWhatsAppQuote(e) {
     message += `*Nota:* Pedido enviado desde el cotizador web. Quedo en espera de confirmar disponibilidad física del contenedor y costos de envío.`;
   }
 
-  // WhatsApp Destination Number: 5613137613
-  const whatsappNumber = '5215613137613';
+  // WhatsApp Destination Number: 5533745087
+  const whatsappNumber = '525533745087';
   const encodedText = encodeURIComponent(message);
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedText}`;
 
