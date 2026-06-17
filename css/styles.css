@@ -204,6 +204,15 @@ body.dark-mode-active .btn-icon:hover {
   background: rgba(255, 255, 255, 0.08);
 }
 
+#lang-toggle.btn-icon {
+  width: auto;
+  padding: 0 14px;
+  border-radius: 22px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
 .btn-icon .badge {
   position: absolute;
   top: -2px;
@@ -1599,6 +1608,15 @@ footer {
   .menu-toggle {
     display: block;
     z-index: 1001;
+  }
+  
+  #lang-toggle.btn-icon {
+    padding: 0 8px;
+    gap: 4px;
+  }
+  #lang-toggle .lang-text-label,
+  #lang-toggle .lang-sep {
+    display: none;
   }
   
   .nav-menu {

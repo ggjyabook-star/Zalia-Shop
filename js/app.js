@@ -216,7 +216,9 @@ function updateLanguage(lang) {
   // 3. Update the toggle button flag
   const langFlagLabel = document.getElementById('lang-flag-label');
   if (langFlagLabel) {
-    langFlagLabel.textContent = (lang === 'es') ? '🇨🇳' : '🇲🇽';
+    langFlagLabel.innerHTML = (lang === 'es') 
+      ? '<span class="lang-text-label">ES</span><span class="lang-sep" style="opacity:0.4; font-weight:300;">|</span><span>🇨🇳</span>' 
+      : '<span class="lang-text-label">ZH</span><span class="lang-sep" style="opacity:0.4; font-weight:300;">|</span><span>🇲🇽</span>';
   }
 
   // 4. Re-render dynamic elements
