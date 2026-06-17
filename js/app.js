@@ -563,15 +563,15 @@ function renderCatalog() {
     
     if (stockVal <= 0) {
       const txtAgotado = currentLanguage === 'zh' ? '已售罄' : 'Agotado';
-      stockBadge = `<span class="badge-tag" style="background: #ef4444; color: white; right: auto; left: 12px; font-weight:700;"><i class="fas fa-exclamation-triangle"></i> ${txtAgotado}</span>`;
+      stockBadge = `<span class="badge-tag" style="background: #ef4444; color: white; top: auto; bottom: 12px; left: 12px; right: auto; font-weight:700;"><i class="fas fa-exclamation-triangle"></i> ${txtAgotado}</span>`;
       isOutOfStock = true;
     } else if (stockVal < 10) {
       const txtUltimas = currentLanguage === 'zh' ? `仅剩 ${stockVal} 件` : `Últimas ${stockVal} pzs`;
-      stockBadge = `<span class="badge-tag" style="background: #f59e0b; color: white; right: auto; left: 12px; font-weight:700;"><i class="fas fa-hourglass-half"></i> ${txtUltimas}</span>`;
+      stockBadge = `<span class="badge-tag" style="background: #f59e0b; color: white; top: auto; bottom: 12px; left: 12px; right: auto; font-weight:700;"><i class="fas fa-hourglass-half"></i> ${txtUltimas}</span>`;
       maxQtyAttr = `max="${stockVal}"`;
     } else {
       const txtDisp = currentLanguage === 'zh' ? `${stockVal} 可用` : `${stockVal} disp.`;
-      stockBadge = `<span class="badge-tag" style="background: #10b981; color: white; right: auto; left: 12px; font-weight:700;"><i class="fas fa-check-circle"></i> ${txtDisp}</span>`;
+      stockBadge = `<span class="badge-tag" style="background: #10b981; color: white; top: auto; bottom: 12px; left: 12px; right: auto; font-weight:700;"><i class="fas fa-check-circle"></i> ${txtDisp}</span>`;
       maxQtyAttr = `max="${stockVal}"`;
     }
 
