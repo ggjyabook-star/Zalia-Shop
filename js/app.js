@@ -8,6 +8,223 @@ const PHOTO_ALBUMS = {
   'accesorios-mas': 'https://photos.app.goo.gl/hLSqQwHKLHsUMKwd9'
 };
 
+// Language i18n configurations
+let currentLanguage = 'es';
+
+const CATEGORY_TRANSLATIONS = {
+  es: {
+    'bolsas-carteras': 'Bolsas y Carteras',
+    'mochilas': 'Mochilas',
+    'peluches': 'Peluches',
+    'accesorios-mas': 'Accesorios y Más'
+  },
+  zh: {
+    'bolsas-carteras': '包袋与钱包',
+    'mochilas': '双肩包',
+    'peluches': '毛绒玩偶',
+    'accesorios-mas': '配饰及其他'
+  }
+};
+
+const TRANSLATIONS = {
+  es: {
+    "top-banner": "🚀 ¡NUEVA MERCANCÍA DIRECTA DE CONTENEDOR! ENVIAMOS A TODO MÉXICO DESDE CDMX 📦",
+    "nav-home": "Inicio",
+    "nav-catalog": "Catálogo",
+    "nav-how-to-buy": "¿Cómo Comprar?",
+    "nav-about": "Nosotros",
+    "nav-location": "Ubicación",
+    "slide1-badge": "<i class=\"fas fa-ship\"></i> Importación Directa",
+    "slide1-title": "Contenedores Completos <br><span class=\"gradient-text\">Al Mejor Precio</span>",
+    "slide1-desc": "Precios directos de fábrica en bolsas de mano, carteras, mochilas y peluches. Surtimos a mayoristas y minoristas en todo México.",
+    "btn-view-catalog": "<i class=\"fas fa-store\"></i> Ver Catálogo",
+    "btn-physical-store": "<i class=\"fas fa-map-marker-alt\"></i> Tienda Física",
+    "slide2-badge": "<i class=\"fab fa-tiktok\"></i> @zalia.shop",
+    "slide2-title": "Desempaques en Vivo <br><span class=\"gradient-text\">Y Novedades Diarias</span>",
+    "slide2-desc": "Mira la mercancía llegando directo de aduana. Síguenos y no te pierdas ningún directo de contenedor.",
+    "btn-follow-tiktok": "<i class=\"fab fa-tiktok\"></i> Seguir en TikTok",
+    "slide3-badge": "<i class=\"fas fa-boxes\"></i> Tres Niveles de Precios",
+    "slide3-title": "Compra por Pieza, <br><span class=\"gradient-text\">Mayoreo o Caja</span>",
+    "slide3-desc": "Precios especiales para emprendedores. Mayoreo a partir de 3 piezas mixtas. Ahorros de hasta 50% por caja cerrada.",
+    "btn-how-to-buy-cta": "<i class=\"fas fa-question-circle\"></i> ¿Cómo Comprar?",
+    "mini-bags": "Bolsas",
+    "mini-backpacks": "Mochilas",
+    "mini-plushies": "Peluches",
+    "catalog-title": "Catálogo de Ofertas y Novedades",
+    "catalog-desc": "Surtido directo. Utiliza las pestañas para explorar nuestras categorías destacadas y cotizar.",
+    "search-placeholder": "Buscar bolsas, mochilas, peluches...",
+    "how-title": "¿Cómo solicitar tu cotización?",
+    "how-desc": "Hemos diseñado un proceso rápido y digitalizado para que puedas cotizar y asegurar tu mercancía en minutos.",
+    "step1-title": "Selecciona tus Productos",
+    "step1-desc": "Navega en nuestro catálogo, define tus cantidades de prueba y agrégalos a tu cotización digital.",
+    "step2-title": "Revisa tu Lista",
+    "step2-desc": "Abre el carrito, ingresa tu nombre y la ciudad a la que requiere que se envíe o si retiras en tienda física.",
+    "step3-title": "Envía por WhatsApp",
+    "step3-desc": "Haz clic en enviar y un asesor de ventas recibirá tu orden para verificar existencias y concretar tu pago.",
+    "why-choose-title": "¿Por qué elegir Zalia Shop?",
+    "why-choose-desc": "Somos distribuidores clave en el Centro Histórico de la CDMX con un modelo de negocio enfocado en tu crecimiento comercial.",
+    "prop1-title": "Precios de Contenedor",
+    "prop1-desc": "Importamos volúmenes masivos directamente sin intermediarios, lo que nos permite ofrecer el costo más competitivo del mercado nacional.",
+    "prop2-title": "Mayoreo y Menudeo",
+    "prop2-desc": "Accede a precios de mayoreo súper accesibles a partir de tan solo 3 piezas de la tienda, facilitando que inicies o surtas tu negocio.",
+    "prop3-title": "Envíos Rápidos a México",
+    "prop3-desc": "Despachamos tu pedido directo a tu domicilio en cualquier estado de la República por medio de paqueterías seguras y económicas.",
+    "contact-title": "Nuestra Sucursal y Contacto",
+    "contact-desc": "Visítanos directamente en la zona de mayor comercio de importación en la Ciudad de México.",
+    "addr-title": "Dirección Tienda Física",
+    "addr-desc": "República de Honduras 63, Centro Histórico de la Cdad. de México, Centro, Cuauhtémoc, 06020 Ciudad de México, CDMX",
+    "btn-open-maps": "Abrir en Google Maps <i class=\"fas fa-external-link-alt\"></i>",
+    "wa-title": "Ventas y Cotizaciones WhatsApp",
+    "wa-desc": "Soporte de atención directa y aclaraciones de pedidos:",
+    "hours-title": "Horarios de Atención",
+    "hours-week": "Lunes a Sábado: 9:00 AM - 6:00 PM",
+    "hours-sun": "Domingos: Cerrado",
+    "info-title": "Información Importante",
+    "info-desc": "Precios especiales a mayoristas por bulto cerrado y caja de importación completa. Pregunta a tu asesor.",
+    "cart-title-label": "Mi Cotización",
+    "cart-subtotal-label": "Subtotal Regular:",
+    "cart-savings-label": "Descuento Mayoreo:",
+    "cart-total-label": "Total Estimado:",
+    "label-name": "Nombre Completo",
+    "placeholder-name": "Ej. Juan Pérez",
+    "label-city": "Ciudad de Envío / Destino",
+    "placeholder-city": "Ej. Guadalajara, Jal.",
+    "label-delivery": "Método de Entrega",
+    "delivery-home": "Envío a domicilio",
+    "delivery-store": "Recoger en Tienda",
+    "label-client-type": "Tipo de Cliente",
+    "client-wholesale": "Mayorista (Negocio)",
+    "client-retail": "Minorista (Uso Personal)",
+    "btn-whatsapp-submit": "<i class=\"fab fa-whatsapp\"></i> Solicitar Cotización",
+    "footer-desc": "Importadores directos desde fábrica a tu local. Llantas, bolsas, mochilas, peluches y novedades con el mejor precio y la mejor atención de CDMX.",
+    "footer-nav": "Navegación",
+    "footer-contact": "Contacto",
+    "footer-copy": "&copy; 2026 Zalia Shop. Todos los derechos reservados. Importaciones directas de contenedor.",
+    "footer-admin": "<i class=\"fas fa-user-shield\"></i> Panel para Administradores"
+  },
+  zh: {
+    "top-banner": "🚀 货柜直接进口全新货源！从墨西哥城发往墨西哥全国 📦",
+    "nav-home": "首页",
+    "nav-catalog": "商品目录",
+    "nav-how-to-buy": "如何购买？",
+    "nav-about": "关于我们",
+    "nav-location": "分店地址",
+    "slide1-badge": "<i class=\"fas fa-ship\"></i> 厂家直销",
+    "slide1-title": "整箱货源 <br><span class=\"gradient-text\">价格最优</span>",
+    "slide1-desc": "包袋、钱包、双肩包和毛绒玩偶的工厂直销价格。为墨西哥全国的批发商和零售商供货。",
+    "btn-view-catalog": "<i class=\"fas fa-store\"></i> 查看目录",
+    "btn-physical-store": "<i class=\"fas fa-map-marker-alt\"></i> 实体店",
+    "slide2-badge": "<i class=\"fab fa-tiktok\"></i> @zalia.shop",
+    "slide2-title": "现场拆箱 <br><span class=\"gradient-text\">及每日新品</span>",
+    "slide2-desc": "查看直接从海关运达的商品。关注我们，不要错过任何货柜拆箱直播。",
+    "btn-follow-tiktok": "<i class=\"fab fa-tiktok\"></i> 关注 TikTok",
+    "slide3-badge": "<i class=\"fas fa-boxes\"></i> 三种价格档次",
+    "slide3-title": "零售单件、 <br><span class=\"gradient-text\">混批或整箱</span>",
+    "slide3-desc": "为创业者提供特别价格。3件混批即可享受批发价。整箱购买可节省高达50%。",
+    "btn-how-to-buy-cta": "<i class=\"fas fa-question-circle\"></i> 如何购买？",
+    "mini-bags": "包袋",
+    "mini-backpacks": "双肩包",
+    "mini-plushies": "毛绒玩偶",
+    "catalog-title": "促销与新品目录",
+    "catalog-desc": "厂家一手货源。使用标签页浏览我们推荐的品类并进行询价。",
+    "search-placeholder": "搜索包袋、双肩包、毛绒玩偶...",
+    "how-title": "如何申请您的报价？",
+    "how-desc": "我们设计了快速且数字化的流程，让您可以在几分钟内完成询价并锁定商品。",
+    "step1-title": "选择商品",
+    "step1-desc": "浏览我们的目录，确定您的测试数量并将其添加到数字询价单中。",
+    "step2-title": "核对清单",
+    "step2-desc": "打开购物车，输入您的姓名和寄送目的地城市，或者选择是否在实体店自提。",
+    "step3-title": "通过 WhatsApp 发送",
+    "step3-desc": "点击发送，销售顾问将收到您的订单，以核对实际库存并完成付款。",
+    "why-choose-title": "为什么选择 Zalia Shop？",
+    "why-choose-desc": "我们是墨西哥城历史中心的关键分销商，我们的商业模式专注于您的业务增长。",
+    "prop1-title": "整箱优惠价",
+    "prop1-desc": "我们直接大量进口，无任何中间商，这使我们能够提供墨西哥国内市场上最具竞争力的价格。",
+    "prop2-title": "批发与零售",
+    "prop2-desc": "只需购买 3 件商品即可享受超级实惠的混批批发价，让您轻松创业或进货。",
+    "prop3-title": "墨西哥全国快速发货",
+    "prop3-desc": "我们通过安全且经济的快递公司，将您的订单直接发往墨西哥任何州的目的地。",
+    "contact-title": "我们的分店与联系方式",
+    "contact-desc": "欢迎直接来墨西哥城最核心的进口贸易区拜访我们。",
+    "addr-title": "实体店地址",
+    "addr-desc": "República de Honduras 63, Centro Histórico de la Cdad. de México, Centro, Cuauhtémoc, 06020 Ciudad de México, CDMX (墨西哥城中心历史区)",
+    "btn-open-maps": "在谷歌地图中打开 <i class=\"fas fa-external-link-alt\"></i>",
+    "wa-title": "WhatsApp 销售与询价",
+    "wa-desc": "直接服务支持和订单核对：",
+    "hours-title": "营业时间",
+    "hours-week": "周一至周六：上午 9:00 - 下午 6:00",
+    "hours-sun": "周日：休息",
+    "info-title": "重要信息",
+    "info-desc": "批发商整包及整箱进口特价。详情请咨询您的专属销售顾问。",
+    "cart-title-label": "我的询价单",
+    "cart-subtotal-label": "常规小计:",
+    "cart-savings-label": "大宗折扣:",
+    "cart-total-label": "预估总计:",
+    "label-name": "姓名全称",
+    "placeholder-name": "例如：张伟",
+    "label-city": "发货目的地城市",
+    "placeholder-city": "例如：瓜达拉哈拉",
+    "label-delivery": "配送方式",
+    "delivery-home": "快递送货上门",
+    "delivery-store": "实体店自提",
+    "label-client-type": "客户类型",
+    "client-wholesale": "批发商 (商家)",
+    "client-retail": "零售商 (个人用途)",
+    "btn-whatsapp-submit": "<i class=\"fab fa-whatsapp\"></i> 发送询价单",
+    "footer-desc": "厂家直接进口至您的店面。CDMX 价格最优、服务最好的轮胎、包袋、双肩包、毛绒玩偶及新奇产品进口商。",
+    "footer-nav": "导航",
+    "footer-contact": "联系方式",
+    "footer-copy": "&copy; 2026 Zalia Shop。保留所有权利。货柜整箱直接进口。",
+    "footer-admin": "<i class=\"fas fa-user-shield\"></i> 管理员面板"
+  }
+};
+
+function getTranslatedDesc(desc, lang) {
+  if (lang === 'zh') {
+    return desc
+      .replace(/Modelo:/g, '型号:')
+      .replace(/Código de barras:/g, '条形码:');
+  }
+  return desc;
+}
+
+function updateLanguage(lang) {
+  currentLanguage = lang;
+  localStorage.setItem('zalia_lang', lang);
+
+  // Update HTML language attribute
+  document.documentElement.lang = lang;
+
+  // 1. Update elements with data-i18n
+  const elements = document.querySelectorAll('[data-i18n]');
+  elements.forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (TRANSLATIONS[lang] && TRANSLATIONS[lang][key]) {
+      el.innerHTML = TRANSLATIONS[lang][key];
+    }
+  });
+
+  // 2. Update elements with data-i18n-placeholder
+  const inputs = document.querySelectorAll('[data-i18n-placeholder]');
+  inputs.forEach(input => {
+    const key = input.getAttribute('data-i18n-placeholder');
+    if (TRANSLATIONS[lang] && TRANSLATIONS[lang][key]) {
+      input.placeholder = TRANSLATIONS[lang][key];
+    }
+  });
+
+  // 3. Update the toggle button flag
+  const langFlagLabel = document.getElementById('lang-flag-label');
+  if (langFlagLabel) {
+    langFlagLabel.textContent = (lang === 'es') ? '🇨🇳' : '🇲🇽';
+  }
+
+  // 4. Re-render dynamic elements
+  renderTabs();
+  renderCatalog();
+  renderCart();
+}
+
 // Retrieve active products list (loads custom upload if stored in localStorage)
 function getActiveProducts() {
   const custom = localStorage.getItem('zalia_custom_products');
@@ -194,12 +411,12 @@ function initHeroSlider() {
 
 // Initialize Website
 function init() {
-  renderTabs();
-  renderCatalog();
+  currentLanguage = localStorage.getItem('zalia_lang') || 'es';
   setupEventListeners();
   loadCartFromStorage();
   checkDarkModePref();
   initHeroSlider();
+  updateLanguage(currentLanguage);
 }
 
 // Check Dark Mode Preference
@@ -223,12 +440,7 @@ function updateThemeIcon(isDark) {
 
 // Render Tabs Control
 function renderTabs() {
-  const categoriesMap = {
-    'bolsas-carteras': 'Bolsas y Carteras',
-    'mochilas': 'Mochilas',
-    'peluches': 'Peluches',
-    'accesorios-mas': 'Accesorios y Más'
-  };
+  const categoriesMap = CATEGORY_TRANSLATIONS[currentLanguage] || CATEGORY_TRANSLATIONS['es'];
 
   if (!tabsContainer) return;
 
@@ -292,10 +504,13 @@ function renderCatalog() {
   });
 
   if (filteredProducts.length === 0) {
+    const txtNoProducts = currentLanguage === 'zh' 
+      ? '该分类下未找到商品。' 
+      : 'No se encontraron productos en esta categoría.';
     productGrid.innerHTML = `
       <div style="grid-column: 1/-1; text-align: center; padding: 40px; color: var(--text-muted);">
         <i class="fas fa-box-open" style="font-size: 3rem; margin-bottom: 16px;"></i>
-        <p>No se encontraron productos en esta categoría.</p>
+        <p>${txtNoProducts}</p>
       </div>
     `;
     return;
@@ -316,13 +531,16 @@ function renderCatalog() {
     let maxQtyAttr = '';
     
     if (stockVal <= 0) {
-      stockBadge = `<span class="badge-tag" style="background: #ef4444; color: white; right: auto; left: 12px; font-weight:700;"><i class="fas fa-exclamation-triangle"></i> Agotado</span>`;
+      const txtAgotado = currentLanguage === 'zh' ? '已售罄' : 'Agotado';
+      stockBadge = `<span class="badge-tag" style="background: #ef4444; color: white; right: auto; left: 12px; font-weight:700;"><i class="fas fa-exclamation-triangle"></i> ${txtAgotado}</span>`;
       isOutOfStock = true;
     } else if (stockVal < 10) {
-      stockBadge = `<span class="badge-tag" style="background: #f59e0b; color: white; right: auto; left: 12px; font-weight:700;"><i class="fas fa-hourglass-half"></i> Últimas ${stockVal} pzs</span>`;
+      const txtUltimas = currentLanguage === 'zh' ? `仅剩 ${stockVal} 件` : `Últimas ${stockVal} pzs`;
+      stockBadge = `<span class="badge-tag" style="background: #f59e0b; color: white; right: auto; left: 12px; font-weight:700;"><i class="fas fa-hourglass-half"></i> ${txtUltimas}</span>`;
       maxQtyAttr = `max="${stockVal}"`;
     } else {
-      stockBadge = `<span class="badge-tag" style="background: #10b981; color: white; right: auto; left: 12px; font-weight:700;"><i class="fas fa-check-circle"></i> ${stockVal} disp.</span>`;
+      const txtDisp = currentLanguage === 'zh' ? `${stockVal} 可用` : `${stockVal} disp.`;
+      stockBadge = `<span class="badge-tag" style="background: #10b981; color: white; right: auto; left: 12px; font-weight:700;"><i class="fas fa-check-circle"></i> ${txtDisp}</span>`;
       maxQtyAttr = `max="${stockVal}"`;
     }
 
@@ -343,44 +561,63 @@ function renderCatalog() {
       </div>
     `;
 
+    const txtAction = isOutOfStock 
+      ? (currentLanguage === 'zh' ? '已售罄' : 'Sin existencias')
+      : (currentLanguage === 'zh' ? '添加商品' : 'Agregar Piezas');
+
     const actionBtnHtml = isOutOfStock ? `
       <button class="btn-add-card" disabled style="font-size: 0.95rem; background: #64748b; cursor: not-allowed; box-shadow: none;">
-        <i class="fas fa-times-circle"></i> Sin existencias
+        <i class="fas fa-times-circle"></i> ${txtAction}
       </button>
     ` : `
       <button class="btn-add-card add-to-cart-btn" data-id="${product.id}" style="font-size: 0.95rem;">
-        <i class="fas fa-shopping-cart"></i> Agregar Piezas
+        <i class="fas fa-shopping-cart"></i> ${txtAction}
       </button>
     `;
+
+    const txtCajaCon = currentLanguage === 'zh' 
+      ? `整箱包含: <strong>${product.pcsPerBox} 件</strong>` 
+      : `Caja cerrada con: <strong>${product.pcsPerBox} pzs</strong>`;
+
+    const txtPriceTier1 = currentLanguage === 'zh' ? '1-2 件' : '1-2 Pzs';
+    const txtPriceTier2 = currentLanguage === 'zh' ? '批发 (3+)' : 'Mayoreo (3+)';
+    const txtPriceTier3 = currentLanguage === 'zh' ? '箱价 (单件)' : 'Caja (pza)';
+    
+    const translatedTag = currentLanguage === 'zh' 
+      ? (product.tag === 'Importación' ? '进口' : '货柜') 
+      : (product.tag || 'Contenedor');
+    const translatedImportTag = currentLanguage === 'zh' ? '进口' : 'Importación';
+
+    const displayDesc = getTranslatedDesc(product.desc || '', currentLanguage);
 
     card.innerHTML = `
       <div class="product-img-wrapper">
         <img class="product-img" src="${product.image}" alt="${product.name}" loading="lazy">
-        <span class="badge-tag">${product.tag || 'Contenedor'}</span>
-        <span class="badge-tag tag-import">Importación</span>
+        <span class="badge-tag">${translatedTag}</span>
+        <span class="badge-tag tag-import">${translatedImportTag}</span>
         ${stockBadge}
       </div>
       <div class="product-info">
         <h3>${product.name}</h3>
         <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 12px; height: 40px; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">
-          ${product.desc || ''}
+          ${displayDesc}
         </p>
         
         <span class="pcs-box-badge">
-          <i class="fas fa-boxes"></i> Caja cerrada con: <strong>${product.pcsPerBox} pzs</strong>
+          <i class="fas fa-boxes"></i> ${txtCajaCon}
         </span>
 
         <div class="product-prices">
           <div class="price-box retail">
-            <span class="price-label">1-2 Pzs</span>
+            <span class="price-label">${txtPriceTier1}</span>
             <span class="price-value">$${product.retailPrice}</span>
           </div>
           <div class="price-box wholesale">
-            <span class="price-label">Mayoreo (3+)</span>
+            <span class="price-label">${txtPriceTier2}</span>
             <span class="price-value">$${product.wholesalePrice}</span>
           </div>
           <div class="price-box box-tier">
-            <span class="price-label">Caja (pza)</span>
+            <span class="price-label">${txtPriceTier3}</span>
             <span class="price-value">$${product.boxPrice}</span>
           </div>
         </div>
@@ -406,7 +643,11 @@ function renderCatalog() {
     loadMoreBtn.className = 'btn-primary';
     loadMoreBtn.style.padding = '12px 30px';
     loadMoreBtn.style.fontSize = '1rem';
-    loadMoreBtn.innerHTML = `<i class="fas fa-plus-circle"></i> Cargar más (${remaining} productos restantes)`;
+    
+    const txtCargarMas = currentLanguage === 'zh' 
+      ? `加载更多 (剩余 ${remaining} 个商品)` 
+      : `Cargar más (${remaining} productos restantes)`;
+    loadMoreBtn.innerHTML = `<i class="fas fa-plus-circle"></i> ${txtCargarMas}`;
     
     loadMoreBtn.addEventListener('click', () => {
       displayLimit += 40;
@@ -437,7 +678,10 @@ function setupCardControls() {
         if (val < stockLimit) {
           input.value = val + 1;
         } else {
-          alert(`Límite alcanzado: solo hay ${stockLimit} piezas disponibles de este producto.`);
+          const alertMsg = currentLanguage === 'zh'
+            ? `已达库存限制：该商品仅剩 ${stockLimit} 件可用。`
+            : `Límite alcanzado: solo hay ${stockLimit} piezas disponibles de este producto.`;
+          alert(alertMsg);
         }
       }
     });
@@ -467,7 +711,10 @@ function setupCardControls() {
       let val = parseInt(input.value) || 1;
       if (val < 1) val = 1;
       if (val > stockLimit) {
-        alert(`Cantidad limitada a las existencias disponibles: ${stockLimit} pzs.`);
+        const alertMsg = currentLanguage === 'zh'
+          ? `数量限制为可用库存：${stockLimit} 件。`
+          : `Cantidad limitada a las existencias disponibles: ${stockLimit} pzs.`;
+        alert(alertMsg);
         val = stockLimit;
       }
       input.value = val;
@@ -485,7 +732,7 @@ function setupCardControls() {
       
       // Visual Feedback
       const originalHtml = btn.innerHTML;
-      btn.innerHTML = '<i class="fas fa-check"></i> ¡Agregado!';
+      btn.innerHTML = currentLanguage === 'zh' ? '<i class="fas fa-check"></i> 已添加!' : '<i class="fas fa-check"></i> ¡Agregado!';
       btn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
       setTimeout(() => {
         btn.innerHTML = originalHtml;
@@ -559,10 +806,13 @@ function renderCart() {
   cartHeaderCount.textContent = totalPiecesInCart;
 
   if (cart.length === 0) {
+    const txtEmptyCart = currentLanguage === 'zh'
+      ? '您的询价商品将显示在这里。从目录中添加一些吧！'
+      : 'Tus productos cotizados aparecerán aquí. ¡Agrega algunos del catálogo!';
     cartItemsContainer.innerHTML = `
       <div class="cart-empty-msg">
         <i class="fas fa-shopping-basket" style="font-size: 3rem; color: var(--text-muted); margin-bottom: 16px; display:block;"></i>
-        Tus productos cotizados aparecerán aquí. ¡Agrega algunos del catálogo!
+        ${txtEmptyCart}
       </div>
     `;
     subtotalEl.textContent = '$0 MXN';
@@ -585,31 +835,39 @@ function renderCart() {
     if (qty >= pcsPerBox) {
       // Box price applied (Quantity of this item equals or exceeds one full box capacity)
       pricePerPiece = Number(item.boxPrice) || 0;
-      tierLabel = 'Precio Caja';
+      tierLabel = currentLanguage === 'zh' ? '箱价' : 'Precio Caja';
       
       const boxesCount = Math.floor(qty / pcsPerBox);
       const remainder = qty % pcsPerBox;
       if (remainder > 0) {
-        promptTip = `<small style="color:var(--secondary); display:block; margin-top:2px;">📦 Llevas ${boxesCount} caja(s) y ${remainder} pzs sueltas con precio caja</small>`;
+        promptTip = currentLanguage === 'zh'
+          ? `<small style="color:var(--secondary); display:block; margin-top:2px;">📦 您购买了 ${boxesCount} 箱和 ${remainder} 件散装（享受整箱单价）</small>`
+          : `<small style="color:var(--secondary); display:block; margin-top:2px;">📦 Llevas ${boxesCount} caja(s) y ${remainder} pzs sueltas con precio caja</small>`;
       } else {
-        promptTip = `<small style="color:var(--success); display:block; margin-top:2px;">📦 Llevas exactamente ${boxesCount} caja(s) cerrada(s)</small>`;
+        promptTip = currentLanguage === 'zh'
+          ? `<small style="color:var(--success); display:block; margin-top:2px;">📦 您购买了整整 ${boxesCount} 箱</small>`
+          : `<small style="color:var(--success); display:block; margin-top:2px;">📦 Llevas exactamente ${boxesCount} caja(s) cerrada(s)</small>`;
       }
     } else if (isWholesaleMixed) {
       // Wholesale price applied (Total pieces of all products in cart is 3 or more)
       pricePerPiece = Number(item.wholesalePrice) || 0;
-      tierLabel = 'Precio Mayoreo';
+      tierLabel = currentLanguage === 'zh' ? '批发价' : 'Precio Mayoreo';
       
       // Tip to unlock Box Price
       const diff = pcsPerBox - qty;
-      promptTip = `<small style="color:var(--text-muted); display:block; margin-top:2px;">💡 Agrega ${diff} pzs más para precio caja ($${item.boxPrice})</small>`;
+      promptTip = currentLanguage === 'zh'
+        ? `<small style="color:var(--text-muted); display:block; margin-top:2px;">💡 再添加 ${diff} 件即可解锁箱价 ($${item.boxPrice})</small>`
+        : `<small style="color:var(--text-muted); display:block; margin-top:2px;">💡 Agrega ${diff} pzs más para precio caja ($${item.boxPrice})</small>`;
     } else {
       // Retail price applied
       pricePerPiece = Number(item.retailPrice) || 0;
-      tierLabel = 'Precio Normal (Menudeo)';
+      tierLabel = currentLanguage === 'zh' ? '普通零售价' : 'Precio Normal (Menudeo)';
       
       // Tip to unlock Wholesale
       const diffWholesale = 3 - totalPiecesInCart;
-      promptTip = `<small style="color:var(--text-muted); display:block; margin-top:2px;">💡 Agrega ${diffWholesale} pza(s) más para precio mayoreo mixto ($${item.wholesalePrice})</small>`;
+      promptTip = currentLanguage === 'zh'
+        ? `<small style="color:var(--text-muted); display:block; margin-top:2px;">💡 再添加 ${diffWholesale} 件即可解锁混批批发价 ($${item.wholesalePrice})</small>`
+        : `<small style="color:var(--text-muted); display:block; margin-top:2px;">💡 Agrega ${diffWholesale} pza(s) más para precio mayoreo mixto ($${item.wholesalePrice})</small>`;
     }
 
     const itemCost = pricePerPiece * qty;
@@ -618,16 +876,22 @@ function renderCart() {
 
     const row = document.createElement('div');
     row.className = 'cart-item';
+    
+    const txtDesglose = currentLanguage === 'zh' ? '明细' : 'Desglose';
+    const txtTasa = currentLanguage === 'zh' ? '费率' : 'Tasa';
+    const txtSubtotal = currentLanguage === 'zh' ? '小计' : 'Subtotal';
+    const txtPzs = currentLanguage === 'zh' ? '件' : 'pzs';
+
     row.innerHTML = `
       <img class="cart-item-img" src="${item.image}" alt="${item.name}">
       <div class="cart-item-details">
         <div class="cart-item-title">${item.name}</div>
         <div class="cart-item-pricing" style="font-size:0.85rem; line-height: 1.4;">
-          Desglose: <strong>${qty} pzs</strong> x <span class="highlight">$${pricePerPiece} MXN</span>
+          ${txtDesglose}: <strong>${qty} ${txtPzs}</strong> x <span class="highlight">$${pricePerPiece} MXN</span>
           <br>
-          <span style="color:var(--primary); font-weight:600;">Tasa: ${tierLabel}</span>
+          <span style="color:var(--primary); font-weight:600;">${txtTasa}: ${tierLabel}</span>
           ${promptTip}
-          Subtotal: <strong class="cart-subtotal-item">$${itemCost} MXN</strong>
+          ${txtSubtotal}: <strong class="cart-subtotal-item">$${itemCost} MXN</strong>
         </div>
       </div>
       <div class="cart-item-qty">
@@ -636,7 +900,7 @@ function renderCart() {
           <input type="number" class="qty-val cart-qty-input" data-id="${item.id}" value="${qty}" min="1" style="-moz-appearance: textfield;">
           <button class="qty-btn cart-qty-plus" data-id="${item.id}">+</button>
         </div>
-        <button class="btn-remove-item" data-id="${item.id}" title="Eliminar del cotizador">
+        <button class="btn-remove-item" data-id="${item.id}" title="${currentLanguage === 'zh' ? '从询价单中删除' : 'Eliminar del cotizador'}">
           <i class="fas fa-trash-alt"></i>
         </button>
       </div>
@@ -733,6 +997,15 @@ function setupEventListeners() {
   if (closeCartBtn) closeCartBtn.addEventListener('click', () => toggleCart(false));
   if (cartBackdrop) cartBackdrop.addEventListener('click', () => toggleCart(false));
 
+  // Language Toggle Button Handler
+  const langToggleBtn = document.getElementById('lang-toggle');
+  if (langToggleBtn) {
+    langToggleBtn.addEventListener('click', () => {
+      const nextLang = (currentLanguage === 'es') ? 'zh' : 'es';
+      updateLanguage(nextLang);
+    });
+  }
+
   // Toggle Mobile Menu
   if (mobileMenuBtn) {
     mobileMenuBtn.addEventListener('click', () => {
@@ -797,7 +1070,10 @@ function sendWhatsAppQuote(e) {
   e.preventDefault();
   
   if (cart.length === 0) {
-    alert('Por favor agrega al menos un artículo a tu cotización.');
+    const alertMsg = currentLanguage === 'zh'
+      ? '请先添加至少一件商品到您的询价单。'
+      : 'Por favor agrega al menos un artículo a tu cotización.';
+    alert(alertMsg);
     return;
   }
 
@@ -810,7 +1086,10 @@ function sendWhatsAppQuote(e) {
   const deliveryVal = deliveryOption ? deliveryOption.value : 'envio'; // 'envio' or 'tienda'
 
   if (!name || !city) {
-    alert('Por favor completa todos los campos del formulario.');
+    const alertMsg = currentLanguage === 'zh'
+      ? '请填写表单中的所有必填项。'
+      : 'Por favor completa todos los campos del formulario.';
+    alert(alertMsg);
     return;
   }
 
@@ -819,14 +1098,26 @@ function sendWhatsAppQuote(e) {
   let totalCost = 0;
 
   // Header of WhatsApp Message
-  let message = `🛍️ *ZALIA SHOP - SOLICITUD DE PEDIDO*\n`;
-  message += `━━━━━━━━━━━━━━━━━━━━\n`;
-  message += `👤 *Cliente:* ${name}\n`;
-  message += `📍 *Ciudad/Origen:* ${city}\n`;
-  message += `🚚 *Método:* ${deliveryVal === 'envio' ? 'Envío a Domicilio (República)' : 'Recoger en Tienda Física'}\n`;
-  message += `🏷️ *Cliente:* ${clientType === 'wholesale' ? 'Negocio / Mayorista' : 'Minorista'}\n`;
-  message += `━━━━━━━━━━━━━━━━━━━━\n\n`;
-  message += `📦 *Detalle del Pedido:*\n`;
+  let message = '';
+  if (currentLanguage === 'zh') {
+    message = `🛍️ *ZALIA SHOP - 询价订单申请*\n`;
+    message += `━━━━━━━━━━━━━━━━━━━━\n`;
+    message += `👤 *客户姓名:* ${name}\n`;
+    message += `📍 *发货城市/目的地:* ${city}\n`;
+    message += `🚚 *配送方式:* ${deliveryVal === 'envio' ? '快递送货上门（墨西哥全国）' : '实体店自提'}\n`;
+    message += `🏷️ *客户类型:* ${clientType === 'wholesale' ? '商家 / 批发客户' : '零售客户'}\n`;
+    message += `━━━━━━━━━━━━━━━━━━━━\n\n`;
+    message += `📦 *订单明细:*\n`;
+  } else {
+    message = `🛍️ *ZALIA SHOP - SOLICITUD DE PEDIDO*\n`;
+    message += `━━━━━━━━━━━━━━━━━━━━\n`;
+    message += `👤 *Cliente:* ${name}\n`;
+    message += `📍 *Ciudad/Origen:* ${city}\n`;
+    message += `🚚 *Método:* ${deliveryVal === 'envio' ? 'Envío a Domicilio (República)' : 'Recoger en Tienda Física'}\n`;
+    message += `🏷️ *Cliente:* ${clientType === 'wholesale' ? 'Negocio / Mayorista' : 'Minorista'}\n`;
+    message += `━━━━━━━━━━━━━━━━━━━━\n\n`;
+    message += `📦 *Detalle del Pedido:*\n`;
+  }
 
   cart.forEach(item => {
     let pricePerPiece = 0;
@@ -836,21 +1127,31 @@ function sendWhatsAppQuote(e) {
       pricePerPiece = item.boxPrice;
       const boxesCount = Math.floor(item.qty / item.pcsPerBox);
       const remainder = item.qty % item.pcsPerBox;
-      tierLabel = `Caja cerrada (${boxesCount} caja(s) de ${item.pcsPerBox} pzs ${remainder > 0 ? `+ ${remainder} sueltas` : ''})`;
+      if (currentLanguage === 'zh') {
+        tierLabel = `整箱购买 (${boxesCount} 箱，每箱 ${item.pcsPerBox} 件 ${remainder > 0 ? `+ ${remainder} 件散装` : ''})`;
+      } else {
+        tierLabel = `Caja cerrada (${boxesCount} caja(s) de ${item.pcsPerBox} pzs ${remainder > 0 ? `+ ${remainder} sueltas` : ''})`;
+      }
     } else if (isWholesaleMixed) {
       pricePerPiece = item.wholesalePrice;
-      tierLabel = 'Mayoreo Mixto';
+      tierLabel = currentLanguage === 'zh' ? '混批批发' : 'Mayoreo Mixto';
     } else {
       pricePerPiece = item.retailPrice;
-      tierLabel = 'Normal (Menudeo)';
+      tierLabel = currentLanguage === 'zh' ? '普通零售' : 'Normal (Menudeo)';
     }
 
     const cost = pricePerPiece * item.qty;
     totalCost += cost;
 
-    message += `• *${item.qty} pzs* - ${item.name}\n`;
-    message += `  _P. Unitario:_ $${pricePerPiece} MXN | _Subtotal:_ *$${cost} MXN*\n`;
-    message += `  _Tasa aplicada:_ ${tierLabel}\n\n`;
+    if (currentLanguage === 'zh') {
+      message += `• *${item.qty} 件* - ${item.name}\n`;
+      message += `  _单价:_ $${pricePerPiece} MXN | _小计:_ *$${cost} MXN*\n`;
+      message += `  _适用费率:_ ${tierLabel}\n\n`;
+    } else {
+      message += `• *${item.qty} pzs* - ${item.name}\n`;
+      message += `  _P. Unitario:_ $${pricePerPiece} MXN | _Subtotal:_ *$${cost} MXN*\n`;
+      message += `  _Tasa aplicada:_ ${tierLabel}\n\n`;
+    }
   });
 
   message += `━━━━━━━━━━━━━━━━━━━━\n`;
@@ -863,14 +1164,23 @@ function sendWhatsAppQuote(e) {
   
   const savings = regularRetailTotal - totalCost;
 
-  message += `📦 *Total Piezas:* ${totalPiecesInCart} pzs\n`;
-  if (savings > 0) {
-    message += `💰 *Subtotal regular:* $${regularRetailTotal} MXN\n`;
-    message += `🎉 *Ahorro por Volumen:* $${savings} MXN\n`;
+  if (currentLanguage === 'zh') {
+    message += `📦 *总件数:* ${totalPiecesInCart} 件\n`;
+    if (savings > 0) {
+      message += `💰 *常规原价小计:* $${regularRetailTotal} MXN\n`;
+      message += `🎉 *大宗采购优惠:* $${savings} MXN\n`;
+    }
+    message += `💵 *净总计:* *$${totalCost} MXN*\n\n`;
+    message += `*备注:* 此询价单自网站生成发送。我正等待确认货柜的实际库存以及运费。`;
+  } else {
+    message += `📦 *Total Piezas:* ${totalPiecesInCart} pzs\n`;
+    if (savings > 0) {
+      message += `💰 *Subtotal regular:* $${regularRetailTotal} MXN\n`;
+      message += `🎉 *Ahorro por Volumen:* $${savings} MXN\n`;
+    }
+    message += `💵 *TOTAL NETO:* *$${totalCost} MXN*\n\n`;
+    message += `*Nota:* Pedido enviado desde el cotizador web. Quedo en espera de confirmar disponibilidad física del contenedor y costos de envío.`;
   }
-  
-  message += `💵 *TOTAL NETO:* *$${totalCost} MXN*\n\n`;
-  message += `*Nota:* Pedido enviado desde el cotizador web. Quedo en espera de confirmar disponibilidad física del contenedor y costos de envío.`;
 
   // WhatsApp Destination Number: 5613137613
   const whatsappNumber = '5215613137613';

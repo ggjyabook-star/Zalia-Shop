@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -29,7 +29,7 @@
 <body>
 
   <!-- Top Announcement Banner -->
-  <div class="top-banner">
+  <div class="top-banner" data-i18n="top-banner">
     🚀 ¡NUEVA MERCANCÍA DIRECTA DE CONTENEDOR! ENVIAMOS A TODO MÉXICO DESDE CDMX 📦
   </div>
 
@@ -43,16 +43,19 @@
       <!-- Desktop Navigation -->
       <nav>
         <ul class="nav-menu" id="nav-menu">
-          <li><a href="#home" class="nav-link active">Inicio</a></li>
-          <li><a href="#catalogo" class="nav-link">Catálogo</a></li>
-          <li><a href="#como-cotizar" class="nav-link">¿Cómo Comprar?</a></li>
-          <li><a href="#nosotros" class="nav-link">Nosotros</a></li>
-          <li><a href="#ubicacion" class="nav-link">Ubicación</a></li>
+          <li><a href="#home" class="nav-link active" data-i18n="nav-home">Inicio</a></li>
+          <li><a href="#catalogo" class="nav-link" data-i18n="nav-catalog">Catálogo</a></li>
+          <li><a href="#como-cotizar" class="nav-link" data-i18n="nav-how-to-buy">¿Cómo Comprar?</a></li>
+          <li><a href="#nosotros" class="nav-link" data-i18n="nav-about">Nosotros</a></li>
+          <li><a href="#ubicacion" class="nav-link" data-i18n="nav-location">Ubicación</a></li>
         </ul>
       </nav>
       
       <!-- Actions (Theme Toggle & Cart Button) -->
       <div class="nav-actions">
+        <button id="lang-toggle" class="btn-icon" title="Cambiar Idioma" aria-label="Cambiar idioma">
+          <span id="lang-flag-label" style="font-size: 1.25rem; font-weight: 700; line-height: 1; display: flex; align-items: center; justify-content: center;">🇨🇳</span>
+        </button>
         <button id="theme-toggle" class="btn-icon" title="Cambiar Tema" aria-label="Cambiar tema">
           <i class="fas fa-moon"></i>
         </button>
@@ -75,12 +78,12 @@
       <div class="slide active">
         <div class="slide-content">
           <div class="slide-text">
-            <span class="slide-badge"><i class="fas fa-ship"></i> Importación Directa</span>
-            <h1>Contenedores Completos <br><span class="gradient-text">Al Mejor Precio</span></h1>
-            <p>Precios directos de fábrica en bolsas de mano, carteras, mochilas y peluches. Surtimos a mayoristas y minoristas en todo México.</p>
+            <span class="slide-badge" data-i18n="slide1-badge"><i class="fas fa-ship"></i> Importación Directa</span>
+            <h1 data-i18n="slide1-title">Contenedores Completos <br><span class="gradient-text">Al Mejor Precio</span></h1>
+            <p data-i18n="slide1-desc">Precios directos de fábrica en bolsas de mano, carteras, mochilas y peluches. Surtimos a mayoristas y minoristas en todo México.</p>
             <div class="hero-cta">
-              <a href="#catalogo" class="btn-primary"><i class="fas fa-store"></i> Ver Catálogo</a>
-              <a href="#ubicacion" class="btn-secondary"><i class="fas fa-map-marker-alt"></i> Tienda Física</a>
+              <a href="#catalogo" class="btn-primary" data-i18n="btn-view-catalog"><i class="fas fa-store"></i> Ver Catálogo</a>
+              <a href="#ubicacion" class="btn-secondary" data-i18n="btn-physical-store"><i class="fas fa-map-marker-alt"></i> Tienda Física</a>
             </div>
           </div>
           <div class="slide-visual">
@@ -95,11 +98,11 @@
       <div class="slide">
         <div class="slide-content">
           <div class="slide-text">
-            <span class="slide-badge"><i class="fab fa-tiktok"></i> @zalia.shop</span>
-            <h1>Desempaques en Vivo <br><span class="gradient-text">Y Novedades Diarias</span></h1>
-            <p>Mira la mercancía llegando directo de aduana. Síguenos y no te pierdas ningún directo de contenedor.</p>
+            <span class="slide-badge" data-i18n="slide2-badge"><i class="fab fa-tiktok"></i> @zalia.shop</span>
+            <h1 data-i18n="slide2-title">Desempaques en Vivo <br><span class="gradient-text">Y Novedades Diarias</span></h1>
+            <p data-i18n="slide2-desc">Mira la mercancía llegando directo de aduana. Síguenos y no te pierdas ningún directo de contenedor.</p>
             <div class="hero-cta">
-              <a href="https://www.tiktok.com/@zalia.shop" target="_blank" class="btn-primary"><i class="fab fa-tiktok"></i> Seguir en TikTok</a>
+              <a href="https://www.tiktok.com/@zalia.shop" target="_blank" class="btn-primary" data-i18n="btn-follow-tiktok"><i class="fab fa-tiktok"></i> Seguir en TikTok</a>
             </div>
           </div>
           <div class="slide-visual video-visual">
@@ -116,18 +119,18 @@
       <div class="slide">
         <div class="slide-content">
           <div class="slide-text">
-            <span class="slide-badge"><i class="fas fa-boxes"></i> Tres Niveles de Precios</span>
-            <h1>Compra por Pieza, <br><span class="gradient-text">Mayoreo o Caja</span></h1>
-            <p>Precios especiales para emprendedores. Mayoreo a partir de 3 piezas mixtas. Ahorros de hasta 50% por caja cerrada.</p>
+            <span class="slide-badge" data-i18n="slide3-badge"><i class="fas fa-boxes"></i> Tres Niveles de Precios</span>
+            <h1 data-i18n="slide3-title">Compra por Pieza, <br><span class="gradient-text">Mayoreo o Caja</span></h1>
+            <p data-i18n="slide3-desc">Precios especiales para emprendedores. Mayoreo a partir de 3 piezas mixtas. Ahorros de hasta 50% por caja cerrada.</p>
             <div class="hero-cta">
-              <a href="#como-cotizar" class="btn-primary"><i class="fas fa-question-circle"></i> ¿Cómo Comprar?</a>
+              <a href="#como-cotizar" class="btn-primary" data-i18n="btn-how-to-buy-cta"><i class="fas fa-question-circle"></i> ¿Cómo Comprar?</a>
             </div>
           </div>
           <div class="slide-visual products-visual">
             <div class="featured-products-mini">
-              <div class="mini-card"><img src="assets/images/bolsa_cartera_showcase.png" alt="Bolsas"><span>Bolsas</span></div>
-              <div class="mini-card"><img src="assets/images/mochila_showcase.png" alt="Mochilas"><span>Mochilas</span></div>
-              <div class="mini-card"><img src="assets/images/peluche_showcase.png" alt="Peluches"><span>Peluches</span></div>
+              <div class="mini-card"><img src="assets/images/bolsa_cartera_showcase.png" alt="Bolsas"><span data-i18n="mini-bags">Bolsas</span></div>
+              <div class="mini-card"><img src="assets/images/mochila_showcase.png" alt="Mochilas"><span data-i18n="mini-backpacks">Mochilas</span></div>
+              <div class="mini-card"><img src="assets/images/peluche_showcase.png" alt="Peluches"><span data-i18n="mini-plushies">Peluches</span></div>
             </div>
           </div>
         </div>
@@ -150,8 +153,8 @@
   <section id="catalogo" class="section">
     <div class="container">
       <div class="section-header">
-        <h2>Catálogo de Ofertas y Novedades</h2>
-        <p>Surtido directo. Utiliza las pestañas para explorar nuestras categorías destacadas y cotizar.</p>
+        <h2 data-i18n="catalog-title">Catálogo de Ofertas y Novedades</h2>
+        <p data-i18n="catalog-desc">Surtido directo. Utiliza las pestañas para explorar nuestras categorías destacadas y cotizar.</p>
       </div>
 
       <!-- Catalog Controls -->
@@ -159,7 +162,7 @@
         <!-- Search -->
         <div class="search-box">
           <i class="fas fa-search search-icon"></i>
-          <input type="text" id="search-input" class="search-input" placeholder="Buscar bolsas, mochilas, peluches...">
+          <input type="text" id="search-input" class="search-input" placeholder="Buscar bolsas, mochilas, peluches..." data-i18n-placeholder="search-placeholder">
         </div>
         <!-- Category Tabs -->
         <div class="tabs" id="tabs-container">
@@ -180,28 +183,28 @@
   <section id="como-cotizar" class="section" style="background-color: rgba(0,0,0,0.02); body.dark-mode-active & { background-color: rgba(255,255,255,0.01); }">
     <div class="container">
       <div class="section-header">
-        <h2>¿Cómo solicitar tu cotización?</h2>
-        <p>Hemos diseñado un proceso rápido y digitalizado para que puedas cotizar y asegurar tu mercancía en minutos.</p>
+        <h2 data-i18n="how-title">¿Cómo solicitar tu cotización?</h2>
+        <p data-i18n="how-desc">Hemos diseñado un proceso rápido y digitalizado para que puedas cotizar y asegurar tu mercancía en minutos.</p>
       </div>
       
       <div class="steps-container">
         <!-- Step 1 -->
         <div class="step-item">
           <div class="step-number">1</div>
-          <h3>Selecciona tus Productos</h3>
-          <p>Navega en nuestro catálogo, define tus cantidades de prueba y agrégalos a tu cotización digital.</p>
+          <h3 data-i18n="step1-title">Selecciona tus Productos</h3>
+          <p data-i18n="step1-desc">Navega en nuestro catálogo, define tus cantidades de prueba y agrégalos a tu cotización digital.</p>
         </div>
         <!-- Step 2 -->
         <div class="step-item">
           <div class="step-number">2</div>
-          <h3>Revisa tu Lista</h3>
-          <p>Abre el carrito, ingresa tu nombre y la ciudad a la que requiere que se envíe o si retiras en tienda física.</p>
+          <h3 data-i18n="step2-title">Revisa tu Lista</h3>
+          <p data-i18n="step2-desc">Abre el carrito, ingresa tu nombre y la ciudad a la que requiere que se envíe o si retiras en tienda física.</p>
         </div>
         <!-- Step 3 -->
         <div class="step-item">
           <div class="step-number">3</div>
-          <h3>Envía por WhatsApp</h3>
-          <p>Haz clic en enviar y un asesor de ventas recibirá tu orden para verificar existencias y concretar tu pago.</p>
+          <h3 data-i18n="step3-title">Envía por WhatsApp</h3>
+          <p data-i18n="step3-desc">Haz clic en enviar y un asesor de ventas recibirá tu orden para verificar existencias y concretar tu pago.</p>
         </div>
       </div>
     </div>
@@ -211,8 +214,8 @@
   <section id="nosotros" class="section">
     <div class="container">
       <div class="section-header">
-        <h2>¿Por qué elegir Zalia Shop?</h2>
-        <p>Somos distribuidores clave en el Centro Histórico de la CDMX con un modelo de negocio enfocado en tu crecimiento comercial.</p>
+        <h2 data-i18n="why-choose-title">¿Por qué elegir Zalia Shop?</h2>
+        <p data-i18n="why-choose-desc">Somos distribuidores clave en el Centro Histórico de la CDMX con un modelo de negocio enfocado en tu crecimiento comercial.</p>
       </div>
       
       <div class="props-grid">
@@ -221,24 +224,24 @@
           <div class="prop-icon">
             <i class="fas fa-ship"></i>
           </div>
-          <h3>Precios de Contenedor</h3>
-          <p>Importamos volúmenes masivos directamente sin intermediarios, lo que nos permite ofrecer el costo más competitivo del mercado nacional.</p>
+          <h3 data-i18n="prop1-title">Precios de Contenedor</h3>
+          <p data-i18n="prop1-desc">Importamos volúmenes masivos directamente sin intermediarios, lo que nos permite ofrecer el costo más competitivo del mercado nacional.</p>
         </div>
         <!-- Card 2 -->
         <div class="prop-card">
           <div class="prop-icon">
             <i class="fas fa-hand-holding-usd"></i>
           </div>
-          <h3>Mayoreo y Menudeo</h3>
-          <p>Accede a precios de mayoreo súper accesibles a partir de tan solo 3 piezas de la tienda, facilitando que inicies o surtas tu negocio.</p>
+          <h3 data-i18n="prop2-title">Mayoreo y Menudeo</h3>
+          <p data-i18n="prop2-desc">Accede a precios de mayoreo súper accesibles a partir de tan solo 3 piezas de la tienda, facilitando que inicies o surtas tu negocio.</p>
         </div>
         <!-- Card 3 -->
         <div class="prop-card">
           <div class="prop-icon">
             <i class="fas fa-truck-fast"></i>
           </div>
-          <h3>Envíos Rápidos a México</h3>
-          <p>Despachamos tu pedido directo a tu domicilio en cualquier estado de la República por medio de paqueterías seguras y económicas.</p>
+          <h3 data-i18n="prop3-title">Envíos Rápidos a México</h3>
+          <p data-i18n="prop3-desc">Despachamos tu pedido directo a tu domicilio en cualquier estado de la República por medio de paqueterías seguras y económicas.</p>
         </div>
       </div>
     </div>
@@ -248,8 +251,8 @@
   <section id="ubicacion" class="section contact-section">
     <div class="container">
       <div class="section-header">
-        <h2>Nuestra Sucursal y Contacto</h2>
-        <p>Visítanos directamente en la zona de mayor comercio de importación en la Ciudad de México.</p>
+        <h2 data-i18n="contact-title">Nuestra Sucursal y Contacto</h2>
+        <p data-i18n="contact-desc">Visítanos directamente en la zona de mayor comercio de importación en la Ciudad de México.</p>
       </div>
 
       <div class="contact-grid">
@@ -261,9 +264,9 @@
               <i class="fas fa-map-marker-alt"></i>
             </div>
             <div class="info-text">
-              <h4>Dirección Tienda Física</h4>
-              <p>República de Honduras 63, Centro Histórico de la Cdad. de México, Centro, Cuauhtémoc, 06020 Ciudad de México, CDMX</p>
-              <a href="https://maps.app.goo.gl/TpZsThZZwviE7Qdh6" target="_blank">Abrir en Google Maps <i class="fas fa-external-link-alt"></i></a>
+              <h4 data-i18n="addr-title">Dirección Tienda Física</h4>
+              <p data-i18n="addr-desc">República de Honduras 63, Centro Histórico de la Cdad. de México, Centro, Cuauhtémoc, 06020 Ciudad de México, CDMX</p>
+              <a href="https://maps.app.goo.gl/TpZsThZZwviE7Qdh6" target="_blank" data-i18n="btn-open-maps">Abrir en Google Maps <i class="fas fa-external-link-alt"></i></a>
             </div>
           </div>
 
@@ -272,8 +275,8 @@
               <i class="fab fa-whatsapp"></i>
             </div>
             <div class="info-text">
-              <h4>Ventas y Cotizaciones WhatsApp</h4>
-              <p>Soporte de atención directa y aclaraciones de pedidos:</p>
+              <h4 data-i18n="wa-title">Ventas y Cotizaciones WhatsApp</h4>
+              <p data-i18n="wa-desc">Soporte de atención directa y aclaraciones de pedidos:</p>
               <a href="https://wa.me/5215613137613" target="_blank">+52 56 1313 7613</a>
             </div>
           </div>
@@ -283,9 +286,9 @@
               <i class="fas fa-clock"></i>
             </div>
             <div class="info-text">
-              <h4>Horarios de Atención</h4>
-              <p>Lunes a Sábado: 9:00 AM - 6:00 PM</p>
-              <p>Domingos: Cerrado</p>
+              <h4 data-i18n="hours-title">Horarios de Atención</h4>
+              <p data-i18n="hours-week">Lunes a Sábado: 9:00 AM - 6:00 PM</p>
+              <p data-i18n="hours-sun">Domingos: Cerrado</p>
             </div>
           </div>
 
@@ -294,8 +297,8 @@
               <i class="fas fa-info-circle"></i>
             </div>
             <div class="info-text">
-              <h4>Información Importante</h4>
-              <p>Precios especiales a mayoristas por bulto cerrado y caja de importación completa. Pregunta a tu asesor.</p>
+              <h4 data-i18n="info-title">Información Importante</h4>
+              <p data-i18n="info-desc">Precios especiales a mayoristas por bulto cerrado y caja de importación completa. Pregunta a tu asesor.</p>
             </div>
           </div>
 
@@ -322,7 +325,7 @@
   <!-- Cart Drawer (Mi Cotización) -->
   <div class="cart-drawer" id="cart-drawer">
     <div class="cart-header">
-      <h3><i class="fas fa-shopping-basket"></i> Mi Cotización (<span id="cart-header-count">0</span>)</h3>
+      <h3><i class="fas fa-shopping-basket"></i> <span data-i18n="cart-title-label">Mi Cotización</span> (<span id="cart-header-count">0</span>)</h3>
       <button class="cart-close" id="close-cart-btn" aria-label="Cerrar carrito">
         <i class="fas fa-times"></i>
       </button>
@@ -337,50 +340,50 @@
       <!-- Checkout / Quotation Form -->
       <div class="cart-footer">
         <div class="cart-summary-row">
-          <span>Subtotal Regular:</span>
+          <span data-i18n="cart-subtotal-label">Subtotal Regular:</span>
           <span id="cart-subtotal">$0 MXN</span>
         </div>
         <div class="cart-summary-row savings">
-          <span>Descuento Mayoreo:</span>
+          <span data-i18n="cart-savings-label">Descuento Mayoreo:</span>
           <span id="cart-savings">$0 MXN</span>
         </div>
         <div class="cart-summary-row total">
-          <span>Total Estimado:</span>
+          <span data-i18n="cart-total-label">Total Estimado:</span>
           <span class="highlight" id="cart-total">$0 MXN</span>
         </div>
 
         <form id="quote-form" style="margin-top: 20px;">
           <div class="form-group">
-            <label class="form-label" for="client-name">Nombre Completo</label>
-            <input type="text" id="client-name" class="form-control" placeholder="Ej. Juan Pérez" required>
+            <label class="form-label" for="client-name" data-i18n="label-name">Nombre Completo</label>
+            <input type="text" id="client-name" class="form-control" placeholder="Ej. Juan Pérez" data-i18n-placeholder="placeholder-name" required>
           </div>
           <div class="form-group">
-            <label class="form-label" for="client-city">Ciudad de Envío / Destino</label>
-            <input type="text" id="client-city" class="form-control" placeholder="Ej. Guadalajara, Jal." required>
+            <label class="form-label" for="client-city" data-i18n="label-city">Ciudad de Envío / Destino</label>
+            <input type="text" id="client-city" class="form-control" placeholder="Ej. Guadalajara, Jal." data-i18n-placeholder="placeholder-city" required>
           </div>
           
           <!-- Delivery Option Selectors -->
           <div class="form-group">
-            <label class="form-label">Método de Entrega</label>
+            <label class="form-label" data-i18n="label-delivery">Método de Entrega</label>
             <div style="display: flex; gap: 16px; margin-top: 8px;">
               <label style="display: flex; align-items: center; gap: 6px; cursor: pointer; font-size: 0.9rem; font-weight: 500;">
-                <input type="radio" name="delivery-method" value="envio" checked style="accent-color: var(--primary);"> Envío a domicilio
+                <input type="radio" name="delivery-method" value="envio" checked style="accent-color: var(--primary);"> <span data-i18n="delivery-home">Envío a domicilio</span>
               </label>
               <label style="display: flex; align-items: center; gap: 6px; cursor: pointer; font-size: 0.9rem; font-weight: 500;">
-                <input type="radio" name="delivery-method" value="tienda" style="accent-color: var(--primary);"> Recoger en Tienda
+                <input type="radio" name="delivery-method" value="tienda" style="accent-color: var(--primary);"> <span data-i18n="delivery-store">Recoger en Tienda</span>
               </label>
             </div>
           </div>
 
           <div class="form-group">
-            <label class="form-label" for="client-type">Tipo de Cliente</label>
+            <label class="form-label" for="client-type" data-i18n="label-client-type">Tipo de Cliente</label>
             <select id="client-type" class="form-control" required>
-              <option value="wholesale">Mayorista (Negocio)</option>
-              <option value="retail" selected>Minorista (Uso Personal)</option>
+              <option value="wholesale" data-i18n="client-wholesale">Mayorista (Negocio)</option>
+              <option value="retail" selected data-i18n="client-retail">Minorista (Uso Personal)</option>
             </select>
           </div>
           
-          <button type="submit" class="btn-whatsapp-submit">
+          <button type="submit" class="btn-whatsapp-submit" data-i18n="btn-whatsapp-submit">
             <i class="fab fa-whatsapp"></i> Solicitar Cotización
           </button>
         </form>
@@ -393,22 +396,22 @@
     <div class="footer-container">
       <div class="footer-brand">
         <img src="assets/logos/logo_color.png" alt="Zalia Shop Logo" class="logo-img">
-        <p>Importadores directos desde fábrica a tu local. Llantas, bolsas, mochilas, peluches y novedades con el mejor precio y la mejor atención de CDMX.</p>
+        <p data-i18n="footer-desc">Importadores directos desde fábrica a tu local. Llantas, bolsas, mochilas, peluches y novedades con el mejor precio y la mejor atención de CDMX.</p>
       </div>
       
       <div class="footer-links">
         <div class="footer-col">
-          <h4>Navegación</h4>
+          <h4 data-i18n="footer-nav">Navegación</h4>
           <ul>
-            <li><a href="#home">Inicio</a></li>
-            <li><a href="#nosotros">Nosotros</a></li>
-            <li><a href="#catalogo">Catálogo</a></li>
-            <li><a href="#ubicacion">Ubicación</a></li>
+            <li><a href="#home" data-i18n="nav-home">Inicio</a></li>
+            <li><a href="#nosotros" data-i18n="nav-about">Nosotros</a></li>
+            <li><a href="#catalogo" data-i18n="nav-catalog">Catálogo</a></li>
+            <li><a href="#ubicacion" data-i18n="nav-location">Ubicación</a></li>
           </ul>
         </div>
         
         <div class="footer-col">
-          <h4>Contacto</h4>
+          <h4 data-i18n="footer-contact">Contacto</h4>
           <ul>
             <li><a href="https://wa.me/5215613137613" target="_blank"><i class="fab fa-whatsapp"></i> +52 56 1313 7613</a></li>
             <li><a href="https://maps.app.goo.gl/TpZsThZZwviE7Qdh6" target="_blank"><i class="fas fa-map-marker-alt"></i> CDMX, México</a></li>
@@ -418,9 +421,9 @@
     </div>
     
     <div class="footer-copy">
-      <p>&copy; 2026 Zalia Shop. Todos los derechos reservados. Importaciones directas de contenedor.</p>
+      <p data-i18n="footer-copy">&copy; 2026 Zalia Shop. Todos los derechos reservados. Importaciones directas de contenedor.</p>
       <p style="margin-top: 10px;">
-        <a href="dashboard.html" style="color: #64748b; text-decoration: none; font-size: 0.8rem; transition: var(--transition); display: inline-flex; align-items: center; gap: 6px;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='#64748b'">
+        <a href="dashboard.html" data-i18n="footer-admin" style="color: #64748b; text-decoration: none; font-size: 0.8rem; transition: var(--transition); display: inline-flex; align-items: center; gap: 6px;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='#64748b'">
           <i class="fas fa-user-shield"></i> Panel para Administradores
         </a>
       </p>
