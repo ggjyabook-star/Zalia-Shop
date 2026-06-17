@@ -131,9 +131,10 @@
           </div>
           <div class="slide-visual products-visual">
             <div class="featured-products-mini">
-              <div class="mini-card"><img src="assets/images/bolsa_cartera_showcase.png" alt="Bolsas"><span data-i18n="mini-bags">Bolsas</span></div>
-              <div class="mini-card"><img src="assets/images/mochila_showcase.png" alt="Mochilas"><span data-i18n="mini-backpacks">Mochilas</span></div>
-              <div class="mini-card"><img src="assets/images/peluche_showcase.png" alt="Peluches"><span data-i18n="mini-plushies">Peluches</span></div>
+              <div class="mini-card"><img src="assets/images/bolsa_cartera_showcase.png" alt="Módulo 1"><span data-i18n="mini-modulo-1">Módulo 1</span></div>
+              <div class="mini-card"><img src="assets/images/mochila_showcase.png" alt="Módulo 2"><span data-i18n="mini-modulo-2">Módulo 2</span></div>
+              <div class="mini-card"><img src="assets/images/peluche_showcase.png" alt="Módulo 3"><span data-i18n="mini-modulo-3">Módulo 3</span></div>
+              <div class="mini-card"><img src="assets/images/accesorio_showcase.png" alt="Módulo 4"><span data-i18n="mini-modulo-4">Módulo 4</span></div>
             </div>
           </div>
         </div>
@@ -162,10 +163,21 @@
 
       <!-- Catalog Controls -->
       <div class="catalog-controls">
-        <!-- Search -->
-        <div class="search-box">
-          <i class="fas fa-search search-icon"></i>
-          <input type="text" id="search-input" class="search-input" placeholder="Buscar bolsas, mochilas, peluches..." data-i18n-placeholder="search-placeholder">
+        <!-- Search and Filters Row -->
+        <div class="search-filters-row">
+          <!-- Search -->
+          <div class="search-box">
+            <i class="fas fa-search search-icon"></i>
+            <input type="text" id="search-input" class="search-input" placeholder="Buscar por modelo o código..." data-i18n-placeholder="search-placeholder">
+          </div>
+          <!-- Price Search Module -->
+          <div class="price-search-box">
+            <i class="fas fa-tags price-filter-icon"></i>
+            <span class="price-filter-label" data-i18n="price-filter-label">Precio:</span>
+            <input type="number" id="price-min" class="price-filter-input" placeholder="Mín" data-i18n-placeholder="price-min-placeholder">
+            <span class="price-filter-sep">-</span>
+            <input type="number" id="price-max" class="price-filter-input" placeholder="Máx" data-i18n-placeholder="price-max-placeholder">
+          </div>
         </div>
         <!-- Category Tabs -->
         <div class="tabs" id="tabs-container">

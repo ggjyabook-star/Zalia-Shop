@@ -2,10 +2,10 @@
 
 // Album links mapping
 const PHOTO_ALBUMS = {
-  'bolsas-carteras': 'https://photos.app.goo.gl/AdWXRuyVsDtofdf98',
-  'mochilas': 'https://photos.app.goo.gl/cvWhkoSWzJNGAPFZ9',
-  'peluches': 'https://photos.app.goo.gl/iY5eHKvz9iuS8vn2A',
-  'accesorios-mas': 'https://photos.app.goo.gl/hLSqQwHKLHsUMKwd9'
+  'modulo-1': 'https://photos.app.goo.gl/AdWXRuyVsDtofdf98',
+  'modulo-2': 'https://photos.app.goo.gl/cvWhkoSWzJNGAPFZ9',
+  'modulo-3': 'https://photos.app.goo.gl/iY5eHKvz9iuS8vn2A',
+  'modulo-4': 'https://photos.app.goo.gl/hLSqQwHKLHsUMKwd9'
 };
 
 // Language i18n configurations
@@ -13,18 +13,19 @@ let currentLanguage = 'es';
 
 const CATEGORY_TRANSLATIONS = {
   es: {
-    'bolsas-carteras': 'Bolsas y Carteras',
-    'mochilas': 'Mochilas',
-    'peluches': 'Peluches',
-    'accesorios-mas': 'Accesorios y Más'
+    'modulo-1': 'Módulo 1',
+    'modulo-2': 'Módulo 2',
+    'modulo-3': 'Módulo 3',
+    'modulo-4': 'Módulo 4'
   },
   zh: {
-    'bolsas-carteras': '包袋与钱包',
-    'mochilas': '双肩包',
-    'peluches': '毛绒玩偶',
-    'accesorios-mas': '配饰及其他'
+    'modulo-1': '模块 1',
+    'modulo-2': '模块 2',
+    'modulo-3': '模块 3',
+    'modulo-4': '模块 4'
   }
 };
+
 
 const TRANSLATIONS = {
   es: {
@@ -47,12 +48,16 @@ const TRANSLATIONS = {
     "slide3-title": "Compra por Pieza, <br><span class=\"gradient-text\">Mayoreo o Caja</span>",
     "slide3-desc": "Precios especiales para emprendedores. Mayoreo a partir de 3 piezas mixtas. Ahorros de hasta 50% por caja cerrada.",
     "btn-how-to-buy-cta": "<i class=\"fas fa-question-circle\"></i> ¿Cómo Comprar?",
-    "mini-bags": "Bolsas",
-    "mini-backpacks": "Mochilas",
-    "mini-plushies": "Peluches",
+    "mini-modulo-1": "Módulo 1",
+    "mini-modulo-2": "Módulo 2",
+    "mini-modulo-3": "Módulo 3",
+    "mini-modulo-4": "Módulo 4",
     "catalog-title": "Catálogo de Ofertas y Novedades",
-    "catalog-desc": "Surtido directo. Utiliza las pestañas para explorar nuestras categorías destacadas y cotizar.",
-    "search-placeholder": "Buscar bolsas, mochilas, peluches...",
+    "catalog-desc": "Surtido directo. Utiliza las pestañas para explorar los módulos de productos y cotizar.",
+    "search-placeholder": "Buscar por modelo, código de barras...",
+    "price-filter-label": "Precio:",
+    "price-min-placeholder": "Mín",
+    "price-max-placeholder": "Máx",
     "how-title": "¿Cómo solicitar tu cotización?",
     "how-desc": "Hemos diseñado un proceso rápido y digitalizado para que puedas cotizar y asegurar tu mercancía en minutos.",
     "step1-title": "Selecciona tus Productos",
@@ -122,12 +127,16 @@ const TRANSLATIONS = {
     "slide3-title": "零售单件、 <br><span class=\"gradient-text\">混批或整箱</span>",
     "slide3-desc": "为创业者提供特别价格。3件混批即可享受批发价。整箱购买可节省高达50%。",
     "btn-how-to-buy-cta": "<i class=\"fas fa-question-circle\"></i> 如何购买？",
-    "mini-bags": "包袋",
-    "mini-backpacks": "双肩包",
-    "mini-plushies": "毛绒玩偶",
+    "mini-modulo-1": "模块 1",
+    "mini-modulo-2": "模块 2",
+    "mini-modulo-3": "模块 3",
+    "mini-modulo-4": "模块 4",
     "catalog-title": "促销与新品目录",
-    "catalog-desc": "厂家一手货源。使用标签页浏览我们推荐的品类并进行询价。",
-    "search-placeholder": "搜索包袋、双肩包、毛绒玩偶...",
+    "catalog-desc": "一手货源。使用标签页浏览产品模块并获取询价。",
+    "search-placeholder": "按型号、条形码等搜索...",
+    "price-filter-label": "价格:",
+    "price-min-placeholder": "最低",
+    "price-max-placeholder": "最高",
     "how-title": "如何申请您的报价？",
     "how-desc": "我们设计了快速且数字化的流程，让您可以在几分钟内完成询价并锁定商品。",
     "step1-title": "选择商品",
@@ -243,8 +252,10 @@ function getActiveProducts() {
 
 // App State
 let cart = [];
-let activeCategory = 'bolsas-carteras';
+let activeCategory = 'modulo-1';
 let searchQuery = '';
+let minPrice = '';
+let maxPrice = '';
 let displayLimit = 40;
 let searchDebounceTimer = null;
 
@@ -252,6 +263,8 @@ let searchDebounceTimer = null;
 const productGrid = document.getElementById('product-grid');
 const tabsContainer = document.getElementById('tabs-container');
 const searchInput = document.getElementById('search-input');
+const priceMinInput = document.getElementById('price-min');
+const priceMaxInput = document.getElementById('price-max');
 const albumBtn = document.getElementById('album-link-btn');
 const albumCategoryName = document.getElementById('album-category-name');
 const cartDrawer = document.getElementById('cart-drawer');
@@ -368,7 +381,7 @@ function initHeroSlider() {
 
   // Mini-cards category redirect with smooth scroll
   const miniCards = document.querySelectorAll('.mini-card');
-  const catKeys = ['bolsas-carteras', 'mochilas', 'peluches'];
+  const catKeys = ['modulo-1', 'modulo-2', 'modulo-3', 'modulo-4'];
   miniCards.forEach((card, idx) => {
     card.addEventListener('click', (e) => {
       e.preventDefault();
@@ -384,12 +397,7 @@ function initHeroSlider() {
           }
         });
         
-        const categoriesMap = {
-          'bolsas-carteras': 'Bolsas y Carteras',
-          'mochilas': 'Mochilas',
-          'peluches': 'Peluches',
-          'accesorios-mas': 'Accesorios y Más'
-        };
+        const categoriesMap = CATEGORY_TRANSLATIONS[currentLanguage] || CATEGORY_TRANSLATIONS['es'];
         
         const albumBtn = document.getElementById('album-link-btn');
         const albumCategoryName = document.getElementById('album-category-name');
@@ -397,6 +405,14 @@ function initHeroSlider() {
           albumBtn.setAttribute('href', PHOTO_ALBUMS[targetCat]);
           albumCategoryName.textContent = categoriesMap[targetCat];
         }
+        
+        // Reset search filters when clicking on hero mini-cards
+        searchQuery = '';
+        minPrice = '';
+        maxPrice = '';
+        if (searchInput) searchInput.value = '';
+        if (priceMinInput) priceMinInput.value = '';
+        if (priceMaxInput) priceMaxInput.value = '';
         
         renderCatalog();
         
@@ -464,7 +480,11 @@ function renderTabs() {
       activeCategory = key;
       displayLimit = 40; // Reset display limit on tab change
       searchQuery = '';
+      minPrice = '';
+      maxPrice = '';
       if (searchInput) searchInput.value = '';
+      if (priceMinInput) priceMinInput.value = '';
+      if (priceMaxInput) priceMaxInput.value = '';
       document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
       button.classList.add('active');
       
@@ -502,7 +522,16 @@ function renderCatalog() {
       prod.id.toLowerCase().includes(query) ||
       (prod.barcode && prod.barcode.toLowerCase().includes(query))
     );
-    return matchesCategory && matchesSearch;
+
+    // Price range filters
+    const minVal = parseFloat(minPrice) || 0;
+    const maxVal = parseFloat(maxPrice) || Infinity;
+    const matchesPrice = (
+      (prod.wholesalePrice >= minVal || prod.retailPrice >= minVal) &&
+      (prod.wholesalePrice <= maxVal || prod.retailPrice <= maxVal)
+    );
+
+    return matchesCategory && matchesSearch && matchesPrice;
   });
 
   if (filteredProducts.length === 0) {
@@ -1036,6 +1065,29 @@ function setupEventListeners() {
       searchDebounceTimer = setTimeout(() => {
         searchQuery = e.target.value;
         displayLimit = 40; // Reset pagination on new search
+        renderCatalog();
+      }, 250);
+    });
+  }
+
+  // Price Range Search Handlers (debounced for smooth performance)
+  if (priceMinInput) {
+    priceMinInput.addEventListener('input', (e) => {
+      clearTimeout(searchDebounceTimer);
+      searchDebounceTimer = setTimeout(() => {
+        minPrice = e.target.value;
+        displayLimit = 40;
+        renderCatalog();
+      }, 250);
+    });
+  }
+
+  if (priceMaxInput) {
+    priceMaxInput.addEventListener('input', (e) => {
+      clearTimeout(searchDebounceTimer);
+      searchDebounceTimer = setTimeout(() => {
+        maxPrice = e.target.value;
+        displayLimit = 40;
         renderCatalog();
       }, 250);
     });
