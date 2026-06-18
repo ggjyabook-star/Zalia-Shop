@@ -8,7 +8,7 @@
         "boxPrice":  64,
         "pcsPerBox":  300,
         "image":  "assets/images/FXZ-59622.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: FXZ-59622 - Código de barras: SJB2026060501",
         "stock":  600,
         "barcode":  "SJB2026060501"
@@ -22,7 +22,7 @@
         "boxPrice":  16,
         "pcsPerBox":  360,
         "image":  "assets/images/SN1819.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: SN1819 - Código de barras: SB20260611",
         "stock":  360,
         "barcode":  "SB20260611"
@@ -36,7 +36,7 @@
         "boxPrice":  24,
         "pcsPerBox":  240,
         "image":  "assets/images/DJ02.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: DJ02 - Código de barras: XB2026060209",
         "stock":  240,
         "barcode":  "XB2026060209"
@@ -50,7 +50,7 @@
         "boxPrice":  9.2,
         "pcsPerBox":  600,
         "image":  "assets/images/GD-025.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: GD-025 - Código de barras: GJ2026052902",
         "stock":  600,
         "barcode":  "GJ2026052902"
@@ -64,7 +64,7 @@
         "boxPrice":  5.6,
         "pcsPerBox":  1200,
         "image":  "assets/images/BTWZ-90232.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: BTWZ-90232 - Código de barras: WZ2026052602",
         "stock":  1200,
         "barcode":  "WZ2026052602"
@@ -78,7 +78,7 @@
         "boxPrice":  102.4,
         "pcsPerBox":  96,
         "image":  "assets/images/MS-3022.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: MS-3022 - Código de barras: QB2026052621",
         "stock":  250,
         "barcode":  "QB2026052621"
@@ -92,7 +92,7 @@
         "boxPrice":  3.2,
         "pcsPerBox":  1728,
         "image":  "assets/images/B-5574.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: B-5574 - Código de barras: ZH2026052502",
         "stock":  1728,
         "barcode":  "ZH2026052502"
@@ -106,7 +106,7 @@
         "boxPrice":  72,
         "pcsPerBox":  100,
         "image":  "assets/images/YY97224.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: YY97224 - Código de barras: SB2026052205",
         "stock":  248,
         "barcode":  "SB2026052205"
@@ -120,7 +120,7 @@
         "boxPrice":  5.76,
         "pcsPerBox":  1296,
         "image":  "assets/images/SR500+9112.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: SR500+9112 - Código de barras: ZH2026052106",
         "stock":  1296,
         "barcode":  "ZH2026052106"
@@ -134,7 +134,7 @@
         "boxPrice":  40,
         "pcsPerBox":  240,
         "image":  "assets/images/BY294.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: BY294 - Código de barras: QB20260501806",
         "stock":  240,
         "barcode":  "QB20260501806"
@@ -148,7 +148,7 @@
         "boxPrice":  16,
         "pcsPerBox":  400,
         "image":  "assets/images/TC04.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: TC04 - Código de barras: CB2026051504",
         "stock":  400,
         "barcode":  "CB2026051504"
@@ -162,7 +162,7 @@
         "boxPrice":  33.6,
         "pcsPerBox":  300,
         "image":  "assets/images/TH19.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: TH19 - Código de barras: CB2026051503",
         "stock":  300,
         "barcode":  "CB2026051503"
@@ -176,7 +176,7 @@
         "boxPrice":  38.4,
         "pcsPerBox":  300,
         "image":  "assets/images/TG30.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: TG30 - Código de barras: CB2026051502",
         "stock":  300,
         "barcode":  "CB2026051502"
@@ -190,7 +190,7 @@
         "boxPrice":  25.6,
         "pcsPerBox":  300,
         "image":  "assets/images/TN11.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: TN11 - Código de barras: CB2026051501",
         "stock":  300,
         "barcode":  "CB2026051501"
@@ -204,7 +204,7 @@
         "boxPrice":  25.6,
         "pcsPerBox":  120,
         "image":  "assets/images/TTWG-66798.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: TTWG-66798 - Código de barras: WJ26050801",
         "stock":  240,
         "barcode":  "WJ26050801"
@@ -218,7 +218,7 @@
         "boxPrice":  80,
         "pcsPerBox":  96,
         "image":  "assets/images/SM1253.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: SM1253 - Código de barras: SB26050806",
         "stock":  332,
         "barcode":  "SB26050806"
@@ -232,7 +232,7 @@
         "boxPrice":  38.4,
         "pcsPerBox":  60,
         "image":  "assets/images/BSJJ-35748.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: BSJJ-35748 - Código de barras: SJB26050702",
         "stock":  240,
         "barcode":  "SJB26050702"
@@ -246,7 +246,7 @@
         "boxPrice":  22.4,
         "pcsPerBox":  360,
         "image":  "assets/images/LD-08022.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: LD-08022 - Código de barras: XB26050605",
         "stock":  360,
         "barcode":  "XB26050605"
@@ -260,7 +260,7 @@
         "boxPrice":  36.8,
         "pcsPerBox":  240,
         "image":  "assets/images/SA-831.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: SA-831 - Código de barras: DB26050604",
         "stock":  240,
         "barcode":  "DB26050604"
@@ -274,7 +274,7 @@
         "boxPrice":  72,
         "pcsPerBox":  300,
         "image":  "assets/images/FXZ-59627.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: FXZ-59627 - Código de barras: SJB26050602",
         "stock":  300,
         "barcode":  "SJB26050602"
@@ -288,7 +288,7 @@
         "boxPrice":  64,
         "pcsPerBox":  300,
         "image":  "assets/images/FXZ-59623.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: FXZ-59623 - Código de barras: SJB26050601",
         "stock":  900,
         "barcode":  "SJB26050601"
@@ -302,7 +302,7 @@
         "boxPrice":  204,
         "pcsPerBox":  80,
         "image":  "assets/images/YDBL10053.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: YDBL10053 - Código de barras: DB26050405",
         "stock":  242,
         "barcode":  "DB26050405"
@@ -316,7 +316,7 @@
         "boxPrice":  12,
         "pcsPerBox":  100,
         "image":  "assets/images/BSJJ-35754.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: BSJJ-35754 - Código de barras: SJB26050402",
         "stock":  500,
         "barcode":  "SJB26050402"
@@ -330,7 +330,7 @@
         "boxPrice":  7.2,
         "pcsPerBox":  480,
         "image":  "assets/images/YM-S-1596.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: YM-S-1596 - Código de barras: DZ26050401",
         "stock":  480,
         "barcode":  "DZ26050401"
@@ -344,7 +344,7 @@
         "boxPrice":  64,
         "pcsPerBox":  300,
         "image":  "assets/images/FXZ-59621.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: FXZ-59621 - Código de barras: SJB26050401",
         "stock":  4907,
         "barcode":  "SJB26050401"
@@ -358,7 +358,7 @@
         "boxPrice":  204,
         "pcsPerBox":  100,
         "image":  "assets/images/YDBL10050.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: YDBL10050 - Código de barras: XB26050202",
         "stock":  253,
         "barcode":  "XB26050202"
@@ -372,7 +372,7 @@
         "boxPrice":  32,
         "pcsPerBox":  240,
         "image":  "assets/images/SA19889.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: SA19889 - Código de barras: QB26050101",
         "stock":  240,
         "barcode":  "QB26050101"
@@ -386,7 +386,7 @@
         "boxPrice":  104,
         "pcsPerBox":  96,
         "image":  "assets/images/SM1262.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: SM1262 - Código de barras: SB26043008",
         "stock":  291,
         "barcode":  "SB26043008"
@@ -400,7 +400,7 @@
         "boxPrice":  100,
         "pcsPerBox":  96,
         "image":  "assets/images/SM1252.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: SM1252 - Código de barras: SB26043051",
         "stock":  305,
         "barcode":  "SB26043051"
@@ -414,7 +414,7 @@
         "boxPrice":  100,
         "pcsPerBox":  96,
         "image":  "assets/images/SM1256.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: SM1256 - Código de barras: SB26043050",
         "stock":  286,
         "barcode":  "SB26043050"
@@ -428,7 +428,7 @@
         "boxPrice":  100,
         "pcsPerBox":  96,
         "image":  "assets/images/SM1257.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: SM1257 - Código de barras: SB26042923",
         "stock":  288,
         "barcode":  "SB26042923"
@@ -442,7 +442,7 @@
         "boxPrice":  100,
         "pcsPerBox":  96,
         "image":  "assets/images/SM1254.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: SM1254 - Código de barras: SB26042922",
         "stock":  288,
         "barcode":  "SB26042922"
@@ -456,7 +456,7 @@
         "boxPrice":  8,
         "pcsPerBox":  400,
         "image":  "assets/images/SM9682.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: SM9682 - Código de barras: CB26042715",
         "stock":  13801,
         "barcode":  "CB26042715"
@@ -470,7 +470,7 @@
         "boxPrice":  8,
         "pcsPerBox":  400,
         "image":  "assets/images/CBAO-0679.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: CBAO-0679 - Código de barras: CB26042704",
         "stock":  800,
         "barcode":  "CB26042704"
@@ -484,7 +484,7 @@
         "boxPrice":  8,
         "pcsPerBox":  400,
         "image":  "assets/images/CBAO-0697.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: CBAO-0697 - Código de barras: CB26042701",
         "stock":  412,
         "barcode":  "CB26042701"
@@ -498,7 +498,7 @@
         "boxPrice":  16,
         "pcsPerBox":  288,
         "image":  "assets/images/KT19003.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: KT19003 - Código de barras: ZH26042415",
         "stock":  288,
         "barcode":  "ZH26042415"
@@ -512,7 +512,7 @@
         "boxPrice":  17.6,
         "pcsPerBox":  240,
         "image":  "assets/images/DJJ-83615.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: DJJ-83615 - Código de barras: ZH26042413",
         "stock":  240,
         "barcode":  "ZH26042413"
@@ -526,7 +526,7 @@
         "boxPrice":  32,
         "pcsPerBox":  384,
         "image":  "assets/images/MGZ-7840.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: MGZ-7840 - Código de barras: ZH26042403",
         "stock":  384,
         "barcode":  "ZH26042403"
@@ -540,7 +540,7 @@
         "boxPrice":  32,
         "pcsPerBox":  360,
         "image":  "assets/images/MGZ-7841.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: MGZ-7841 - Código de barras: ZH26042302",
         "stock":  720,
         "barcode":  "ZH26042302"
@@ -554,7 +554,7 @@
         "boxPrice":  32,
         "pcsPerBox":  384,
         "image":  "assets/images/MGZ-7843.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: MGZ-7843 - Código de barras: ZH26042301",
         "stock":  384,
         "barcode":  "ZH26042301"
@@ -568,7 +568,7 @@
         "boxPrice":  8,
         "pcsPerBox":  400,
         "image":  "assets/images/CBAO-0666.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: CBAO-0666 - Código de barras: CB26042310",
         "stock":  2071,
         "barcode":  "CB26042310"
@@ -582,7 +582,7 @@
         "boxPrice":  52,
         "pcsPerBox":  200,
         "image":  "assets/images/XZWG-23338.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: XZWG-23338 - Código de barras: WO26042001",
         "stock":  400,
         "barcode":  "WO26042001"
@@ -596,7 +596,7 @@
         "boxPrice":  6.8,
         "pcsPerBox":  1200,
         "image":  "assets/images/BTWZ-90227.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: BTWZ-90227 - Código de barras: WZ26042001",
         "stock":  1200,
         "barcode":  "WZ26042001"
@@ -610,7 +610,7 @@
         "boxPrice":  8,
         "pcsPerBox":  400,
         "image":  "assets/images/CBAO-0681.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: CBAO-0681 - Código de barras: CB26042001",
         "stock":  1000,
         "barcode":  "CB26042001"
@@ -624,7 +624,7 @@
         "boxPrice":  20,
         "pcsPerBox":  120,
         "image":  "assets/images/SC202-14.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: SC202-14 - Código de barras: BJB26041602",
         "stock":  240,
         "barcode":  "BJB26041602"
@@ -638,7 +638,7 @@
         "boxPrice":  140,
         "pcsPerBox":  120,
         "image":  "assets/images/YDBL10004.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: YDBL10004 - Código de barras: QB26041615",
         "stock":  240,
         "barcode":  "QB26041615"
@@ -652,7 +652,7 @@
         "boxPrice":  44,
         "pcsPerBox":  180,
         "image":  "assets/images/TX-99203.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: TX-99203 - Código de barras: SB26041608",
         "stock":  467,
         "barcode":  "SB26041608"
@@ -666,7 +666,7 @@
         "boxPrice":  24,
         "pcsPerBox":  360,
         "image":  "assets/images/50556.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: 50556 - Código de barras: ZH26041604",
         "stock":  360,
         "barcode":  "ZH26041604"
@@ -680,7 +680,7 @@
         "boxPrice":  2.8,
         "pcsPerBox":  1152,
         "image":  "assets/images/SP-6060.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: SP-6060 - Código de barras: ZH26041503",
         "stock":  1152,
         "barcode":  "ZH26041503"
@@ -694,7 +694,7 @@
         "boxPrice":  0.76,
         "pcsPerBox":  1296,
         "image":  "assets/images/668-2.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: 668-2 - Código de barras: ZH26041502",
         "stock":  5184,
         "barcode":  "ZH26041502"
@@ -708,7 +708,7 @@
         "boxPrice":  7.2,
         "pcsPerBox":  200,
         "image":  "assets/images/DJJ-83647.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: DJJ-83647 - Código de barras: ZH26041401",
         "stock":  400,
         "barcode":  "ZH26041401"
@@ -722,7 +722,7 @@
         "boxPrice":  16,
         "pcsPerBox":  360,
         "image":  "assets/images/SN1805.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: SN1805 - Código de barras: SB26041401",
         "stock":  360,
         "barcode":  "SB26041401"
@@ -736,7 +736,7 @@
         "boxPrice":  40,
         "pcsPerBox":  240,
         "image":  "assets/images/YJHZ-77659.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: YJHZ-77659 - Código de barras: HZD26041002",
         "stock":  240,
         "barcode":  "HZD26041002"
@@ -750,7 +750,7 @@
         "boxPrice":  8,
         "pcsPerBox":  400,
         "image":  "assets/images/CBAO-0688.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: CBAO-0688 - Código de barras: CB26040901",
         "stock":  1200,
         "barcode":  "CB26040901"
@@ -764,7 +764,7 @@
         "boxPrice":  52,
         "pcsPerBox":  300,
         "image":  "assets/images/TN22.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: TN22 - Código de barras: CB26040701",
         "stock":  300,
         "barcode":  "CB26040701"
@@ -778,7 +778,7 @@
         "boxPrice":  16,
         "pcsPerBox":  240,
         "image":  "assets/images/ZSH-54612.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: ZSH-54612 - Código de barras: SJB26040201",
         "stock":  240,
         "barcode":  "SJB26040201"
@@ -792,7 +792,7 @@
         "boxPrice":  8,
         "pcsPerBox":  400,
         "image":  "assets/images/CBAO-0687.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: CBAO-0687 - Código de barras: CB26040101",
         "stock":  1603,
         "barcode":  "CB26040101"
@@ -806,7 +806,7 @@
         "boxPrice":  10,
         "pcsPerBox":  288,
         "image":  "assets/images/588M-8.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: 588M-8 - Código de barras: DZ26032806",
         "stock":  576,
         "barcode":  "DZ26032806"
@@ -820,7 +820,7 @@
         "boxPrice":  4.4,
         "pcsPerBox":  1200,
         "image":  "assets/images/XXH132.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: XXH132 - Código de barras: DZ26032805",
         "stock":  1200,
         "barcode":  "DZ26032805"
@@ -834,7 +834,7 @@
         "boxPrice":  10,
         "pcsPerBox":  384,
         "image":  "assets/images/9948.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: 9948 - Código de barras: DZ26032804",
         "stock":  384,
         "barcode":  "DZ26032804"
@@ -848,7 +848,7 @@
         "boxPrice":  7.6,
         "pcsPerBox":  480,
         "image":  "assets/images/9268L-68.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: 9268L-68 - Código de barras: DZ26032803",
         "stock":  480,
         "barcode":  "DZ26032803"
@@ -862,7 +862,7 @@
         "boxPrice":  10,
         "pcsPerBox":  288,
         "image":  "assets/images/7850M-4.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: 7850M-4 - Código de barras: DZ26032802",
         "stock":  288,
         "barcode":  "DZ26032802"
@@ -876,7 +876,7 @@
         "boxPrice":  33.6,
         "pcsPerBox":  300,
         "image":  "assets/images/SA-830.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: SA-830 - Código de barras: DZ26032801",
         "stock":  1020,
         "barcode":  "DZ26032801"
@@ -890,7 +890,7 @@
         "boxPrice":  68,
         "pcsPerBox":  180,
         "image":  "assets/images/YJHZ-77652.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: YJHZ-77652 - Código de barras: DB26032504",
         "stock":  341,
         "barcode":  "DB26032504"
@@ -904,7 +904,7 @@
         "boxPrice":  7.2,
         "pcsPerBox":  480,
         "image":  "assets/images/1974-M.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: 1974-M - Código de barras: LPD26032301",
         "stock":  336,
         "barcode":  "LPD26032301"
@@ -918,7 +918,7 @@
         "boxPrice":  120,
         "pcsPerBox":  12,
         "image":  "assets/images/CL-120P.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: CL-120P - Código de barras: MKB26032301",
         "stock":  264,
         "barcode":  "MKB26032301"
@@ -932,7 +932,7 @@
         "boxPrice":  8,
         "pcsPerBox":  400,
         "image":  "assets/images/CBAO-0696.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: CBAO-0696 - Código de barras: CB26032102",
         "stock":  4800,
         "barcode":  "CB26032102"
@@ -946,7 +946,7 @@
         "boxPrice":  8.8,
         "pcsPerBox":  360,
         "image":  "assets/images/YM-2095-L-1-2-3-4.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: YM-2095-L-1-2-3-4 - Código de barras: LPD26032103",
         "stock":  360,
         "barcode":  "LPD26032103"
@@ -960,7 +960,7 @@
         "boxPrice":  8,
         "pcsPerBox":  240,
         "image":  "assets/images/YBTX-55220.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: YBTX-55220 - Código de barras: BJB26032002",
         "stock":  240,
         "barcode":  "BJB26032002"
@@ -974,7 +974,7 @@
         "boxPrice":  7.2,
         "pcsPerBox":  400,
         "image":  "assets/images/CBAO-0692.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: CBAO-0692 - Código de barras: CB26032010",
         "stock":  400,
         "barcode":  "CB26032010"
@@ -988,7 +988,7 @@
         "boxPrice":  33.6,
         "pcsPerBox":  200,
         "image":  "assets/images/XF-768.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: XF-768 - Código de barras: CB26032001",
         "stock":  3600,
         "barcode":  "CB26032001"
@@ -1002,7 +1002,7 @@
         "boxPrice":  36,
         "pcsPerBox":  40,
         "image":  "assets/images/CL-36P.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: CL-36P - Código de barras: MKB26031901",
         "stock":  565,
         "barcode":  "MKB26031901"
@@ -1016,7 +1016,7 @@
         "boxPrice":  24,
         "pcsPerBox":  60,
         "image":  "assets/images/CL-24P.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: CL-24P - Código de barras: MKB26031701",
         "stock":  360,
         "barcode":  "MKB26031701"
@@ -1030,7 +1030,7 @@
         "boxPrice":  72,
         "pcsPerBox":  240,
         "image":  "assets/images/DL-95420.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: DL-95420 - Código de barras: SJB26031301",
         "stock":  1418,
         "barcode":  "SJB26031301"
@@ -1044,7 +1044,7 @@
         "boxPrice":  7.2,
         "pcsPerBox":  400,
         "image":  "assets/images/CBAO-0695.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: CBAO-0695 - Código de barras: CB26031101",
         "stock":  6000,
         "barcode":  "CB26031101"
@@ -1058,7 +1058,7 @@
         "boxPrice":  16,
         "pcsPerBox":  300,
         "image":  "assets/images/GLDZ-77510.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: GLDZ-77510 - Código de barras: DZ26030902",
         "stock":  300,
         "barcode":  "DZ26030902"
@@ -1072,7 +1072,7 @@
         "boxPrice":  30.4,
         "pcsPerBox":  96,
         "image":  "assets/images/SC-217-20.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: SC-217-20 - Código de barras: BJB26030701",
         "stock":  576,
         "barcode":  "BJB26030701"
@@ -1086,7 +1086,7 @@
         "boxPrice":  48,
         "pcsPerBox":  300,
         "image":  "assets/images/SUP-12163.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: SUP-12163 - Código de barras: QB26030617",
         "stock":  419,
         "barcode":  "QB26030617"
@@ -1100,7 +1100,7 @@
         "boxPrice":  25.6,
         "pcsPerBox":  300,
         "image":  "assets/images/SUP-81125.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: SUP-81125 - Código de barras: QB26030616",
         "stock":  300,
         "barcode":  "QB26030616"
@@ -1114,7 +1114,7 @@
         "boxPrice":  18.4,
         "pcsPerBox":  300,
         "image":  "assets/images/SUP-81141.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: SUP-81141 - Código de barras: QB26030611",
         "stock":  300,
         "barcode":  "QB26030611"
@@ -1128,7 +1128,7 @@
         "boxPrice":  18.4,
         "pcsPerBox":  300,
         "image":  "assets/images/SUP-81135.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: SUP-81135 - Código de barras: QB26030610",
         "stock":  300,
         "barcode":  "QB26030610"
@@ -1142,7 +1142,7 @@
         "boxPrice":  48,
         "pcsPerBox":  300,
         "image":  "assets/images/SUP-12161.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: SUP-12161 - Código de barras: QB26030605",
         "stock":  251,
         "barcode":  "QB26030605"
@@ -1156,7 +1156,7 @@
         "boxPrice":  30.4,
         "pcsPerBox":  432,
         "image":  "assets/images/40113.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: 40113 - Código de barras: ZH26030406",
         "stock":  432,
         "barcode":  "ZH26030406"
@@ -1170,7 +1170,7 @@
         "boxPrice":  22.4,
         "pcsPerBox":  480,
         "image":  "assets/images/40014.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: 40014 - Código de barras: ZH26030402",
         "stock":  480,
         "barcode":  "ZH26030402"
@@ -1184,7 +1184,7 @@
         "boxPrice":  108,
         "pcsPerBox":  120,
         "image":  "assets/images/40144.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: 40144 - Código de barras: ZH26030401",
         "stock":  360,
         "barcode":  "ZH26030401"
@@ -1198,7 +1198,7 @@
         "boxPrice":  18.4,
         "pcsPerBox":  300,
         "image":  "assets/images/SUP-81140.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: SUP-81140 - Código de barras: QB26030401",
         "stock":  300,
         "barcode":  "QB26030401"
@@ -1212,7 +1212,7 @@
         "boxPrice":  28,
         "pcsPerBox":  80,
         "image":  "assets/images/3D-PP014.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: 3D-PP014 - Código de barras: BJB26030303",
         "stock":  720,
         "barcode":  "BJB26030303"
@@ -1226,7 +1226,7 @@
         "boxPrice":  36,
         "pcsPerBox":  56,
         "image":  "assets/images/SC-6008.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: SC-6008 - Código de barras: BJB26030302",
         "stock":  392,
         "barcode":  "BJB26030302"
@@ -1240,7 +1240,7 @@
         "boxPrice":  28,
         "pcsPerBox":  96,
         "image":  "assets/images/SC-217-21.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: SC-217-21 - Código de barras: BJB26030405",
         "stock":  672,
         "barcode":  "BJB26030405"
@@ -1254,7 +1254,7 @@
         "boxPrice":  26.4,
         "pcsPerBox":  150,
         "image":  "assets/images/WLSD-58360.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: WLSD-58360 - Código de barras: DZ26022801",
         "stock":  300,
         "barcode":  "DZ26022801"
@@ -1268,7 +1268,7 @@
         "boxPrice":  8.8,
         "pcsPerBox":  400,
         "image":  "assets/images/XF-447.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: XF-447 - Código de barras: CB26022601",
         "stock":  13844,
         "barcode":  "CB26022601"
@@ -1282,7 +1282,7 @@
         "boxPrice":  134.4,
         "pcsPerBox":  96,
         "image":  "assets/images/COS-1503.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: COS-1503 - Código de barras: QB26022601",
         "stock":  576,
         "barcode":  "QB26022601"
@@ -1296,7 +1296,7 @@
         "boxPrice":  18.4,
         "pcsPerBox":  300,
         "image":  "assets/images/SUP-81139.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: SUP-81139 - Código de barras: QB26022401",
         "stock":  600,
         "barcode":  "QB26022401"
@@ -1310,7 +1310,7 @@
         "boxPrice":  16,
         "pcsPerBox":  360,
         "image":  "assets/images/SN1818.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: SN1818 - Código de barras: SB26022401",
         "stock":  720,
         "barcode":  "SB26022401"
@@ -1324,7 +1324,7 @@
         "boxPrice":  33.6,
         "pcsPerBox":  100,
         "image":  "assets/images/XRZ-75911.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: XRZ-75911 - Código de barras: ZQ26022301",
         "stock":  1100,
         "barcode":  "ZQ26022301"
@@ -1338,7 +1338,7 @@
         "boxPrice":  92,
         "pcsPerBox":  60,
         "image":  "assets/images/GLDZ-77512.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: GLDZ-77512 - Código de barras: ZH26022301",
         "stock":  825,
         "barcode":  "ZH26022301"
@@ -1352,7 +1352,7 @@
         "boxPrice":  120,
         "pcsPerBox":  60,
         "image":  "assets/images/FX25163-13.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: FX25163-13 - Código de barras: SB26022001",
         "stock":  300,
         "barcode":  "SB26022001"
@@ -1366,7 +1366,7 @@
         "boxPrice":  30.4,
         "pcsPerBox":  100,
         "image":  "assets/images/XRZ-75910.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: XRZ-75910 - Código de barras: ZQ26021801",
         "stock":  800,
         "barcode":  "ZQ26021801"
@@ -1380,7 +1380,7 @@
         "boxPrice":  48,
         "pcsPerBox":  300,
         "image":  "assets/images/MS-2001.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: MS-2001 - Código de barras: QB26021802",
         "stock":  276,
         "barcode":  "QB26021802"
@@ -1394,7 +1394,7 @@
         "boxPrice":  208,
         "pcsPerBox":  80,
         "image":  "assets/images/YDBL13201.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: YDBL13201 - Código de barras: DB26021712",
         "stock":  320,
         "barcode":  "DB26021712"
@@ -1408,7 +1408,7 @@
         "boxPrice":  50.4,
         "pcsPerBox":  80,
         "image":  "assets/images/1685-12A.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: 1685-12A - Código de barras: SB26021006",
         "stock":  320,
         "barcode":  "SB26021006"
@@ -1422,7 +1422,7 @@
         "boxPrice":  50.4,
         "pcsPerBox":  80,
         "image":  "assets/images/862.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: 862 - Código de barras: SB26021002",
         "stock":  320,
         "barcode":  "SB26021002"
@@ -1436,7 +1436,7 @@
         "boxPrice":  36,
         "pcsPerBox":  240,
         "image":  "assets/images/LC-167.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: LC-167 - Código de barras: QB26021001",
         "stock":  1200,
         "barcode":  "QB26021001"
@@ -1450,7 +1450,7 @@
         "boxPrice":  16,
         "pcsPerBox":  555,
         "image":  "assets/images/SA-795.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: SA-795 - Código de barras: DZ26021011",
         "stock":  1729,
         "barcode":  "DZ26021011"
@@ -1464,7 +1464,7 @@
         "boxPrice":  84,
         "pcsPerBox":  150,
         "image":  "assets/images/TX-99218.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: TX-99218 - Código de barras: SB26020901",
         "stock":  278,
         "barcode":  "SB26020901"
@@ -1478,7 +1478,7 @@
         "boxPrice":  7.2,
         "pcsPerBox":  480,
         "image":  "assets/images/1846-M.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: 1846-M - Código de barras: DZ26020901",
         "stock":  480,
         "barcode":  "DZ26020901"
@@ -1492,7 +1492,7 @@
         "boxPrice":  7.2,
         "pcsPerBox":  480,
         "image":  "assets/images/2105-M.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: 2105-M - Código de barras: DZ26020602",
         "stock":  480,
         "barcode":  "DZ26020602"
@@ -1506,7 +1506,7 @@
         "boxPrice":  7.2,
         "pcsPerBox":  480,
         "image":  "assets/images/1903-M.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: 1903-M - Código de barras: DZ26020601",
         "stock":  960,
         "barcode":  "DZ26020601"
@@ -1520,7 +1520,7 @@
         "boxPrice":  40,
         "pcsPerBox":  240,
         "image":  "assets/images/KL-030.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: KL-030 - Código de barras: B26020501",
         "stock":  960,
         "barcode":  "B26020501"
@@ -1534,7 +1534,7 @@
         "boxPrice":  44,
         "pcsPerBox":  300,
         "image":  "assets/images/BK21.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: BK21 - Código de barras: CB26020510",
         "stock":  300,
         "barcode":  "CB26020510"
@@ -1548,7 +1548,7 @@
         "boxPrice":  10.8,
         "pcsPerBox":  300,
         "image":  "assets/images/BXP19742.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: BXP19742 - Código de barras: QB26020509",
         "stock":  300,
         "barcode":  "QB26020509"
@@ -1562,7 +1562,7 @@
         "boxPrice":  10.8,
         "pcsPerBox":  300,
         "image":  "assets/images/BXP19741.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: BXP19741 - Código de barras: QB26020506",
         "stock":  300,
         "barcode":  "QB26020506"
@@ -1576,7 +1576,7 @@
         "boxPrice":  22.4,
         "pcsPerBox":  300,
         "image":  "assets/images/BXP90540.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: BXP90540 - Código de barras: QB26020503",
         "stock":  300,
         "barcode":  "QB26020503"
@@ -1590,7 +1590,7 @@
         "boxPrice":  100,
         "pcsPerBox":  50,
         "image":  "assets/images/JLB-6823.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: JLB-6823 - Código de barras: WO26020329",
         "stock":  298,
         "barcode":  "WO26020329"
@@ -1604,7 +1604,7 @@
         "boxPrice":  232,
         "pcsPerBox":  4,
         "image":  "assets/images/NNDF-18-3.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: NNDF-18-3 - Código de barras: FS26020301",
         "stock":  1447,
         "barcode":  "FS26020301"
@@ -1618,7 +1618,7 @@
         "boxPrice":  24,
         "pcsPerBox":  300,
         "image":  "assets/images/TG25-1.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: TG25-1 - Código de barras: WCH26012801",
         "stock":  600,
         "barcode":  "WCH26012801"
@@ -1632,7 +1632,7 @@
         "boxPrice":  30.4,
         "pcsPerBox":  100,
         "image":  "assets/images/GJ-BALL21.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: GJ-BALL21 - Código de barras: ZQ26012701",
         "stock":  301,
         "barcode":  "ZQ26012701"
@@ -1646,7 +1646,7 @@
         "boxPrice":  22.4,
         "pcsPerBox":  300,
         "image":  "assets/images/BXP90531.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: BXP90531 - Código de barras: QB26012797",
         "stock":  300,
         "barcode":  "QB26012797"
@@ -1660,7 +1660,7 @@
         "boxPrice":  30.4,
         "pcsPerBox":  540,
         "image":  "assets/images/CO-1008.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: CO-1008 - Código de barras: QB26012609",
         "stock":  537,
         "barcode":  "QB26012609"
@@ -1674,7 +1674,7 @@
         "boxPrice":  160,
         "pcsPerBox":  36,
         "image":  "assets/images/LS-505.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: LS-505 - Código de barras: HZX26012601",
         "stock":  288,
         "barcode":  "HZX26012601"
@@ -1688,7 +1688,7 @@
         "boxPrice":  120,
         "pcsPerBox":  60,
         "image":  "assets/images/MN-4000.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: MN-4000 - Código de barras: QB26012409",
         "stock":  635,
         "barcode":  "QB26012409"
@@ -1702,7 +1702,7 @@
         "boxPrice":  20,
         "pcsPerBox":  180,
         "image":  "assets/images/DBabi733.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: DBabi733 - Código de barras: ZH26012201",
         "stock":  1440,
         "barcode":  "ZH26012201"
@@ -1716,7 +1716,7 @@
         "boxPrice":  16,
         "pcsPerBox":  240,
         "image":  "assets/images/L-8033.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: L-8033 - Código de barras: SB26011701",
         "stock":  1200,
         "barcode":  "SB26011701"
@@ -1730,7 +1730,7 @@
         "boxPrice":  16,
         "pcsPerBox":  500,
         "image":  "assets/images/RED1100.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: RED1100 - Código de barras: MLA26011603",
         "stock":  7500,
         "barcode":  "MLA26011603"
@@ -1744,7 +1744,7 @@
         "boxPrice":  16,
         "pcsPerBox":  200,
         "image":  "assets/images/YM-7727.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: YM-7727 - Código de barras: LBB26011502",
         "stock":  1400,
         "barcode":  "LBB26011502"
@@ -1758,7 +1758,7 @@
         "boxPrice":  96,
         "pcsPerBox":  100,
         "image":  "assets/images/XZWG-23354.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: XZWG-23354 - Código de barras: ",
         "stock":  250,
         "barcode":  ""
@@ -1772,7 +1772,7 @@
         "boxPrice":  4.4,
         "pcsPerBox":  800,
         "image":  "assets/logos/logo_color.png",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: E3056-3057 - Código de barras: ",
         "stock":  800,
         "barcode":  ""
@@ -1786,7 +1786,7 @@
         "boxPrice":  5.2,
         "pcsPerBox":  800,
         "image":  "assets/images/E3071-3072.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: E3071-3072 - Código de barras: ",
         "stock":  2400,
         "barcode":  ""
@@ -1800,7 +1800,7 @@
         "boxPrice":  64,
         "pcsPerBox":  240,
         "image":  "assets/images/CO-1006.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: CO-1006 - Código de barras: QB26010201",
         "stock":  447,
         "barcode":  "QB26010201"
@@ -1814,7 +1814,7 @@
         "boxPrice":  36,
         "pcsPerBox":  300,
         "image":  "assets/images/TG25.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: TG25 - Código de barras: DB25121706",
         "stock":  300,
         "barcode":  "DB25121706"
@@ -1828,7 +1828,7 @@
         "boxPrice":  40,
         "pcsPerBox":  250,
         "image":  "assets/images/GS-6360.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: GS-6360 - Código de barras: B25121101",
         "stock":  495,
         "barcode":  "B25121101"
@@ -1842,7 +1842,7 @@
         "boxPrice":  44,
         "pcsPerBox":  240,
         "image":  "assets/images/XDWJ-8720.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: XDWJ-8720 - Código de barras: ZH25112901",
         "stock":  3097,
         "barcode":  "ZH25112901"
@@ -1856,7 +1856,7 @@
         "boxPrice":  102.4,
         "pcsPerBox":  120,
         "image":  "assets/images/LLH-041.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: LLH-041 - Código de barras: 251126000004",
         "stock":  1081,
         "barcode":  "251126000004"
@@ -1870,7 +1870,7 @@
         "boxPrice":  6.8,
         "pcsPerBox":  1200,
         "image":  "assets/images/90222.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: 90222 - Código de barras: ",
         "stock":  1200,
         "barcode":  ""
@@ -1884,7 +1884,7 @@
         "boxPrice":  72,
         "pcsPerBox":  120,
         "image":  "assets/images/5210#.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: 5210# - Código de barras: DB26020705",
         "stock":  369,
         "barcode":  "DB26020705"
@@ -1898,7 +1898,7 @@
         "boxPrice":  44,
         "pcsPerBox":  300,
         "image":  "assets/images/YYD-7019.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: YYD-7019 - Código de barras: WO25110421",
         "stock":  247,
         "barcode":  "WO25110421"
@@ -1912,7 +1912,7 @@
         "boxPrice":  24,
         "pcsPerBox":  300,
         "image":  "assets/images/MRKP-6113.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: MRKP-6113 - Código de barras: WO25110403",
         "stock":  477,
         "barcode":  "WO25110403"
@@ -1926,7 +1926,7 @@
         "boxPrice":  28.8,
         "pcsPerBox":  240,
         "image":  "assets/images/SX-27-7.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: SX-27-7 - Código de barras: QB25102402",
         "stock":  252,
         "barcode":  "QB25102402"
@@ -1940,7 +1940,7 @@
         "boxPrice":  28.8,
         "pcsPerBox":  240,
         "image":  "assets/images/SX-27-2.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: SX-27-2 - Código de barras: QB25102401",
         "stock":  480,
         "barcode":  "QB25102401"
@@ -1954,7 +1954,7 @@
         "boxPrice":  6.4,
         "pcsPerBox":  2400,
         "image":  "assets/images/LL1368.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: LL1368 - Código de barras: B25102001",
         "stock":  257,
         "barcode":  "B25102001"
@@ -1968,7 +1968,7 @@
         "boxPrice":  44,
         "pcsPerBox":  360,
         "image":  "assets/images/SA2023032.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: SA2023032 - Código de barras: QB25102101",
         "stock":  322,
         "barcode":  "QB25102101"
@@ -1982,7 +1982,7 @@
         "boxPrice":  8,
         "pcsPerBox":  1000,
         "image":  "assets/images/0812.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: 0812 - Código de barras: ZH25101088",
         "stock":  550,
         "barcode":  "ZH25101088"
@@ -1996,7 +1996,7 @@
         "boxPrice":  180,
         "pcsPerBox":  80,
         "image":  "assets/images/0688.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: 0688 - Código de barras: DB25100910",
         "stock":  263,
         "barcode":  "DB25100910"
@@ -2010,7 +2010,7 @@
         "boxPrice":  64,
         "pcsPerBox":  75,
         "image":  "assets/images/QXC-925-27.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: QXC-925-27 - Código de barras: WO2510077",
         "stock":  430,
         "barcode":  "WO2510077"
@@ -2024,7 +2024,7 @@
         "boxPrice":  12,
         "pcsPerBox":  500,
         "image":  "assets/images/TV-79.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: TV-79 - Código de barras: XB2509130",
         "stock":  3931,
         "barcode":  "XB2509130"
@@ -2038,7 +2038,7 @@
         "boxPrice":  45.6,
         "pcsPerBox":  150,
         "image":  "assets/images/YD-681.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: YD-681 - Código de barras: WO2509042",
         "stock":  995,
         "barcode":  "WO2509042"
@@ -2052,7 +2052,7 @@
         "boxPrice":  44,
         "pcsPerBox":  150,
         "image":  "assets/images/LO-064-065-066.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: LO-064-065-066 - Código de barras: WO2509016",
         "stock":  774,
         "barcode":  "WO2509016"
@@ -2066,7 +2066,7 @@
         "boxPrice":  104,
         "pcsPerBox":  35,
         "image":  "assets/images/YS-712-60#3.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: YS-712-60#3 - Código de barras: WO2509009",
         "stock":  334,
         "barcode":  "WO2509009"
@@ -2080,7 +2080,7 @@
         "boxPrice":  14.4,
         "pcsPerBox":  250,
         "image":  "assets/images/YX330014.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: YX330014 - Código de barras: QRJ26042901",
         "stock":  250,
         "barcode":  "QRJ26042901"
@@ -2094,7 +2094,7 @@
         "boxPrice":  14.4,
         "pcsPerBox":  250,
         "image":  "assets/images/YX-330002.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: YX-330002 - Código de barras: QRJ26012206",
         "stock":  250,
         "barcode":  "QRJ26012206"
@@ -2108,7 +2108,7 @@
         "boxPrice":  104,
         "pcsPerBox":  35,
         "image":  "assets/images/YS-711-60.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: YS-711-60 - Código de barras: WO2510076",
         "stock":  342,
         "barcode":  "WO2510076"
@@ -2122,7 +2122,7 @@
         "boxPrice":  32,
         "pcsPerBox":  60,
         "image":  "assets/images/YH-5502.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: YH-5502 - Código de barras: YS26022502",
         "stock":  1756,
         "barcode":  "YS26022502"
@@ -2136,7 +2136,7 @@
         "boxPrice":  16,
         "pcsPerBox":  600,
         "image":  "assets/images/YG-9927.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: YG-9927 - Código de barras: QB26042916",
         "stock":  600,
         "barcode":  "QB26042916"
@@ -2150,7 +2150,7 @@
         "boxPrice":  14.4,
         "pcsPerBox":  600,
         "image":  "assets/images/YG-9920.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: YG-9920 - Código de barras: QB25101804",
         "stock":  408,
         "barcode":  "QB25101804"
@@ -2164,7 +2164,7 @@
         "boxPrice":  28,
         "pcsPerBox":  360,
         "image":  "assets/images/YG-9903.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: YG-9903 - Código de barras: QB2509025",
         "stock":  540,
         "barcode":  "QB2509025"
@@ -2178,7 +2178,7 @@
         "boxPrice":  24,
         "pcsPerBox":  480,
         "image":  "assets/images/YG-5018.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: YG-5018 - Código de barras: QB25102703",
         "stock":  254,
         "barcode":  "QB25102703"
@@ -2192,7 +2192,7 @@
         "boxPrice":  40,
         "pcsPerBox":  240,
         "image":  "assets/images/YG-318.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: YG-318 - Código de barras: 251127000001",
         "stock":  452,
         "barcode":  "251127000001"
@@ -2206,7 +2206,7 @@
         "boxPrice":  32,
         "pcsPerBox":  72,
         "image":  "assets/images/YF-5774.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: YF-5774 - Código de barras: ZH26020301",
         "stock":  365,
         "barcode":  "ZH26020301"
@@ -2220,7 +2220,7 @@
         "boxPrice":  16,
         "pcsPerBox":  400,
         "image":  "assets/images/YF-5742.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: YF-5742 - Código de barras: ZH25102702",
         "stock":  401,
         "barcode":  "ZH25102702"
@@ -2234,7 +2234,7 @@
         "boxPrice":  52,
         "pcsPerBox":  300,
         "image":  "assets/images/YD40014.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: YD40014 - Código de barras: QB25121801",
         "stock":  604,
         "barcode":  "QB25121801"
@@ -2248,7 +2248,7 @@
         "boxPrice":  56,
         "pcsPerBox":  500,
         "image":  "assets/images/YD40013-1.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: YD40013-1 - Código de barras: QB26012401",
         "stock":  501,
         "barcode":  "QB26012401"
@@ -2262,7 +2262,7 @@
         "boxPrice":  240,
         "pcsPerBox":  40,
         "image":  "assets/images/YD40011-1.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: YD40011-1 - Código de barras: DB25101451",
         "stock":  293,
         "barcode":  "DB25101451"
@@ -2276,7 +2276,7 @@
         "boxPrice":  52,
         "pcsPerBox":  500,
         "image":  "assets/images/YD40007-1.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: YD40007-1 - Código de barras: DB25103002",
         "stock":  812,
         "barcode":  "DB25103002"
@@ -2290,7 +2290,7 @@
         "boxPrice":  240,
         "pcsPerBox":  40,
         "image":  "assets/images/YD20019.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: YD20019 - Código de barras: DB25101373",
         "stock":  446,
         "barcode":  "DB25101373"
@@ -2304,7 +2304,7 @@
         "boxPrice":  30.4,
         "pcsPerBox":  120,
         "image":  "assets/images/YC-HAT1294.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: YC-HAT1294 - Código de barras: MZ26030410",
         "stock":  242,
         "barcode":  "MZ26030410"
@@ -2318,7 +2318,7 @@
         "boxPrice":  30.4,
         "pcsPerBox":  120,
         "image":  "assets/images/YC-HAT1287.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: YC-HAT1287 - Código de barras: MZ26020201",
         "stock":  355,
         "barcode":  "MZ26020201"
@@ -2332,7 +2332,7 @@
         "boxPrice":  30.4,
         "pcsPerBox":  120,
         "image":  "assets/images/YC-HAT1260.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: YC-HAT1260 - Código de barras: MZ26022803",
         "stock":  252,
         "barcode":  "MZ26022803"
@@ -2346,7 +2346,7 @@
         "boxPrice":  30.4,
         "pcsPerBox":  120,
         "image":  "assets/images/YC-HAT1257.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: YC-HAT1257 - Código de barras: MZ26031011",
         "stock":  286,
         "barcode":  "MZ26031011"
@@ -2360,7 +2360,7 @@
         "boxPrice":  30.4,
         "pcsPerBox":  120,
         "image":  "assets/images/YC-HAT1232.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: YC-HAT1232 - Código de barras: MZ26021801",
         "stock":  398,
         "barcode":  "MZ26021801"
@@ -2374,7 +2374,7 @@
         "boxPrice":  30.4,
         "pcsPerBox":  120,
         "image":  "assets/images/YC-HAT12149.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: YC-HAT12149 - Código de barras: MZ26030901",
         "stock":  404,
         "barcode":  "MZ26030901"
@@ -2388,7 +2388,7 @@
         "boxPrice":  30.4,
         "pcsPerBox":  120,
         "image":  "assets/images/YC-HAT12135.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: YC-HAT12135 - Código de barras: MZ26022301",
         "stock":  328,
         "barcode":  "MZ26022301"
@@ -2402,7 +2402,7 @@
         "boxPrice":  30.4,
         "pcsPerBox":  120,
         "image":  "assets/images/YC-HAT12127.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: YC-HAT12127 - Código de barras: MZ26021701",
         "stock":  485,
         "barcode":  "MZ26021701"
@@ -2416,7 +2416,7 @@
         "boxPrice":  30.4,
         "pcsPerBox":  120,
         "image":  "assets/images/YC-HAT12124.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: YC-HAT12124 - Código de barras: MZ26021702",
         "stock":  571,
         "barcode":  "MZ26021702"
@@ -2430,7 +2430,7 @@
         "boxPrice":  32,
         "pcsPerBox":  120,
         "image":  "assets/images/ZYD-Y7740.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: ZYD-Y7740 - Código de barras: ZH25110502",
         "stock":  1363,
         "barcode":  "ZH25110502"
@@ -2444,7 +2444,7 @@
         "boxPrice":  32,
         "pcsPerBox":  120,
         "image":  "assets/images/ZYD-F7730.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: ZYD-F7730 - Código de barras: ZH25110501",
         "stock":  3168,
         "barcode":  "ZH25110501"
@@ -2458,7 +2458,7 @@
         "boxPrice":  96,
         "pcsPerBox":  100,
         "image":  "assets/images/ZYA-687-1.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: ZYA-687-1 - Código de barras: DB26021701",
         "stock":  281,
         "barcode":  "DB26021701"
@@ -2472,7 +2472,7 @@
         "boxPrice":  96,
         "pcsPerBox":  80,
         "image":  "assets/images/ZSL-717.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: ZSL-717 - Código de barras: DB2509019",
         "stock":  338,
         "barcode":  "DB2509019"
@@ -2486,7 +2486,7 @@
         "boxPrice":  44,
         "pcsPerBox":  30,
         "image":  "assets/images/TYH-551.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: TYH-551 - Código de barras: WO2509023",
         "stock":  250,
         "barcode":  "WO2509023"
@@ -2500,7 +2500,7 @@
         "boxPrice":  38.4,
         "pcsPerBox":  35,
         "image":  "assets/images/TYH-550.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: TYH-550 - Código de barras: WO25122604",
         "stock":  247,
         "barcode":  "WO25122604"
@@ -2514,7 +2514,7 @@
         "boxPrice":  4.8,
         "pcsPerBox":  1000,
         "image":  "assets/images/TY-41110.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: TY-41110 - Código de barras: DB2509135",
         "stock":  466,
         "barcode":  "DB2509135"
@@ -2528,7 +2528,7 @@
         "boxPrice":  60,
         "pcsPerBox":  260,
         "image":  "assets/images/TG53.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: TG53 - Código de barras: DB25121705",
         "stock":  260,
         "barcode":  "DB25121705"
@@ -2542,7 +2542,7 @@
         "boxPrice":  36,
         "pcsPerBox":  260,
         "image":  "assets/images/TG29.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: TG29 - Código de barras: DB25121702",
         "stock":  260,
         "barcode":  "DB25121702"
@@ -2556,7 +2556,7 @@
         "boxPrice":  24,
         "pcsPerBox":  120,
         "image":  "assets/images/TB-UM19.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: TB-UM19 - Código de barras: YS26020302",
         "stock":  910,
         "barcode":  "YS26020302"
@@ -2570,7 +2570,7 @@
         "boxPrice":  32,
         "pcsPerBox":  100,
         "image":  "assets/images/TB-UM14.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: TB-UM14 - Código de barras: YS26022504",
         "stock":  2556,
         "barcode":  "YS26022504"
@@ -2584,7 +2584,7 @@
         "boxPrice":  52,
         "pcsPerBox":  96,
         "image":  "assets/images/SP-256.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: SP-256 - Código de barras: HZH2026051801",
         "stock":  241,
         "barcode":  "HZH2026051801"
@@ -2598,7 +2598,7 @@
         "boxPrice":  52,
         "pcsPerBox":  96,
         "image":  "assets/images/SP-029.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: SP-029 - Código de barras: BD26033001",
         "stock":  266,
         "barcode":  "BD26033001"
@@ -2612,7 +2612,7 @@
         "boxPrice":  24,
         "pcsPerBox":  360,
         "image":  "assets/images/SND-1371.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: SND-1371 - Código de barras: DB2509133",
         "stock":  371,
         "barcode":  "DB2509133"
@@ -2626,7 +2626,7 @@
         "boxPrice":  15.2,
         "pcsPerBox":  960,
         "image":  "assets/images/SND-1370.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: SND-1370 - Código de barras: DB2509134",
         "stock":  2458,
         "barcode":  "DB2509134"
@@ -2640,7 +2640,7 @@
         "boxPrice":  16,
         "pcsPerBox":  360,
         "image":  "assets/images/SN-1916.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: SN-1916 - Código de barras: SB26011721",
         "stock":  1080,
         "barcode":  "SB26011721"
@@ -2654,7 +2654,7 @@
         "boxPrice":  16,
         "pcsPerBox":  360,
         "image":  "assets/images/SN-1907.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: SN-1907 - Código de barras: SB26011720",
         "stock":  721,
         "barcode":  "SB26011720"
@@ -2668,7 +2668,7 @@
         "boxPrice":  16,
         "pcsPerBox":  360,
         "image":  "assets/images/SN-1808.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: SN-1808 - Código de barras: SB26011722",
         "stock":  360,
         "barcode":  "SB26011722"
@@ -2682,7 +2682,7 @@
         "boxPrice":  16,
         "pcsPerBox":  360,
         "image":  "assets/images/SN-1807.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: SN-1807 - Código de barras: SB26041001",
         "stock":  360,
         "barcode":  "SB26041001"
@@ -2696,7 +2696,7 @@
         "boxPrice":  24,
         "pcsPerBox":  240,
         "image":  "assets/images/SM9998.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: SM9998 - Código de barras: XB2510010",
         "stock":  725,
         "barcode":  "XB2510010"
@@ -2710,7 +2710,7 @@
         "boxPrice":  7.2,
         "pcsPerBox":  400,
         "image":  "assets/images/SM909.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: SM909 - Código de barras: CB26031201",
         "stock":  400,
         "barcode":  "CB26031201"
@@ -2724,7 +2724,7 @@
         "boxPrice":  7.2,
         "pcsPerBox":  400,
         "image":  "assets/images/SM908.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: SM908 - Código de barras: CB26031202",
         "stock":  400,
         "barcode":  "CB26031202"
@@ -2738,7 +2738,7 @@
         "boxPrice":  7.2,
         "pcsPerBox":  400,
         "image":  "assets/images/SM907.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: SM907 - Código de barras: CB26021301",
         "stock":  800,
         "barcode":  "CB26021301"
@@ -2752,7 +2752,7 @@
         "boxPrice":  7.2,
         "pcsPerBox":  400,
         "image":  "assets/images/SM905.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: SM905 - Código de barras: CB26022102",
         "stock":  1224,
         "barcode":  "CB26022102"
@@ -2766,7 +2766,7 @@
         "boxPrice":  7.2,
         "pcsPerBox":  400,
         "image":  "assets/images/SM902.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: SM902 - Código de barras: CB26022101",
         "stock":  1600,
         "barcode":  "CB26022101"
@@ -2780,7 +2780,7 @@
         "boxPrice":  7.2,
         "pcsPerBox":  400,
         "image":  "assets/images/SM901.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: SM901 - Código de barras: CB26030201",
         "stock":  400,
         "barcode":  "CB26030201"
@@ -2794,7 +2794,7 @@
         "boxPrice":  40,
         "pcsPerBox":  100,
         "image":  "assets/images/SM6711.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: SM6711 - Código de barras: SB2026052615",
         "stock":  700,
         "barcode":  "SB2026052615"
@@ -2808,7 +2808,7 @@
         "boxPrice":  16,
         "pcsPerBox":  180,
         "image":  "assets/images/SM4872.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: SM4872 - Código de barras: SB26011501",
         "stock":  1260,
         "barcode":  "SB26011501"
@@ -2822,7 +2822,7 @@
         "boxPrice":  16,
         "pcsPerBox":  150,
         "image":  "assets/images/SM4843.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: SM4843 - Código de barras: LBB26011502",
         "stock":  1350,
         "barcode":  "LBB26011502"
@@ -2836,7 +2836,7 @@
         "boxPrice":  9.6,
         "pcsPerBox":  500,
         "image":  "assets/images/SM3402.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: SM3402 - Código de barras: DB2509131",
         "stock":  14789,
         "barcode":  "DB2509131"
@@ -2850,7 +2850,7 @@
         "boxPrice":  6.4,
         "pcsPerBox":  500,
         "image":  "assets/images/SM1506-2.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: SM1506-2 - Código de barras: CB26033101",
         "stock":  11000,
         "barcode":  "CB26033101"
@@ -2864,7 +2864,7 @@
         "boxPrice":  10.4,
         "pcsPerBox":  50,
         "image":  "assets/images/SM1506.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: SM1506 - Código de barras: XB2509131",
         "stock":  500,
         "barcode":  "XB2509131"
@@ -2878,7 +2878,7 @@
         "boxPrice":  7.2,
         "pcsPerBox":  500,
         "image":  "assets/images/SM1505.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: SM1505 - Código de barras: CB26031004",
         "stock":  3000,
         "barcode":  "CB26031004"
@@ -2892,7 +2892,7 @@
         "boxPrice":  7.2,
         "pcsPerBox":  400,
         "image":  "assets/images/SM-TV19.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: SM-TV19 - Código de barras: DB25121707",
         "stock":  2000,
         "barcode":  "DB25121707"
@@ -2906,7 +2906,7 @@
         "boxPrice":  0.4,
         "pcsPerBox":  3000,
         "image":  "assets/images/XML-YY12220.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: XML-YY12220 - Código de barras: ZH26022503",
         "stock":  3000,
         "barcode":  "ZH26022503"
@@ -2920,7 +2920,7 @@
         "boxPrice":  16,
         "pcsPerBox":  150,
         "image":  "assets/images/XL-KP7972.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: XL-KP7972 - Código de barras: LBB26032801",
         "stock":  450,
         "barcode":  "LBB26032801"
@@ -2934,7 +2934,7 @@
         "boxPrice":  25.6,
         "pcsPerBox":  300,
         "image":  "assets/images/XK-701.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: XK-701 - Código de barras: QB26030509",
         "stock":  264,
         "barcode":  "QB26030509"
@@ -2948,7 +2948,7 @@
         "boxPrice":  25.6,
         "pcsPerBox":  300,
         "image":  "assets/images/XK-700.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: XK-700 - Código de barras: QB26030501",
         "stock":  504,
         "barcode":  "QB26030501"
@@ -2962,7 +2962,7 @@
         "boxPrice":  25.6,
         "pcsPerBox":  300,
         "image":  "assets/images/XK-695.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: XK-695 - Código de barras: QB25121301",
         "stock":  300,
         "barcode":  "QB25121301"
@@ -2976,7 +2976,7 @@
         "boxPrice":  25.6,
         "pcsPerBox":  300,
         "image":  "assets/images/XK-694.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: XK-694 - Código de barras: QB25121310",
         "stock":  276,
         "barcode":  "QB25121310"
@@ -2990,7 +2990,7 @@
         "boxPrice":  25.6,
         "pcsPerBox":  300,
         "image":  "assets/images/XK-693.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: XK-693 - Código de barras: QB25121311",
         "stock":  577,
         "barcode":  "QB25121311"
@@ -3004,7 +3004,7 @@
         "boxPrice":  6.24,
         "pcsPerBox":  288,
         "image":  "assets/images/XJ-91402.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: XJ-91402 - Código de barras: QRJ26012215",
         "stock":  2880,
         "barcode":  "QRJ26012215"
@@ -3018,7 +3018,7 @@
         "boxPrice":  9.6,
         "pcsPerBox":  480,
         "image":  "assets/images/XJ-91400.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: XJ-91400 - Código de barras: QRJ26010903",
         "stock":  13202,
         "barcode":  "QRJ26010903"
@@ -3032,7 +3032,7 @@
         "boxPrice":  28,
         "pcsPerBox":  50,
         "image":  "assets/images/XHYZ-9310.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: XHYZ-9310 - Código de barras: DZ26021203",
         "stock":  715,
         "barcode":  "DZ26021203"
@@ -3046,7 +3046,7 @@
         "boxPrice":  76,
         "pcsPerBox":  20,
         "image":  "assets/images/XDWZ-8250.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: XDWZ-8250 - Código de barras: ZH26012799",
         "stock":  853,
         "barcode":  "ZH26012799"
@@ -3060,7 +3060,7 @@
         "boxPrice":  28,
         "pcsPerBox":  360,
         "image":  "assets/images/XDWJ-8723.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: XDWJ-8723 - Código de barras: GJ25120101",
         "stock":  263,
         "barcode":  "GJ25120101"
@@ -3074,7 +3074,7 @@
         "boxPrice":  18.4,
         "pcsPerBox":  100,
         "image":  "assets/images/WKSS-6730.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: WKSS-6730 - Código de barras: HZB2509005",
         "stock":  3389,
         "barcode":  "HZB2509005"
@@ -3088,7 +3088,7 @@
         "boxPrice":  16,
         "pcsPerBox":  240,
         "image":  "assets/images/QL-161.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: QL-161 - Código de barras: QB26011502",
         "stock":  720,
         "barcode":  "QB26011502"
@@ -3102,7 +3102,7 @@
         "boxPrice":  25.6,
         "pcsPerBox":  180,
         "image":  "assets/images/QL-148.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: QL-148 - Código de barras: ",
         "stock":  360,
         "barcode":  ""
@@ -3116,7 +3116,7 @@
         "boxPrice":  30.4,
         "pcsPerBox":  180,
         "image":  "assets/images/QL-126.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: QL-126 - Código de barras: QB26011503",
         "stock":  540,
         "barcode":  "QB26011503"
@@ -3130,7 +3130,7 @@
         "boxPrice":  108,
         "pcsPerBox":  120,
         "image":  "assets/images/PA-01.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: PA-01 - Código de barras: QB2509076",
         "stock":  287,
         "barcode":  "QB2509076"
@@ -3144,7 +3144,7 @@
         "boxPrice":  68,
         "pcsPerBox":  120,
         "image":  "assets/images/MTM-7754.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: MTM-7754 - Código de barras: WO2509048",
         "stock":  302,
         "barcode":  "WO2509048"
@@ -3158,7 +3158,7 @@
         "boxPrice":  28,
         "pcsPerBox":  240,
         "image":  "assets/images/MBB-6618.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: MBB-6618 - Código de barras: QB26011501",
         "stock":  960,
         "barcode":  "QB26011501"
@@ -3172,7 +3172,7 @@
         "boxPrice":  112,
         "pcsPerBox":  80,
         "image":  "assets/images/M9638.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: M9638 - Código de barras: QB26011705",
         "stock":  305,
         "barcode":  "QB26011705"
@@ -3186,7 +3186,7 @@
         "boxPrice":  112,
         "pcsPerBox":  80,
         "image":  "assets/images/M9636.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: M9636 - Código de barras: QB26012320",
         "stock":  403,
         "barcode":  "QB26012320"
@@ -3200,7 +3200,7 @@
         "boxPrice":  24,
         "pcsPerBox":  360,
         "image":  "assets/logos/logo_color.png",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: SAN-2013 - Código de barras: QB25121303",
         "stock":  263,
         "barcode":  "QB25121303"
@@ -3214,7 +3214,7 @@
         "boxPrice":  17.6,
         "pcsPerBox":  480,
         "image":  "assets/images/SAN-2010.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: SAN-2010 - Código de barras: QB2509026",
         "stock":  348,
         "barcode":  "QB2509026"
@@ -3228,7 +3228,7 @@
         "boxPrice":  96,
         "pcsPerBox":  120,
         "image":  "assets/images/SA-815.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: SA-815 - Código de barras: WO2509053",
         "stock":  358,
         "barcode":  "WO2509053"
@@ -3242,7 +3242,7 @@
         "boxPrice":  44,
         "pcsPerBox":  600,
         "image":  "assets/images/SA-755.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: SA-755 - Código de barras: WO26020320",
         "stock":  600,
         "barcode":  "WO26020320"
@@ -3256,7 +3256,7 @@
         "boxPrice":  16,
         "pcsPerBox":  600,
         "image":  "assets/images/SA-713.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: SA-713 - Código de barras: ZH2026051802",
         "stock":  1800,
         "barcode":  "ZH2026051802"
@@ -3270,7 +3270,7 @@
         "boxPrice":  60,
         "pcsPerBox":  160,
         "image":  "assets/images/SA-711.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: SA-711 - Código de barras: WO2509047",
         "stock":  333,
         "barcode":  "WO2509047"
@@ -3284,7 +3284,7 @@
         "boxPrice":  60,
         "pcsPerBox":  160,
         "image":  "assets/images/SA-710.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: SA-710 - Código de barras: WO2509029",
         "stock":  283,
         "barcode":  "WO2509029"
@@ -3298,7 +3298,7 @@
         "boxPrice":  60,
         "pcsPerBox":  240,
         "image":  "assets/images/SA-709.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: SA-709 - Código de barras: WO2509045",
         "stock":  508,
         "barcode":  "WO2509045"
@@ -3312,7 +3312,7 @@
         "boxPrice":  17.6,
         "pcsPerBox":  480,
         "image":  "assets/images/SA-701.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: SA-701 - Código de barras: SD2509007",
         "stock":  4164,
         "barcode":  "SD2509007"
@@ -3326,7 +3326,7 @@
         "boxPrice":  8,
         "pcsPerBox":  1000,
         "image":  "assets/images/SA-531.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: SA-531 - Código de barras: GJ2509003",
         "stock":  266,
         "barcode":  "GJ2509003"
@@ -3340,7 +3340,7 @@
         "boxPrice":  16,
         "pcsPerBox":  600,
         "image":  "assets/images/SA-527.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: SA-527 - Código de barras: MZ2509002",
         "stock":  684,
         "barcode":  "MZ2509002"
@@ -3354,7 +3354,7 @@
         "boxPrice":  16,
         "pcsPerBox":  360,
         "image":  "assets/images/SA-525.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: SA-525 - Código de barras: MZ2509003",
         "stock":  1397,
         "barcode":  "MZ2509003"
@@ -3368,7 +3368,7 @@
         "boxPrice":  16,
         "pcsPerBox":  60,
         "image":  "assets/images/SA-362.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: SA-362 - Código de barras: MZ2509001",
         "stock":  532,
         "barcode":  "MZ2509001"
@@ -3382,7 +3382,7 @@
         "boxPrice":  17.6,
         "pcsPerBox":  200,
         "image":  "assets/images/SA-361.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: SA-361 - Código de barras: MZ26041001",
         "stock":  1418,
         "barcode":  "MZ26041001"
@@ -3396,7 +3396,7 @@
         "boxPrice":  4,
         "pcsPerBox":  1200,
         "image":  "assets/images/SA-353.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: SA-353 - Código de barras: ZH26021201",
         "stock":  7202,
         "barcode":  "ZH26021201"
@@ -3410,7 +3410,7 @@
         "boxPrice":  32,
         "pcsPerBox":  250,
         "image":  "assets/images/SA-333.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: SA-333 - Código de barras: B26012610",
         "stock":  330,
         "barcode":  "B26012610"
@@ -3424,7 +3424,7 @@
         "boxPrice":  32,
         "pcsPerBox":  250,
         "image":  "assets/images/SA-311.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: SA-311 - Código de barras: GJ26030601",
         "stock":  2695,
         "barcode":  "GJ26030601"
@@ -3438,7 +3438,7 @@
         "boxPrice":  12.8,
         "pcsPerBox":  720,
         "image":  "assets/images/SA-297.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: SA-297 - Código de barras: GJ25100921",
         "stock":  315,
         "barcode":  "GJ25100921"
@@ -3452,7 +3452,7 @@
         "boxPrice":  14.4,
         "pcsPerBox":  720,
         "image":  "assets/images/SA-293.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: SA-293 - Código de barras: GJ26020901",
         "stock":  720,
         "barcode":  "GJ26020901"
@@ -3466,7 +3466,7 @@
         "boxPrice":  14.4,
         "pcsPerBox":  720,
         "image":  "assets/images/SA-283.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: SA-283 - Código de barras: ZH26020703",
         "stock":  720,
         "barcode":  "ZH26020703"
@@ -3480,7 +3480,7 @@
         "boxPrice":  20,
         "pcsPerBox":  600,
         "image":  "assets/images/SA-233.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: SA-233 - Código de barras: GJ26042901",
         "stock":  600,
         "barcode":  "GJ26042901"
@@ -3494,7 +3494,7 @@
         "boxPrice":  20,
         "pcsPerBox":  600,
         "image":  "assets/images/SA-230.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: SA-230 - Código de barras: GJ26030401",
         "stock":  600,
         "barcode":  "GJ26030401"
@@ -3508,7 +3508,7 @@
         "boxPrice":  44,
         "pcsPerBox":  360,
         "image":  "assets/images/SA-2023031.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: SA-2023031 - Código de barras: QB2509028",
         "stock":  1468,
         "barcode":  "QB2509028"
@@ -3522,7 +3522,7 @@
         "boxPrice":  21.6,
         "pcsPerBox":  360,
         "image":  "assets/images/SA-19891.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: SA-19891 - Código de barras: QB25121201",
         "stock":  697,
         "barcode":  "QB25121201"
@@ -3536,7 +3536,7 @@
         "boxPrice":  40,
         "pcsPerBox":  240,
         "image":  "assets/images/SA-1970.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: SA-1970 - Código de barras: PS26011301",
         "stock":  624,
         "barcode":  "PS26011301"
@@ -3550,7 +3550,7 @@
         "boxPrice":  68,
         "pcsPerBox":  60,
         "image":  "assets/logos/logo_color.png",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: SA-197-25 - Código de barras: ",
         "stock":  660,
         "barcode":  ""
@@ -3564,7 +3564,7 @@
         "boxPrice":  52,
         "pcsPerBox":  240,
         "image":  "assets/images/SA-193.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: SA-193 - Código de barras: WO2509046",
         "stock":  480,
         "barcode":  "WO2509046"
@@ -3578,7 +3578,7 @@
         "boxPrice":  52,
         "pcsPerBox":  240,
         "image":  "assets/images/SA-192.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: SA-192 - Código de barras: WO2509043",
         "stock":  841,
         "barcode":  "WO2509043"
@@ -3592,7 +3592,7 @@
         "boxPrice":  52,
         "pcsPerBox":  240,
         "image":  "assets/images/SA-191.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: SA-191 - Código de barras: ",
         "stock":  482,
         "barcode":  ""
@@ -3606,7 +3606,7 @@
         "boxPrice":  2.48,
         "pcsPerBox":  2400,
         "image":  "assets/images/SA-186.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: SA-186 - Código de barras: ",
         "stock":  700,
         "barcode":  ""
@@ -3620,7 +3620,7 @@
         "boxPrice":  0.8,
         "pcsPerBox":  4000,
         "image":  "assets/logos/logo_color.png",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: SA-059 - Código de barras: ZH26042930",
         "stock":  4000,
         "barcode":  "ZH26042930"
@@ -3634,7 +3634,7 @@
         "boxPrice":  24,
         "pcsPerBox":  240,
         "image":  "assets/images/RZL-7751.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: RZL-7751 - Código de barras: WO2026052101",
         "stock":  2892,
         "barcode":  "WO2026052101"
@@ -3648,7 +3648,7 @@
         "boxPrice":  84,
         "pcsPerBox":  50,
         "image":  "assets/images/RZL-7657.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: RZL-7657 - Código de barras: WO25122301",
         "stock":  649,
         "barcode":  "WO25122301"
@@ -3662,7 +3662,7 @@
         "boxPrice":  44,
         "pcsPerBox":  200,
         "image":  "assets/images/RZL-35184.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: RZL-35184 - Código de barras: ZH25112902",
         "stock":  490,
         "barcode":  "ZH25112902"
@@ -3676,7 +3676,7 @@
         "boxPrice":  20,
         "pcsPerBox":  1200,
         "image":  "assets/images/RZL-35182.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: RZL-35182 - Código de barras: WO25120302",
         "stock":  245,
         "barcode":  "WO25120302"
@@ -3690,7 +3690,7 @@
         "boxPrice":  7.2,
         "pcsPerBox":  480,
         "image":  "assets/images/RR-3412.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: RR-3412 - Código de barras: CB26041302",
         "stock":  1920,
         "barcode":  "CB26041302"
@@ -3704,7 +3704,7 @@
         "boxPrice":  7.2,
         "pcsPerBox":  400,
         "image":  "assets/images/RR-3411.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: RR-3411 - Código de barras: CB26031801",
         "stock":  6809,
         "barcode":  "CB26031801"
@@ -3718,7 +3718,7 @@
         "boxPrice":  8,
         "pcsPerBox":  400,
         "image":  "assets/images/RR-3410.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: RR-3410 - Código de barras: CB26020601",
         "stock":  2000,
         "barcode":  "CB26020601"
@@ -3732,7 +3732,7 @@
         "boxPrice":  33.6,
         "pcsPerBox":  120,
         "image":  "assets/images/QW-5292.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: QW-5292 - Código de barras: MZ26022804",
         "stock":  408,
         "barcode":  "MZ26022804"
@@ -3746,7 +3746,7 @@
         "boxPrice":  30.4,
         "pcsPerBox":  120,
         "image":  "assets/images/QW-5283.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: QW-5283 - Código de barras: MZ26031016",
         "stock":  241,
         "barcode":  "MZ26031016"
@@ -3760,7 +3760,7 @@
         "boxPrice":  16,
         "pcsPerBox":  240,
         "image":  "assets/images/QL-917.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: QL-917 - Código de barras: QB25102701",
         "stock":  336,
         "barcode":  "QB25102701"
@@ -3774,7 +3774,7 @@
         "boxPrice":  24,
         "pcsPerBox":  480,
         "image":  "assets/images/JGE-22001.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: JGE-22001 - Código de barras: GJ2509004",
         "stock":  1484,
         "barcode":  "GJ2509004"
@@ -3788,7 +3788,7 @@
         "boxPrice":  32,
         "pcsPerBox":  120,
         "image":  "assets/images/JD-570.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: JD-570 - Código de barras: DB26042935",
         "stock":  480,
         "barcode":  "DB26042935"
@@ -3802,7 +3802,7 @@
         "boxPrice":  60,
         "pcsPerBox":  150,
         "image":  "assets/images/HYXL003.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: HYXL003 - Código de barras: WO2509044",
         "stock":  991,
         "barcode":  "WO2509044"
@@ -3816,7 +3816,7 @@
         "boxPrice":  60,
         "pcsPerBox":  120,
         "image":  "assets/images/HYXL002.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: HYXL002 - Código de barras: WO2509030",
         "stock":  756,
         "barcode":  "WO2509030"
@@ -3830,7 +3830,7 @@
         "boxPrice":  52,
         "pcsPerBox":  110,
         "image":  "assets/images/HYXL001.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: HYXL001 - Código de barras: WO25100901",
         "stock":  950,
         "barcode":  "WO25100901"
@@ -3844,7 +3844,7 @@
         "boxPrice":  28.8,
         "pcsPerBox":  600,
         "image":  "assets/images/HYMR-9403.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: HYMR-9403 - Código de barras: GJ25110701",
         "stock":  332,
         "barcode":  "GJ25110701"
@@ -3858,7 +3858,7 @@
         "boxPrice":  25.6,
         "pcsPerBox":  600,
         "image":  "assets/images/HYMR-9322.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: HYMR-9322 - Código de barras: GJ2026052601",
         "stock":  600,
         "barcode":  "GJ2026052601"
@@ -3872,7 +3872,7 @@
         "boxPrice":  32,
         "pcsPerBox":  600,
         "image":  "assets/images/HYMR-9319.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: HYMR-9319 - Código de barras: ",
         "stock":  667,
         "barcode":  ""
@@ -3886,7 +3886,7 @@
         "boxPrice":  28.8,
         "pcsPerBox":  600,
         "image":  "assets/images/HYMR-9317.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: HYMR-9317 - Código de barras: WO25110422",
         "stock":  498,
         "barcode":  "WO25110422"
@@ -3900,7 +3900,7 @@
         "boxPrice":  4.4,
         "pcsPerBox":  1200,
         "image":  "assets/images/HY-9910.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: HY-9910 - Código de barras: GJ2509001",
         "stock":  775,
         "barcode":  "GJ2509001"
@@ -3914,7 +3914,7 @@
         "boxPrice":  16,
         "pcsPerBox":  200,
         "image":  "assets/images/HY-5741.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: HY-5741 - Código de barras: MLA26011601",
         "stock":  700,
         "barcode":  "MLA26011601"
@@ -3928,7 +3928,7 @@
         "boxPrice":  20,
         "pcsPerBox":  480,
         "image":  "assets/images/HY-337.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: HY-337 - Código de barras: ZH26031803",
         "stock":  480,
         "barcode":  "ZH26031803"
@@ -3942,7 +3942,7 @@
         "boxPrice":  4,
         "pcsPerBox":  1200,
         "image":  "assets/images/HY-1.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: HY-1 - Código de barras: GJ25101101",
         "stock":  718,
         "barcode":  "GJ25101101"
@@ -3956,7 +3956,7 @@
         "boxPrice":  8,
         "pcsPerBox":  400,
         "image":  "assets/images/HRCB-5710.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: HRCB-5710 - Código de barras: CB26020201",
         "stock":  400,
         "barcode":  "CB26020201"
@@ -3970,7 +3970,7 @@
         "boxPrice":  12,
         "pcsPerBox":  480,
         "image":  "assets/images/HN-7330.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: HN-7330 - Código de barras: SD25111001",
         "stock":  3890,
         "barcode":  "SD25111001"
@@ -3984,7 +3984,7 @@
         "boxPrice":  40,
         "pcsPerBox":  250,
         "image":  "assets/images/GS-6362.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: GS-6362 - Código de barras: B26012501",
         "stock":  1867,
         "barcode":  "B26012501"
@@ -3998,7 +3998,7 @@
         "boxPrice":  40,
         "pcsPerBox":  250,
         "image":  "assets/images/GS-6361.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: GS-6361 - Código de barras: B25112801",
         "stock":  368,
         "barcode":  "B25112801"
@@ -4012,7 +4012,7 @@
         "boxPrice":  1.6,
         "pcsPerBox":  1920,
         "image":  "assets/images/GEL-335.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: GEL-335 - Código de barras: ZH26021101",
         "stock":  1848,
         "barcode":  "ZH26021101"
@@ -4026,7 +4026,7 @@
         "boxPrice":  12,
         "pcsPerBox":  192,
         "image":  "assets/images/FX-88535.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: FX-88535 - Código de barras: ZH2026051301",
         "stock":  384,
         "barcode":  "ZH2026051301"
@@ -4040,7 +4040,7 @@
         "boxPrice":  48,
         "pcsPerBox":  24,
         "image":  "assets/images/FX-88517.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: FX-88517 - Código de barras: ZH26032506",
         "stock":  803,
         "barcode":  "ZH26032506"
@@ -4054,7 +4054,7 @@
         "boxPrice":  54.4,
         "pcsPerBox":  28,
         "image":  "assets/images/FX-88511.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: FX-88511 - Código de barras: ZH25122601",
         "stock":  1288,
         "barcode":  "ZH25122601"
@@ -4068,7 +4068,7 @@
         "boxPrice":  40,
         "pcsPerBox":  36,
         "image":  "assets/images/FX-88510.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: FX-88510 - Código de barras: ZH25121602",
         "stock":  1152,
         "barcode":  "ZH25121602"
@@ -4082,7 +4082,7 @@
         "boxPrice":  28,
         "pcsPerBox":  600,
         "image":  "assets/images/FF11231.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: FF11231 - Código de barras: SY2026052601",
         "stock":  600,
         "barcode":  "SY2026052601"
@@ -4096,7 +4096,7 @@
         "boxPrice":  20,
         "pcsPerBox":  500,
         "image":  "assets/images/LX-56560.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: LX-56560 - Código de barras: WO2510001",
         "stock":  1499,
         "barcode":  "WO2510001"
@@ -4110,7 +4110,7 @@
         "boxPrice":  16,
         "pcsPerBox":  240,
         "image":  "assets/images/LS-34.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: LS-34 - Código de barras: XB2509033",
         "stock":  359,
         "barcode":  "XB2509033"
@@ -4124,7 +4124,7 @@
         "boxPrice":  44,
         "pcsPerBox":  150,
         "image":  "assets/images/LO-046.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: LO-046 - Código de barras: WO26012102",
         "stock":  529,
         "barcode":  "WO26012102"
@@ -4138,7 +4138,7 @@
         "boxPrice":  52,
         "pcsPerBox":  130,
         "image":  "assets/images/LO-045.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: LO-045 - Código de barras: WO26012103",
         "stock":  624,
         "barcode":  "WO26012103"
@@ -4152,7 +4152,7 @@
         "boxPrice":  7.2,
         "pcsPerBox":  500,
         "image":  "assets/images/LL3274.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: LL3274 - Código de barras: CB26041802",
         "stock":  3650,
         "barcode":  "CB26041802"
@@ -4166,7 +4166,7 @@
         "boxPrice":  144,
         "pcsPerBox":  6,
         "image":  "assets/images/LF6793.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: LF6793 - Código de barras: FS26012701",
         "stock":  4620,
         "barcode":  "FS26012701"
@@ -4180,7 +4180,7 @@
         "boxPrice":  232,
         "pcsPerBox":  4,
         "image":  "assets/images/LF6791.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: LF6791 - Código de barras: FS26013101",
         "stock":  2578,
         "barcode":  "FS26013101"
@@ -4194,7 +4194,7 @@
         "boxPrice":  46.4,
         "pcsPerBox":  200,
         "image":  "assets/images/LBB-2227.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: LBB-2227 - Código de barras: ",
         "stock":  597,
         "barcode":  ""
@@ -4208,7 +4208,7 @@
         "boxPrice":  44.8,
         "pcsPerBox":  200,
         "image":  "assets/images/LBB-2225.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: LBB-2225 - Código de barras: ZH25121020",
         "stock":  1205,
         "barcode":  "ZH25121020"
@@ -4222,7 +4222,7 @@
         "boxPrice":  46.4,
         "pcsPerBox":  200,
         "image":  "assets/images/LBB-2223.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: LBB-2223 - Código de barras: ",
         "stock":  256,
         "barcode":  ""
@@ -4236,7 +4236,7 @@
         "boxPrice":  2.4,
         "pcsPerBox":  1100,
         "image":  "assets/images/L819.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: L819 - Código de barras: ZH25102701",
         "stock":  957,
         "barcode":  "ZH25102701"
@@ -4250,7 +4250,7 @@
         "boxPrice":  25.6,
         "pcsPerBox":  200,
         "image":  "assets/images/L8037.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: L8037 - Código de barras: XB2026060201",
         "stock":  600,
         "barcode":  "XB2026060201"
@@ -4264,7 +4264,7 @@
         "boxPrice":  32,
         "pcsPerBox":  240,
         "image":  "assets/images/L8034.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: L8034 - Código de barras: DB2509078",
         "stock":  954,
         "barcode":  "DB2509078"
@@ -4278,7 +4278,7 @@
         "boxPrice":  16,
         "pcsPerBox":  240,
         "image":  "assets/images/L8031.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: L8031 - Código de barras: SB26011422",
         "stock":  1500,
         "barcode":  "SB26011422"
@@ -4292,7 +4292,7 @@
         "boxPrice":  30.4,
         "pcsPerBox":  300,
         "image":  "assets/images/L8030.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: L8030 - Código de barras: SB2026060312",
         "stock":  300,
         "barcode":  "SB2026060312"
@@ -4306,7 +4306,7 @@
         "boxPrice":  40,
         "pcsPerBox":  240,
         "image":  "assets/images/KL-041.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: KL-041 - Código de barras: B26012601",
         "stock":  0,
         "barcode":  "B26012601"
@@ -4320,7 +4320,7 @@
         "boxPrice":  40,
         "pcsPerBox":  240,
         "image":  "assets/images/KL-033.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: KL-033 - Código de barras: B26012610",
         "stock":  290,
         "barcode":  "B26012610"
@@ -4334,7 +4334,7 @@
         "boxPrice":  40,
         "pcsPerBox":  600,
         "image":  "assets/images/KL-014.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: KL-014 - Código de barras: B25100701",
         "stock":  548,
         "barcode":  "B25100701"
@@ -4348,7 +4348,7 @@
         "boxPrice":  40,
         "pcsPerBox":  600,
         "image":  "assets/images/KL-013.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: KL-013 - Código de barras: B25122901",
         "stock":  254,
         "barcode":  "B25122901"
@@ -4362,7 +4362,7 @@
         "boxPrice":  40,
         "pcsPerBox":  600,
         "image":  "assets/images/KL-012.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: KL-012 - Código de barras: B25100704",
         "stock":  534,
         "barcode":  "B25100704"
@@ -4376,7 +4376,7 @@
         "boxPrice":  33.6,
         "pcsPerBox":  600,
         "image":  "assets/images/KL-010.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: KL-010 - Código de barras: B25100703",
         "stock":  592,
         "barcode":  "B25100703"
@@ -4390,7 +4390,7 @@
         "boxPrice":  33.6,
         "pcsPerBox":  600,
         "image":  "assets/images/KL-009.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: KL-009 - Código de barras: B25101101",
         "stock":  518,
         "barcode":  "B25101101"
@@ -4404,7 +4404,7 @@
         "boxPrice":  32,
         "pcsPerBox":  500,
         "image":  "assets/images/KL-004.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: KL-004 - Código de barras: B25100702",
         "stock":  242,
         "barcode":  "B25100702"
@@ -4418,7 +4418,7 @@
         "boxPrice":  30.4,
         "pcsPerBox":  500,
         "image":  "assets/images/KL-003.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: KL-003 - Código de barras: B25100705",
         "stock":  304,
         "barcode":  "B25100705"
@@ -4432,7 +4432,7 @@
         "boxPrice":  40,
         "pcsPerBox":  144,
         "image":  "assets/images/KDX-0902.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: KDX-0902 - Código de barras: ZH26021901",
         "stock":  1393,
         "barcode":  "ZH26021901"
@@ -4446,7 +4446,7 @@
         "boxPrice":  12,
         "pcsPerBox":  300,
         "image":  "assets/images/DH-117.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: DH-117 - Código de barras: QB26042938",
         "stock":  300,
         "barcode":  "QB26042938"
@@ -4460,7 +4460,7 @@
         "boxPrice":  24,
         "pcsPerBox":  180,
         "image":  "assets/images/DBABI-731.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: DBABI-731 - Código de barras: ZH26022101",
         "stock":  360,
         "barcode":  "ZH26022101"
@@ -4474,7 +4474,7 @@
         "boxPrice":  52,
         "pcsPerBox":  80,
         "image":  "assets/images/CYBOX-4501.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: CYBOX-4501 - Código de barras: XL25101308",
         "stock":  388,
         "barcode":  "XL25101308"
@@ -4488,7 +4488,7 @@
         "boxPrice":  108,
         "pcsPerBox":  50,
         "image":  "assets/images/CYBOX-4500.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: CYBOX-4500 - Código de barras: XL25101307",
         "stock":  1436,
         "barcode":  "XL25101307"
@@ -4502,7 +4502,7 @@
         "boxPrice":  112,
         "pcsPerBox":  50,
         "image":  "assets/images/CY-6339.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: CY-6339 - Código de barras: XL26030301",
         "stock":  498,
         "barcode":  "XL26030301"
@@ -4516,7 +4516,7 @@
         "boxPrice":  44,
         "pcsPerBox":  200,
         "image":  "assets/images/CX-6114.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: CX-6114 - Código de barras: WO25110401",
         "stock":  4306,
         "barcode":  "WO25110401"
@@ -4530,7 +4530,7 @@
         "boxPrice":  12,
         "pcsPerBox":  240,
         "image":  "assets/images/CX-2780.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: CX-2780 - Código de barras: MZ2509004",
         "stock":  29100,
         "barcode":  "MZ2509004"
@@ -4544,7 +4544,7 @@
         "boxPrice":  0.48,
         "pcsPerBox":  3000,
         "image":  "assets/images/CX-2747.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: CX-2747 - Código de barras: ZH26033102",
         "stock":  192000,
         "barcode":  "ZH26033102"
@@ -4558,7 +4558,7 @@
         "boxPrice":  9.2,
         "pcsPerBox":  400,
         "image":  "assets/images/CBCB-5730.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: CBCB-5730 - Código de barras: CB26040601",
         "stock":  9600,
         "barcode":  "CB26040601"
@@ -4572,7 +4572,7 @@
         "boxPrice":  7.2,
         "pcsPerBox":  400,
         "image":  "assets/images/CBAO-882.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: CBAO-882 - Código de barras: CB26020501",
         "stock":  622,
         "barcode":  "CB26020501"
@@ -4586,7 +4586,7 @@
         "boxPrice":  6.8,
         "pcsPerBox":  300,
         "image":  "assets/images/CBAO-668.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: CBAO-668 - Código de barras: XB20102001",
         "stock":  259,
         "barcode":  "XB20102001"
@@ -4600,7 +4600,7 @@
         "boxPrice":  8,
         "pcsPerBox":  400,
         "image":  "assets/images/CBAO-0658.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: CBAO-0658 - Código de barras: CB26012601",
         "stock":  400,
         "barcode":  "CB26012601"
@@ -4614,7 +4614,7 @@
         "boxPrice":  8,
         "pcsPerBox":  400,
         "image":  "assets/images/CBAO-0656.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: CBAO-0656 - Código de barras: CB26032101",
         "stock":  800,
         "barcode":  "CB26032101"
@@ -4628,7 +4628,7 @@
         "boxPrice":  8,
         "pcsPerBox":  400,
         "image":  "assets/images/CBAO-0654.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: CBAO-0654 - Código de barras: CB26030202",
         "stock":  801,
         "barcode":  "CB26030202"
@@ -4642,7 +4642,7 @@
         "boxPrice":  8,
         "pcsPerBox":  400,
         "image":  "assets/images/CBAO-0648.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: CBAO-0648 - Código de barras: CB26042101",
         "stock":  1500,
         "barcode":  "CB26042101"
@@ -4656,7 +4656,7 @@
         "boxPrice":  8,
         "pcsPerBox":  400,
         "image":  "assets/images/CBAO-0646.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: CBAO-0646 - Código de barras: CB26041701",
         "stock":  400,
         "barcode":  "CB26041701"
@@ -4670,7 +4670,7 @@
         "boxPrice":  7.2,
         "pcsPerBox":  400,
         "image":  "assets/images/CBAO-0641.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: CBAO-0641 - Código de barras: CB26031601",
         "stock":  1200,
         "barcode":  "CB26031601"
@@ -4684,7 +4684,7 @@
         "boxPrice":  8,
         "pcsPerBox":  400,
         "image":  "assets/images/CBAO-0631.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: CBAO-0631 - Código de barras: CB26041301",
         "stock":  801,
         "barcode":  "CB26041301"
@@ -4698,7 +4698,7 @@
         "boxPrice":  7.2,
         "pcsPerBox":  400,
         "image":  "assets/images/CBAO-0627.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: CBAO-0627 - Código de barras: CB26032015",
         "stock":  400,
         "barcode":  "CB26032015"
@@ -4712,7 +4712,7 @@
         "boxPrice":  7.2,
         "pcsPerBox":  400,
         "image":  "assets/images/CBAO-0626.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: CBAO-0626 - Código de barras: CB260302",
         "stock":  1200,
         "barcode":  "CB260302"
@@ -4726,7 +4726,7 @@
         "boxPrice":  7.2,
         "pcsPerBox":  400,
         "image":  "assets/images/CBAO-0624.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: CBAO-0624 - Código de barras: CB26031001",
         "stock":  400,
         "barcode":  "CB26031001"
@@ -4740,7 +4740,7 @@
         "boxPrice":  7.2,
         "pcsPerBox":  400,
         "image":  "assets/images/CBAO-0623.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: CBAO-0623 - Código de barras: CB26031002",
         "stock":  800,
         "barcode":  "CB26031002"
@@ -4754,7 +4754,7 @@
         "boxPrice":  7.2,
         "pcsPerBox":  400,
         "image":  "assets/images/CBAO-0621.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: CBAO-0621 - Código de barras: CB26031003",
         "stock":  803,
         "barcode":  "CB26031003"
@@ -4768,7 +4768,7 @@
         "boxPrice":  7.2,
         "pcsPerBox":  500,
         "image":  "assets/images/CBAO-0620.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: CBAO-0620 - Código de barras: CB26021201",
         "stock":  400,
         "barcode":  "CB26021201"
@@ -4782,7 +4782,7 @@
         "boxPrice":  8,
         "pcsPerBox":  400,
         "image":  "assets/images/CBAO-0589.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: CBAO-0589 - Código de barras: CB26042503",
         "stock":  1200,
         "barcode":  "CB26042503"
@@ -4796,7 +4796,7 @@
         "boxPrice":  8,
         "pcsPerBox":  400,
         "image":  "assets/images/CBAO-0587.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: CBAO-0587 - Código de barras: CB26042210",
         "stock":  800,
         "barcode":  "CB26042210"
@@ -4810,7 +4810,7 @@
         "boxPrice":  9.6,
         "pcsPerBox":  400,
         "image":  "assets/images/CBAO-0521.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: CBAO-0521 - Código de barras: XB25101301",
         "stock":  1652,
         "barcode":  "XB25101301"
@@ -4824,7 +4824,7 @@
         "boxPrice":  92,
         "pcsPerBox":  120,
         "image":  "assets/images/BY-744.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: BY-744 - Código de barras: QB2509039",
         "stock":  242,
         "barcode":  "QB2509039"
@@ -4838,7 +4838,7 @@
         "boxPrice":  92,
         "pcsPerBox":  120,
         "image":  "assets/images/BY-742.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: BY-742 - Código de barras: QB2509037",
         "stock":  346,
         "barcode":  "QB2509037"
@@ -4852,7 +4852,7 @@
         "boxPrice":  28,
         "pcsPerBox":  300,
         "image":  "assets/images/BY-607.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: BY-607 - Código de barras: QB2509064",
         "stock":  270,
         "barcode":  "QB2509064"
@@ -4866,7 +4866,7 @@
         "boxPrice":  17.6,
         "pcsPerBox":  600,
         "image":  "assets/images/BY-338.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: BY-338 - Código de barras: QB2509066",
         "stock":  552,
         "barcode":  "QB2509066"
@@ -4880,7 +4880,7 @@
         "boxPrice":  18.4,
         "pcsPerBox":  240,
         "image":  "assets/images/FD-3363.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: FD-3363 - Código de barras: YYQ26022302",
         "stock":  480,
         "barcode":  "YYQ26022302"
@@ -4894,7 +4894,7 @@
         "boxPrice":  17.6,
         "pcsPerBox":  300,
         "image":  "assets/images/FD-3350.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: FD-3350 - Código de barras: YYQ26022401",
         "stock":  600,
         "barcode":  "YYQ26022401"
@@ -4908,7 +4908,7 @@
         "boxPrice":  13.6,
         "pcsPerBox":  150,
         "image":  "assets/images/EVA12.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: EVA12 - Código de barras: YY26031901",
         "stock":  1765,
         "barcode":  "YY26031901"
@@ -4922,7 +4922,7 @@
         "boxPrice":  9.6,
         "pcsPerBox":  480,
         "image":  "assets/images/DY-BOX1207.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: DY-BOX1207 - Código de barras: BD26042901",
         "stock":  3840,
         "barcode":  "BD26042901"
@@ -4936,7 +4936,7 @@
         "boxPrice":  30.4,
         "pcsPerBox":  180,
         "image":  "assets/images/DW-3122.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: DW-3122 - Código de barras: BJB26031902",
         "stock":  360,
         "barcode":  "BJB26031902"
@@ -4950,7 +4950,7 @@
         "boxPrice":  16,
         "pcsPerBox":  240,
         "image":  "assets/images/DJ-8963.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: DJ-8963 - Código de barras: SB26011421",
         "stock":  960,
         "barcode":  "SB26011421"
@@ -4964,7 +4964,7 @@
         "boxPrice":  16,
         "pcsPerBox":  200,
         "image":  "assets/images/DJ-661.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: DJ-661 - Código de barras: SB26012101",
         "stock":  2000,
         "barcode":  "SB26012101"
@@ -4978,7 +4978,7 @@
         "boxPrice":  26.4,
         "pcsPerBox":  360,
         "image":  "assets/images/DH-429.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: DH-429 - Código de barras: WO25102101",
         "stock":  241,
         "barcode":  "WO25102101"
@@ -4992,7 +4992,7 @@
         "boxPrice":  8,
         "pcsPerBox":  1200,
         "image":  "assets/images/BTWY-3738.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: BTWY-3738 - Código de barras: WZ2026052601",
         "stock":  1200,
         "barcode":  "WZ2026052601"
@@ -5006,7 +5006,7 @@
         "boxPrice":  6.8,
         "pcsPerBox":  1200,
         "image":  "assets/images/BT-SD4560.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: BT-SD4560 - Código de barras: SD2509003",
         "stock":  12550,
         "barcode":  "SD2509003"
@@ -5020,7 +5020,7 @@
         "boxPrice":  40,
         "pcsPerBox":  140,
         "image":  "assets/images/BLL-70034.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: BLL-70034 - Código de barras: BZ2026052501",
         "stock":  280,
         "barcode":  "BZ2026052501"
@@ -5034,7 +5034,7 @@
         "boxPrice":  140,
         "pcsPerBox":  60,
         "image":  "assets/images/BB826#.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: BB826# - Código de barras: DB25122305",
         "stock":  269,
         "barcode":  "DB25122305"
@@ -5048,7 +5048,7 @@
         "boxPrice":  96,
         "pcsPerBox":  120,
         "image":  "assets/images/B1341.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: B1341 - Código de barras: XB2509075",
         "stock":  672,
         "barcode":  "XB2509075"
@@ -5062,7 +5062,7 @@
         "boxPrice":  17.6,
         "pcsPerBox":  300,
         "image":  "assets/images/9371#.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: 9371# - Código de barras: QB2510074",
         "stock":  300,
         "barcode":  "QB2510074"
@@ -5076,7 +5076,7 @@
         "boxPrice":  19.2,
         "pcsPerBox":  300,
         "image":  "assets/images/9351#.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: 9351# - Código de barras: QB2510075",
         "stock":  276,
         "barcode":  "QB2510075"
@@ -5090,7 +5090,7 @@
         "boxPrice":  17.6,
         "pcsPerBox":  300,
         "image":  "assets/images/9312#.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: 9312# - Código de barras: QB2510071",
         "stock":  301,
         "barcode":  "QB2510071"
@@ -5104,7 +5104,7 @@
         "boxPrice":  17.6,
         "pcsPerBox":  300,
         "image":  "assets/images/9263#.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: 9263# - Código de barras: QB2510073",
         "stock":  288,
         "barcode":  "QB2510073"
@@ -5118,7 +5118,7 @@
         "boxPrice":  7.6,
         "pcsPerBox":  480,
         "image":  "assets/images/9173M.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: 9173M - Código de barras: SD25100901",
         "stock":  984,
         "barcode":  "SD25100901"
@@ -5132,7 +5132,7 @@
         "boxPrice":  8,
         "pcsPerBox":  480,
         "image":  "assets/images/891M.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: 891M - Código de barras: SD25121230",
         "stock":  480,
         "barcode":  "SD25121230"
@@ -5146,7 +5146,7 @@
         "boxPrice":  96,
         "pcsPerBox":  80,
         "image":  "assets/images/8888.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: 8888 - Código de barras: DB2510006",
         "stock":  1017,
         "barcode":  "DB2510006"
@@ -5160,7 +5160,7 @@
         "boxPrice":  144,
         "pcsPerBox":  10,
         "image":  "assets/images/8071-K.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: 8071-K - Código de barras: ZH26011901",
         "stock":  630,
         "barcode":  "ZH26011901"
@@ -5174,7 +5174,7 @@
         "boxPrice":  8,
         "pcsPerBox":  480,
         "image":  "assets/images/774M.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: 774M - Código de barras: ZH25121102",
         "stock":  313,
         "barcode":  "ZH25121102"
@@ -5188,7 +5188,7 @@
         "boxPrice":  6.56,
         "pcsPerBox":  720,
         "image":  "assets/images/761S.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: 761S - Código de barras: SD25102950",
         "stock":  3603,
         "barcode":  "SD25102950"
@@ -5202,7 +5202,7 @@
         "boxPrice":  7.84,
         "pcsPerBox":  480,
         "image":  "assets/images/761M.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: 761M - Código de barras: SD2510001",
         "stock":  2381,
         "barcode":  "SD2510001"
@@ -5216,7 +5216,7 @@
         "boxPrice":  76,
         "pcsPerBox":  150,
         "image":  "assets/images/200B8.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: 200B8 - Código de barras: QB2510013",
         "stock":  666,
         "barcode":  "QB2510013"
@@ -5230,7 +5230,7 @@
         "boxPrice":  64,
         "pcsPerBox":  500,
         "image":  "assets/images/200B7.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: 200B7 - Código de barras: QB25103001",
         "stock":  1142,
         "barcode":  "QB25103001"
@@ -5244,7 +5244,7 @@
         "boxPrice":  64,
         "pcsPerBox":  500,
         "image":  "assets/images/200B6.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: 200B6 - Código de barras: QB25112501",
         "stock":  1821,
         "barcode":  "QB25112501"
@@ -5258,7 +5258,7 @@
         "boxPrice":  64,
         "pcsPerBox":  500,
         "image":  "assets/images/200B5.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: 200B5 - Código de barras: QB25103002",
         "stock":  2667,
         "barcode":  "QB25103002"
@@ -5272,7 +5272,7 @@
         "boxPrice":  64,
         "pcsPerBox":  500,
         "image":  "assets/images/200B4.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: 200B4 - Código de barras: QB25103101",
         "stock":  1492,
         "barcode":  "QB25103101"
@@ -5286,7 +5286,7 @@
         "boxPrice":  76,
         "pcsPerBox":  200,
         "image":  "assets/images/200B3.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: 200B3 - Código de barras: QB25101111",
         "stock":  401,
         "barcode":  "QB25101111"
@@ -5300,7 +5300,7 @@
         "boxPrice":  76,
         "pcsPerBox":  180,
         "image":  "assets/images/200B2.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: 200B2 - Código de barras: QB25101483",
         "stock":  455,
         "barcode":  "QB25101483"
@@ -5314,7 +5314,7 @@
         "boxPrice":  0.8,
         "pcsPerBox":  1000,
         "image":  "assets/images/18078-6.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: 18078-6 - Código de barras: ZH26041005",
         "stock":  920,
         "barcode":  "ZH26041005"
@@ -5328,7 +5328,7 @@
         "boxPrice":  6.4,
         "pcsPerBox":  480,
         "image":  "assets/images/1281L.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: 1281L - Código de barras: LPD26012801",
         "stock":  465,
         "barcode":  "LPD26012801"
@@ -5342,7 +5342,7 @@
         "boxPrice":  80,
         "pcsPerBox":  100,
         "image":  "assets/images/6606.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: 6606 - Código de barras: DB26010606",
         "stock":  285,
         "barcode":  "DB26010606"
@@ -5356,7 +5356,7 @@
         "boxPrice":  80,
         "pcsPerBox":  100,
         "image":  "assets/images/6605.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: 6605 - Código de barras: DB25111121",
         "stock":  403,
         "barcode":  "DB25111121"
@@ -5370,7 +5370,7 @@
         "boxPrice":  68,
         "pcsPerBox":  100,
         "image":  "assets/images/5302.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: 5302 - Código de barras: XB2509066",
         "stock":  366,
         "barcode":  "XB2509066"
@@ -5384,7 +5384,7 @@
         "boxPrice":  68,
         "pcsPerBox":  120,
         "image":  "assets/images/5210-1.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: 5210-1 - Código de barras: DB25111250",
         "stock":  345,
         "barcode":  "DB25111250"
@@ -5398,7 +5398,7 @@
         "boxPrice":  158.4,
         "pcsPerBox":  80,
         "image":  "assets/images/3538.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: 3538 - Código de barras: SB26041403",
         "stock":  306,
         "barcode":  "SB26041403"
@@ -5412,7 +5412,7 @@
         "boxPrice":  116,
         "pcsPerBox":  100,
         "image":  "assets/images/3201.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: 3201 - Código de barras: SB2509008",
         "stock":  362,
         "barcode":  "SB2509008"
@@ -5426,7 +5426,7 @@
         "boxPrice":  4,
         "pcsPerBox":  1000,
         "image":  "assets/images/2049-6.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: 2049-6 - Código de barras: ZH25102101",
         "stock":  2910,
         "barcode":  "ZH25102101"
@@ -5440,7 +5440,7 @@
         "boxPrice":  96,
         "pcsPerBox":  80,
         "image":  "assets/images/1008.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: 1008 - Código de barras: DB2509081",
         "stock":  243,
         "barcode":  "DB2509081"
@@ -5454,7 +5454,7 @@
         "boxPrice":  116,
         "pcsPerBox":  80,
         "image":  "assets/images/08.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: 08 - Código de barras: DB2509080",
         "stock":  254,
         "barcode":  "DB2509080"
@@ -5468,7 +5468,7 @@
         "boxPrice":  16,
         "pcsPerBox":  600,
         "image":  "assets/images/Y-040.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: Y-040 - Código de barras: XB2510042",
         "stock":  538,
         "barcode":  "XB2510042"
@@ -5482,7 +5482,7 @@
         "boxPrice":  16,
         "pcsPerBox":  240,
         "image":  "assets/images/LS-25.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: LS-25 - Código de barras: XB2509005",
         "stock":  483,
         "barcode":  "XB2509005"
@@ -5496,7 +5496,7 @@
         "boxPrice":  0,
         "pcsPerBox":  600,
         "image":  "assets/images/SA-238.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: SA-238 - Código de barras: 202500050",
         "stock":  600,
         "barcode":  "202500050"
@@ -5510,7 +5510,7 @@
         "boxPrice":  20,
         "pcsPerBox":  360,
         "image":  "assets/images/LS-1.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: LS-1 - Código de barras: XB2509018",
         "stock":  474,
         "barcode":  "XB2509018"
@@ -5524,7 +5524,7 @@
         "boxPrice":  16,
         "pcsPerBox":  360,
         "image":  "assets/images/QL-2167.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: QL-2167 - Código de barras: QB2509007",
         "stock":  360,
         "barcode":  "QB2509007"
@@ -5538,7 +5538,7 @@
         "boxPrice":  16,
         "pcsPerBox":  600,
         "image":  "assets/images/SMM-3666.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: SMM-3666 - Código de barras: GJ2509002",
         "stock":  365,
         "barcode":  "GJ2509002"
@@ -5552,7 +5552,7 @@
         "boxPrice":  144,
         "pcsPerBox":  20,
         "image":  "assets/images/1047.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: 1047 - Código de barras: STY26030902",
         "stock":  260,
         "barcode":  "STY26030902"
@@ -5566,7 +5566,7 @@
         "boxPrice":  52,
         "pcsPerBox":  80,
         "image":  "assets/images/YTDW004.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: YTDW004 - Código de barras: WO2510002",
         "stock":  988,
         "barcode":  "WO2510002"
@@ -5580,7 +5580,7 @@
         "boxPrice":  76,
         "pcsPerBox":  20,
         "image":  "assets/images/BQ-787.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: BQ-787 - Código de barras: ZH26042702",
         "stock":  283,
         "barcode":  "ZH26042702"
@@ -5594,7 +5594,7 @@
         "boxPrice":  8.8,
         "pcsPerBox":  1000,
         "image":  "assets/images/YF-5799.jpeg",
-        "tag":  "ImportaciÃ³n",
+        "tag":  "Importación",
         "desc":  "Modelo: YF-5799 - Código de barras: ",
         "stock":  1000,
         "barcode":  ""
