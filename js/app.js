@@ -624,7 +624,6 @@ function renderCatalog() {
     const translatedTag = currentLanguage === 'zh' 
       ? (product.tag === 'Importación' ? '进口' : '货柜') 
       : (product.tag || 'Contenedor');
-    const translatedImportTag = currentLanguage === 'zh' ? '进口' : 'Importación';
 
     const displayDesc = getTranslatedDesc(product.desc || '', currentLanguage);
 
@@ -632,7 +631,6 @@ function renderCatalog() {
       <div class="product-img-wrapper">
         <img class="product-img" src="${product.image}" alt="${product.name}" loading="lazy">
         <span class="badge-tag">${translatedTag}</span>
-        <span class="badge-tag tag-import">${translatedImportTag}</span>
         ${stockBadge}
       </div>
       <div class="product-info">
