@@ -670,12 +670,22 @@ body.dark-mode-active .section-header p {
 }
 
 .props-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  display: flex;
+  overflow-x: auto;
   gap: 30px;
+  padding-bottom: 20px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.props-grid::-webkit-scrollbar {
+  display: none;
 }
 
 .prop-card {
+  flex: 0 0 auto;
+  width: 320px;
+  scroll-snap-align: start;
   background: var(--light-card);
   padding: 40px 30px;
   border-radius: var(--border-radius-lg);
@@ -1555,19 +1565,48 @@ body.dark-mode-active .contact-section {
 .info-item {
   display: flex;
   gap: 16px;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 20px;
+  border-radius: var(--border-radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+  transition: var(--transition);
+}
+
+body.dark-mode-active .info-item {
+  background: rgba(20, 30, 55, 0.4);
+  border-color: rgba(255, 255, 255, 0.05);
+}
+
+.info-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+  border-color: var(--primary);
+}
+
+body.dark-mode-active .info-item:hover {
+  border-color: var(--secondary);
+  box-shadow: 0 15px 40px rgba(0, 180, 216, 0.1);
 }
 
 .info-icon {
-  width: 48px;
-  height: 48px;
-  border-radius: var(--border-radius-sm);
-  background: rgba(0, 180, 216, 0.1);
-  color: var(--secondary);
+  width: 54px;
+  height: 54px;
+  border-radius: var(--border-radius);
+  background: linear-gradient(135deg, rgba(255, 0, 127, 0.1), rgba(0, 180, 216, 0.15));
+  color: var(--primary);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   flex-shrink: 0;
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+body.dark-mode-active .info-icon {
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.05);
 }
 
 .info-text h4 {
