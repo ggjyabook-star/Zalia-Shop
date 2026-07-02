@@ -2158,6 +2158,12 @@ body.dark-mode-active .lightbox-media-side {
   transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
   cursor: zoom-in;
   transform-origin: center center;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  image-rendering: auto;
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 .lightbox-zoomable-img.zoomed {

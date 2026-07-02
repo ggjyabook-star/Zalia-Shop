@@ -1556,6 +1556,7 @@ function initLightbox() {
     let baseTranslateX = 0;
     let baseTranslateY = 0;
     let lastTap = 0;
+    let wasMultiTouch = false;
 
     window.resetLightboxZoom = function() {
       currentScale = 1;
@@ -1607,7 +1608,7 @@ function initLightbox() {
     lightboxImg.addEventListener('touchend', (e) => {
       const currentTime = Date.now();
       const tapLength = currentTime - lastTap;
-      if (tapLength < 300 && tapLength > 0) {
+      if (tapLength < 300 && tapLength > 0 && !wasMultiTouch) {
         e.preventDefault();
         const touch = e.changedTouches[0];
         toggleZoom(touch.clientX, touch.clientY);
@@ -1646,6 +1647,7 @@ function initLightbox() {
       } else if (e.touches.length === 2) {
         isPinching = true;
         isPanning = false;
+        wasMultiTouch = true;
         initialPinchDistance = Math.hypot(
           e.touches[0].clientX - e.touches[1].clientX,
           e.touches[0].clientY - e.touches[1].clientY
@@ -1690,7 +1692,7 @@ function initLightbox() {
       }
       
       // If 1-finger swipe and image was NOT zoomed in
-      if (e.touches.length === 0 && currentScale === 1) {
+      if (e.touches.length === 0 && currentScale === 1 && !wasMultiTouch) {
         endX = e.changedTouches[0].clientX;
         endY = e.changedTouches[0].clientY;
         const dx = endX - startX;
@@ -1705,6 +1707,14 @@ function initLightbox() {
             navigateLightbox(-1);
           }
         }
+      }
+
+      // Reset multitouch tracking and scale snapping when all fingers are lifted
+      if (e.touches.length === 0) {
+        if (currentScale < 1.15) {
+          window.resetLightboxZoom();
+        }
+        wasMultiTouch = false;
       }
     }, { passive: true });
   }
