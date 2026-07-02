@@ -45,6 +45,10 @@
   scroll-behavior: smooth;
 }
 
+button, a, input, select, textarea {
+  touch-action: manipulation;
+}
+
 body {
   background-color: var(--light-bg);
   color: var(--text-dark);
