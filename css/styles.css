@@ -1038,6 +1038,7 @@ body.dark-mode-active .tab-btn {
   -webkit-backdrop-filter: blur(10px);
   border-radius: var(--border-radius);
   border: 1px solid rgba(255, 255, 255, 0.6);
+  cursor: pointer;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
   overflow: hidden;
   transition: var(--transition);
@@ -1349,6 +1350,8 @@ body.dark-mode-active .cart-close {
 .cart-content-scroll {
   overflow-y: auto;
   overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-y: contain;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
@@ -2244,6 +2247,8 @@ body.dark-mode-active .lightbox-media-side {
 .lightbox-details-side {
   padding: 36px;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-y: contain;
   display: flex;
   flex-direction: column;
   height: 100%;

@@ -845,11 +845,10 @@ function setupCardControls() {
     });
   });
 
-  // Image click to open lightbox
-  productGrid.querySelectorAll('.product-img-wrapper').forEach(wrapper => {
-    wrapper.addEventListener('click', (e) => {
-      if (e.target.closest('.badge-tag')) return;
-      const card = wrapper.closest('.product-card');
+  // Card click to open lightbox
+  productGrid.querySelectorAll('.product-card').forEach(card => {
+    card.addEventListener('click', (e) => {
+      if (e.target.closest('.badge-tag') || e.target.closest('button') || e.target.closest('input')) return;
       const addBtn = card.querySelector('.add-to-cart-btn');
       if (addBtn) {
         const id = addBtn.getAttribute('data-id');
