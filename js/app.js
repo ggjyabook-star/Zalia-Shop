@@ -295,6 +295,8 @@ const clientTypeSelect = document.getElementById('client-type');
 const themeToggleBtn = document.getElementById('theme-toggle');
 const openCartBtn = document.getElementById('open-cart-btn');
 const closeCartBtn = document.getElementById('close-cart-btn');
+const floatingCartBtn = document.getElementById('floating-cart-btn');
+const floatingCartBadge = document.getElementById('floating-cart-count');
 const mobileMenuBtn = document.getElementById('mobile-menu-btn');
 const navMenu = document.getElementById('nav-menu');
 const quoteForm = document.getElementById('quote-form');
@@ -921,6 +923,7 @@ function renderCart() {
   const isWholesaleMixed = totalPiecesInCart >= 3;
 
   cartCountBadge.textContent = totalPiecesInCart;
+  if (floatingCartBadge) floatingCartBadge.textContent = totalPiecesInCart;
   cartHeaderCount.textContent = totalPiecesInCart;
 
   if (cart.length === 0) {
@@ -1005,11 +1008,11 @@ function renderCart() {
       <div class="cart-item-details">
         <div class="cart-item-title">${item.name}</div>
         <div class="cart-item-pricing" style="font-size:0.85rem; line-height: 1.4;">
-          ${txtDesglose}: <strong>${qty} ${txtPzs}</strong> x <span class="highlight">$${pricePerPiece} MXN</span>
+          ${txtDesglose}: <strong>${qty} ${txtPzs}</strong> x <span class="highlight">$${pricePerPiece.toFixed(2)} MXN</span>
           <br>
           <span style="color:var(--primary); font-weight:600;">${txtTasa}: ${tierLabel}</span>
           ${promptTip}
-          ${txtSubtotal}: <strong class="cart-subtotal-item">$${itemCost} MXN</strong>
+          ${txtSubtotal}: <strong class="cart-subtotal-item">$${itemCost.toFixed(2)} MXN</strong>
         </div>
       </div>
       <div class="cart-item-qty">
@@ -1028,9 +1031,9 @@ function renderCart() {
 
   const totalSavings = regularRetailTotal - finalSubtotal;
 
-  subtotalEl.textContent = `$${regularRetailTotal} MXN`;
-  savingsEl.textContent = `$${totalSavings} MXN`;
-  totalEl.textContent = `$${finalSubtotal} MXN`;
+  subtotalEl.textContent = `$${regularRetailTotal.toFixed(2)} MXN`;
+  savingsEl.textContent = `$${totalSavings.toFixed(2)} MXN`;
+  totalEl.textContent = `$${finalSubtotal.toFixed(2)} MXN`;
 
   setupCartEvents();
 }
@@ -1112,6 +1115,7 @@ function toggleCart(show) {
 // Setup Event Listeners
 function setupEventListeners() {
   if (openCartBtn) openCartBtn.addEventListener('click', () => toggleCart(true));
+  if (floatingCartBtn) floatingCartBtn.addEventListener('click', () => toggleCart(true));
   if (closeCartBtn) closeCartBtn.addEventListener('click', () => toggleCart(false));
   if (cartBackdrop) cartBackdrop.addEventListener('click', () => toggleCart(false));
 
@@ -1286,11 +1290,11 @@ function sendWhatsAppQuote(e) {
 
     if (currentLanguage === 'zh') {
       message += `• *${item.qty} 件* - ${item.name}\n`;
-      message += `  _单价:_ $${pricePerPiece} MXN | _小计:_ *$${cost} MXN*\n`;
+      message += `  _单价:_ $${pricePerPiece.toFixed(2)} MXN | _小计:_ *$${cost.toFixed(2)} MXN*\n`;
       message += `  _适用费率:_ ${tierLabel}\n\n`;
     } else {
       message += `• *${item.qty} pzs* - ${item.name}\n`;
-      message += `  _P. Unitario:_ $${pricePerPiece} MXN | _Subtotal:_ *$${cost} MXN*\n`;
+      message += `  _P. Unitario:_ $${pricePerPiece.toFixed(2)} MXN | _Subtotal:_ *$${cost.toFixed(2)} MXN*\n`;
       message += `  _Tasa aplicada:_ ${tierLabel}\n\n`;
     }
   });
@@ -1308,18 +1312,18 @@ function sendWhatsAppQuote(e) {
   if (currentLanguage === 'zh') {
     message += `📦 *总件数:* ${totalPiecesInCart} 件\n`;
     if (savings > 0) {
-      message += `💰 *常规原价小计:* $${regularRetailTotal} MXN\n`;
-      message += `🎉 *大宗采购优惠:* $${savings} MXN\n`;
+      message += `💰 *常规原价小计:* $${regularRetailTotal.toFixed(2)} MXN\n`;
+      message += `🎉 *大宗采购优惠:* $${savings.toFixed(2)} MXN\n`;
     }
-    message += `💵 *净总计:* *$${totalCost} MXN*\n\n`;
+    message += `💵 *净总计:* *$${totalCost.toFixed(2)} MXN*\n\n`;
     message += `*备注:* 此询价单自网站生成发送。我正等待确认货柜的实际库存以及运费。`;
   } else {
     message += `📦 *Total Piezas:* ${totalPiecesInCart} pzs\n`;
     if (savings > 0) {
-      message += `💰 *Subtotal regular:* $${regularRetailTotal} MXN\n`;
-      message += `🎉 *Ahorro por Volumen:* $${savings} MXN\n`;
+      message += `💰 *Subtotal regular:* $${regularRetailTotal.toFixed(2)} MXN\n`;
+      message += `🎉 *Ahorro por Volumen:* $${savings.toFixed(2)} MXN\n`;
     }
-    message += `💵 *TOTAL NETO:* *$${totalCost} MXN*\n\n`;
+    message += `💵 *TOTAL NETO:* *$${totalCost.toFixed(2)} MXN*\n\n`;
     message += `*Nota:* Pedido enviado desde el cotizador web. Quedo en espera de confirmar disponibilidad física del contenedor y costos de envío.`;
   }
 
@@ -1779,9 +1783,9 @@ function openLightbox(index) {
   }
 
   // Pricing Tiers
-  if (lightboxPriceRetail) lightboxPriceRetail.textContent = `$${product.retailPrice}`;
-  if (lightboxPriceWholesale) lightboxPriceWholesale.textContent = `$${product.wholesalePrice}`;
-  if (lightboxPriceBox) lightboxPriceBox.textContent = `$${product.boxPrice}`;
+  if (lightboxPriceRetail) lightboxPriceRetail.textContent = `$${product.retailPrice.toFixed(2)}`;
+  if (lightboxPriceWholesale) lightboxPriceWholesale.textContent = `$${product.wholesalePrice.toFixed(2)}`;
+  if (lightboxPriceBox) lightboxPriceBox.textContent = `$${product.boxPrice.toFixed(2)}`;
 
   // Default values
   if (lightboxQtyInput) {
