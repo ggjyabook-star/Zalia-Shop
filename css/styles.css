@@ -2578,3 +2578,10 @@ body.dark-mode-active .lightbox-qty-ctrl {
   }
 }
 
+/* Hide zoom hint on touch devices */
+@media (pointer: coarse) {
+  .lightbox-zoom-hint {
+    display: none !important;
+  }
+}
+

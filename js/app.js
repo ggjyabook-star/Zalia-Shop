@@ -1377,6 +1377,9 @@ function loadCartFromStorage() {
 // Lightbox Product Viewer Logic
 // ==========================================================================
 let lightboxModal, lightboxImg, lightboxTitle, lightboxDesc, lightboxModuleTag, lightboxStockTag, lightboxBoxSpecsText, lightboxPriceRetail, lightboxPriceWholesale, lightboxPriceBox, lightboxQtyInput, lightboxNavIndex;
+let currentScale = 1;
+let translateX = 0;
+let translateY = 0;
 
 function initLightbox() {
   lightboxModal = document.getElementById('product-lightbox');
@@ -1541,28 +1544,81 @@ function initLightbox() {
   // Panning & Magnifier lens triggers
   if (lightboxImg) {
     const viewport = lightboxImg.parentElement;
+    let startX = 0;
+    let startY = 0;
+    let endX = 0;
+    let endY = 0;
+    let touchStartTime = 0;
+    let isPinching = false;
+    let isPanning = false;
+    let initialPinchDistance = 0;
+    let initialPinchScale = 1;
+    let baseTranslateX = 0;
+    let baseTranslateY = 0;
+    let lastTap = 0;
 
-    lightboxImg.addEventListener('click', (e) => {
-      e.stopPropagation();
-      lightboxImg.classList.toggle('zoomed');
+    window.resetLightboxZoom = function() {
+      currentScale = 1;
+      translateX = 0;
+      translateY = 0;
+      lightboxImg.style.transform = '';
+      lightboxImg.classList.remove('zoomed');
       const zoomHint = lightboxModal.querySelector('.lightbox-zoom-hint span');
-      if (lightboxImg.classList.contains('zoomed')) {
+      if (zoomHint) {
+        zoomHint.setAttribute('data-i18n', 'zoom-hint-click');
+        zoomHint.textContent = currentLanguage === 'zh' ? '点击放大' : 'Haz clic para ampliar';
+      }
+    };
+
+    function toggleZoom(clientX, clientY) {
+      if (currentScale > 1) {
+        window.resetLightboxZoom();
+      } else {
+        currentScale = 2.2;
+        if (typeof clientX !== 'undefined' && typeof clientY !== 'undefined') {
+          const rect = viewport.getBoundingClientRect();
+          const x = (clientX - rect.left) / rect.width;
+          const y = (clientY - rect.top) / rect.height;
+          translateX = (0.5 - x) * rect.width * 0.5;
+          translateY = (0.5 - y) * rect.height * 0.5;
+          lightboxImg.style.transform = `scale(2.2) translate(${translateX / 2.2}px, ${translateY / 2.2}px)`;
+        } else {
+          lightboxImg.style.transform = 'scale(2.2)';
+        }
+        lightboxImg.classList.add('zoomed');
+        const zoomHint = lightboxModal.querySelector('.lightbox-zoom-hint span');
         if (zoomHint) {
           zoomHint.setAttribute('data-i18n', 'zoom-hint-click-out');
           zoomHint.textContent = currentLanguage === 'zh' ? '点击缩小' : 'Haz clic para alejar';
         }
-      } else {
-        lightboxImg.style.transform = '';
-        if (zoomHint) {
-          zoomHint.setAttribute('data-i18n', 'zoom-hint-click');
-          zoomHint.textContent = currentLanguage === 'zh' ? '点击放大' : 'Haz clic para ampliar';
-        }
+      }
+    }
+
+    // Toggle zoom on click (for non-touch devices only, coarse pointer check)
+    lightboxImg.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isTouch = window.matchMedia('(pointer: coarse)').matches;
+      if (!isTouch) {
+        toggleZoom(e.clientX, e.clientY);
       }
     });
 
-    // Panning on mousemove
+    // Double tap support for touch screens
+    lightboxImg.addEventListener('touchend', (e) => {
+      const currentTime = Date.now();
+      const tapLength = currentTime - lastTap;
+      if (tapLength < 300 && tapLength > 0) {
+        e.preventDefault();
+        const touch = e.changedTouches[0];
+        toggleZoom(touch.clientX, touch.clientY);
+      }
+      lastTap = currentTime;
+    });
+
+    // Panning on mousemove (desktop)
     viewport.addEventListener('mousemove', (e) => {
-      if (!lightboxImg.classList.contains('zoomed')) return;
+      const isTouch = window.matchMedia('(pointer: coarse)').matches;
+      if (isTouch || !lightboxImg.classList.contains('zoomed')) return;
       const rect = viewport.getBoundingClientRect();
       const x = (e.clientX - rect.left) / rect.width;
       const y = (e.clientY - rect.top) / rect.height;
@@ -1572,43 +1628,85 @@ function initLightbox() {
     });
 
     viewport.addEventListener('mouseleave', () => {
-      if (lightboxImg.classList.contains('zoomed')) {
+      if (lightboxImg.classList.contains('zoomed') && !window.matchMedia('(pointer: coarse)').matches) {
         lightboxImg.style.transform = 'scale(2.2) translate(0, 0)';
       }
     });
 
-    // Panning on touchmove for mobiles
-    viewport.addEventListener('touchmove', (e) => {
-      if (!lightboxImg.classList.contains('zoomed') || e.touches.length !== 1) return;
-      const rect = viewport.getBoundingClientRect();
-      const touch = e.touches[0];
-      const x = (touch.clientX - rect.left) / rect.width;
-      const y = (touch.clientY - rect.top) / rect.height;
-      const moveX = (0.5 - x) * 100;
-      const moveY = (0.5 - y) * 100;
-      lightboxImg.style.transform = `scale(2.2) translate(${moveX / 2}%, ${moveY / 2}%)`;
+    // Mobile touch gestures: pinch zoom, pan and swipe navigation
+    viewport.addEventListener('touchstart', (e) => {
+      if (e.touches.length === 1) {
+        startX = e.touches[0].clientX;
+        startY = e.touches[0].clientY;
+        touchStartTime = Date.now();
+        isPanning = currentScale > 1;
+        isPinching = false;
+        baseTranslateX = translateX;
+        baseTranslateY = translateY;
+      } else if (e.touches.length === 2) {
+        isPinching = true;
+        isPanning = false;
+        initialPinchDistance = Math.hypot(
+          e.touches[0].clientX - e.touches[1].clientX,
+          e.touches[0].clientY - e.touches[1].clientY
+        );
+        initialPinchScale = currentScale;
+      }
     }, { passive: true });
 
-    // Touch swiping triggers
-    let startX = 0;
-    let endX = 0;
-    const card = lightboxModal.querySelector('.lightbox-card');
-    if (card) {
-      card.addEventListener('touchstart', (e) => {
-        startX = e.changedTouches[0].screenX;
-      }, { passive: true });
-      card.addEventListener('touchend', (e) => {
-        endX = e.changedTouches[0].screenX;
-        const threshold = 55;
-        if (!lightboxImg.classList.contains('zoomed')) {
-          if (startX - endX > threshold) {
+    viewport.addEventListener('touchmove', (e) => {
+      if (isPinching && e.touches.length === 2) {
+        e.preventDefault(); // Stop window bouncing/scroll
+        const currentPinchDistance = Math.hypot(
+          e.touches[0].clientX - e.touches[1].clientX,
+          e.touches[0].clientY - e.touches[1].clientY
+        );
+        const factor = currentPinchDistance / initialPinchDistance;
+        currentScale = Math.max(1, Math.min(3.5, initialPinchScale * factor));
+        
+        if (currentScale > 1) {
+          lightboxImg.classList.add('zoomed');
+          lightboxImg.style.transform = `scale(${currentScale}) translate(${translateX}px, ${translateY}px)`;
+        } else {
+          window.resetLightboxZoom();
+        }
+      } else if (isPanning && e.touches.length === 1) {
+        e.preventDefault(); // Stop window scrolling while panning
+        const dx = e.touches[0].clientX - startX;
+        const dy = e.touches[0].clientY - startY;
+        
+        translateX = baseTranslateX + dx / currentScale;
+        translateY = baseTranslateY + dy / currentScale;
+        
+        lightboxImg.style.transform = `scale(${currentScale}) translate(${translateX}px, ${translateY}px)`;
+      }
+    }, { passive: false });
+
+    viewport.addEventListener('touchend', (e) => {
+      if (isPinching) {
+        if (e.touches.length < 2) {
+          isPinching = false;
+        }
+      }
+      
+      // If 1-finger swipe and image was NOT zoomed in
+      if (e.touches.length === 0 && currentScale === 1) {
+        endX = e.changedTouches[0].clientX;
+        endY = e.changedTouches[0].clientY;
+        const dx = endX - startX;
+        const dy = endY - startY;
+        const duration = Date.now() - touchStartTime;
+
+        // Verify swipe parameters
+        if (duration < 300 && Math.abs(dx) > 40 && Math.abs(dy) < 40) {
+          if (dx < 0) {
             navigateLightbox(1);
-          } else if (endX - startX > threshold) {
+          } else {
             navigateLightbox(-1);
           }
         }
-      }, { passive: true });
-    }
+      }
+    }, { passive: true });
   }
 }
 
@@ -1619,14 +1717,11 @@ function openLightbox(index) {
   if (!product) return;
 
   // Reset zoom styles
-  if (lightboxImg) {
+  if (window.resetLightboxZoom) {
+    window.resetLightboxZoom();
+  } else if (lightboxImg) {
     lightboxImg.classList.remove('zoomed');
     lightboxImg.style.transform = '';
-    const zoomHint = lightboxModal.querySelector('.lightbox-zoom-hint span');
-    if (zoomHint) {
-      zoomHint.setAttribute('data-i18n', 'zoom-hint-click');
-      zoomHint.textContent = currentLanguage === 'zh' ? '点击放大' : 'Haz clic para ampliar';
-    }
   }
 
   // Populate data fields
