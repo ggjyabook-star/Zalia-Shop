@@ -445,6 +445,83 @@
     </div>
   </footer>
 
+  <!-- Product Lightbox Modal -->
+  <div id="product-lightbox" class="lightbox-modal" style="display: none;">
+    <div class="lightbox-backdrop"></div>
+    <div class="lightbox-content-wrapper">
+      <button class="lightbox-close" aria-label="Cerrar"><i class="fas fa-times"></i></button>
+      
+      <div class="lightbox-nav-btn prev" aria-label="Anterior"><i class="fas fa-chevron-left"></i></div>
+      <div class="lightbox-nav-btn next" aria-label="Siguiente"><i class="fas fa-chevron-right"></i></div>
+      
+      <div class="lightbox-card">
+        <div class="lightbox-media-side">
+          <div class="lightbox-image-viewport">
+            <img id="lightbox-img" src="" alt="" class="lightbox-zoomable-img">
+            <div class="lightbox-zoom-hint">
+              <i class="fas fa-search-plus"></i> <span data-i18n="zoom-hint-click">Haz clic para ampliar</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="lightbox-details-side">
+          <div class="lightbox-header">
+            <span class="lightbox-module-badge" id="lightbox-module-tag"></span>
+            <span class="lightbox-stock-badge" id="lightbox-stock-tag"></span>
+          </div>
+          
+          <h2 id="lightbox-title"></h2>
+          <div class="lightbox-desc-container">
+            <p id="lightbox-desc"></p>
+          </div>
+          
+          <div class="lightbox-box-specs">
+            <i class="fas fa-boxes"></i> <span id="lightbox-box-specs-text"></span>
+          </div>
+          
+          <div class="lightbox-prices-section">
+            <div class="lightbox-price-card retail">
+              <span class="price-label" data-i18n="lightbox-retail-label">Menudeo (1-2 pzs)</span>
+              <span class="price-value" id="lightbox-price-retail"></span>
+            </div>
+            <div class="lightbox-price-card wholesale">
+              <span class="price-label" data-i18n="lightbox-wholesale-label">Mayoreo (3+ pzs)</span>
+              <span class="price-value" id="lightbox-price-wholesale"></span>
+            </div>
+            <div class="lightbox-price-card box">
+              <span class="price-label" data-i18n="lightbox-box-label">Caja cerrada (pza)</span>
+              <span class="price-value" id="lightbox-price-box"></span>
+            </div>
+          </div>
+          
+          <div class="lightbox-actions-section">
+            <div class="lightbox-qty-row">
+              <span class="lightbox-qty-label" data-i18n="lightbox-qty-label">Cantidad:</span>
+              <div class="quantity-control lightbox-qty-ctrl">
+                <button class="qty-btn" id="lightbox-qty-minus">-</button>
+                <input type="number" class="qty-val" id="lightbox-qty-input" value="1">
+                <button class="qty-btn" id="lightbox-qty-plus">+</button>
+              </div>
+            </div>
+            
+            <div class="lightbox-buttons-row">
+              <button class="btn-primary" id="lightbox-add-pieces-btn">
+                <i class="fas fa-shopping-cart"></i> <span data-i18n="lightbox-add-pieces-text">Agregar Piezas</span>
+              </button>
+              <button class="btn-secondary" id="lightbox-add-box-btn">
+                <i class="fas fa-box"></i> <span id="lightbox-add-box-text">Agregar Caja</span>
+              </button>
+            </div>
+          </div>
+          
+          <div class="lightbox-footer-nav-info">
+            <span id="lightbox-nav-index"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- TikTok Embed Script -->
   <script async src="https://www.tiktok.com/embed.js"></script>
   <!-- Products Data -->

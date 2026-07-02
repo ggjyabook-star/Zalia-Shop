@@ -58,6 +58,12 @@ const TRANSLATIONS = {
     "price-filter-label": "Precio:",
     "price-min-placeholder": "Mín",
     "price-max-placeholder": "Máx",
+    "zoom-hint-click": "Haz clic para ampliar",
+    "lightbox-retail-label": "Menudeo (1-2 pzs)",
+    "lightbox-wholesale-label": "Mayoreo (3+ pzs)",
+    "lightbox-box-label": "Caja Cerrada (pza)",
+    "lightbox-qty-label": "Cantidad:",
+    "lightbox-add-pieces-text": "Agregar Piezas",
     "how-title": "¿Cómo solicitar tu cotización?",
     "how-desc": "Hemos diseñado un proceso rápido y digitalizado para que puedas cotizar y asegurar tu mercancía en minutos.",
     "step1-title": "Selecciona tus Productos",
@@ -137,6 +143,12 @@ const TRANSLATIONS = {
     "price-filter-label": "价格:",
     "price-min-placeholder": "最低",
     "price-max-placeholder": "最高",
+    "zoom-hint-click": "点击放大",
+    "lightbox-retail-label": "零售 (1-2 件)",
+    "lightbox-wholesale-label": "批发 (3+ 件)",
+    "lightbox-box-label": "整箱价 (单件)",
+    "lightbox-qty-label": "数量:",
+    "lightbox-add-pieces-text": "添加商品",
     "how-title": "如何申请您的报价？",
     "how-desc": "我们设计了快速且数字化的流程，让您可以在几分钟内完成询价并锁定商品。",
     "step1-title": "选择商品",
@@ -258,6 +270,8 @@ let minPrice = '';
 let maxPrice = '';
 let displayLimit = 40;
 let searchDebounceTimer = null;
+let currentCatalogProducts = [];
+let currentLightboxIndex = -1;
 
 // DOM Elements
 const productGrid = document.getElementById('product-grid');
@@ -434,6 +448,7 @@ function init() {
   loadCartFromStorage();
   checkDarkModePref();
   initHeroSlider();
+  initLightbox();
   updateLanguage(currentLanguage);
 }
 
@@ -533,6 +548,8 @@ function renderCatalog() {
 
     return matchesCategory && matchesSearch && matchesPrice;
   });
+
+  currentCatalogProducts = filteredProducts;
 
   if (filteredProducts.length === 0) {
     const txtNoProducts = currentLanguage === 'zh' 
@@ -822,6 +839,22 @@ function setupCardControls() {
           ? `无法添加整箱：库存仅剩 ${stockLimit} 件，而添加一整箱将使您的购物车达到 ${newQty} 件。`
           : `No se puede agregar la caja: el stock disponible es de ${stockLimit} pzs, y agregar una caja completa superaría ese límite (total: ${newQty} pzs).`;
         alert(alertMsg);
+      }
+    });
+  });
+
+  // Image click to open lightbox
+  productGrid.querySelectorAll('.product-img-wrapper').forEach(wrapper => {
+    wrapper.addEventListener('click', (e) => {
+      if (e.target.closest('.badge-tag')) return;
+      const card = wrapper.closest('.product-card');
+      const addBtn = card.querySelector('.add-to-cart-btn');
+      if (addBtn) {
+        const id = addBtn.getAttribute('data-id');
+        const index = currentCatalogProducts.findIndex(p => String(p.id).trim() === String(id).trim());
+        if (index > -1) {
+          openLightbox(index);
+        }
       }
     });
   });
@@ -1338,6 +1371,388 @@ function loadCartFromStorage() {
       cart = [];
     }
   }
+}
+
+// ==========================================================================
+// Lightbox Product Viewer Logic
+// ==========================================================================
+let lightboxModal, lightboxImg, lightboxTitle, lightboxDesc, lightboxModuleTag, lightboxStockTag, lightboxBoxSpecsText, lightboxPriceRetail, lightboxPriceWholesale, lightboxPriceBox, lightboxQtyInput, lightboxNavIndex;
+
+function initLightbox() {
+  lightboxModal = document.getElementById('product-lightbox');
+  if (!lightboxModal) return;
+
+  lightboxImg = document.getElementById('lightbox-img');
+  lightboxTitle = document.getElementById('lightbox-title');
+  lightboxDesc = document.getElementById('lightbox-desc');
+  lightboxModuleTag = document.getElementById('lightbox-module-tag');
+  lightboxStockTag = document.getElementById('lightbox-stock-tag');
+  lightboxBoxSpecsText = document.getElementById('lightbox-box-specs-text');
+  lightboxPriceRetail = document.getElementById('lightbox-price-retail');
+  lightboxPriceWholesale = document.getElementById('lightbox-price-wholesale');
+  lightboxPriceBox = document.getElementById('lightbox-price-box');
+  lightboxQtyInput = document.getElementById('lightbox-qty-input');
+  lightboxNavIndex = document.getElementById('lightbox-nav-index');
+
+  // Close triggers
+  const closeBtn = lightboxModal.querySelector('.lightbox-close');
+  const backdrop = lightboxModal.querySelector('.lightbox-backdrop');
+  if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
+  if (backdrop) backdrop.addEventListener('click', closeLightbox);
+
+  // Navigation triggers
+  const prevBtn = lightboxModal.querySelector('.lightbox-nav-btn.prev');
+  const nextBtn = lightboxModal.querySelector('.lightbox-nav-btn.next');
+  if (prevBtn) prevBtn.addEventListener('click', (e) => { e.stopPropagation(); navigateLightbox(-1); });
+  if (nextBtn) nextBtn.addEventListener('click', (e) => { e.stopPropagation(); navigateLightbox(1); });
+
+  // Qty Plus/Minus Triggers
+  const qtyMinus = document.getElementById('lightbox-qty-minus');
+  const qtyPlus = document.getElementById('lightbox-qty-plus');
+
+  if (qtyMinus && lightboxQtyInput) {
+    qtyMinus.addEventListener('click', (e) => {
+      e.stopPropagation();
+      let val = parseInt(lightboxQtyInput.value) || 1;
+      if (val > 1) {
+        lightboxQtyInput.value = val - 1;
+      }
+    });
+  }
+
+  if (qtyPlus && lightboxQtyInput) {
+    qtyPlus.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const product = currentCatalogProducts[currentLightboxIndex];
+      if (!product) return;
+      const stockLimit = typeof product.stock !== 'undefined' ? Number(product.stock) : 999;
+      let val = parseInt(lightboxQtyInput.value) || 1;
+      if (val < stockLimit) {
+        lightboxQtyInput.value = val + 1;
+      } else {
+        const alertMsg = currentLanguage === 'zh'
+          ? `已达库存限制：该商品仅剩 ${stockLimit} 件可用。`
+          : `Límite alcanzado: solo hay ${stockLimit} piezas disponibles de este producto.`;
+        alert(alertMsg);
+      }
+    });
+  }
+
+  if (lightboxQtyInput) {
+    lightboxQtyInput.addEventListener('change', () => {
+      const product = currentCatalogProducts[currentLightboxIndex];
+      if (!product) return;
+      const stockLimit = typeof product.stock !== 'undefined' ? Number(product.stock) : 999;
+      let val = parseInt(lightboxQtyInput.value) || 1;
+      if (val < 1) val = 1;
+      if (val > stockLimit) {
+        const alertMsg = currentLanguage === 'zh'
+          ? `数量限制为可用库存：${stockLimit} 件。`
+          : `Cantidad limitada a las existencias disponibles: ${stockLimit} pzs.`;
+        alert(alertMsg);
+        val = stockLimit;
+      }
+      lightboxQtyInput.value = val;
+    });
+  }
+
+  // Add Pieces Trigger
+  const addPiecesBtn = document.getElementById('lightbox-add-pieces-btn');
+  if (addPiecesBtn) {
+    addPiecesBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const product = currentCatalogProducts[currentLightboxIndex];
+      if (!product) return;
+      const qty = parseInt(lightboxQtyInput.value) || 1;
+      addToCart(product.id, qty);
+
+      // Sync input in catalog grid
+      const input = document.getElementById(`qty-input-${product.id}`);
+      if (input) {
+        input.value = qty;
+      }
+
+      // Visual feedback
+      const originalHtml = addPiecesBtn.innerHTML;
+      addPiecesBtn.innerHTML = currentLanguage === 'zh' ? '<i class="fas fa-check"></i> 已添加!' : '<i class="fas fa-check"></i> ¡Agregado!';
+      addPiecesBtn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
+      setTimeout(() => {
+        addPiecesBtn.innerHTML = originalHtml;
+        addPiecesBtn.style.background = '';
+      }, 1500);
+    });
+  }
+
+  // Add Box Trigger
+  const addBoxBtn = document.getElementById('lightbox-add-box-btn');
+  if (addBoxBtn) {
+    addBoxBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const product = currentCatalogProducts[currentLightboxIndex];
+      if (!product) return;
+      const pcs = parseInt(product.pcsPerBox) || 12;
+
+      // Find current quantity in cart
+      const cartItem = cart.find(item => String(item.id).trim() === String(product.id).trim());
+      const currentQty = cartItem ? cartItem.qty : 0;
+      
+      const stockLimit = typeof product.stock !== 'undefined' ? Number(product.stock) : 999;
+      const newQty = currentQty + pcs;
+
+      if (newQty <= stockLimit) {
+        addToCart(product.id, newQty);
+        
+        // Sync input in catalog grid
+        const input = document.getElementById(`qty-input-${product.id}`);
+        if (input) {
+          input.value = newQty;
+        }
+
+        // Visual Feedback
+        const originalHtml = addBoxBtn.innerHTML;
+        addBoxBtn.innerHTML = currentLanguage === 'zh' ? '<i class="fas fa-check"></i> 已添加整箱!' : '<i class="fas fa-check"></i> ¡Caja Agregada!';
+        addBoxBtn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
+        addBoxBtn.style.borderColor = '#10b981';
+        addBoxBtn.style.color = 'white';
+        setTimeout(() => {
+          addBoxBtn.innerHTML = originalHtml;
+          addBoxBtn.style.background = '';
+          addBoxBtn.style.borderColor = '';
+          addBoxBtn.style.color = '';
+        }, 1500);
+      } else {
+        const alertMsg = currentLanguage === 'zh'
+          ? `无法添加整箱：库存仅剩 ${stockLimit} 件，而添加一整箱将使您的购物车达到 ${newQty} 件。`
+          : `No se puede agregar la caja: el stock disponible es de ${stockLimit} pzs, y agregar una caja completa superaría ese límite (total: ${newQty} pzs).`;
+        alert(alertMsg);
+      }
+    });
+  }
+
+  // Keyboard navigation bindings
+  document.addEventListener('keydown', (e) => {
+    if (lightboxModal && lightboxModal.style.display !== 'none') {
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') navigateLightbox(-1);
+      if (e.key === 'ArrowRight') navigateLightbox(1);
+    }
+  });
+
+  // Panning & Magnifier lens triggers
+  if (lightboxImg) {
+    const viewport = lightboxImg.parentElement;
+
+    lightboxImg.addEventListener('click', (e) => {
+      e.stopPropagation();
+      lightboxImg.classList.toggle('zoomed');
+      const zoomHint = lightboxModal.querySelector('.lightbox-zoom-hint span');
+      if (lightboxImg.classList.contains('zoomed')) {
+        if (zoomHint) {
+          zoomHint.setAttribute('data-i18n', 'zoom-hint-click-out');
+          zoomHint.textContent = currentLanguage === 'zh' ? '点击缩小' : 'Haz clic para alejar';
+        }
+      } else {
+        lightboxImg.style.transform = '';
+        if (zoomHint) {
+          zoomHint.setAttribute('data-i18n', 'zoom-hint-click');
+          zoomHint.textContent = currentLanguage === 'zh' ? '点击放大' : 'Haz clic para ampliar';
+        }
+      }
+    });
+
+    // Panning on mousemove
+    viewport.addEventListener('mousemove', (e) => {
+      if (!lightboxImg.classList.contains('zoomed')) return;
+      const rect = viewport.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width;
+      const y = (e.clientY - rect.top) / rect.height;
+      const moveX = (0.5 - x) * 100;
+      const moveY = (0.5 - y) * 100;
+      lightboxImg.style.transform = `scale(2.2) translate(${moveX / 2}%, ${moveY / 2}%)`;
+    });
+
+    viewport.addEventListener('mouseleave', () => {
+      if (lightboxImg.classList.contains('zoomed')) {
+        lightboxImg.style.transform = 'scale(2.2) translate(0, 0)';
+      }
+    });
+
+    // Panning on touchmove for mobiles
+    viewport.addEventListener('touchmove', (e) => {
+      if (!lightboxImg.classList.contains('zoomed') || e.touches.length !== 1) return;
+      const rect = viewport.getBoundingClientRect();
+      const touch = e.touches[0];
+      const x = (touch.clientX - rect.left) / rect.width;
+      const y = (touch.clientY - rect.top) / rect.height;
+      const moveX = (0.5 - x) * 100;
+      const moveY = (0.5 - y) * 100;
+      lightboxImg.style.transform = `scale(2.2) translate(${moveX / 2}%, ${moveY / 2}%)`;
+    }, { passive: true });
+
+    // Touch swiping triggers
+    let startX = 0;
+    let endX = 0;
+    const card = lightboxModal.querySelector('.lightbox-card');
+    if (card) {
+      card.addEventListener('touchstart', (e) => {
+        startX = e.changedTouches[0].screenX;
+      }, { passive: true });
+      card.addEventListener('touchend', (e) => {
+        endX = e.changedTouches[0].screenX;
+        const threshold = 55;
+        if (!lightboxImg.classList.contains('zoomed')) {
+          if (startX - endX > threshold) {
+            navigateLightbox(1);
+          } else if (endX - startX > threshold) {
+            navigateLightbox(-1);
+          }
+        }
+      }, { passive: true });
+    }
+  }
+}
+
+function openLightbox(index) {
+  if (index < 0 || index >= currentCatalogProducts.length) return;
+  currentLightboxIndex = index;
+  const product = currentCatalogProducts[index];
+  if (!product) return;
+
+  // Reset zoom styles
+  if (lightboxImg) {
+    lightboxImg.classList.remove('zoomed');
+    lightboxImg.style.transform = '';
+    const zoomHint = lightboxModal.querySelector('.lightbox-zoom-hint span');
+    if (zoomHint) {
+      zoomHint.setAttribute('data-i18n', 'zoom-hint-click');
+      zoomHint.textContent = currentLanguage === 'zh' ? '点击放大' : 'Haz clic para ampliar';
+    }
+  }
+
+  // Populate data fields
+  if (lightboxImg) {
+    lightboxImg.src = product.image;
+    lightboxImg.alt = product.name;
+  }
+  if (lightboxTitle) lightboxTitle.textContent = product.name;
+  
+  const displayDesc = getTranslatedDesc(product.desc || '', currentLanguage);
+  if (lightboxDesc) lightboxDesc.textContent = displayDesc;
+
+  // Category Module tag
+  if (lightboxModuleTag) {
+    const categoriesMap = CATEGORY_TRANSLATIONS[currentLanguage] || CATEGORY_TRANSLATIONS['es'];
+    lightboxModuleTag.textContent = categoriesMap[product.category] || product.category;
+  }
+
+  // Availability / Stock badge
+  const stockVal = typeof product.stock !== 'undefined' ? Number(product.stock) : 999;
+  if (lightboxStockTag) {
+    if (stockVal <= 0) {
+      lightboxStockTag.style.background = '#ef4444';
+      lightboxStockTag.innerHTML = currentLanguage === 'zh' 
+        ? '<i class="fas fa-exclamation-triangle"></i> 已售罄' 
+        : '<i class="fas fa-exclamation-triangle"></i> Agotado';
+    } else if (stockVal < 10) {
+      lightboxStockTag.style.background = '#f59e0b';
+      lightboxStockTag.innerHTML = currentLanguage === 'zh'
+        ? `<i class="fas fa-hourglass-half"></i> 仅剩 ${stockVal} 件`
+        : `<i class="fas fa-hourglass-half"></i> Últimas ${stockVal} pzs`;
+    } else {
+      lightboxStockTag.style.background = '#10b981';
+      lightboxStockTag.innerHTML = currentLanguage === 'zh'
+        ? `<i class="fas fa-check-circle"></i> ${stockVal} 可用`
+        : `<i class="fas fa-check-circle"></i> ${stockVal} disp.`;
+    }
+  }
+
+  // Box details
+  if (lightboxBoxSpecsText) {
+    lightboxBoxSpecsText.innerHTML = currentLanguage === 'zh'
+      ? `整箱包含: <strong>${product.pcsPerBox} 件</strong>`
+      : `Caja cerrada con: <strong>${product.pcsPerBox} pzs</strong>`;
+  }
+
+  // Pricing Tiers
+  if (lightboxPriceRetail) lightboxPriceRetail.textContent = `$${product.retailPrice}`;
+  if (lightboxPriceWholesale) lightboxPriceWholesale.textContent = `$${product.wholesalePrice}`;
+  if (lightboxPriceBox) lightboxPriceBox.textContent = `$${product.boxPrice}`;
+
+  // Default values
+  if (lightboxQtyInput) {
+    lightboxQtyInput.value = 1;
+    if (stockVal <= 0) {
+      lightboxQtyInput.disabled = true;
+      lightboxQtyInput.value = 0;
+    } else {
+      lightboxQtyInput.disabled = false;
+      lightboxQtyInput.max = stockVal;
+    }
+  }
+
+  // Disable buttons if stock is unavailable
+  const addPiecesBtn = document.getElementById('lightbox-add-pieces-btn');
+  const addBoxBtn = document.getElementById('lightbox-add-box-btn');
+  
+  if (addPiecesBtn) {
+    if (stockVal <= 0) {
+      addPiecesBtn.disabled = true;
+      addPiecesBtn.style.opacity = '0.5';
+      addPiecesBtn.style.cursor = 'not-allowed';
+    } else {
+      addPiecesBtn.disabled = false;
+      addPiecesBtn.style.opacity = '';
+      addPiecesBtn.style.cursor = '';
+    }
+  }
+  
+  if (addBoxBtn) {
+    if (stockVal < (product.pcsPerBox || 12)) {
+      addBoxBtn.disabled = true;
+      addBoxBtn.style.opacity = '0.5';
+      addBoxBtn.style.cursor = 'not-allowed';
+      addBoxBtn.innerHTML = `<i class="fas fa-box"></i> ${currentLanguage === 'zh' ? '库存不足整箱' : 'Stock Insuficiente'}`;
+    } else {
+      addBoxBtn.disabled = false;
+      addBoxBtn.style.opacity = '';
+      addBoxBtn.style.cursor = '';
+      addBoxBtn.innerHTML = `<i class="fas fa-box"></i> ${currentLanguage === 'zh' ? '添加整箱' : 'Agregar Caja'}`;
+    }
+  }
+
+  // Navigation Index indicator
+  if (lightboxNavIndex) {
+    lightboxNavIndex.textContent = currentLanguage === 'zh'
+      ? `商品 ${index + 1} / ${currentCatalogProducts.length}`
+      : `Producto ${index + 1} de ${currentCatalogProducts.length}`;
+  }
+
+  // Show Modal and disable page body scrolling
+  if (lightboxModal) {
+    lightboxModal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+}
+
+function closeLightbox() {
+  if (lightboxModal) {
+    lightboxModal.style.display = 'none';
+    document.body.style.overflow = '';
+  }
+}
+
+function navigateLightbox(dir) {
+  if (currentCatalogProducts.length === 0) return;
+  let nextIndex = currentLightboxIndex + dir;
+  
+  // Wrap around infinite navigation loop
+  if (nextIndex >= currentCatalogProducts.length) {
+    nextIndex = 0;
+  } else if (nextIndex < 0) {
+    nextIndex = currentCatalogProducts.length - 1;
+  }
+  
+  openLightbox(nextIndex);
 }
 
 // Run app
