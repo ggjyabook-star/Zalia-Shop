@@ -14,30 +14,30 @@
   
   <style>
     /* Inline Dashboard-specific styling extending styles.css */
+    .admin-container .prop-card {
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+    
     @media (max-width: 850px) {
-      header, header.scrolled {
-        height: auto !important;
-        min-height: max-content !important;
-        padding-bottom: 15px !important;
+      header {
+        position: relative !important;
       }
       header .nav-container {
         flex-direction: column;
-        gap: 10px;
-        padding: 15px 10px 5px 10px !important;
-        height: auto !important;
+        padding: 15px !important;
+        gap: 15px;
       }
       header .nav-container h2 {
-        font-size: 1.15rem !important;
+        font-size: 1.4rem !important;
         text-align: center;
-        margin: 5px 0 5px 0 !important;
-        width: 100%;
+        margin: 0;
       }
       header .nav-actions {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        align-items: center;
-        gap: 12px;
+        gap: 10px;
         width: 100%;
       }
       #lang-toggle-dash {
@@ -50,18 +50,12 @@
         flex: 1 1 100%;
         text-align: center;
         justify-content: center;
-        padding: 12px !important;
-        font-size: 0.95rem !important;
-        margin: 0;
       }
       .admin-container {
-        margin-top: 350px !important;
+        margin-top: 40px !important;
       }
       .admin-container .section-header {
         text-align: center !important;
-      }
-      .admin-container .section-header h2 {
-        font-size: 1.8rem !important;
       }
     }
     
