@@ -2201,8 +2201,8 @@ body.dark-mode-active .lightbox-media-side {
 }
 
 .lightbox-zoomable-img {
-  max-width: 92%;
-  max-height: 92%;
+  max-width: 100%;
+  max-height: 100%;
   object-fit: contain;
   border-radius: var(--border-radius-sm);
   transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -2549,16 +2549,16 @@ body.dark-mode-active .lightbox-qty-ctrl {
 @media (max-width: 900px) {
   .lightbox-card {
     grid-template-columns: 1fr;
-    height: 95vh;
-    max-height: 95vh;
-    width: 95%;
+    height: 92vh;
+    max-height: 92vh;
+    width: 96%;
     display: flex;
     flex-direction: column;
   }
   
   .lightbox-media-side {
-    height: 45vh;
-    min-height: 280px;
+    height: 55vh;
+    min-height: 300px;
     flex-shrink: 0;
     border-right: none;
     border-bottom: 1px solid var(--light-border);
@@ -2601,12 +2601,12 @@ body.dark-mode-active .lightbox-qty-ctrl {
 
 @media (max-width: 480px) {
   .lightbox-media-side {
-    height: 45vh;
-    min-height: 250px;
+    height: 55vh;
+    min-height: 300px;
   }
   
   .lightbox-details-side {
-    padding: 12px 16px;
+    padding: 16px;
   }
 
   .lightbox-card h2 {
