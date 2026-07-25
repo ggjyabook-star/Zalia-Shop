@@ -284,21 +284,12 @@
         <span id="login-error-msg">Usuario o contraseña incorrectos.</span>
       </div>
       
-      <div style="background: rgba(0, 180, 216, 0.08); border: 1px dashed var(--secondary); padding: 12px 14px; border-radius: var(--border-radius-sm); margin-bottom: 20px; font-size: 0.88rem; text-align: center; color: var(--text-dark);">
-        <i class="fas fa-key" style="color: var(--secondary); margin-right: 4px;"></i> <strong>Credenciales de Demo:</strong><br>
-        Usuario: <code style="background: rgba(0,0,0,0.06); padding: 2px 6px; border-radius: 4px; font-weight:700;">admin</code> &nbsp;|&nbsp; 
-        Contraseña: <code style="background: rgba(0,0,0,0.06); padding: 2px 6px; border-radius: 4px; font-weight:700;">zalia123</code>
-        <div style="font-size: 0.78rem; color: var(--primary); font-weight: 600; margin-top: 4px;">
-          ✨ Campos pre-llenados automáticamente para la presentación
-        </div>
-      </div>
-
       <form id="login-form">
         <div class="login-input-group">
           <label for="username">Usuario</label>
           <div class="login-input-wrapper">
             <i class="fas fa-user login-input-icon"></i>
-            <input type="text" id="username" class="login-input" value="admin" placeholder="Ingresa tu usuario" required autocomplete="username">
+            <input type="text" id="username" class="login-input" placeholder="Ingresa tu usuario" required autocomplete="username">
           </div>
         </div>
         
@@ -306,12 +297,12 @@
           <label for="password">Contraseña</label>
           <div class="login-input-wrapper">
             <i class="fas fa-lock login-input-icon"></i>
-            <input type="password" id="password" class="login-input" value="zalia123" placeholder="Ingresa tu contraseña" required autocomplete="current-password">
+            <input type="password" id="password" class="login-input" placeholder="Ingresa tu contraseña" required autocomplete="current-password">
           </div>
         </div>
         
         <button type="submit" class="login-btn">
-          <i class="fas fa-sign-in-alt"></i> Iniciar Sesión Directo
+          <i class="fas fa-sign-in-alt"></i> Iniciar Sesión
         </button>
       </form>
     </div>
@@ -361,108 +352,6 @@
         <button id="btn-restore-default" class="btn-secondary" style="background: #ef4444; box-shadow: 0 4px 15px rgba(239, 68, 68, 0.25); padding: 10px 18px; font-size: 0.9rem;">
           <i class="fas fa-undo"></i> Restaurar Por Defecto
         </button>
-      </div>
-    </div>
-
-    <!-- Demo Excel Sample Files (4 Files for Client Presentation) -->
-    <div class="prop-card" style="margin-bottom: 30px; padding: 30px; border-left: 5px solid var(--primary);">
-      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; margin-bottom: 20px;">
-        <div>
-          <h3 style="font-weight: 800; font-size: 1.35rem; display: flex; align-items: center; gap: 10px;">
-            <i class="fas fa-file-excel" style="color: #10b981; font-size: 1.6rem;"></i> 
-            Archivos Excel de Demostración (4 Ejemplos Listos)
-          </h3>
-          <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 4px;">
-            Elige cualquiera de los 4 archivos Excel de prueba para cargarlos directamente en el sistema o descargarlos para arrastrar y mostrar la actualización en vivo al cliente.
-          </p>
-        </div>
-        <span style="background: rgba(255,0,127,0.1); color: var(--primary); font-weight: 700; padding: 6px 14px; border-radius: 50px; font-size: 0.85rem;">
-          <i class="fas fa-play-circle"></i> Demostración Cliente
-        </span>
-      </div>
-
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px;">
-        
-        <!-- Excel 1 -->
-        <div style="background: rgba(16, 185, 129, 0.05); border: 1px solid rgba(16, 185, 129, 0.2); border-radius: var(--border-radius); padding: 18px; display: flex; flex-direction: column; justify-content: space-between; gap: 12px; transition: var(--transition);" class="excel-sample-card">
-          <div>
-            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
-              <span style="font-size: 0.78rem; font-weight: 800; color: #10b981; background: rgba(16,185,129,0.15); padding: 3px 8px; border-radius: 4px;">EXCEL #1</span>
-              <i class="fas fa-box-open" style="color: #10b981;"></i>
-            </div>
-            <h4 style="font-size: 1rem; font-weight: 700; margin-bottom: 4px;">Bolsas y Mochilas (Lote 1)</h4>
-            <p style="font-size: 0.82rem; color: var(--text-muted);">Contenedor Directo (`产品列表1.xlsx`)</p>
-          </div>
-          <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-            <button class="btn-primary" onclick="loadSampleExcel('产品列表1.xlsx', 'Excel #1 - Bolsas y Mochilas Lote 1')" style="flex: 1; padding: 8px 12px; font-size: 0.82rem; justify-content: center; background: linear-gradient(135deg, #10b981, #059669); box-shadow: none;">
-              <i class="fas fa-bolt"></i> Cargar Directo
-            </button>
-            <a href="产品列表1.xlsx" download="Ejemplo1_Zalia_Bolsas.xlsx" title="Descargar Excel Ejemplo 1" class="btn-secondary" style="padding: 8px 12px; font-size: 0.82rem; justify-content: center;">
-              <i class="fas fa-download"></i>
-            </a>
-          </div>
-        </div>
-
-        <!-- Excel 2 -->
-        <div style="background: rgba(0, 180, 216, 0.05); border: 1px solid rgba(0, 180, 216, 0.2); border-radius: var(--border-radius); padding: 18px; display: flex; flex-direction: column; justify-content: space-between; gap: 12px; transition: var(--transition);" class="excel-sample-card">
-          <div>
-            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
-              <span style="font-size: 0.78rem; font-weight: 800; color: var(--secondary); background: rgba(0, 180, 216, 0.15); padding: 3px 8px; border-radius: 4px;">EXCEL #2</span>
-              <i class="fas fa-suitcase" style="color: var(--secondary);"></i>
-            </div>
-            <h4 style="font-size: 1rem; font-weight: 700; margin-bottom: 4px;">Carteras y Peluches (Lote 2)</h4>
-            <p style="font-size: 0.82rem; color: var(--text-muted);">Surtido Aduana (`产品列表2.xlsx`)</p>
-          </div>
-          <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-            <button class="btn-secondary" onclick="loadSampleExcel('产品列表2.xlsx', 'Excel #2 - Carteras y Peluches Lote 2')" style="flex: 1; padding: 8px 12px; font-size: 0.82rem; justify-content: center; background: linear-gradient(135deg, var(--secondary), #0096c7); color: white; box-shadow: none;">
-              <i class="fas fa-bolt"></i> Cargar Directo
-            </button>
-            <a href="产品列表2.xlsx" download="Ejemplo2_Zalia_Carteras.xlsx" title="Descargar Excel Ejemplo 2" class="btn-secondary" style="padding: 8px 12px; font-size: 0.82rem; justify-content: center;">
-              <i class="fas fa-download"></i>
-            </a>
-          </div>
-        </div>
-
-        <!-- Excel 3 -->
-        <div style="background: rgba(255, 0, 127, 0.05); border: 1px solid rgba(255, 0, 127, 0.2); border-radius: var(--border-radius); padding: 18px; display: flex; flex-direction: column; justify-content: space-between; gap: 12px; transition: var(--transition);" class="excel-sample-card">
-          <div>
-            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
-              <span style="font-size: 0.78rem; font-weight: 800; color: var(--primary); background: rgba(255, 0, 127, 0.15); padding: 3px 8px; border-radius: 4px;">EXCEL #3</span>
-              <i class="fas fa-tags" style="color: var(--primary);"></i>
-            </div>
-            <h4 style="font-size: 1rem; font-weight: 700; margin-bottom: 4px;">Novedades y Accesorios (Lote 3)</h4>
-            <p style="font-size: 0.82rem; color: var(--text-muted);">Novedades CDMX (`产品列表3.xlsx`)</p>
-          </div>
-          <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-            <button class="btn-primary" onclick="loadSampleExcel('产品列表3.xlsx', 'Excel #3 - Novedades y Accesorios Lote 3')" style="flex: 1; padding: 8px 12px; font-size: 0.82rem; justify-content: center; box-shadow: none;">
-              <i class="fas fa-bolt"></i> Cargar Directo
-            </button>
-            <a href="产品列表3.xlsx" download="Ejemplo3_Zalia_Novedades.xlsx" title="Descargar Excel Ejemplo 3" class="btn-secondary" style="padding: 8px 12px; font-size: 0.82rem; justify-content: center;">
-              <i class="fas fa-download"></i>
-            </a>
-          </div>
-        </div>
-
-        <!-- Excel 4 -->
-        <div style="background: rgba(245, 158, 11, 0.05); border: 1px solid rgba(245, 158, 11, 0.2); border-radius: var(--border-radius); padding: 18px; display: flex; flex-direction: column; justify-content: space-between; gap: 12px; transition: var(--transition);" class="excel-sample-card">
-          <div>
-            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
-              <span style="font-size: 0.78rem; font-weight: 800; color: #f59e0b; background: rgba(245, 158, 11, 0.15); padding: 3px 8px; border-radius: 4px;">EXCEL #4</span>
-              <i class="fas fa-layer-group" style="color: #f59e0b;"></i>
-            </div>
-            <h4 style="font-size: 1rem; font-weight: 700; margin-bottom: 4px;">Catálogo Completo Gran Volumen</h4>
-            <p style="font-size: 0.82rem; color: var(--text-muted);">Lote Completo (`产品列表4.xlsx`)</p>
-          </div>
-          <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-            <button class="btn-secondary" onclick="loadSampleExcel('产品列表4.xlsx', 'Excel #4 - Catálogo Completo Gran Volumen')" style="flex: 1; padding: 8px 12px; font-size: 0.82rem; justify-content: center; background: #f59e0b; color: white; box-shadow: none;">
-              <i class="fas fa-bolt"></i> Cargar Directo
-            </button>
-            <a href="产品列表4.xlsx" download="Ejemplo4_Zalia_Completo.xlsx" title="Descargar Excel Ejemplo 4" class="btn-secondary" style="padding: 8px 12px; font-size: 0.82rem; justify-content: center;">
-              <i class="fas fa-download"></i>
-            </a>
-          </div>
-        </div>
-
       </div>
     </div>
 
@@ -742,33 +631,6 @@
       if (clean.startsWith('M')) return 'mochilas';
       if (clean.startsWith('P')) return 'peluches';
       return 'accesorios-mas';
-    }
-
-    // Quick Load Sample Excel Files for Client Presentation
-    function loadSampleExcel(filename, sampleTitle) {
-      logBox.style.display = 'block';
-      logContent.textContent = `🚀 Cargando demostración: ${sampleTitle} (${filename})...\nLeyendo libro de trabajo Excel...\n`;
-      previewPanel.style.display = 'none';
-      savePanel.style.display = 'none';
-      parsedProducts = [];
-
-      fetch(filename)
-        .then(response => {
-          if (!response.ok) throw new Error(`No se pudo leer el archivo local "${filename}".`);
-          return response.arrayBuffer();
-        })
-        .then(buffer => {
-          const data = new Uint8Array(buffer);
-          const workbook = XLSX.read(data, {type: 'array'});
-          const firstSheetName = workbook.SheetNames[0];
-          const worksheet = workbook.Sheets[firstSheetName];
-          const jsonData = XLSX.utils.sheet_to_json(worksheet);
-          logContent.textContent += `✅ Archivo "${filename}" leído exitosamente. ${jsonData.length} filas detectadas.\n`;
-          processJsonData(jsonData);
-        })
-        .catch(err => {
-          logContent.textContent += `❌ Error al cargar ${filename}: ${err.message}\n`;
-        });
     }
 
     // Read and Parse Uploader File

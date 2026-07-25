@@ -626,19 +626,16 @@ function renderCatalog() {
       </button>
     `;
 
-    const totalBoxPrice = (Number(product.boxPrice) || Number(product.wholesalePrice) || 0) * (Number(product.pcsPerBox) || 12);
-    const totalBoxFormatted = `$${totalBoxPrice.toLocaleString('es-MX', {minimumFractionDigits: 2, maximumFractionDigits: 2})} MXN`;
-
     const txtBoxAction = currentLanguage === 'zh' ? '添加整箱' : 'Agregar Caja';
     const actionBoxBtnHtml = isOutOfStock ? '' : `
       <button class="btn-add-box add-box-to-cart-btn" data-id="${product.id}" data-pcs="${product.pcsPerBox}">
-        <i class="fas fa-box"></i> ${txtBoxAction} (${product.pcsPerBox} pzs = ${totalBoxFormatted})
+        <i class="fas fa-box"></i> ${txtBoxAction} (${product.pcsPerBox} pzs)
       </button>
     `;
 
     const txtCajaCon = currentLanguage === 'zh' 
-      ? `整箱包含: <strong>${product.pcsPerBox} 件</strong> (总价: ${totalBoxFormatted})` 
-      : `Caja cerrada con: <strong>${product.pcsPerBox} pzs</strong> &nbsp;|&nbsp; <strong style="color:var(--primary);">Total Caja: ${totalBoxFormatted}</strong>`;
+      ? `整箱包含: <strong>${product.pcsPerBox} 件</strong>` 
+      : `Caja cerrada con: <strong>${product.pcsPerBox} pzs</strong>`;
 
     const txtPriceTier1 = currentLanguage === 'zh' ? '1-2 件' : '1-2 Pzs';
     const txtPriceTier2 = currentLanguage === 'zh' ? '批发 (3+)' : 'Mayoreo (3+)';
@@ -731,7 +728,7 @@ function setupCardControls() {
   productGrid.querySelectorAll('.qty-btn.plus').forEach(btn => {
     btn.addEventListener('click', (e) => {
       const id = btn.getAttribute('data-id');
-      const input = btn.closest('div').querySelector('.qty-val') || document.getElementById(`qty-input-${id}`);
+      const input = document.getElementById(`qty-input-${id}`);
       const activeProducts = getActiveProducts();
       const product = activeProducts.find(p => String(p.id).trim() === String(id).trim());
       const stockLimit = product && typeof product.stock !== 'undefined' ? Number(product.stock) : 999;
@@ -753,7 +750,7 @@ function setupCardControls() {
   productGrid.querySelectorAll('.qty-btn.minus').forEach(btn => {
     btn.addEventListener('click', (e) => {
       const id = btn.getAttribute('data-id');
-      const input = btn.closest('div').querySelector('.qty-val') || document.getElementById(`qty-input-${id}`);
+      const input = document.getElementById(`qty-input-${id}`);
       if (input) {
         let val = parseInt(input.value) || 0;
         if (val > 1) {
@@ -787,7 +784,7 @@ function setupCardControls() {
   productGrid.querySelectorAll('.add-to-cart-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
       const id = btn.getAttribute('data-id');
-      const input = btn.closest('div').querySelector('.qty-val') || document.getElementById(`qty-input-${id}`);
+      const input = document.getElementById(`qty-input-${id}`);
       const qty = input ? (parseInt(input.value) || 1) : 1;
 
       addToCart(id, qty);
@@ -823,7 +820,7 @@ function setupCardControls() {
         addToCart(id, newQty);
         
         // Update input field in catalog page
-        const input = btn.closest('.product-actions').querySelector('.qty-val') || document.getElementById(`qty-input-${id}`);
+        const input = document.getElementById(`qty-input-${id}`);
         if (input) {
           input.value = newQty;
         }
@@ -1778,23 +1775,17 @@ function openLightbox(index) {
     }
   }
 
-  // Box calculation
-  const totalBoxPriceModal = (Number(product.boxPrice) || Number(product.wholesalePrice) || 0) * (Number(product.pcsPerBox) || 12);
-  const totalBoxFormattedModal = `$${totalBoxPriceModal.toLocaleString('es-MX', {minimumFractionDigits: 2, maximumFractionDigits: 2})} MXN`;
-
   // Box details
   if (lightboxBoxSpecsText) {
     lightboxBoxSpecsText.innerHTML = currentLanguage === 'zh'
-      ? `整箱包含: <strong>${product.pcsPerBox} 件</strong> ($${product.boxPrice.toFixed(2)} / 件) &nbsp;|&nbsp; <strong style="color:var(--primary);">总价: ${totalBoxFormattedModal}</strong>`
-      : `Caja cerrada con: <strong>${product.pcsPerBox} pzs</strong> ($${product.boxPrice.toFixed(2)} c/u) &nbsp;|&nbsp; <strong style="color:var(--primary); font-size:1.05rem;">Total Caja: ${totalBoxFormattedModal}</strong>`;
+      ? `整箱包含: <strong>${product.pcsPerBox} 件</strong>`
+      : `Caja cerrada con: <strong>${product.pcsPerBox} pzs</strong>`;
   }
 
   // Pricing Tiers
   if (lightboxPriceRetail) lightboxPriceRetail.textContent = `$${product.retailPrice.toFixed(2)}`;
   if (lightboxPriceWholesale) lightboxPriceWholesale.textContent = `$${product.wholesalePrice.toFixed(2)}`;
-  if (lightboxPriceBox) {
-    lightboxPriceBox.innerHTML = `$${product.boxPrice.toFixed(2)} <span style="font-size:0.72rem; opacity:0.8; font-weight:normal;">/pza</span><span style="display:block; font-size:0.78rem; font-weight:800; color:var(--primary); margin-top:2px;">(Total: ${totalBoxFormattedModal})</span>`;
-  }
+  if (lightboxPriceBox) lightboxPriceBox.textContent = `$${product.boxPrice.toFixed(2)}`;
 
   // Default values
   if (lightboxQtyInput) {
@@ -1834,7 +1825,7 @@ function openLightbox(index) {
       addBoxBtn.disabled = false;
       addBoxBtn.style.opacity = '';
       addBoxBtn.style.cursor = '';
-      addBoxBtn.innerHTML = `<i class="fas fa-box"></i> ${currentLanguage === 'zh' ? `添加整箱 (${product.pcsPerBox} 件 = ${totalBoxFormattedModal})` : `Agregar Caja (${product.pcsPerBox} pzs = ${totalBoxFormattedModal})`}`;
+      addBoxBtn.innerHTML = `<i class="fas fa-box"></i> ${currentLanguage === 'zh' ? '添加整箱' : 'Agregar Caja'}`;
     }
   }
 
