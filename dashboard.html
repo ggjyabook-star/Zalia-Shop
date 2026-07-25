@@ -15,33 +15,47 @@
   <style>
     /* Inline Dashboard-specific styling extending styles.css */
     @media (max-width: 850px) {
+      header, header.scrolled {
+        height: auto !important;
+        min-height: max-content !important;
+        padding-bottom: 15px !important;
+      }
       header .nav-container {
         flex-direction: column;
-        gap: 12px;
-        padding: 12px;
+        gap: 10px;
+        padding: 15px 10px 5px 10px !important;
+        height: auto !important;
       }
       header .nav-container h2 {
-        font-size: 1.25rem !important;
+        font-size: 1.15rem !important;
         text-align: center;
-        margin: 0;
+        margin: 5px 0 5px 0 !important;
+        width: 100%;
       }
       header .nav-actions {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 8px;
+        align-items: center;
+        gap: 12px;
         width: 100%;
+      }
+      #lang-toggle-dash {
+        width: auto !important;
+        padding: 0 15px !important;
+        border-radius: 25px !important;
       }
       header .nav-actions .btn-secondary, 
       header .nav-actions .btn-primary {
-        flex: 1 1 45%;
+        flex: 1 1 100%;
         text-align: center;
         justify-content: center;
-        padding: 8px 12px !important;
-        font-size: 0.85rem !important;
+        padding: 12px !important;
+        font-size: 0.95rem !important;
+        margin: 0;
       }
       .admin-container {
-        margin-top: 180px !important;
+        margin-top: 280px !important;
       }
     }
     
