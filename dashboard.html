@@ -336,7 +336,7 @@
   <div class="admin-container">
     <div class="section-header" style="text-align: left; margin-bottom: 30px;">
       <h2 style="font-size: 2.2rem;">Panel de Control y CMS</h2>
-      <p>Edita tus productos, actualiza los precios de mayoreo, menudeo, caja y liga tus fotos de Google Photos de forma sencilla mediante un archivo Excel o CSV.</p>
+      <p>Actualiza tu inventario arrastrando los archivos Excel directamente de tu sistema.</p>
     </div>
 
     <!-- Status Overview -->
@@ -347,172 +347,126 @@
           Cargando información del catálogo...
         </p>
       </div>
-      <div style="display: flex; gap: 12px; align-items: center;">
+      <div style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap;">
         <span class="badge-status" id="catalog-badge-status">Cargando...</span>
-        <button id="btn-restore-default" class="btn-secondary" style="background: #ef4444; box-shadow: 0 4px 15px rgba(239, 68, 68, 0.25); padding: 10px 18px; font-size: 0.9rem;">
+        <button id="btn-export-current" class="btn-secondary" style="padding: 10px 18px; font-size: 0.9rem;">
+          <i class="fas fa-download"></i> Respaldar Catálogo
+        </button>
+        <button id="btn-restore-default" class="btn-secondary" style="background: #ef4444; color: white; border: none; padding: 10px 18px; font-size: 0.9rem;">
           <i class="fas fa-undo"></i> Restaurar Por Defecto
         </button>
       </div>
     </div>
 
-    <div class="admin-grid">
-      <!-- Left Column: Upload and Preview -->
-      <div style="display: flex; flex-direction: column; gap: 30px;">
-        <!-- Upload Box -->
-        <div class="prop-card" style="padding: 30px;">
-          <h3 style="font-weight: 700; font-size: 1.3rem; margin-bottom: 16px;">
-            <i class="fas fa-file-excel" style="color: #10b981; margin-right: 8px;"></i> Subir Archivo Excel o CSV
-          </h3>
-          <p style="color: var(--text-muted); margin-bottom: 20px; font-size: 0.95rem;">
-            Actualiza tus productos subiendo el archivo. Asegúrate de respetar los nombres de las columnas para evitar errores de carga.
-          </p>
-          
-          <div class="upload-zone" id="drop-zone">
-            <i class="fas fa-cloud-upload-alt upload-icon"></i>
-            <h4 style="font-size: 1.15rem; margin-bottom: 8px;">Arrastra tu archivo aquí</h4>
-            <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 16px;">Formatos soportados: .xlsx, .xls, .csv</p>
-            <button class="btn-secondary" style="pointer-events: none;">Buscar Archivo</button>
-            <input type="file" id="file-input" style="display:none;" accept=".csv, .xlsx, .xls">
-          </div>
-
-          <div id="validation-logs" style="display:none;">
-            <div class="log-box" id="log-content"></div>
-          </div>
-          
-          <div id="save-panel" style="display:none; margin-top: 20px; text-align: right;">
-            <button id="btn-save-catalog" class="btn-primary" style="background: linear-gradient(135deg, #10b981, #059669); box-shadow: 0 6px 20px rgba(16, 185, 129, 0.3);">
-              <i class="fas fa-save"></i> Guardar y Publicar Catálogo
-            </button>
-          </div>
-        </div>
-
-        <!-- Preview Block -->
-        <div class="prop-card" id="preview-panel" style="display:none; padding: 30px;">
-          <h3 style="font-weight: 700; font-size: 1.3rem;">Previsualización de Productos a Cargar</h3>
-          <p style="color: var(--text-muted); font-size: 0.9rem;">Mostrando las primeras filas detectadas en tu archivo.</p>
-          
-          <div class="table-container">
-            <table class="preview-table">
-              <thead>
-                <tr>
-                  <th>Imagen</th>
-                  <th>ID</th>
-                  <th>Nombre</th>
-                  <th>Categoría</th>
-                  <th>P. Normal</th>
-                  <th>P. Mayoreo</th>
-                  <th>P. Caja</th>
-                  <th>Pzs/Caja</th>
-                  <th>Stock</th>
-                </tr>
-              </thead>
-              <tbody id="preview-table-body">
-                <!-- Injected by JS -->
-              </tbody>
-            </table>
-          </div>
-        </div>
+    <!-- Step 1 & 2: Explanation & Excel Examples -->
+    <div class="prop-card" style="margin-bottom: 30px; padding: 40px 30px; border-top: 4px solid var(--primary);">
+      <div style="text-align: center; margin-bottom: 40px;">
+        <h2 style="font-size: 2rem; margin-bottom: 15px; background: linear-gradient(135deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Actualiza tu Inventario en 3 Simples Pasos</h2>
+        <p style="font-size: 1.1rem; color: var(--text-muted); max-width: 800px; margin: 0 auto; line-height: 1.6;">
+          <strong>Paso 1:</strong> Tu sistema interno te dará los siguientes reportes Excel (descárgalos a tu computadora).<br>
+          <strong>Paso 2:</strong> Arrastra tu archivo Excel descargado a la <strong>zona de subida</strong> en la parte inferior.<br>
+          <strong>Paso 3:</strong> Revisa los productos detectados y dale en guardar para <strong>actualizar tu tienda en automático.</strong>
+        </p>
       </div>
 
-      <!-- Right Column: Instructions & Downloads -->
-      <div style="display: flex; flex-direction: column; gap: 30px;">
-        <!-- Downloads -->
-        <div class="prop-card" style="padding: 30px;">
-          <h3 style="font-weight: 700; font-size: 1.3rem; margin-bottom: 16px;">Recursos de Edición</h3>
-          <div style="display: flex; flex-direction: column; gap: 14px;">
-            <a href="plantilla_productos.csv" download="plantilla_productos.csv" class="btn-secondary" style="width: 100%; justify-content: center; background: #2563eb; box-shadow: 0 4px 15px rgba(37, 99, 235, 0.25);">
-              <i class="fas fa-file-download"></i> Descargar Plantilla CSV
-            </a>
-            <button id="btn-export-current" class="btn-secondary" style="width: 100%; justify-content: center; border-color: var(--primary); color: var(--primary); background: transparent;">
-              <i class="fas fa-download"></i> Respaldar Catálogo Activo (CSV)
-            </button>
+      <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 20px; text-align: center;">Formatos de Excel de tu Sistema (Ejemplos Visuales):</h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 20px;">
+        <!-- Excel 1 -->
+        <div style="background: rgba(16, 185, 129, 0.05); border: 1px solid rgba(16, 185, 129, 0.2); border-radius: var(--border-radius); padding: 18px; display: flex; flex-direction: column; gap: 8px;" class="excel-sample-card">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+            <span style="font-size: 0.78rem; font-weight: 800; color: #10b981; background: rgba(16,185,129,0.15); padding: 3px 8px; border-radius: 4px;">ARCHIVO 1</span>
+            <i class="fas fa-box-open" style="color: #10b981;"></i>
           </div>
+          <h4 style="font-size: 1rem; font-weight: 700; margin-bottom: 4px;">Bolsas y Mochilas</h4>
+          <p style="font-size: 0.85rem; color: var(--text-muted);">Contenedor directo. Súbelo para actualizar esta categoría.</p>
         </div>
 
-        <!-- Instructions -->
-        <div class="prop-card" style="padding: 30px;">
-          <h3 style="font-weight: 700; font-size: 1.3rem; margin-bottom: 16px;">¿Cómo Editar tu Catálogo?</h3>
-          <ul style="padding-left: 20px; display: flex; flex-direction: column; gap: 12px; font-size: 0.95rem; color: var(--text-muted);">
-            <li>
-              <strong style="color: var(--text-dark); body.dark-mode-active & { color: white; }">1. Descarga el archivo de ejemplo:</strong> Descarga la plantilla CSV y ábrela en Microsoft Excel, Google Sheets o Block de Notas.
-            </li>
-            <li>
-              <strong style="color: var(--text-dark); body.dark-mode-active & { color: white; }">2. Edita las Columnas:</strong>
-              <ul>
-                <li><code style="font-weight: 700;">Categoria</code>: Debe ser exactamente: <code style="color: var(--primary);">bolsas-carteras</code>, <code style="color: var(--primary);">mochilas</code>, <code style="color: var(--primary);">peluches</code> o <code style="color: var(--primary);">accesorios-mas</code>.</li>
-                <li><code style="font-weight: 700;">Imagen_URL</code>: Liga directa de la foto. Puedes copiar las ligas desde tu Google Photos haciendo clic derecho en la imagen abierta y seleccionando "Copiar dirección de imagen".</li>
-              </ul>
-            </li>
-            <li>
-              <strong style="color: var(--text-dark); body.dark-mode-active & { color: white; }">3. Sube tu archivo:</strong> Arrastra tu documento editado aquí en esta ventana. Verificaremos que el formato sea correcto.
-            </li>
-            <li>
-              <strong style="color: var(--text-dark); body.dark-mode-active & { color: white; }">4. Publica los cambios:</strong> Haz clic en "Guardar y Publicar" para aplicar la actualización inmediatamente en el catálogo del sitio web.
-            </li>
-          </ul>
+        <!-- Excel 2 -->
+        <div style="background: rgba(0, 180, 216, 0.05); border: 1px solid rgba(0, 180, 216, 0.2); border-radius: var(--border-radius); padding: 18px; display: flex; flex-direction: column; gap: 8px;" class="excel-sample-card">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+            <span style="font-size: 0.78rem; font-weight: 800; color: var(--secondary); background: rgba(0, 180, 216, 0.15); padding: 3px 8px; border-radius: 4px;">ARCHIVO 2</span>
+            <i class="fas fa-suitcase" style="color: var(--secondary);"></i>
+          </div>
+          <h4 style="font-size: 1rem; font-weight: 700; margin-bottom: 4px;">Carteras y Peluches</h4>
+          <p style="font-size: 0.85rem; color: var(--text-muted);">Surtido de aduana. Agrega las últimas existencias.</p>
+        </div>
+
+        <!-- Excel 3 -->
+        <div style="background: rgba(255, 0, 127, 0.05); border: 1px solid rgba(255, 0, 127, 0.2); border-radius: var(--border-radius); padding: 18px; display: flex; flex-direction: column; gap: 8px;" class="excel-sample-card">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+            <span style="font-size: 0.78rem; font-weight: 800; color: var(--primary); background: rgba(255, 0, 127, 0.15); padding: 3px 8px; border-radius: 4px;">ARCHIVO 3</span>
+            <i class="fas fa-tags" style="color: var(--primary);"></i>
+          </div>
+          <h4 style="font-size: 1rem; font-weight: 700; margin-bottom: 4px;">Accesorios Extra</h4>
+          <p style="font-size: 0.85rem; color: var(--text-muted);">Novedades variadas con fotos automáticas.</p>
+        </div>
+
+        <!-- Excel 4 -->
+        <div style="background: rgba(245, 158, 11, 0.05); border: 1px solid rgba(245, 158, 11, 0.2); border-radius: var(--border-radius); padding: 18px; display: flex; flex-direction: column; gap: 8px;" class="excel-sample-card">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+            <span style="font-size: 0.78rem; font-weight: 800; color: #f59e0b; background: rgba(245, 158, 11, 0.15); padding: 3px 8px; border-radius: 4px;">ARCHIVO 4</span>
+            <i class="fas fa-layer-group" style="color: #f59e0b;"></i>
+          </div>
+          <h4 style="font-size: 1rem; font-weight: 700; margin-bottom: 4px;">Catálogo Completo</h4>
+          <p style="font-size: 0.85rem; color: var(--text-muted);">Volcado total. Reemplaza y actualiza toda la tienda de golpe.</p>
         </div>
       </div>
     </div>
 
-    <!-- Integration Explanation & Excel Samples -->
-    <div class="prop-card" style="margin-top: 30px; padding: 40px 30px; border-top: 4px solid var(--primary);">
-      <div style="text-align: center; margin-bottom: 40px;">
-        <h2 style="font-size: 2rem; margin-bottom: 15px; background: linear-gradient(135deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Actualiza tu Inventario en 3 Simples Pasos</h2>
-        <p style="font-size: 1.1rem; color: var(--text-muted); max-width: 800px; margin: 0 auto; line-height: 1.6;">
-          <strong>Paso 1:</strong> Tu sistema interno te dará estos reportes Excel.<br>
-          <strong>Paso 2:</strong> Agrégalos (arrástralos) en la zona de subida de arriba conforme los descargues.<br>
-          <strong>Paso 3:</strong> Dale en publicar y <strong>en automático se actualizará todo el inventario y la tienda.</strong>
-        </p>
+    <!-- Step 3: Upload Box -->
+    <div class="prop-card" style="padding: 50px 30px; border-top: 4px solid #10b981; margin-bottom: 30px;">
+      <h3 style="font-weight: 800; font-size: 1.8rem; margin-bottom: 16px; text-align: center;">
+        <i class="fas fa-cloud-upload-alt" style="color: #10b981; margin-right: 12px;"></i> Sube tu Archivo Excel Aquí
+      </h3>
+      <p style="color: var(--text-muted); margin-bottom: 30px; font-size: 1.05rem; text-align: center; max-width: 650px; margin-left: auto; margin-right: auto;">
+        Arrastra tu archivo Excel (.xlsx) o CSV a la caja inferior. Leeremos los productos y actualizaremos los precios, categorías y stock en toda la tienda.
+      </p>
+      
+      <div class="upload-zone" id="drop-zone" style="max-width: 700px; margin: 0 auto; padding: 60px 30px;">
+        <i class="fas fa-file-excel upload-icon" style="font-size: 4rem; background: linear-gradient(135deg, #10b981, #059669); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i>
+        <h4 style="font-size: 1.4rem; margin-bottom: 12px;">Arrastra el reporte Excel aquí</h4>
+        <p style="color: var(--text-muted); font-size: 1rem; margin-bottom: 24px;">Formatos soportados: .xlsx, .xls, .csv</p>
+        <button class="btn-primary" style="pointer-events: none; background: linear-gradient(135deg, #10b981, #059669); box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4); font-size: 1rem; padding: 12px 24px; border-radius: 50px;">
+          <i class="fas fa-search"></i> Buscar Archivo en mi PC
+        </button>
+        <input type="file" id="file-input" style="display:none;" accept=".csv, .xlsx, .xls">
       </div>
 
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
-        <!-- Excel 1 -->
-        <div style="background: rgba(16, 185, 129, 0.05); border: 1px solid rgba(16, 185, 129, 0.2); border-radius: var(--border-radius); padding: 18px; display: flex; flex-direction: column; justify-content: space-between; gap: 12px; transition: var(--transition);" class="excel-sample-card">
-          <div>
-            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
-              <span style="font-size: 0.78rem; font-weight: 800; color: #10b981; background: rgba(16,185,129,0.15); padding: 3px 8px; border-radius: 4px;">ARCHIVO 1</span>
-              <i class="fas fa-box-open" style="color: #10b981;"></i>
-            </div>
-            <h4 style="font-size: 1rem; font-weight: 700; margin-bottom: 4px;">Bolsas y Mochilas</h4>
-            <p style="font-size: 0.85rem; color: var(--text-muted);">Productos de contenedor directo. Súbelo para actualizar stock y precios de esta categoría.</p>
-          </div>
-        </div>
+      <div id="validation-logs" style="display:none; max-width: 800px; margin: 30px auto 0;">
+        <div class="log-box" id="log-content"></div>
+      </div>
+      
+      <div id="save-panel" style="display:none; margin-top: 30px; text-align: center;">
+        <button id="btn-save-catalog" class="btn-primary" style="background: linear-gradient(135deg, #2563eb, #1d4ed8); box-shadow: 0 6px 20px rgba(37, 99, 235, 0.3); font-size: 1.2rem; padding: 16px 40px; border-radius: 50px;">
+          <i class="fas fa-paper-plane"></i> Publicar y Actualizar Tienda
+        </button>
+      </div>
+    </div>
 
-        <!-- Excel 2 -->
-        <div style="background: rgba(0, 180, 216, 0.05); border: 1px solid rgba(0, 180, 216, 0.2); border-radius: var(--border-radius); padding: 18px; display: flex; flex-direction: column; justify-content: space-between; gap: 12px; transition: var(--transition);" class="excel-sample-card">
-          <div>
-            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
-              <span style="font-size: 0.78rem; font-weight: 800; color: var(--secondary); background: rgba(0, 180, 216, 0.15); padding: 3px 8px; border-radius: 4px;">ARCHIVO 2</span>
-              <i class="fas fa-suitcase" style="color: var(--secondary);"></i>
-            </div>
-            <h4 style="font-size: 1rem; font-weight: 700; margin-bottom: 4px;">Carteras y Peluches</h4>
-            <p style="font-size: 0.85rem; color: var(--text-muted);">Surtido de aduana. Súbelo para agregar las últimas novedades y existencias.</p>
-          </div>
-        </div>
-
-        <!-- Excel 3 -->
-        <div style="background: rgba(255, 0, 127, 0.05); border: 1px solid rgba(255, 0, 127, 0.2); border-radius: var(--border-radius); padding: 18px; display: flex; flex-direction: column; justify-content: space-between; gap: 12px; transition: var(--transition);" class="excel-sample-card">
-          <div>
-            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
-              <span style="font-size: 0.78rem; font-weight: 800; color: var(--primary); background: rgba(255, 0, 127, 0.15); padding: 3px 8px; border-radius: 4px;">ARCHIVO 3</span>
-              <i class="fas fa-tags" style="color: var(--primary);"></i>
-            </div>
-            <h4 style="font-size: 1rem; font-weight: 700; margin-bottom: 4px;">Accesorios Extra</h4>
-            <p style="font-size: 0.85rem; color: var(--text-muted);">Novedades variadas. Al subirlo se ligan automáticamente las fotos de tu sistema.</p>
-          </div>
-        </div>
-
-        <!-- Excel 4 -->
-        <div style="background: rgba(245, 158, 11, 0.05); border: 1px solid rgba(245, 158, 11, 0.2); border-radius: var(--border-radius); padding: 18px; display: flex; flex-direction: column; justify-content: space-between; gap: 12px; transition: var(--transition);" class="excel-sample-card">
-          <div>
-            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
-              <span style="font-size: 0.78rem; font-weight: 800; color: #f59e0b; background: rgba(245, 158, 11, 0.15); padding: 3px 8px; border-radius: 4px;">ARCHIVO 4</span>
-              <i class="fas fa-layer-group" style="color: #f59e0b;"></i>
-            </div>
-            <h4 style="font-size: 1rem; font-weight: 700; margin-bottom: 4px;">Catálogo Completo</h4>
-            <p style="font-size: 0.85rem; color: var(--text-muted);">Volcado total del inventario de gran volumen. Reemplaza y actualiza toda la tienda de golpe.</p>
-          </div>
-        </div>
+    <!-- Preview Block -->
+    <div class="prop-card" id="preview-panel" style="display:none; padding: 30px; margin-bottom: 30px;">
+      <h3 style="font-weight: 700; font-size: 1.3rem; margin-bottom: 10px;">Previsualización de Productos Detectados</h3>
+      <p style="color: var(--text-muted); font-size: 0.95rem;">Revisa que la información sea correcta antes de dar clic en Publicar y Actualizar Tienda.</p>
+      
+      <div class="table-container" style="margin-top: 20px;">
+        <table class="preview-table">
+          <thead>
+            <tr>
+              <th>Imagen</th>
+              <th>ID</th>
+              <th>Nombre</th>
+              <th>Categoría</th>
+              <th>P. Normal</th>
+              <th>P. Mayoreo</th>
+              <th>P. Caja</th>
+              <th>Pzs/Caja</th>
+              <th>Stock</th>
+            </tr>
+          </thead>
+          <tbody id="preview-table-body">
+            <!-- Injected by JS -->
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
@@ -692,33 +646,6 @@
       if (clean.startsWith('B') || clean.startsWith('C')) return 'bolsas-carteras';
       if (clean.startsWith('M')) return 'mochilas';
       if (clean.startsWith('P')) return 'peluches';
-    }
-
-    // Quick Load Sample Excel Files from the Internal System
-    function loadSampleExcel(filename, sampleTitle) {
-      logBox.style.display = 'block';
-      logContent.textContent = `🚀 Conectando con tu sistema para cargar: ${sampleTitle} (${filename})...\nProcesando reporte de inventario...\n`;
-      previewPanel.style.display = 'none';
-      savePanel.style.display = 'none';
-      parsedProducts = [];
-
-      fetch(filename)
-        .then(response => {
-          if (!response.ok) throw new Error(`No se pudo leer el archivo local "${filename}".`);
-          return response.arrayBuffer();
-        })
-        .then(buffer => {
-          const data = new Uint8Array(buffer);
-          const workbook = XLSX.read(data, {type: 'array'});
-          const firstSheetName = workbook.SheetNames[0];
-          const worksheet = workbook.Sheets[firstSheetName];
-          const jsonData = XLSX.utils.sheet_to_json(worksheet);
-          logContent.textContent += `✅ Archivo "${filename}" procesado exitosamente. ${jsonData.length} filas detectadas listas para actualizar el stock.\n`;
-          processJsonData(jsonData);
-        })
-        .catch(err => {
-          logContent.textContent += `❌ Error al cargar ${filename}: ${err.message}\n`;
-        });
     }
 
     // Read and Parse Uploader File
