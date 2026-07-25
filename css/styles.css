@@ -2775,3 +2775,467 @@ body.dark-mode-active .floating-cart-btn .cart-badge {
     padding: 0 10px;
   }
 }
+
+/* ============================================= */
+/* ===== TIKTOK HERO SECTION PROPER STYLES ===== */
+/* ============================================= */
+
+.tiktok-hero-section {
+  position: relative;
+  padding: 40px 24px 60px;
+  overflow: hidden;
+  background: radial-gradient(ellipse at 20% 50%, rgba(255, 0, 127, 0.06) 0%, transparent 50%),
+              radial-gradient(ellipse at 80% 50%, rgba(0, 180, 216, 0.06) 0%, transparent 50%);
+}
+
+body.dark-mode-active .tiktok-hero-section {
+  background: radial-gradient(ellipse at 20% 50%, rgba(255, 0, 127, 0.1) 0%, transparent 50%),
+              radial-gradient(ellipse at 80% 50%, rgba(0, 180, 216, 0.08) 0%, transparent 50%),
+              var(--dark-bg);
+}
+
+/* Animated background orbs */
+.tiktok-hero-section::before {
+  content: '';
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(255, 0, 127, 0.12) 0%, transparent 70%);
+  top: -100px;
+  right: -100px;
+  border-radius: 50%;
+  animation: floatOrb1 8s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.tiktok-hero-section::after {
+  content: '';
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(circle, rgba(0, 180, 216, 0.1) 0%, transparent 70%);
+  bottom: -80px;
+  left: -80px;
+  border-radius: 50%;
+  animation: floatOrb2 10s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes floatOrb1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(-30px, 20px) scale(1.1); }
+  66% { transform: translate(20px, -15px) scale(0.95); }
+}
+
+@keyframes floatOrb2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(25px, -20px) scale(1.08); }
+}
+
+.tiktok-hero-container {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.tiktok-hero-title {
+  font-size: 2.6rem;
+  font-weight: 800;
+  margin-bottom: 16px;
+  line-height: 1.2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.tiktok-hero-title .fab.fa-tiktok {
+  font-size: 2.2rem;
+  background: linear-gradient(135deg, #00f2fe, #4facfe, #ff007f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 8px rgba(0, 180, 216, 0.3));
+}
+
+.tiktok-hero-desc {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 0 auto 32px;
+  line-height: 1.7;
+}
+
+body.dark-mode-active .tiktok-hero-desc {
+  color: var(--text-white-muted);
+}
+
+.tiktok-hero-video-wrapper {
+  margin: 0 auto 32px;
+  max-width: 620px;
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+}
+
+.tiktok-hero-cta {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.tiktok-hero-cta .btn-primary.btn-lg {
+  padding: 14px 32px;
+  font-size: 1.05rem;
+  border-radius: 50px;
+  gap: 10px;
+  box-shadow: 0 8px 25px rgba(255, 0, 127, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.tiktok-hero-cta .btn-primary.btn-lg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  animation: shimmerBtn 3s infinite;
+}
+
+@keyframes shimmerBtn {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+/* ============================================= */
+/* ===== SCROLL REVEAL ANIMATION SYSTEM ======== */
+/* ============================================= */
+
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.scroll-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Special reveal variants for different elements */
+.prop-card.scroll-reveal {
+  transform: translateY(50px) scale(0.96);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.prop-card.scroll-reveal.revealed {
+  transform: translateY(0) scale(1);
+}
+
+.step-item.scroll-reveal {
+  transform: translateY(30px) scale(0.95);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.step-item.scroll-reveal.revealed {
+  transform: translateY(0) scale(1);
+}
+
+.info-item.scroll-reveal {
+  transform: translateX(-30px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.info-item.scroll-reveal.revealed {
+  transform: translateX(0);
+}
+
+.map-wrapper.scroll-reveal {
+  transform: translateY(30px) scale(0.98);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.map-wrapper.scroll-reveal.revealed {
+  transform: translateY(0) scale(1);
+}
+
+.tiktok-hero-title.scroll-reveal {
+  transform: translateY(30px) scale(0.95);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tiktok-hero-title.scroll-reveal.revealed {
+  transform: translateY(0) scale(1);
+}
+
+.tiktok-hero-video-wrapper.scroll-reveal {
+  transform: translateY(40px) scale(0.95);
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tiktok-hero-video-wrapper.scroll-reveal.revealed {
+  transform: translateY(0) scale(1);
+}
+
+/* ============================================= */
+/* ===== ENHANCED DESIGN IMPROVEMENTS ========== */
+/* ============================================= */
+
+/* Enhanced top banner with animation */
+.top-banner {
+  background: linear-gradient(90deg, var(--primary), var(--secondary), var(--primary));
+  background-size: 200% auto;
+  animation: bannerGradient 6s linear infinite;
+}
+
+@keyframes bannerGradient {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+/* Alternating section background */
+.section-alt-bg {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+body.dark-mode-active .section-alt-bg {
+  background-color: rgba(255, 255, 255, 0.01);
+}
+
+/* Section divider glow effect */
+.section + .section {
+  border-top: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+body.dark-mode-active .section + .section {
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+/* Enhanced section headers */
+.section-header h2 {
+  background: linear-gradient(135deg, var(--text-dark) 0%, #334155 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -0.02em;
+}
+
+body.dark-mode-active .section-header h2 {
+  background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Step number pulse animation */
+.step-number {
+  position: relative;
+}
+
+.step-number::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  opacity: 0;
+  z-index: -1;
+  animation: stepPulse 3s ease-in-out infinite;
+}
+
+@keyframes stepPulse {
+  0%, 100% { opacity: 0; transform: scale(1); }
+  50% { opacity: 0.15; transform: scale(1.15); }
+}
+
+.step-item:nth-child(2) .step-number::after {
+  animation-delay: 1s;
+}
+
+.step-item:nth-child(3) .step-number::after {
+  animation-delay: 2s;
+}
+
+/* Enhanced prop-card third child icon color */
+.prop-card:nth-child(3) .prop-icon {
+  background: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+}
+
+/* Product card enhanced hover glow */
+.product-card:hover {
+  box-shadow: 0 20px 40px rgba(0, 180, 216, 0.12),
+              0 0 0 1px rgba(0, 180, 216, 0.2);
+}
+
+body.dark-mode-active .product-card:hover {
+  box-shadow: 0 20px 40px rgba(0, 180, 216, 0.15),
+              0 0 0 1px rgba(0, 180, 216, 0.25),
+              inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+/* Enhanced floating cart button with breathing animation */
+.floating-cart-btn {
+  animation: cartBreathe 3s ease-in-out infinite;
+}
+
+@keyframes cartBreathe {
+  0%, 100% { box-shadow: 0 10px 25px rgba(255, 0, 127, 0.4); }
+  50% { box-shadow: 0 10px 35px rgba(255, 0, 127, 0.6), 0 0 20px rgba(255, 0, 127, 0.2); }
+}
+
+.floating-cart-btn:hover {
+  animation: none;
+}
+
+/* Enhanced map wrapper design */
+.map-wrapper {
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  position: relative;
+}
+
+.map-wrapper::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: calc(var(--border-radius-lg) + 2px);
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  z-index: -1;
+  opacity: 0.3;
+  transition: opacity 0.3s ease;
+}
+
+.map-wrapper:hover::before {
+  opacity: 0.6;
+}
+
+/* Footer enhanced styling */
+footer {
+  background: linear-gradient(180deg, #0f172a 0%, #070b14 100%);
+  position: relative;
+}
+
+footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--primary), var(--secondary), transparent);
+}
+
+/* ============================================= */
+/* ===== MOBILE HERO FIX & RESPONSIVE ========== */
+/* ============================================= */
+
+@media (max-width: 992px) {
+  .tiktok-hero-title {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .tiktok-hero-section {
+    padding: 30px 16px 40px;
+  }
+
+  .tiktok-hero-title {
+    font-size: 2rem;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .tiktok-hero-desc {
+    text-align: center;
+    font-size: 1rem;
+    padding: 0 8px;
+  }
+
+  .tiktok-hero-cta {
+    justify-content: center;
+  }
+
+  .tiktok-hero-cta .btn-primary.btn-lg {
+    width: 100%;
+    max-width: 320px;
+    justify-content: center;
+  }
+
+  /* Fix: ensure all hero content is centered on mobile */
+  .tiktok-hero-container {
+    text-align: center;
+    padding: 0 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tiktok-hero-title {
+    font-size: 1.7rem;
+    line-height: 1.25;
+    gap: 8px;
+  }
+
+  .tiktok-hero-title .fab.fa-tiktok {
+    font-size: 1.6rem;
+  }
+
+  .tiktok-hero-desc {
+    font-size: 0.95rem;
+    padding: 0 4px;
+    margin-bottom: 24px;
+  }
+
+  .tiktok-hero-section::before,
+  .tiktok-hero-section::after {
+    display: none;
+  }
+}
+
+/* Prefers reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .scroll-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .floating-cart-btn {
+    animation: none;
+  }
+
+  .top-banner {
+    animation: none;
+  }
+
+  .tiktok-hero-section::before,
+  .tiktok-hero-section::after {
+    animation: none;
+  }
+
+  .step-number::after {
+    animation: none;
+  }
+
+  .tiktok-hero-cta .btn-primary.btn-lg::before {
+    animation: none;
+  }
+}

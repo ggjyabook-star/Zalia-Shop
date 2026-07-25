@@ -452,6 +452,7 @@ function init() {
   initHeroSlider();
   initLightbox();
   updateLanguage(currentLanguage);
+  initScrollAnimations();
 }
 
 // Check Dark Mode Preference
@@ -1861,6 +1862,72 @@ function navigateLightbox(dir) {
   }
   
   openLightbox(nextIndex);
+}
+
+// ===== Scroll Reveal Animations =====
+function addScrollRevealClasses() {
+  // Section headers
+  document.querySelectorAll('.section-header').forEach(el => {
+    el.classList.add('scroll-reveal');
+  });
+
+  // TikTok Hero elements
+  const heroTitle = document.querySelector('.tiktok-hero-title');
+  const heroDesc = document.querySelector('.tiktok-hero-desc');
+  const heroVideo = document.querySelector('.tiktok-hero-video-wrapper');
+  const heroCta = document.querySelector('.tiktok-hero-cta');
+  if (heroTitle) { heroTitle.classList.add('scroll-reveal'); }
+  if (heroDesc) { heroDesc.classList.add('scroll-reveal'); heroDesc.setAttribute('data-delay', '200'); }
+  if (heroVideo) { heroVideo.classList.add('scroll-reveal'); heroVideo.setAttribute('data-delay', '400'); }
+  if (heroCta) { heroCta.classList.add('scroll-reveal'); heroCta.setAttribute('data-delay', '600'); }
+
+  // Prop cards (staggered)
+  document.querySelectorAll('.prop-card').forEach((el, i) => {
+    el.classList.add('scroll-reveal');
+    el.setAttribute('data-delay', String(i * 150));
+  });
+
+  // Step items (staggered)
+  document.querySelectorAll('.step-item').forEach((el, i) => {
+    el.classList.add('scroll-reveal');
+    el.setAttribute('data-delay', String(i * 200));
+  });
+
+  // Info items (staggered)
+  document.querySelectorAll('.info-item').forEach((el, i) => {
+    el.classList.add('scroll-reveal');
+    el.setAttribute('data-delay', String(i * 100));
+  });
+
+  // Map wrapper
+  const mapWrapper = document.querySelector('.map-wrapper');
+  if (mapWrapper) { mapWrapper.classList.add('scroll-reveal'); }
+}
+
+function initScrollAnimations() {
+  addScrollRevealClasses();
+
+  const observerOptions = {
+    threshold: 0.15,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const delay = parseInt(el.getAttribute('data-delay') || '0', 10);
+        setTimeout(() => {
+          el.classList.add('revealed');
+        }, delay);
+        observer.unobserve(el);
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('.scroll-reveal').forEach(el => {
+    observer.observe(el);
+  });
 }
 
 // Run app
