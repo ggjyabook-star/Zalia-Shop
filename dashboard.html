@@ -946,8 +946,7 @@
     function loadDefaultStatus() {
       catalogBadgeStatus.textContent = 'Por Defecto';
       catalogBadgeStatus.className = 'badge-status default-mode';
-      const count = (typeof DEFAULT_PRODUCTS !== 'undefined') ? DEFAULT_PRODUCTS.length : 48;
-      catalogDescStatus.innerHTML = `Estás utilizando el catálogo predeterminado de Zalia Shop surtido desde el inventario del contenedor (<strong>${count} productos oficiales</strong>).`;
+      catalogDescStatus.innerHTML = `Estás utilizando el catálogo predeterminado de Zalia Shop.`;
       btnRestoreDefault.style.display = 'none';
     }
 
