@@ -320,6 +320,12 @@
         <h2 style="font-size: 1.4rem; font-weight: 700;">Administración de Catálogo</h2>
         
         <div class="nav-actions">
+          <button id="lang-toggle-dash" class="btn-icon" title="Cambiar Idioma" aria-label="Cambiar idioma">
+            <i class="fas fa-globe" style="font-size: 1.05rem; opacity: 0.8;"></i>
+            <span id="lang-flag-label" style="font-size: 1.05rem; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 4px;">
+              <span class="lang-text-label">ES</span><span class="lang-sep" style="opacity:0.4; font-weight:300;">|</span><span>🇨🇳</span>
+            </span>
+          </button>
           <button id="theme-toggle" class="btn-icon" title="Cambiar Tema" aria-label="Cambiar tema">
             <i class="fas fa-moon"></i>
           </button>
@@ -1062,6 +1068,124 @@
 
     function updateThemeIcon(isDark) {
       themeToggleBtn.innerHTML = isDark ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+    }
+
+    // Dashboard Translation Logic (Spanish to Chinese)
+    const DASH_TEXT_MAP = {
+      es: [
+        "Administración de Catálogo",
+        "Cerrar Sesión",
+        "Ver Tienda",
+        "Panel de Control y CMS",
+        "Actualiza tu inventario arrastrando los archivos Excel directamente de tu sistema.",
+        "Estado del Catálogo de Productos",
+        "Cargando información del catálogo...",
+        "Respaldar Catálogo",
+        "Restaurar Por Defecto",
+        "Actualiza tu Inventario en 3 Simples Pasos",
+        "Paso 1:",
+        "Descarga los reportes Excel que te arroje tu sistema interno (no importa si el sistema te da 1, 2, 3 o más archivos).",
+        "Paso 2:",
+        "Arrastra todos esos Excel a la",
+        "zona de subida",
+        "en la parte inferior.",
+        "Paso 3:",
+        "La plataforma juntará todos tus productos automáticamente. Dale en publicar para",
+        "actualizar tu tienda de golpe.",
+        "¿Aún no tienes los reportes de tu sistema? Puedes descargar este archivo de prueba:",
+        "Descargar Excel de Ejemplo",
+        "Sube tu Archivo Excel Aquí",
+        "Arrastra los archivos Excel que te dé tu sistema a la caja inferior. No importa si es 1, 2, 3, 4 o los que sean; la plataforma los juntará todos y actualizará el catálogo completo de tu tienda en automático.",
+        "Arrastra tus archivos Excel aquí",
+        "Formatos soportados: .xlsx, .xls, .csv",
+        "Buscar Archivo en mi PC",
+        "Publicar y Actualizar Tienda",
+        "Previsualización de Productos Detectados",
+        "Revisa que la información sea correcta antes de dar clic en Publicar y Actualizar Tienda.",
+        "Imagen", "ID", "Nombre", "Categoría", "P. Normal", "P. Mayoreo", "P. Caja", "Pzs/Caja", "Stock",
+        "Restaurar Respaldo",
+        "¿Te equivocaste en algo? Aquí puedes subir el archivo de respaldo que descargaste previamente para devolver la tienda a esa versión exacta.",
+        "Arrastra tu archivo de respaldo aquí",
+        "Sí, regresar a esta versión"
+      ],
+      zh: [
+        "目录管理",
+        "退出登录",
+        "查看商店",
+        "控制面板和内容管理系统",
+        "通过直接拖拽系统生成的Excel文件来更新库存。",
+        "产品目录状态",
+        "正在加载目录信息...",
+        "备份目录",
+        "恢复默认",
+        "简单的三步更新库存",
+        "第一步：",
+        "下载内部系统生成的Excel报告（无论是1个、2个、3个还是更多）。",
+        "第二步：",
+        "将所有Excel文件拖到下方的",
+        "上传区域",
+        "。",
+        "第三步：",
+        "平台会自动合并所有产品。点击发布即可",
+        "一次性更新商店。",
+        "还没有系统报告？您可以下载此测试文件：",
+        "下载示例Excel",
+        "在此上传您的Excel文件",
+        "将系统生成的Excel文件拖到下方的区域。无论是1个、2个还是更多，系统会自动合并并更新全部库存。",
+        "将您的Excel文件拖放到此处",
+        "支持格式：.xlsx, .xls, .csv",
+        "在电脑中查找文件",
+        "发布并更新商店",
+        "预览检测到的产品",
+        "在点击“发布”前请检查信息是否正确。",
+        "图片", "编号", "名称", "类别", "原价", "批发价", "箱价", "每箱数量", "库存",
+        "恢复备份",
+        "有什么错误吗？您可以在此处上传之前下载的备份文件，将商店恢复到该特定版本。",
+        "将备份文件拖放到此处",
+        "是的，恢复到此版本"
+      ]
+    };
+
+    let dashLang = 'es';
+    const langToggleDash = document.getElementById('lang-toggle-dash');
+    const langFlagLabel = document.getElementById('lang-flag-label');
+
+    if (langToggleDash) {
+      langToggleDash.addEventListener('click', () => {
+        dashLang = dashLang === 'es' ? 'zh' : 'es';
+        applyDashTranslations(dashLang);
+      });
+    }
+
+    function applyDashTranslations(targetLang) {
+      const sourceList = targetLang === 'zh' ? DASH_TEXT_MAP.es : DASH_TEXT_MAP.zh;
+      const targetList = targetLang === 'zh' ? DASH_TEXT_MAP.zh : DASH_TEXT_MAP.es;
+
+      // Update flag
+      if (langFlagLabel) {
+        langFlagLabel.innerHTML = targetLang === 'es'
+          ? '<span class="lang-text-label">ES</span><span class="lang-sep" style="opacity:0.4; font-weight:300;">|</span><span>🇨🇳</span>'
+          : '<span class="lang-text-label">ZH</span><span class="lang-sep" style="opacity:0.4; font-weight:300;">|</span><span>🇲🇽</span>';
+      }
+
+      // Translate text nodes via TreeWalker
+      const walker = document.createTreeWalker(
+        document.body,
+        NodeFilter.SHOW_TEXT,
+        { acceptNode: (node) => node.parentNode.tagName !== 'SCRIPT' && node.parentNode.tagName !== 'STYLE' ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT },
+        false
+      );
+
+      let node;
+      while ((node = walker.nextNode())) {
+        const text = node.nodeValue.trim();
+        if (!text) continue;
+        
+        const idx = sourceList.indexOf(text);
+        if (idx !== -1) {
+          node.nodeValue = node.nodeValue.replace(text, targetList[idx]);
+        }
+      }
     }
 
     document.addEventListener('DOMContentLoaded', init);
