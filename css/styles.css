@@ -2549,15 +2549,15 @@ body.dark-mode-active .lightbox-qty-ctrl {
 @media (max-width: 900px) {
   .lightbox-card {
     grid-template-columns: 1fr;
-    height: 90vh;
-    max-height: 85vh;
-    width: 92%;
+    height: 95vh;
+    max-height: 95vh;
+    width: 95%;
     display: flex;
     flex-direction: column;
   }
   
   .lightbox-media-side {
-    height: 280px;
+    height: 45vh;
     min-height: 280px;
     flex-shrink: 0;
     border-right: none;
@@ -2601,8 +2601,8 @@ body.dark-mode-active .lightbox-qty-ctrl {
 
 @media (max-width: 480px) {
   .lightbox-media-side {
-    height: 180px;
-    min-height: 180px;
+    height: 45vh;
+    min-height: 250px;
   }
   
   .lightbox-details-side {
