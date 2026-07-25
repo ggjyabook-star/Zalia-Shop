@@ -731,7 +731,7 @@ function setupCardControls() {
   productGrid.querySelectorAll('.qty-btn.plus').forEach(btn => {
     btn.addEventListener('click', (e) => {
       const id = btn.getAttribute('data-id');
-      const input = document.getElementById(`qty-input-${id}`);
+      const input = btn.closest('div').querySelector('.qty-val') || document.getElementById(`qty-input-${id}`);
       const activeProducts = getActiveProducts();
       const product = activeProducts.find(p => String(p.id).trim() === String(id).trim());
       const stockLimit = product && typeof product.stock !== 'undefined' ? Number(product.stock) : 999;
@@ -753,7 +753,7 @@ function setupCardControls() {
   productGrid.querySelectorAll('.qty-btn.minus').forEach(btn => {
     btn.addEventListener('click', (e) => {
       const id = btn.getAttribute('data-id');
-      const input = document.getElementById(`qty-input-${id}`);
+      const input = btn.closest('div').querySelector('.qty-val') || document.getElementById(`qty-input-${id}`);
       if (input) {
         let val = parseInt(input.value) || 0;
         if (val > 1) {
@@ -787,7 +787,7 @@ function setupCardControls() {
   productGrid.querySelectorAll('.add-to-cart-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
       const id = btn.getAttribute('data-id');
-      const input = document.getElementById(`qty-input-${id}`);
+      const input = btn.closest('div').querySelector('.qty-val') || document.getElementById(`qty-input-${id}`);
       const qty = input ? (parseInt(input.value) || 1) : 1;
 
       addToCart(id, qty);
@@ -823,7 +823,7 @@ function setupCardControls() {
         addToCart(id, newQty);
         
         // Update input field in catalog page
-        const input = document.getElementById(`qty-input-${id}`);
+        const input = btn.closest('.product-actions').querySelector('.qty-val') || document.getElementById(`qty-input-${id}`);
         if (input) {
           input.value = newQty;
         }
