@@ -426,10 +426,10 @@
         <i class="fas fa-file-excel upload-icon" style="font-size: 4rem; background: linear-gradient(135deg, #10b981, #059669); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i>
         <h4 style="font-size: 1.4rem; margin-bottom: 12px;">Arrastra el reporte Excel aquí</h4>
         <p style="color: var(--text-muted); font-size: 1rem; margin-bottom: 24px;">Formatos soportados: .xlsx, .xls, .csv</p>
-        <button class="btn-primary" style="pointer-events: none; background: linear-gradient(135deg, #10b981, #059669); box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4); font-size: 1rem; padding: 12px 24px; border-radius: 50px;">
+        <button class="btn-primary" style="pointer-events: none; background: linear-gradient(135deg, #10b981, #059669); box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4); font-size: 1rem; padding: 12px 24px; border-radius: 50px;" onclick="document.getElementById('file-input').click()">
           <i class="fas fa-search"></i> Buscar Archivo en mi PC
         </button>
-        <input type="file" id="file-input" style="display:none;" accept=".csv, .xlsx, .xls">
+        <input type="file" id="file-input" style="display:none;" accept=".csv, .xlsx, .xls" multiple>
       </div>
 
       <div id="validation-logs" style="display:none; max-width: 800px; margin: 30px auto 0;">
@@ -604,24 +604,17 @@
         }
       });
 
-      // Save Catalog
+      // Save and Publish
       btnSaveCatalog.addEventListener('click', () => {
         if (parsedProducts.length === 0) return;
-        
-        // Save to LocalStorage
         localStorage.setItem('zalia_custom_products', JSON.stringify(parsedProducts));
-        
-        // Clear cart to avoid mismatching items
-        localStorage.removeItem('zalia_cart');
-
-        alert(`¡Catálogo publicado con éxito! Se cargaron ${parsedProducts.length} productos correctamente en la tienda.`);
-        
-        // Refresh status
+        localStorage.removeItem('zalia_cart'); // clear cart
         updateCatalogStatusText();
-        
-        // Reset uploader interface
+        alert(`¡Éxito! Se actualizaron y publicaron ${parsedProducts.length} productos en la tienda.`);
+        parsedProducts = [];
         previewPanel.style.display = 'none';
         savePanel.style.display = 'none';
+        logContent.textContent = '';
         logBox.style.display = 'none';
       });
 
@@ -636,7 +629,12 @@
       });
 
       // Export Current Active Catalog to CSV
-      btnExportCurrent.addEventListener('click', exportActiveCatalogToCSV);
+      if (btnExportCurrent) {
+        btnExportCurrent.addEventListener('click', (e) => {
+          e.preventDefault();
+          exportActiveCatalogToCSV();
+        });
+      }
     }
 
     // Helper to auto-categorize products by SKU prefix
@@ -651,10 +649,15 @@
     // Read and Parse Uploader File
     function handleFile(file) {
       logBox.style.display = 'block';
-      logContent.textContent = `Analizando archivo: "${file.name}"...\n`;
-      previewPanel.style.display = 'none';
-      savePanel.style.display = 'none';
-      parsedProducts = [];
+      
+      // If it's the very first file being parsed in this batch, reset the UI just once
+      if (logContent.textContent.trim() === '' || logContent.textContent.includes('¡Éxito!')) {
+         logContent.textContent = '';
+      }
+      
+      logContent.textContent += `Analizando archivo: "${file.name}"...\n`;
+      previewPanel.style.display = 'block';
+      savePanel.style.display = 'block';
 
       const reader = new FileReader();
       const ext = file.name.split('.').pop().toLowerCase();
@@ -927,16 +930,16 @@
       }
 
       if (cleanItems.length === 0) {
-        logContent.textContent += `❌ Carga abortada: Ningún producto pasó las reglas de validación.\n`;
+        logContent.textContent += `❌ Archivo descartado: Ningún producto pasó las reglas de validación.\n`;
         return;
       }
 
-      logContent.textContent += `✅ ¡Carga exitosa! ${cleanItems.length} productos listos para importación.\n`;
-      parsedProducts = cleanItems;
+      parsedProducts = parsedProducts.concat(cleanItems);
+      logContent.textContent += `✅ ¡Archivo procesado! Se extrajeron ${cleanItems.length} productos (Total acumulado listo para publicar: ${parsedProducts.length}).\n`;
 
       // Show Preview Table (including Stock column)
       previewTableBody.innerHTML = '';
-      const previewSlice = cleanItems.slice(0, 8);
+      const previewSlice = parsedProducts.slice(0, 15); // Show first 15 products combined
       
       previewSlice.forEach(p => {
         const tr = document.createElement('tr');
