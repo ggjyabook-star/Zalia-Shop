@@ -453,6 +453,100 @@
         </div>
       </div>
     </div>
+
+    <!-- Integration Explanation & Excel Samples -->
+    <div class="prop-card" style="margin-top: 30px; padding: 40px 30px; border-top: 4px solid var(--primary);">
+      <div style="text-align: center; margin-bottom: 30px;">
+        <h2 style="font-size: 2rem; margin-bottom: 15px; background: linear-gradient(135deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Integración Automática con tu Sistema</h2>
+        <p style="font-size: 1.1rem; color: var(--text-muted); max-width: 800px; margin: 0 auto; line-height: 1.6;">
+          <strong>Estos archivos Excel provienen directamente de tu sistema de inventario.</strong><br>
+          Al descargar los reportes de tu sistema y subirlos aquí, <strong>el stock, los precios y los productos se actualizan automáticamente en tiempo real</strong> en toda la tienda.<br>
+          Sube tus archivos o prueba con estos ejemplos reales de tu sistema:
+        </p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+        <!-- Excel 1 -->
+        <div style="background: rgba(16, 185, 129, 0.05); border: 1px solid rgba(16, 185, 129, 0.2); border-radius: var(--border-radius); padding: 18px; display: flex; flex-direction: column; justify-content: space-between; gap: 12px; transition: var(--transition);" class="excel-sample-card">
+          <div>
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+              <span style="font-size: 0.78rem; font-weight: 800; color: #10b981; background: rgba(16,185,129,0.15); padding: 3px 8px; border-radius: 4px;">REPORTE SISTEMA #1</span>
+              <i class="fas fa-box-open" style="color: #10b981;"></i>
+            </div>
+            <h4 style="font-size: 1rem; font-weight: 700; margin-bottom: 4px;">Bolsas y Mochilas</h4>
+            <p style="font-size: 0.82rem; color: var(--text-muted);">Contenedor Directo (`产品列表1.xlsx`)</p>
+          </div>
+          <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+            <button class="btn-primary" onclick="loadSampleExcel('产品列表1.xlsx', 'Reporte #1 - Bolsas y Mochilas')" style="flex: 1; padding: 8px 12px; font-size: 0.82rem; justify-content: center; background: linear-gradient(135deg, #10b981, #059669); box-shadow: none;">
+              <i class="fas fa-bolt"></i> Simular Carga
+            </button>
+            <a href="产品列表1.xlsx" download="Ejemplo1_Zalia.xlsx" class="btn-secondary" style="padding: 8px 12px; font-size: 0.82rem; justify-content: center;">
+              <i class="fas fa-download"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Excel 2 -->
+        <div style="background: rgba(0, 180, 216, 0.05); border: 1px solid rgba(0, 180, 216, 0.2); border-radius: var(--border-radius); padding: 18px; display: flex; flex-direction: column; justify-content: space-between; gap: 12px; transition: var(--transition);" class="excel-sample-card">
+          <div>
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+              <span style="font-size: 0.78rem; font-weight: 800; color: var(--secondary); background: rgba(0, 180, 216, 0.15); padding: 3px 8px; border-radius: 4px;">REPORTE SISTEMA #2</span>
+              <i class="fas fa-suitcase" style="color: var(--secondary);"></i>
+            </div>
+            <h4 style="font-size: 1rem; font-weight: 700; margin-bottom: 4px;">Carteras y Peluches</h4>
+            <p style="font-size: 0.82rem; color: var(--text-muted);">Surtido Aduana (`产品列表2.xlsx`)</p>
+          </div>
+          <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+            <button class="btn-secondary" onclick="loadSampleExcel('产品列表2.xlsx', 'Reporte #2 - Carteras y Peluches')" style="flex: 1; padding: 8px 12px; font-size: 0.82rem; justify-content: center; background: linear-gradient(135deg, var(--secondary), #0096c7); color: white; box-shadow: none;">
+              <i class="fas fa-bolt"></i> Simular Carga
+            </button>
+            <a href="产品列表2.xlsx" download="Ejemplo2_Zalia.xlsx" class="btn-secondary" style="padding: 8px 12px; font-size: 0.82rem; justify-content: center;">
+              <i class="fas fa-download"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Excel 3 -->
+        <div style="background: rgba(255, 0, 127, 0.05); border: 1px solid rgba(255, 0, 127, 0.2); border-radius: var(--border-radius); padding: 18px; display: flex; flex-direction: column; justify-content: space-between; gap: 12px; transition: var(--transition);" class="excel-sample-card">
+          <div>
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+              <span style="font-size: 0.78rem; font-weight: 800; color: var(--primary); background: rgba(255, 0, 127, 0.15); padding: 3px 8px; border-radius: 4px;">REPORTE SISTEMA #3</span>
+              <i class="fas fa-tags" style="color: var(--primary);"></i>
+            </div>
+            <h4 style="font-size: 1rem; font-weight: 700; margin-bottom: 4px;">Novedades y Accesorios</h4>
+            <p style="font-size: 0.82rem; color: var(--text-muted);">Novedades CDMX (`产品列表3.xlsx`)</p>
+          </div>
+          <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+            <button class="btn-primary" onclick="loadSampleExcel('产品列表3.xlsx', 'Reporte #3 - Novedades')" style="flex: 1; padding: 8px 12px; font-size: 0.82rem; justify-content: center; box-shadow: none;">
+              <i class="fas fa-bolt"></i> Simular Carga
+            </button>
+            <a href="产品列表3.xlsx" download="Ejemplo3_Zalia.xlsx" class="btn-secondary" style="padding: 8px 12px; font-size: 0.82rem; justify-content: center;">
+              <i class="fas fa-download"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Excel 4 -->
+        <div style="background: rgba(245, 158, 11, 0.05); border: 1px solid rgba(245, 158, 11, 0.2); border-radius: var(--border-radius); padding: 18px; display: flex; flex-direction: column; justify-content: space-between; gap: 12px; transition: var(--transition);" class="excel-sample-card">
+          <div>
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+              <span style="font-size: 0.78rem; font-weight: 800; color: #f59e0b; background: rgba(245, 158, 11, 0.15); padding: 3px 8px; border-radius: 4px;">REPORTE SISTEMA #4</span>
+              <i class="fas fa-layer-group" style="color: #f59e0b;"></i>
+            </div>
+            <h4 style="font-size: 1rem; font-weight: 700; margin-bottom: 4px;">Catálogo Completo</h4>
+            <p style="font-size: 0.82rem; color: var(--text-muted);">Gran Volumen (`产品列表4.xlsx`)</p>
+          </div>
+          <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+            <button class="btn-secondary" onclick="loadSampleExcel('产品列表4.xlsx', 'Reporte #4 - Catálogo Completo')" style="flex: 1; padding: 8px 12px; font-size: 0.82rem; justify-content: center; background: #f59e0b; color: white; box-shadow: none;">
+              <i class="fas fa-bolt"></i> Simular Carga
+            </button>
+            <a href="产品列表4.xlsx" download="Ejemplo4_Zalia.xlsx" class="btn-secondary" style="padding: 8px 12px; font-size: 0.82rem; justify-content: center;">
+              <i class="fas fa-download"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- Closing main dashboard content wrapper -->
@@ -630,7 +724,33 @@
       if (clean.startsWith('B') || clean.startsWith('C')) return 'bolsas-carteras';
       if (clean.startsWith('M')) return 'mochilas';
       if (clean.startsWith('P')) return 'peluches';
-      return 'accesorios-mas';
+    }
+
+    // Quick Load Sample Excel Files from the Internal System
+    function loadSampleExcel(filename, sampleTitle) {
+      logBox.style.display = 'block';
+      logContent.textContent = `🚀 Conectando con tu sistema para cargar: ${sampleTitle} (${filename})...\nProcesando reporte de inventario...\n`;
+      previewPanel.style.display = 'none';
+      savePanel.style.display = 'none';
+      parsedProducts = [];
+
+      fetch(filename)
+        .then(response => {
+          if (!response.ok) throw new Error(`No se pudo leer el archivo local "${filename}".`);
+          return response.arrayBuffer();
+        })
+        .then(buffer => {
+          const data = new Uint8Array(buffer);
+          const workbook = XLSX.read(data, {type: 'array'});
+          const firstSheetName = workbook.SheetNames[0];
+          const worksheet = workbook.Sheets[firstSheetName];
+          const jsonData = XLSX.utils.sheet_to_json(worksheet);
+          logContent.textContent += `✅ Archivo "${filename}" procesado exitosamente. ${jsonData.length} filas detectadas listas para actualizar el stock.\n`;
+          processJsonData(jsonData);
+        })
+        .catch(err => {
+          logContent.textContent += `❌ Error al cargar ${filename}: ${err.message}\n`;
+        });
     }
 
     // Read and Parse Uploader File
