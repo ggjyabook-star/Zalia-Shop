@@ -592,11 +592,11 @@
         }
       });
 
-      // Export Current Active Catalog to CSV
+      // Export Current Active Catalog to Excel
       if (btnExportCurrent) {
         btnExportCurrent.addEventListener('click', (e) => {
           e.preventDefault();
-          exportActiveCatalogToCSV();
+          exportActiveCatalogToExcel();
         });
       }
     }
@@ -951,8 +951,8 @@
       btnRestoreDefault.style.display = 'none';
     }
 
-    // Export current active products to CSV format
-    function exportActiveCatalogToCSV() {
+    // Export current active products to Excel format
+    function exportActiveCatalogToExcel() {
       // Fetch currently active catalog
       let catalog = [];
       const customProducts = localStorage.getItem('zalia_custom_products');
@@ -966,28 +966,35 @@
       }
 
       if (catalog.length === 0) {
-        window.location.href = '产品列表1.xlsx';
+        alert("No hay productos en el catálogo para respaldar.");
         return;
       }
 
-      let csvContent = '\uFEFF'; // UTF-8 BOM
-      csvContent += 'ID,Nombre,Categoria,Precio_Normal,Precio_Mayoreo,Precio_Caja,Piezas_Por_Caja,Imagen_URL,Etiqueta,Descripcion,Stock,Barcode\n';
-      
-      catalog.forEach(p => {
-        const nameEsc = `"${(p.name || p.id || '').replace(/"/g, '""')}"`;
-        const descEsc = `"${(p.desc || '').replace(/"/g, '""')}"`;
-        csvContent += `${p.id},${nameEsc},${p.category},${p.retailPrice},${p.wholesalePrice},${p.boxPrice},${p.pcsPerBox},${p.image},${p.tag},${descEsc},${p.stock || 0},${p.barcode || ''}\n`;
-      });
+      // Prepare rows for SheetJS
+      const rows = catalog.map(p => ({
+        'ID': p.id || '',
+        'Nombre': p.name || p.id || '',
+        'Categoria': p.category || '',
+        'Precio_Normal': p.retailPrice || 0,
+        'Precio_Mayoreo': p.wholesalePrice || 0,
+        'Precio_Caja': p.boxPrice || 0,
+        'Piezas_Por_Caja': p.pcsPerBox || 1,
+        'Imagen_URL': p.image || '',
+        'Etiqueta': p.tag || '',
+        'Descripcion': p.desc || '',
+        'Stock': p.stock || 0,
+        'Barcode': p.barcode || ''
+      }));
 
-      const blob = new Blob([csvContent], {type: 'text/csv;charset=utf-8;'});
-      const link = document.createElement('a');
-      const url = URL.createObjectURL(blob);
-      link.setAttribute('href', url);
-      link.setAttribute('download', 'catalogo_activo_zalia.csv');
-      link.style.visibility = 'hidden';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
+      // Generate Excel file
+      try {
+        const worksheet = XLSX.utils.json_to_sheet(rows);
+        const workbook = XLSX.utils.book_new();
+        XLSX.utils.book_append_sheet(workbook, worksheet, "Respaldo Zalia");
+        XLSX.writeFile(workbook, "Respaldo_Catalogo_Zalia.xlsx");
+      } catch (err) {
+        alert("Hubo un error al generar el archivo Excel: " + err.message);
+      }
     }
 
     // Theme Helpers
