@@ -433,6 +433,28 @@
         </table>
       </div>
     </div>
+    <!-- Backup Restore Block -->
+    <div class="prop-card" style="padding: 40px 30px; border-top: 4px solid #ef4444; margin-bottom: 30px; background: rgba(239, 68, 68, 0.02);">
+      <h3 style="font-weight: 800; font-size: 1.5rem; margin-bottom: 10px; color: #ef4444;">
+        <i class="fas fa-history" style="margin-right: 8px;"></i> Restaurar Respaldo
+      </h3>
+      <p style="color: var(--text-muted); margin-bottom: 25px; font-size: 1rem;">
+        ¿Te equivocaste en algo? Aquí puedes subir el archivo de respaldo que descargaste previamente para devolver la tienda a esa versión exacta.
+      </p>
+      
+      <div class="upload-zone" id="backup-drop-zone" style="max-width: 600px; margin: 0; padding: 30px; border-color: rgba(239, 68, 68, 0.3); cursor: pointer;">
+        <i class="fas fa-file-excel upload-icon" style="font-size: 3rem; color: #ef4444;"></i>
+        <h4 style="font-size: 1.2rem; margin-bottom: 10px;">Arrastra tu archivo de respaldo aquí</h4>
+        <input type="file" id="backup-file-input" style="display:none;" accept=".xlsx, .xls, .csv">
+      </div>
+
+      <div id="backup-action-panel" style="display:none; margin-top: 20px; text-align: left;">
+        <p style="font-weight: 600; margin-bottom: 15px; color: var(--text-dark);" id="backup-status-text"></p>
+        <button id="btn-restore-backup" class="btn-secondary" style="background: #ef4444; color: white; border: none; padding: 12px 24px; font-size: 1rem;">
+          <i class="fas fa-exclamation-triangle"></i> Sí, regresar a esta versión
+        </button>
+      </div>
+    </div>
   </div>
 
   <!-- Closing main dashboard content wrapper -->
@@ -461,6 +483,14 @@
     const catalogDescStatus = document.getElementById('catalog-desc-status');
     const catalogBadgeStatus = document.getElementById('catalog-badge-status');
     const themeToggleBtn = document.getElementById('theme-toggle');
+
+    // Backup DOM Elements
+    const backupDropZone = document.getElementById('backup-drop-zone');
+    const backupFileInput = document.getElementById('backup-file-input');
+    const backupActionPanel = document.getElementById('backup-action-panel');
+    const backupStatusText = document.getElementById('backup-status-text');
+    const btnRestoreBackup = document.getElementById('btn-restore-backup');
+    let backupParsedProducts = [];
 
     // Login Gate Elements
     const loginGate = document.getElementById('login-gate');
@@ -611,17 +641,19 @@
     }
 
     // Read and Parse Uploader File
-    function handleFile(file) {
-      logBox.style.display = 'block';
-      
-      // If it's the very first file being parsed in this batch, reset the UI just once
-      if (logContent.textContent.trim() === '' || logContent.textContent.includes('¡Éxito!')) {
-         logContent.textContent = '';
+    function handleFile(file, isBackup = false) {
+      if (!isBackup) {
+        logBox.style.display = 'block';
+        if (logContent.textContent.trim() === '' || logContent.textContent.includes('¡Éxito!')) {
+           logContent.textContent = '';
+        }
+        logContent.textContent += `Analizando archivo: "${file.name}"...\n`;
+        previewPanel.style.display = 'block';
+        savePanel.style.display = 'block';
+      } else {
+        backupActionPanel.style.display = 'none';
+        backupStatusText.innerHTML = `Analizando archivo de respaldo: "${file.name}"...`;
       }
-      
-      logContent.textContent += `Analizando archivo: "${file.name}"...\n`;
-      previewPanel.style.display = 'block';
-      savePanel.style.display = 'block';
 
       const reader = new FileReader();
       const ext = file.name.split('.').pop().toLowerCase();
@@ -629,7 +661,7 @@
       if (ext === 'csv') {
         reader.onload = function(e) {
           const text = e.target.result;
-          parseCSV(text);
+          parseCSV(text, isBackup);
         };
         reader.readAsText(file, 'UTF-8');
       } else if (ext === 'xlsx' || ext === 'xls') {
@@ -640,20 +672,27 @@
             const firstSheetName = workbook.SheetNames[0];
             const worksheet = workbook.Sheets[firstSheetName];
             const jsonData = XLSX.utils.sheet_to_json(worksheet);
-            processJsonData(jsonData);
+            processJsonData(jsonData, isBackup);
           } catch (error) {
-            logContent.textContent += `❌ Error al decodificar archivo Excel: ${error.message}\n`;
+            if (!isBackup) logContent.textContent += `❌ Error al decodificar archivo Excel: ${error.message}\n`;
+            else backupStatusText.innerHTML = `❌ Error al decodificar archivo de respaldo: ${error.message}`;
           }
         };
         reader.readAsArrayBuffer(file);
       } else {
-        logContent.textContent += `❌ Tipo de archivo no soportado. Sube un archivo Excel (.xlsx, .xls) o CSV (.csv).\n`;
+        if (!isBackup) logContent.textContent += `❌ Tipo de archivo no soportado. Sube un archivo Excel (.xlsx, .xls) o CSV (.csv).\n`;
+        else backupStatusText.innerHTML = `❌ Tipo de archivo no soportado.`;
       }
     }
 
     // CSV Parsing Logic
-    function parseCSV(text) {
-      logContent.textContent += `Lector CSV en ejecución...\n`;
+    function parseCSV(text, isBackup = false) {
+      const logMsg = (msg) => {
+        if (!isBackup) logContent.textContent += msg + '\n';
+        else backupStatusText.innerHTML = msg;
+      };
+      
+      if (!isBackup) logContent.textContent += `Lector CSV en ejecución...\n`;
       try {
         const lines = [];
         let row = [""];
@@ -685,12 +724,12 @@
         }
 
         if (lines.length === 0) {
-          logContent.textContent += `❌ Archivo CSV vacío.\n`;
+          logMsg(`❌ Archivo CSV vacío.`);
           return;
         }
 
         const headers = lines[0].map(h => h.trim().toUpperCase());
-        logContent.textContent += `Columnas encontradas: [${headers.join(', ')}]\n`;
+        if (!isBackup) logContent.textContent += `Columnas encontradas: [${headers.join(', ')}]\n`;
 
         const getColIndex = (names) => {
           for (let name of names) {
@@ -717,11 +756,11 @@
         };
 
         if (colIndices.id === -1) {
-          logContent.textContent += `❌ Falta la columna de ID / 货号 en el archivo.\n`;
+          logMsg(`❌ Falta la columna de ID / 货号 en el archivo.`);
           return;
         }
         if (colIndices.pNormal === -1 && colIndices.pMayoreo === -1) {
-          logContent.textContent += `❌ Falta la columna de precio (Precio_Normal / 价格1 o Precio_Mayoreo / 价格4) en el archivo.\n`;
+          logMsg(`❌ Falta la columna de precio (Precio_Normal / 价格1 o Precio_Mayoreo / 价格4) en el archivo.`);
           return;
         }
 
@@ -760,25 +799,31 @@
             barcode: rawBarcode
           });
         }
-        processProductsList(items);
+        processProductsList(items, isBackup);
 
       } catch (err) {
-        logContent.textContent += `❌ Error parseando CSV: ${err.message}\n`;
+        if (!isBackup) logContent.textContent += `❌ Error parseando CSV: ${err.message}\n`;
+        else backupStatusText.innerHTML = `❌ Error parseando CSV: ${err.message}`;
       }
     }
 
     // Process parsed spreadsheet JSON
-    function processJsonData(rows) {
-      logContent.textContent += `Filas detectadas en hoja Excel: ${rows.length}\n`;
+    function processJsonData(rows, isBackup = false) {
+      const logMsg = (msg) => {
+        if (!isBackup) logContent.textContent += msg + '\n';
+        else backupStatusText.innerHTML = msg;
+      };
+
+      if (!isBackup) logContent.textContent += `Filas detectadas en hoja Excel: ${rows.length}\n`;
       if (rows.length === 0) {
-        logContent.textContent += `❌ No se encontraron filas de datos en el Excel.\n`;
+        logMsg(`❌ No se encontraron filas de datos en el Excel.`);
         return;
       }
 
       // Check schema based on first row keys
       const firstRowKeys = Object.keys(rows[0]).map(k => k.trim());
       const keysUpper = firstRowKeys.map(k => k.toUpperCase());
-      logContent.textContent += `Columnas detectadas: [${firstRowKeys.join(', ')}]\n`;
+      if (!isBackup) logContent.textContent += `Columnas detectadas: [${firstRowKeys.join(', ')}]\n`;
 
       const getMatchedKey = (names) => {
         for (let name of names) {
@@ -804,11 +849,11 @@
       };
 
       if (!keysMapped.id) {
-        logContent.textContent += `❌ Falta la columna de ID / 货号 en el Excel.\n`;
+        logMsg(`❌ Falta la columna de ID / 货号 en el Excel.`);
         return;
       }
       if (!keysMapped.pNormal && !keysMapped.pMayoreo) {
-        logContent.textContent += `❌ Falta la columna de precio (Precio_Normal / 价格1 o Precio_Mayoreo / 价格4) en el Excel.\n`;
+        logMsg(`❌ Falta la columna de precio (Precio_Normal / 价格1 o Precio_Mayoreo / 价格4) en el Excel.`);
         return;
       }
 
@@ -845,11 +890,11 @@
         };
       });
 
-      processProductsList(items);
+      processProductsList(items, isBackup);
     }
 
     // Validate and preview products
-    function processProductsList(items) {
+    function processProductsList(items, isBackup = false) {
       const validCategories = ['bolsas-carteras', 'mochilas', 'peluches', 'accesorios-mas'];
       const errors = [];
       const cleanItems = [];
@@ -886,7 +931,7 @@
       });
 
       // Show Validation Logs
-      if (errors.length > 0) {
+      if (errors.length > 0 && !isBackup) {
         logContent.textContent += `⚠️ Se encontraron ${errors.length} advertencias en el análisis:\n`;
         errors.forEach(err => {
           logContent.textContent += ` - ${err}\n`;
@@ -894,35 +939,42 @@
       }
 
       if (cleanItems.length === 0) {
-        logContent.textContent += `❌ Archivo descartado: Ningún producto pasó las reglas de validación.\n`;
+        if (!isBackup) logContent.textContent += `❌ Archivo descartado: Ningún producto pasó las reglas de validación.\n`;
+        else backupStatusText.innerHTML = `❌ Archivo de respaldo inválido. No se detectaron productos válidos.`;
         return;
       }
 
-      parsedProducts = parsedProducts.concat(cleanItems);
-      logContent.textContent += `✅ ¡Archivo procesado! Se extrajeron ${cleanItems.length} productos (Total acumulado listo para publicar: ${parsedProducts.length}).\n`;
+      if (!isBackup) {
+        parsedProducts = parsedProducts.concat(cleanItems);
+        logContent.textContent += `✅ ¡Archivo procesado! Se extrajeron ${cleanItems.length} productos (Total acumulado listo para publicar: ${parsedProducts.length}).\n`;
 
-      // Show Preview Table (including Stock column)
-      previewTableBody.innerHTML = '';
-      const previewSlice = parsedProducts.slice(0, 15); // Show first 15 products combined
-      
-      previewSlice.forEach(p => {
-        const tr = document.createElement('tr');
-        tr.innerHTML = `
-          <td><img class="preview-img" src="${p.image}" alt="${p.name}"></td>
-          <td><code>${p.id}</code></td>
-          <td style="font-weight:600;">${p.name}</td>
-          <td><code>${p.category}</code></td>
-          <td>$${p.retailPrice}</td>
-          <td>$${p.wholesalePrice}</td>
-          <td style="color:var(--primary); font-weight:700;">$${p.boxPrice}</td>
-          <td>${p.pcsPerBox} pzs</td>
-          <td style="font-weight:600;">${p.stock} pzs</td>
-        `;
-        previewTableBody.appendChild(tr);
-      });
+        // Show Preview Table (including Stock column)
+        previewTableBody.innerHTML = '';
+        const previewSlice = parsedProducts.slice(0, 15); // Show first 15 products combined
+        
+        previewSlice.forEach(p => {
+          const tr = document.createElement('tr');
+          tr.innerHTML = `
+            <td><img class="preview-img" src="${p.image}" alt="${p.name}"></td>
+            <td><code>${p.id}</code></td>
+            <td style="font-weight:600;">${p.name}</td>
+            <td><code>${p.category}</code></td>
+            <td>$${p.retailPrice}</td>
+            <td>$${p.wholesalePrice}</td>
+            <td style="color:var(--primary); font-weight:700;">$${p.boxPrice}</td>
+            <td>${p.pcsPerBox} pzs</td>
+            <td style="font-weight:600;">${p.stock} pzs</td>
+          `;
+          previewTableBody.appendChild(tr);
+        });
 
-      previewPanel.style.display = 'block';
-      savePanel.style.display = 'block';
+        previewPanel.style.display = 'block';
+        savePanel.style.display = 'block';
+      } else {
+        backupParsedProducts = cleanItems;
+        backupStatusText.innerHTML = `✅ Respaldo válido detectado con <strong>${cleanItems.length} productos</strong>. ¿Deseas reemplazar el catálogo actual con este respaldo?`;
+        backupActionPanel.style.display = 'block';
+      }
     }
 
     // Update Catalog Status Card
