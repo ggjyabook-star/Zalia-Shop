@@ -386,9 +386,17 @@ body.dark-mode-active .hero-text p {
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, var(--primary) 20%, var(--secondary) 80%);
+  background: linear-gradient(90deg, var(--primary), var(--secondary), var(--primary));
+  background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  animation: shineText 3s linear infinite;
+}
+
+@keyframes shineText {
+  to {
+    background-position: 200% center;
+  }
 }
 
 .hero-cta {
@@ -2712,3 +2720,58 @@ body.dark-mode-active .floating-cart-btn .cart-badge {
   }
 }
 
+/* Swipe hint and horizontal mobile containers */
+.mobile-swipe-hint {
+  display: none;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--primary);
+  margin-bottom: 15px;
+  animation: pulseHint 2s infinite;
+}
+
+@keyframes pulseHint {
+  0% { opacity: 0.5; transform: translateX(-5px); }
+  50% { opacity: 1; transform: translateX(5px); }
+  100% { opacity: 0.5; transform: translateX(-5px); }
+}
+
+@media (max-width: 768px) {
+  .mobile-swipe-hint {
+    display: block;
+  }
+  
+  .steps-container {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 10px;
+    gap: 20px;
+  }
+  
+  .steps-container::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .step-item {
+    flex: 0 0 85%;
+    scroll-snap-align: center;
+    background: var(--light-card);
+    padding: 20px;
+    border-radius: var(--border-radius-lg);
+  }
+}
+
+@media (max-width: 480px) {
+  .tiktok-hero-title {
+    font-size: 1.8rem !important;
+    line-height: 1.2 !important;
+  }
+  .tiktok-hero-desc {
+    font-size: 1rem !important;
+    padding: 0 10px;
+  }
+}
